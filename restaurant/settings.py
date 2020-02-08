@@ -1,8 +1,24 @@
 import os
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+import environ
 
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+# directory to file mamnage.py
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))      #sciezka absolutna do pliku manage.py
+
+env = environ.Env(
+    #defaul types and values
+    DEBUG=(bool, False),
+    ALLOWED_HOSTS=(;ost, []),
+)
+# .env is in parent directory to 'settings.py'
+env_file= os.path.join(BASE_DIR, '.env')     #sciezka absolutna do pliku env
+# read from .env file if it exists
+environ.Env.read_env(env_files)     #laduje zmienne z pliku env do naszego srodowiska
+
+DEGUB = env('DEBUG')
+SECRET_KEY = env('SECRET_KEY')
+ALLOWED_HOSTS = env('ALLOWED_HOSTS')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -11,10 +27,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '02i)wa**ispbn@(mf3$i!d=p7#4c517r#4co#_r=!x0ar-bp4r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -27,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'debug_toolbar',            # bardzo wazne, zeby to bylo za staticfiles!
     'django_extensions',
-
     'reservation.apps.ReservationConfig',
     
 ]
@@ -35,6 +46,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',      # <---- to tez dopisujemy na samej gorze to doinsatalowaniu paczek
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -73,10 +85,12 @@ WSGI_APPLICATION = 'restaurant.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
+    # zamieniamy dla heroku tak jak ponizej:
+    'default': env.db(),
 }
 
 
@@ -103,13 +117,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 
@@ -117,8 +127,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 STATIC_URL = '/static/'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # STATICFILES_DIRS = [
 #     os.path.join(BASE_DIR, '/static'),
 # ]
