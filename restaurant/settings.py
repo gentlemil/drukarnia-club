@@ -16,17 +16,9 @@ env_file= os.path.join(BASE_DIR, '.env')     #sciezka absolutna do pliku env
 # read from .env file if it exists
 environ.Env.read_env(env_file)     #laduje zmienne z pliku env do naszego srodowiska
 
-DEGUB = env('DEBUG')
+DEBUG = env('DEBUG')
 SECRET_KEY = env('SECRET_KEY')
 ALLOWED_HOSTS = env('ALLOWED_HOSTS')
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '02i)wa**ispbn@(mf3$i!d=p7#4c517r#4co#_r=!x0ar-bp4r'
-
-# SECURITY WARNING: don't run with debug turned on in production!
 
 # Application definition
 
