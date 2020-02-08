@@ -14,7 +14,7 @@ env = environ.Env(
 # .env is in parent directory to 'settings.py'
 env_file= os.path.join(BASE_DIR, '.env')     #sciezka absolutna do pliku env
 # read from .env file if it exists
-environ.Env.read_env(env_files)     #laduje zmienne z pliku env do naszego srodowiska
+environ.Env.read_env(env_file)     #laduje zmienne z pliku env do naszego srodowiska
 
 DEGUB = env('DEBUG')
 SECRET_KEY = env('SECRET_KEY')
