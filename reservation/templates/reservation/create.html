@@ -1,0 +1,63 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+<section id="formTemplate">
+
+    <div class="container">
+        <form class="create" method="post">
+            {% csrf_token %}
+
+            <tr>
+                <td><input type="text" name="name" placeholder="Podaj Imie i Nazwisko" maxlength="250" required
+                        id="id_name"></td>
+            </tr>
+            <div class="formtogether">
+                <tr>
+                    <td><input type="text" name="email" placeholder="Podaj adres e-mail" maxlength="250" required
+                            id="id_email"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="phone" placeholder="Podaj swoj nr kontaktowy" maxlength="250" required
+                            id="id_phone" , pattern="[\+()]*(?:\d[\s\-\.()xX]*){10,14}">
+                    </td>
+                </tr>
+            </div>
+            <div class="formtogether">
+                <tr>
+                    <th><label for="id_bar">Termin:></th>
+                    <td> {{ form.term_of_reservation }} </td>
+                </tr>
+                <tr>
+                    <th><label for="id_bar">Bar:</label></th>
+                    <td>{{ form.bar }}</td>
+                </tr>
+            </div>
+            <div class="formtogether">
+                <tr>
+                    <th><label for="id_nr_of_people">Liczba gosci: :</label></th>
+                    <td>{{ form.nr_of_people }}</td>
+                </tr>
+
+                <tr>
+                    <th><label for="id_catering">Catering:</label></th>
+                    <td>{{ form.catering }}</td>
+                </tr>
+                <tr>
+                    <th><label for="id_faktura">Faktura:</label></th>
+                    <td>{{ form.faktura }}</td>
+                </tr>
+
+            </div>
+            <tr>
+                <td><textarea name="additional_information" cols="80" rows="10" placeholder="drogi pamietniczku"
+                        maxlength="250"></textarea></td>
+            </tr>
+
+            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Save</button>
+        </form>
+    </div>
+
+</section>
+
+{% endblock %}

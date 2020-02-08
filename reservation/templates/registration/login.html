@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section id="loginTemp">
+
+
+    {% if user.is_authenticated %}
+    tylko dla zalogowanych
+    {% endif %}
+
+    {% if form.errors %}
+    <p class="errorlist">Bledna nazwa uzytkownika lub haslo</p>
+    {% endif %}
+
+    <h3>zaloguj sie</h3>
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <div class="overlay">
+            <div class="wrap">
+                <h1>Zaloguj sie</h1>
+                <input type="" placeholder="Username">
+                <input type="email" placeholder="Password">
+                <input type="hidden" name="next" value="{{ next }}">
+                <input type="submit" value="Sign In">
+                <a href="#"><i class="fa fa-question"></i>Forgotten Password</a>
+                <a href="#"><i class="fa fa-user"></i>Create an Account</a>
+            </div>
+        </div>
+    </form>
+
+</section>
+{% endblock %}

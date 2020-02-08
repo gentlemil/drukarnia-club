@@ -1,0 +1,51 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+<section id="listTemplate">
+    <h1>NADCHODZACE REZERWACJE</h1>
+    {% if reservations %}
+    <table class="container">
+        <thead>
+            <tr>
+                <th>
+                    <h1>Lp</h1>
+                </th>
+                <th>
+                    <h1>Imie Nazwisko</h1>
+                </th>
+                <th>
+                    <h1>Data</h1>
+                </th>
+                <th>
+                    <h1>Bar</h1>
+                </th>
+                <th>
+                    <h1>Liczba osob</h1>
+                </th>
+                <th>
+                    <h1>Status</h1>
+                </th>
+                <th>
+                    <h1>Sprawdz</h1>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for r in reservations %}
+            <tr>
+                <td>{{ r.pk }}</td>
+                <td>{{ r.name }}</td>
+                <td>{{ r.term_of_reservation }}</td>
+                <td>{{ r.bar }}</td>
+                <td>{{ r.nr_of_people }}</td>
+                <td>{{ r.status }}</td>
+                <td><a href="{% url 'reservation_details' pk=r.pk %}"><i class="fas fa-book-open"></i></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% endif %}
+</section>
+{% endblock %}

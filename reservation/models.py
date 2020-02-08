@@ -4,70 +4,79 @@
 
 from django.db import models
 from django.utils import timezone
+from django.urls import reverse
+
+class Bar(models.Model):
+    name = models.CharField(max_length=100)
+    limit = models.PositiveIntegerField()
+
+    class Meta:
+        pass
+
+    def __str__(self):
+        return self.name
+
+#
+  #   
+    # 'bar2' = 'sala balowa z lozami'
+    # 'bar3' = 'sala biesiadna, koncertowa'
+    # 'bar4' = 'gorny bar'
+  #
+#  
 
 class Reservation(models.Model):
-    CHOICES = (
-        ('1', 'Tak'),
-        ('0', 'Nie')
-    )
-    
-    BAR_CHOICES = (
-        ('2 BAR', 'sala balowa z lozami'),
-        ('3 BAR', 'sala biesiadna, koncertowa'),
-        ('4 BAR', 'gorny bar'),
-    )
+
+    # YESNO_CHOICES = (
+    #     ('Y', 'Tak'),
+    #     ('N', 'Nie')
+    # )
 
     STATUS_CHOICES = (
             ('draft', 'wstepna'),
             ('confirmed', 'potwierdzona'),
+            ('rejected', 'odrzucona')
         )
     
     name = models.CharField(max_length=200)
-    slug = models.SlugField(
-        max_length=200,
-        unique_for_date= 'term_of_reservation',
-        default='dupa',
-        )
+
     email = models.EmailField(
         max_length=200,
-        unique_for_date='term_of_reservation')
-    phone = models.DecimalField(
-        decimal_places=9,
-        max_digits=9
         )
-        # nie wiem jaki Field tutaj dac zeby ograniczyc do wpisania
-        # nie mniej, nie wiecej cyfr niz 9
-        
-    term_of_reservation = models.DateTimeField(default=timezone.now)
-    bar = models.CharField(
-        max_length=10,
-        choices=BAR_CHOICES,
-    )
-        # trzeba jeszcze stworzyc warunek, ze bar 2 i 3 jest czynny
-        # tylko w piatki i soboty, chyba, ze chce sie zrobic impreze
-        # zamknieta (wynajac cala sale)
+    phone = models.CharField(max_length=20)
 
-    nr_of_people = models.IntegerField(default=2)
-    catering = models.CharField(
-        max_length=5,
-        choices=CHOICES,
-        default=False,
+    term_of_reservation = models.DateTimeField(default=timezone.now)
+
+    bar = models.ForeignKey(Bar, on_delete=models.PROTECT)
+
+    nr_of_people = models.PositiveIntegerField(default=1)
+
+    catering = models.BooleanField(
+        blank=False,
+        null=False,
+        default=False
     )
-    faktura = models.CharField(
-        max_length=5,
-        choices=CHOICES,
-        default=False,
+
+    faktura = models.BooleanField(
+        blank=False,
+        null=False,
+        default=False
     ) 
-    additional_information = models.CharField(max_length=500)
-    created = models.DateTimeField(auto_now=timezone.now)
+
+    additional_information = models.TextField(max_length=500)
+
+    created = models.DateTimeField(auto_now_add=timezone.now)
+
     status = models.CharField(
         max_length=10,
         choices=STATUS_CHOICES,
     )
 
-    # class Meta:
-    #     pass
+    class Meta:
+        pass
 
-    # def __str__(self):
-    #     return self.term_of_reservation
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('reservation-details', args=[self.pk])
 

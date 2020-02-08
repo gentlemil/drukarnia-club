@@ -1,0 +1,69 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+<section id="avTemp">
+    <h1>DOSTEPNOSC BARU</h1>
+
+    {% regroup result by pk as new_results %}
+    <table class="container">
+        <tr>
+            <th>Bar</th>
+            {% for day in nr_of_days %}
+            <th>{{ day }}</th>
+            {% endfor %}
+        </tr>
+        {% for row in new_results %}
+        <tr>
+            <td rowspan=3>{{ row.1.0}}</td>
+            {% for day in nr_of_days %}
+            <th>{{ row.1.people }}</th>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+
+    <table class="container">
+        {% for row in results2 %}
+        <tr>
+            {% for value in row %}
+            <td>{{ value }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+    <table class="container">
+
+        <thead>
+            <tr>
+                <th>
+                    <h1>x</h1>
+                </th>
+                <th>
+                    <h1>BAR1</h1>
+                </th>
+                <th>
+                    <h1>BAR2</h1>
+                </th>
+                <th>
+                    <h1>BAR3</h1>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for bar in result %}
+            <tr>
+                <td>{{ bar }}</td>
+                <td>{{ bar.day }}</td>
+                <td>{{ bar.people }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+
+</section>
+
+{% endblock %}

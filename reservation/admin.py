@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Reservation
+from .models import Reservation, Bar
 
 class ReservationAdmin(admin.ModelAdmin):
     list_display = [
@@ -20,5 +20,15 @@ class ReservationAdmin(admin.ModelAdmin):
     date_hierarchy = 'term_of_reservation'
     # ordering = [ pass ]
 
+class BarAdmin(admin.ModelAdmin):
+    list_display = [
+        'name',
+        'limit'
+    ]
+
+
 
 admin.site.register(Reservation, ReservationAdmin)
+admin.site.register(Bar, BarAdmin)
+
+admin.site.site_header = 'RESERVATION SITE - PROJECT'
