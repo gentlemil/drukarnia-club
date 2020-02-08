@@ -9,7 +9,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))      #sci
 env = environ.Env(
     #defaul types and values
     DEBUG=(bool, False),
-    ALLOWED_HOSTS=(;ost, []),
+    ALLOWED_HOSTS=(list, []),
 )
 # .env is in parent directory to 'settings.py'
 env_file= os.path.join(BASE_DIR, '.env')     #sciezka absolutna do pliku env
