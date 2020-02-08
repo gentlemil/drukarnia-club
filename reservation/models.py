@@ -78,5 +78,5 @@ class Reservation(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('reservation-details', args=[self.pk])
+        return reverse('reservation_details', args=[self.pk])
 

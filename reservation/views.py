@@ -17,7 +17,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 
 from django.views.generic.base import TemplateView
 
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 
 # glowny widok aplikacji rezerwacji, gdzie beda wyswietlane mozliwe akcje do wyboru
 # /reservation
@@ -60,6 +60,9 @@ class ReservationDelete(LoginRequiredMixin, DeleteView):
     model = Reservation
     template_name = 'reservation/delete.html'
 
+    def get_success_url(self):
+        return reverse_lazy('confirm')
+
 # widok formularzu do tworzenia nowej rezerwacji
 # /reservation/create/
 # class ReservationCreate(CreateView):
@@ -101,15 +104,11 @@ def reservation_create(request):
         form = ReservationForm(request.POST)
         # sprawdzenie poprawnosci formularza
         if form.is_valid():
-
             r = form.save()
-
             # messages.success(request, 'SUKCES SUKCES SUKCES')   #formul. przeszedl walidacje :)
-            # return redirect(q.get_absolute_url())
             return redirect(reverse('reservation_details', args=[r.pk]))
-
-        else:       #formularz nie przeszedl walidacji, czyli ma bledy
-            messages.error(request, 'BLAD BLAD BLAD!')
+        # else:       #formularz nie przeszedl walidacji, czyli ma bledy
+            # messages.error(request, 'BLAD BLAD BLAD!')
 
 
     # nie ma danych POST wiec pokazujemy pusty formularz
