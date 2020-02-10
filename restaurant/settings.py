@@ -32,7 +32,8 @@ INSTALLED_APPS = [
     'debug_toolbar',            # bardzo wazne, zeby to bylo za staticfiles!
     'django_extensions',
     'reservation.apps.ReservationConfig',
-    
+    'homepage.apps.HomepageConfig',
+        
 ]
 
 MIDDLEWARE = [

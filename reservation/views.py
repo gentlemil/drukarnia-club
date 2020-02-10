@@ -1,23 +1,18 @@
-from django.http import HttpResponse
-from django.shortcuts import render, redirect, get_object_or_404
-from .models import Reservation, Bar
-from django.views.generic import CreateView, UpdateView, DeleteView
-
-from django.db.models import Count
-
 from django.contrib.auth.mixins import LoginRequiredMixin   #CBV
 from django.contrib.auth.decorators import login_required   #FBV
-
-from django.db.models import Sum, DateField
-from django.db.models.functions import TruncDate
-
-from .forms import ReservationForm
-
 from django.contrib.messages.views import SuccessMessageMixin
+from django.db.models import Sum, DateField, Count
+from django.db.models.functions import TruncDate
+from django.http import HttpResponse
 
-from django.views.generic.base import TemplateView
+from django.shortcuts import render, redirect, get_object_or_404
+from django.views.generic import CreateView, UpdateView, DeleteView
 
 from django.urls import reverse, reverse_lazy
+from django.views.generic.base import TemplateView
+
+from .forms import ReservationForm
+from .models import Reservation, Bar
 
 # glowny widok aplikacji rezerwacji, gdzie beda wyswietlane mozliwe akcje do wyboru
 # /reservation
@@ -28,7 +23,7 @@ def index(request):
 # /reservation/list
 @login_required
 def reservation_list(request):
-    reservations = Reservation.objects.all().order_by('-term_of_reservation')
+    reservations = Reservation.objects.all().order_by('term_of_reservation')
     context = {
 
         'reservations': reservations
