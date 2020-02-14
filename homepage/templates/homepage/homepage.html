@@ -1,0 +1,111 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D R U K 2.0</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" href="{% static 'homepage/css/druk-style.css' %}">
+</head>
+
+<body>
+
+    <!-- ------------------------------------------------------------------------- -->
+    <!-- ---------------------------- NAVIGATION --------------------------------- -->
+    <!-- ------------------------------------------------------------------------- -->
+
+    <ul>
+        <li><a href="#">logowanie</a></li>
+        <li><a href="#">/</a></li>
+        <li><a href="#">rejestracja</a></li>
+    </ul>
+
+    <section id="navigation">
+        <div class="logo">
+            <a href="#"><img src="{% static 'homepage/img/drukarnia-logo.png' %}" alt="logo"></a>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="#">O NAS</a></li>
+                <li><a href="#">DUPA</a></li>
+                <li><a href="#">WYDARZENIA</a></li>
+                <li><a href="#">LOKALIZACJA</a></li>
+                <li><a href="#">REZERWACJA</a></li>
+            </ul>
+        </div>
+    </section>
+    <section id="about">
+        <div class="container">
+            <div class="textone">
+                <p>Toca Madera is a modern take on traditional Mexican cuisine, featuring unique shared plates and
+                    specialty craft cocktails.</p>
+            </div>
+            <div class="texttwo">
+                <p>Now Open in Los Angeles & Scottsdale</p>
+            </div>
+            <div class="buttonabout">
+                <a href="#">RESERVATIONS</a>
+            </div>
+        </div>
+        <!-- krotko o drukarnia, button rezerwacja -->
+    </section>
+    <section id="menu">
+        <div class="container">
+            <div class="textone">
+                <p>Twój bar. Twoje miasto.</p>
+            </div>
+            <div class="texttwo"><i class="fas fa-cocktail"></i>
+                <div class="buttonmenu">
+                    <a href="#">MENU</a>
+                </div>
+            </div>
+            <!-- TASTE. TOUCH. HEAR. EXPERIENCE. twoj bar, twoje miasto, button menu -->
+    </section>
+    <section id="event">
+        <div class="container">
+            <div class="textone">
+                <p>WYDARZENIA</p>
+            </div>
+            <div class="texttwo">
+                <p>Z życia Drukarni.</p>
+                <div class="buttonevent">
+                    <a href="#">ZOBACZ WIĘCEJ</a>
+                </div>
+            </div>
+            <!-- ostatnio w druku, button zobacz wiecej -->
+    </section>
+    <section id="gallery">
+        <div class="container"></div>
+        <!-- drukarniane zdjecia -->
+    </section>
+    <section id="contactform">
+        <div class="container">
+            <form class="contact" action="" method="post">
+                <h3>Masz pytania? Napisz do nas!</h3>
+                <!-- <fieldset> -->
+                <input placeholder="Imie Nazwisko" type="text" tabindex="1" required autofocus>
+                <!-- </fieldset> -->
+                <!-- <fieldset> -->
+                <input placeholder="Adres e-mail" type="email" tabindex="2" required>
+                <!-- </fieldset> -->
+                <!-- <fieldset> -->
+                <input placeholder="Nr kontaktowy (opcjonalnie)" type="tel" tabindex="3" required>
+                <!-- </fieldset> -->
+                <!-- <fieldset> -->
+                <textarea placeholder="Napisz co się trapi...." tabindex="5" required></textarea>
+                <!-- </fieldset> -->
+                <!-- <fieldset> -->
+                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                <!-- </fieldset> -->
+            </form>
+        </div>
+        <!-- formularz kontaktowy -->
+    </section>
+
+</body>
+
+</html>

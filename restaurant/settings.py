@@ -51,8 +51,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'restaurant.urls'
 
 INTERNAL_IPS = [
-    '127.0.0.1',
-    
+    '127.0.0.1', 
 ]
 
 TEMPLATES = [
