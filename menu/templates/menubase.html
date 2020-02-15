@@ -1,4 +1,4 @@
-{% load sass_tags static %}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,8 +10,7 @@
     <!-- <title>Reservation Site</title> -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-    {# <link rel="stylesheet" href="{% static 'reservation/css/style.css' %}"> #}
-    <link rel="stylesheet" href="{% sass_src 'reservation/css/style.scss' %}">
+    <link rel="stylesheet" href="{% static 'reservation/css/style.css' %}">
 
 </head>
 
@@ -22,15 +21,15 @@
         </div>
         <div class="menu">
             <ul>
-                <li><a href="{% url 'reservation_list' %}">LISTA REZERWACJI</a></li>
-                <li><a href="{% url 'reservation-create' %}">NOWA REZERWACJA</a></li>
-                <li><a href="{% url 'bar_availability' %}">DOSTEPNOSC</a></li>
-                <li><a href="{% url 'admin:index' %}">PANEL ADMINISTRATORA</a></li>
-                {% if user.is_authenticated %}
+                <li><a href="{% url 'menu_list' %}">MENU</a></li>
+                <li><a href="{% url 'menu_create' %}">NOWA POZYCJE</a></li>
+                <li><a href="{% url 'menu_update' %}">EDYCJA</a></li>
+                <li><a href="{% url 'menu_delete' %}">USUN</a></li>
+                <!-- {% if user.is_authenticated %}
                 <li><a href="{% url 'logout' %}">Logout</a></li>
                 {% else %}
                 <li><a href="{% url 'login' %}">Login</a></li>
-                {% endif %}
+                {% endif %} -->
             </ul>
         </div>
     </section>

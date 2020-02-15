@@ -26,26 +26,26 @@
 
     <section id="navigation">
         <div class="logo">
-            <a href="#"><img src="{% static 'homepage/img/drukarnia-logo.png' %}" alt="logo"></a>
+            <a href="{% url 'homepage' %}"><img src="{% static 'homepage/img/drukarnia-logo.png' %}" alt="logo"></a>
         </div>
         <div class="menu">
             <ul>
                 <li><a href="#">O NAS</a></li>
-                <li><a href="#">DUPA</a></li>
+                <li><a href="#">MENU</a></li>
                 <li><a href="#">WYDARZENIA</a></li>
                 <li><a href="#">LOKALIZACJA</a></li>
-                <li><a href="#">REZERWACJA</a></li>
+                <li><a href="{% url 'reservation-create' %}">REZERWACJA</a></li>
             </ul>
         </div>
     </section>
     <section id="about">
         <div class="container">
             <div class="textone">
-                <p>Toca Madera is a modern take on traditional Mexican cuisine, featuring unique shared plates and
-                    specialty craft cocktails.</p>
+                <p>Klub Drukarnia to jeden z najlepiej zlokalizowanych krakowskich lokali.
+                    Położony jest tuż nad Wisłą, w dawnej przemysłowej dzielnicy Krakowa – Podgórzu.</p>
             </div>
             <div class="texttwo">
-                <p>Now Open in Los Angeles & Scottsdale</p>
+                <p>Kraków, Stare Podgórze, ul. Nadwiślańska 1</p>
             </div>
             <div class="buttonabout">
                 <a href="#">RESERVATIONS</a>

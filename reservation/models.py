@@ -1,7 +1,3 @@
-#WSTEPNY MODEL MOJEJ STRONY REZERWACYJNEJ
-#DO OBEJRZENIA, PRZEMYSLENIA, POPRAWIENIA
-
-
 from django.db import models
 from django.utils import timezone
 from django.urls import reverse
@@ -16,20 +12,7 @@ class Bar(models.Model):
     def __str__(self):
         return self.name
 
-#
-  #   
-    # 'bar2' = 'sala balowa z lozami'
-    # 'bar3' = 'sala biesiadna, koncertowa'
-    # 'bar4' = 'gorny bar'
-  #
-#  
-
 class Reservation(models.Model):
-
-    # YESNO_CHOICES = (
-    #     ('Y', 'Tak'),
-    #     ('N', 'Nie')
-    # )
 
     STATUS_CHOICES = (
             ('draft', 'wstepna'),

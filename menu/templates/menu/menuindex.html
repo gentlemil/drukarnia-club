@@ -1,0 +1,46 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+<section id="menuList">
+    {% if menus %}
+    <table class="container">
+        <thead>
+            <tr>
+                <th>
+                    <h1>Lp</h1>
+                </th>
+                <th>
+                    <h1>Nazwa</h1>
+                </th>
+                <th>
+                    <h1>Rodzaj alkoholu</h1>
+                </th>
+                <th>
+                    <h1>Ilosc</h1>
+                </th>
+                <th>
+                    <h1>Cena</h1>
+                </th>
+                <th>
+                    <h1>Edycja</h1>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for r in menus %}
+            <tr>
+                <td>{{ r.pk }}</td>
+                <td>{{ r.name }}</td>
+                <td>{{ r.kind }}</td>
+                <td>{{ r.amount }}</td>
+                <td>{{ r.prize }}</td>
+                <td><a href="{% url 'menu_update' pk=r.pk %}"><i class="fas fa-book-open"></i></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% endif %}
+</section>
+{% endblock %}
