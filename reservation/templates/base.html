@@ -10,35 +10,36 @@
     <!-- <title>Reservation Site</title> -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-    {# <link rel="stylesheet" href="{% static 'reservation/css/style.css' %}"> #}
     <link rel="stylesheet" href="{% sass_src 'reservation/css/style.scss' %}">
 
 </head>
 
 <body>
-    <section id="navigation">
-        <div class="logo">
-            <a href="{% url 'homepage' %}"><img src="{% static 'reservation/img/drukarnia-logo.png' %}" alt="logo"></a>
-        </div>
-        <div class="menu">
-            <ul>
-                <li><a href="{% url 'reservation_list' %}">LISTA REZERWACJI</a></li>
-                <li><a href="{% url 'reservation-create' %}">NOWA REZERWACJA</a></li>
-                <li><a href="{% url 'bar_availability' %}">DOSTEPNOSC</a></li>
-                <li><a href="{% url 'admin:index' %}">PANEL ADMINISTRATORA</a></li>
-                {% if user.is_authenticated %}
-                <li><a href="{% url 'logout' %}">Logout</a></li>
-                {% else %}
-                <li><a href="{% url 'login' %}">Login</a></li>
-                {% endif %}
-            </ul>
-        </div>
-    </section>
+    <div class="background">
+        <section id="navigation">
+            <div class="logo">
+                <a href="{% url 'homepage' %}"><img src="{% static 'reservation/img/drukarnia-logo.png' %}"
+                        alt="logo"></a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="{% url 'reservation_list' %}">LISTA REZERWACJI</a></li>
+                    <li><a href="{% url 'reservation-create' %}">NOWA REZERWACJA</a></li>
+                    <li><a href="{% url 'bar_availability' %}">DOSTEPNOSC</a></li>
+                    <li><a href="{% url 'admin:index' %}">PANEL ADMINISTRATORA</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
+                    {% else %}
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </section>
 
-    <div id="content">
-        {% block content %}{% endblock %}
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
     </div>
-
 </body>
 
 </html>

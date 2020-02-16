@@ -1,0 +1,103 @@
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.42em;
+  color: #A7A1AE;
+  overflow-x: hidden;
+  background: url("/static/menu/img/background.jpg") no-repeat fixed;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  max-width: 100vw;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 80px;
+  z-index: 10000;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#navigation .logo {
+  width: 50px;
+  height: 50px;
+  padding-right: 200px;
+}
+
+#navigation .logo a img {
+  width: auto;
+  height: 60px;
+}
+
+#navigation .menu ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+#navigation .menu ul li {
+  padding: 10px 15px;
+  margin: 10px;
+}
+
+#navigation .menu ul li a {
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.42em;
+  color: white;
+}
+
+#navigation .menu ul li a:hover:last-child {
+  color: white;
+}
+
+#navigation .menu ul li li:hover {
+  border: 1px solid #E4E6E9;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-timing-function: line;
+          transition-timing-function: line;
+}
+
+#navigation .menu ul li li:last-child {
+  border: 1px solid #E4E6E9;
+  margin-right: 40px;
+}
+
+#navigation .menu ul li li:hover:last-child {
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-transition: 0.8s all;
+  transition: 0.8s all;
+}
+
+#navigation .logadmin a {
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+}
+/*# sourceMappingURL=menustyle.css.map */

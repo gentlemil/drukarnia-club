@@ -1,0 +1,98 @@
+.background {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding-top: 100vh;
+  background: url("/static/reservation/img/back.jpg") no-repeat fixed;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.background #navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  max-width: 100vw;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 80px;
+  z-index: 10000;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.background #navigation .logo {
+  width: 50px;
+  height: 50px;
+  padding-right: 200px;
+}
+
+.background #navigation .logo a img {
+  width: auto;
+  height: 60px;
+}
+
+.background #navigation .menu ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.background #navigation .menu ul li {
+  padding: 10px 15px;
+  margin: 10px;
+}
+
+.background #navigation .menu ul li a {
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.42em;
+  color: white;
+}
+
+.background #navigation .menu ul li a:hover:last-child {
+  color: white;
+}
+
+.background #navigation .menu ul li li:hover {
+  border: 1px solid #E4E6E9;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-timing-function: line;
+          transition-timing-function: line;
+}
+
+.background #navigation .menu ul li li:last-child {
+  border: 1px solid #E4E6E9;
+  margin-right: 40px;
+}
+
+.background #navigation .menu ul li li:hover:last-child {
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-transition: 0.8s all;
+  transition: 0.8s all;
+}
+
+.background #navigation .logadmin a {
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+}
+/*# sourceMappingURL=style.css.map */

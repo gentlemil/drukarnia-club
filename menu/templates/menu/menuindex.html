@@ -1,9 +1,34 @@
-{% extends "base.html"%}
+{% extends "menubase.html"%}
 
 {% block content %}
 
 <section id="menuList">
     {% if menus %}
+
+    {% for r in menus %}
+    <div class="type">
+        <h2>{{ r.kind }}</h2>
+        <table class="container">
+
+            <tbody>
+                <tr>
+                    <td>{{ r.pk }}</td>
+                    <td>{{ r.name }}</td>
+                    <td>{{ r.amount }}</td>
+                    <td>{{ r.prize }}</td>
+                    <td><a href="{% url 'menu_update' pk=r.pk %}"><i class="fas fa-book-open"></i></a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    { endif }
+
+
+
+
+    {#
+<!--     
     <table class="container">
         <thead>
             <tr>
@@ -40,7 +65,8 @@
             {% endfor %}
         </tbody>
     </table>
+    {% endif %} -->
 
-    {% endif %}
+#}
 </section>
 {% endblock %}

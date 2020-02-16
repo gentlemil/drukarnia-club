@@ -1,12 +1,85 @@
-#navigation {
-    background-color: red;
+.background {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding-top: 100vh;
+    background: url('/static/reservation/img/back.jpg') no-repeat fixed;
+    background-attachment: fixed;
+    background-size: cover;
 
-    .logo {
-        border: 1px solid green;
+    #navigation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        max-width: 100vw;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 80px;
+        z-index: 10000;
+        background-color: rgba(0, 0, 0, 0.5);
 
+        .logo {
+            width: 50px;
+            height: 50px;
+            padding-right: 200px;
+
+            a img {
+                width: auto;
+                height: 60px;
+            }
+        }
+
+        .menu ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+
+            li {
+                padding: 10px 15px;
+                margin: 10px;
+
+                a {
+                    text-decoration: none;
+                    font-size: 16px;
+                    font-family: 'Open Sans', sans-serif;
+                    font-weight: 300;
+                    line-height: 1.42em;
+                    color: white;
+                }
+
+                a:hover:last-child {
+                    color: white;
+                }
+
+                li:hover {
+                    border: 1px solid #E4E6E9;
+                    transition-delay: 0s;
+                    transition-duration: 0.4s;
+                    transition-property: all;
+                    transition-timing-function: line;
+                }
+
+                li:last-child {
+                    border: 1px solid #E4E6E9;
+                    margin-right: 40px;
+                }
+
+                li:hover:last-child {
+                    background-color: rgba(255, 255, 255, 0.1);
+                    transition: 0.8s all;
+                }
+            }
+        }
+
+        .logadmin {
+            a {
+                text-decoration: none;
+                font-size: 25px;
+                color: white;
+            }
+        }
     }
-}
-
-#listTemplate {
-    background-image: url('/static/reservation/img/background.jpg');
 }

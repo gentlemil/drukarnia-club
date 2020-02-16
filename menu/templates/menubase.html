@@ -1,4 +1,4 @@
-{% load static %}
+{% load sass_tags static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +10,7 @@
     <!-- <title>Reservation Site</title> -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-    <link rel="stylesheet" href="{% static 'reservation/css/style.css' %}">
+    <link rel="stylesheet" href="{% sass_src 'menu/css/menustyle.scss' %}">
 
 </head>
 
@@ -21,15 +21,15 @@
         </div>
         <div class="menu">
             <ul>
-                <li><a href="{% url 'menu_list' %}">MENU</a></li>
+                <li><a href="{% url 'menu' %}">MENU</a></li>
                 <li><a href="{% url 'menu_create' %}">NOWA POZYCJE</a></li>
-                <li><a href="{% url 'menu_update' %}">EDYCJA</a></li>
-                <li><a href="{% url 'menu_delete' %}">USUN</a></li>
-                <!-- {% if user.is_authenticated %}
+                <li><a href="#">EDYCJA</a></li>
+                <li><a href="#">USUN</a></li>
+                {#<!-- {% if user.is_authenticated %}
                 <li><a href="{% url 'logout' %}">Logout</a></li>
                 {% else %}
                 <li><a href="{% url 'login' %}">Login</a></li>
-                {% endif %} -->
+                {% endif %} -->#}
             </ul>
         </div>
     </section>

@@ -14,7 +14,8 @@ from .models import Menu
 # from .forms import ReservationForm
 
 def index(request):
-    menus = Menu.objects.all().order_by('type').order_by('name')
+    menus = Menu.objects.all().order_by('kind').distinct('kind')
+    # menus = Menu.objects.all().order_by('type').order_by('name')
     context = {
         'menus': menus
     }

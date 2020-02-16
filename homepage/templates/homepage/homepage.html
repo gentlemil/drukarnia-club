@@ -1,4 +1,4 @@
-{% load static %}
+{% load sass_tags static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +9,7 @@
     <title>D R U K 2.0</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-    <link rel="stylesheet" href="{% static 'homepage/css/druk-style.css' %}">
+    <link rel="stylesheet" href="{% sass_src 'homepage/css/homepagestyle.scss' %}">
 </head>
 
 <body>
@@ -17,95 +17,106 @@
     <!-- ------------------------------------------------------------------------- -->
     <!-- ---------------------------- NAVIGATION --------------------------------- -->
     <!-- ------------------------------------------------------------------------- -->
+    <div class="background">
 
-    <ul>
-        <li><a href="#">logowanie</a></li>
-        <li><a href="#">/</a></li>
-        <li><a href="#">rejestracja</a></li>
-    </ul>
+        <section id="navigation">
 
-    <section id="navigation">
-        <div class="logo">
-            <a href="{% url 'homepage' %}"><img src="{% static 'homepage/img/drukarnia-logo.png' %}" alt="logo"></a>
-        </div>
-        <div class="menu">
-            <ul>
-                <li><a href="#">O NAS</a></li>
-                <li><a href="#">MENU</a></li>
-                <li><a href="#">WYDARZENIA</a></li>
-                <li><a href="#">LOKALIZACJA</a></li>
-                <li><a href="{% url 'reservation-create' %}">REZERWACJA</a></li>
-            </ul>
-        </div>
-    </section>
-    <section id="about">
-        <div class="container">
-            <div class="textone">
-                <p>Klub Drukarnia to jeden z najlepiej zlokalizowanych krakowskich lokali.
-                    Położony jest tuż nad Wisłą, w dawnej przemysłowej dzielnicy Krakowa – Podgórzu.</p>
+            <div class="logo">
+                <a href="{% url 'homepage' %}"><img src="{% static 'homepage/img/drukarnia-logo.png' %}" alt="logo"></a>
             </div>
-            <div class="texttwo">
-                <p>Kraków, Stare Podgórze, ul. Nadwiślańska 1</p>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">O NAS</a></li>
+                    <li><a href="{% url 'menu' %}">MENU</a></li>
+                    <li><a href="#">WYDARZENIA</a></li>
+                    <li><a href="#">LOKALIZACJA</a></li>
+                    <li><a href="{% url 'reservation-create' %}">REZERWACJA</a></li>
+                </ul>
             </div>
-            <div class="buttonabout">
-                <a href="#">RESERVATIONS</a>
+            <div class="logadmin"><a href="#"><i class="fas fa-chess-knight"></i></a></li>
+                </ul>
             </div>
-        </div>
-        <!-- krotko o drukarnia, button rezerwacja -->
-    </section>
-    <section id="menu">
-        <div class="container">
-            <div class="textone">
-                <p>Twój bar. Twoje miasto.</p>
-            </div>
-            <div class="texttwo"><i class="fas fa-cocktail"></i>
-                <div class="buttonmenu">
-                    <a href="#">MENU</a>
+        </section>
+        <section id="about">
+            <div class="container">
+                <div class="textone">
+                    <p>Klub Drukarnia to jeden z najlepiej zlokalizowanych krakowskich lokali.
+                        Położony jest tuż nad Wisłą, w dawnej przemysłowej dzielnicy Krakowa – Podgórzu.</p>
+                </div>
+                <div class="texttwo">
+                    <p>Kraków, Stare Podgórze, ul. Nadwiślańska 1</p>
+                </div>
+                <div class="buttonabout">
+                    <a href="#">RESERVATIONS</a>
                 </div>
             </div>
-            <!-- TASTE. TOUCH. HEAR. EXPERIENCE. twoj bar, twoje miasto, button menu -->
-    </section>
-    <section id="event">
-        <div class="container">
-            <div class="textone">
-                <p>WYDARZENIA</p>
-            </div>
-            <div class="texttwo">
-                <p>Z życia Drukarni.</p>
-                <div class="buttonevent">
-                    <a href="#">ZOBACZ WIĘCEJ</a>
+            <!-- krotko o drukarnia, button rezerwacja -->
+        </section>
+        <section id="menu">
+            <div class="container">
+                <div class="textone">
+                    <p>Twój bar. Twoje miasto.</p>
                 </div>
-            </div>
-            <!-- ostatnio w druku, button zobacz wiecej -->
-    </section>
-    <section id="gallery">
-        <div class="container"></div>
-        <!-- drukarniane zdjecia -->
-    </section>
-    <section id="contactform">
-        <div class="container">
-            <form class="contact" action="" method="post">
+                <div class="texttwo"><i class="fas fa-cocktail"></i>
+                    <div class="buttonmenu">
+                        <a href="#">MENU</a>
+                    </div>
+                </div>
+                <!-- TASTE. TOUCH. HEAR. EXPERIENCE. twoj bar, twoje miasto, button menu -->
+        </section>
+        <section id="event">
+            <div class="container">
+                <div class="textone">
+                    <p>WYDARZENIA</p>
+                </div>
+                <div class="texttwo">
+                    <p>Z życia Drukarni.</p>
+                    <div class="buttonevent">
+                        <a href="#">ZOBACZ WIĘCEJ</a>
+                    </div>
+                </div>
+                <!-- ostatnio w druku, button zobacz wiecej -->
+        </section>
+        <section id="gallery">
+            <div class="container"></div>
+            <!-- drukarniane zdjecia -->
+        </section>
+        <section id="contactform">
+            <div class="container">
                 <h3>Masz pytania? Napisz do nas!</h3>
-                <!-- <fieldset> -->
-                <input placeholder="Imie Nazwisko" type="text" tabindex="1" required autofocus>
-                <!-- </fieldset> -->
-                <!-- <fieldset> -->
-                <input placeholder="Adres e-mail" type="email" tabindex="2" required>
-                <!-- </fieldset> -->
-                <!-- <fieldset> -->
-                <input placeholder="Nr kontaktowy (opcjonalnie)" type="tel" tabindex="3" required>
-                <!-- </fieldset> -->
-                <!-- <fieldset> -->
-                <textarea placeholder="Napisz co się trapi...." tabindex="5" required></textarea>
-                <!-- </fieldset> -->
-                <!-- <fieldset> -->
-                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-                <!-- </fieldset> -->
-            </form>
-        </div>
-        <!-- formularz kontaktowy -->
-    </section>
+                <form class="contact" action="" method="post">
 
+                    <div class="left">
+                        <!-- <fieldset> -->
+                        <input placeholder="Imie Nazwisko" type="text" tabindex="1" required autofocus>
+                        <!-- </fieldset> -->
+                        <!-- <fieldset> -->
+                        <input placeholder="Adres e-mail" type="email" tabindex="2" required>
+                        <!-- </fieldset> -->
+                        <!-- <fieldset> -->
+                        <input placeholder="Nr kontaktowy (opcjonalnie)" type="tel" tabindex="3" required>
+                        <!-- </fieldset> -->
+                    </div>
+                    <div class="right">
+                        <!-- <fieldset> -->
+                        <textarea placeholder="Napisz co się trapi...." tabindex="5" required></textarea>
+                        <!-- </fieldset> -->
+                        <!-- <fieldset> -->
+                        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                        <!-- </fieldset> -->
+                    </div>
+                </form>
+            </div>
+            <!-- formularz kontaktowy -->
+
+        </section>
+        <footer>
+            <p>Web Designer: Milosz Bukala</p>
+        </footer>
+
+
+
+    </div>
 </body>
 
 </html>
