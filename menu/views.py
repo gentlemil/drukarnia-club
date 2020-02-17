@@ -5,7 +5,7 @@ from django.views.generic import CreateView, UpdateView, DeleteView, TemplateVie
 from django.views.generic.base import TemplateView
 from django.http import HttpResponse
 from django.urls import reverse, reverse_lazy
-from .models import Menu
+from .models import Menu, Kind
 
 # from django.contrib.auth.decorators import login_required   #FBV
 # from django.contrib.messages.views import SuccessMessageMixin
@@ -14,10 +14,11 @@ from .models import Menu
 # from .forms import ReservationForm
 
 def index(request):
-    menus = Menu.objects.all().order_by('kind').distinct('kind')
-    # menus = Menu.objects.all().order_by('type').order_by('name')
+    menus = Menu.objects.all()
+    kinds = Kind.objects.all()
     context = {
-        'menus': menus
+        'menus': menus,
+        'kinds': kinds
     }
     
     return render(request, 'menu/menuindex.html', context) 

@@ -1,72 +1,257 @@
 {% extends "menubase.html"%}
+{% load sass_tags static %}
 
 {% block content %}
 
 <section id="menuList">
-    {% if menus %}
-
-    {% for r in menus %}
-    <div class="type">
-        <h2>{{ r.kind }}</h2>
-        <table class="container">
-
-            <tbody>
-                <tr>
-                    <td>{{ r.pk }}</td>
-                    <td>{{ r.name }}</td>
-                    <td>{{ r.amount }}</td>
-                    <td>{{ r.prize }}</td>
-                    <td><a href="{% url 'menu_update' pk=r.pk %}"><i class="fas fa-book-open"></i></a></td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+    <div class="header">
+        <div class="logo">
+            <img src="{% static 'menu/img/coctail-transp.png' %}" alt="coctailtrasp">
+        </div>
+        <div class="title">
+            <h1>MENU</h1>
+            <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum ea quidem obcaecati quas ipsam nisi
+                voluptatibus ducimus eligendi dolorum, doloribus quia, amet maiores veniam nobis eos sit. Nostrum, ad
+                temporibus!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi suscipit atque tempore. Voluptates error
+                exercitationem temporibus inventore ducimus delectus dolor illo totam, quod deleniti dolorem iusto
+                doloremque laborum quidem ea?
+            </h3>
+        </div>
     </div>
-    { endif }
+    <div class="contentList">
+        <div class="mixture">
+            <div class="rubric">
+                <ul>
+                    <li>
+                        <h2>PIWO LANE</h2>
+                    </li>
+                    <li>
+                        <h2>300/500</h2>
+                    </li>
+                </ul>
+            </div>
+            <div class="name">
+                <ul>
+                    <li>
+                        <h3>Kasztelan</h3>
+                        <p>piwo jasne, niepasteryzowane o zawartości alkoholu 5,4%</p>
+                    </li>
+                    <li>
+                        <h3>10,-</h3>
+                    </li>
+                </ul>
+            </div>
+            <div class="name">
+                <ul>
+                    <li>
+                        <h3>Zatecky</h3>
+                        <p>czeski jasny pilsner, delikatny dla podniebienia</p>
+                    </li>
+                    <li>
+                        <h3>10,-</h3>
+                    </li>
+                </ul>
+            </div>
+            <div class="name">
+                <ul>
+                    <li>
+                        <h3>Okocim Jasny</h3>
+                        <p>piwo jasne, typu lager</p>
+                    </li>
+                    <li>
+                        <h3>10,-</h3>
+                    </li>
+                </ul>
+            </div>
+            <div class="name">
+                <ul>
+                    <li>
+                        <h3>Okocim Pszeniczny</h3>
+                        <p>piwo jasne, pszeniczne, lekko mętne i dolikatnych slodkim smaku i aromacieepasteryzowane o
+                            zawartości alkoholu 5,4%</p>
+                    </li>
+                    <li>
+                        <h3>10,-</h3>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="mixture">
+            <div class="rubric">
+                <ul>
+                    <li>
+                        <h2>PIWO LANE</h2>
+                    </li>
+                    <li>
+                        <h2>300/500</h2>
+                    </li>
+                </ul>
+            </div>
+            <div class="name">
+                <ul>
+                    <li>
+                        <h3>Kasztelan</h3>
+                        <p>piwo jasne, niepasteryzowane o zawartości alkoholu 5,4%</p>
+                    </li>
+                    <li>
+                        <h3>10,-</h3>
+                    </li>
+                </ul>
+            </div>
+            <div class="name">
+                <ul>
+                    <li>
+                        <h3>Zatecky</h3>
+                        <p>czeski jasny pilsner, delikatny dla podniebienia</p>
+                    </li>
+                    <li>
+                        <h3>10,-</h3>
+                    </li>
+                </ul>
+            </div>
+            <div class="name">
+                <ul>
+                    <li>
+                        <h3>Okocim Jasny</h3>
+                        <p>piwo jasne, typu lager</p>
+                    </li>
+                    <li>
+                        <h3>10,-</h3>
+                    </li>
+                </ul>
+            </div>
+            <div class="name">
+                <ul>
+                    <li>
+                        <h3>Okocim Pszeniczny</h3>
+                        <p>piwo jasne, pszeniczne, lekko mętne i dolikatnych slodkim smaku i aromacieepasteryzowane o
+                            zawartości alkoholu 5,4%</p>
+                    </li>
+                    <li>
+                        <h3>10,-</h3>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="mixture">
+            <div class="rubric">
+                <ul>
+                    <li>
+                        <h2>PIWO LANE</h2>
+                    </li>
+                    <li>
+                        <h2>300/500</h2>
+                    </li>
+                </ul>
+            </div>
+            <div class="name">
+                <ul>
+                    <li>
+                        <h3>Kasztelan</h3>
+                        <p>piwo jasne, niepasteryzowane o zawartości alkoholu 5,4%</p>
+                    </li>
+                    <li>
+                        <h3>10,-</h3>
+                    </li>
+                </ul>
+            </div>
+            <div class="name">
+                <ul>
+                    <li>
+                        <h3>Zatecky</h3>
+                        <p>czeski jasny pilsner, delikatny dla podniebienia</p>
+                    </li>
+                    <li>
+                        <h3>10,-</h3>
+                    </li>
+                </ul>
+            </div>
+            <div class="name">
+                <ul>
+                    <li>
+                        <h3>Okocim Jasny</h3>
+                        <p>piwo jasne, typu lager</p>
+                    </li>
+                    <li>
+                        <h3>10,-</h3>
+                    </li>
+                </ul>
+            </div>
+            <div class="name">
+                <ul>
+                    <li>
+                        <h3>Okocim Pszeniczny</h3>
+                        <p>piwo jasne, pszeniczne, lekko mętne i dolikatnych slodkim smaku i aromacieepasteryzowane o
+                            zawartości alkoholu 5,4%</p>
+                    </li>
+                    <li>
+                        <h3>10,-</h3>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="mixture">
+            <div class="rubric">
+                <ul>
+                    <li>
+                        <h2>PIWO LANE</h2>
+                    </li>
+                    <li>
+                        <h2>300/500</h2>
+                    </li>
+                </ul>
+            </div>
+            <div class="name">
+                <ul>
+                    <li>
+                        <h3>Kasztelan</h3>
+                        <p>piwo jasne, niepasteryzowane o zawartości alkoholu 5,4%</p>
+                    </li>
+                    <li>
+                        <h3>10,-</h3>
+                    </li>
+                </ul>
+            </div>
+            <div class="name">
+                <ul>
+                    <li>
+                        <h3>Zatecky</h3>
+                        <p>czeski jasny pilsner, delikatny dla podniebienia</p>
+                    </li>
+                    <li>
+                        <h3>10,-</h3>
+                    </li>
+                </ul>
+            </div>
+            <div class="name">
+                <ul>
+                    <li>
+                        <h3>Okocim Jasny</h3>
+                        <p>piwo jasne, typu lager</p>
+                    </li>
+                    <li>
+                        <h3>10,-</h3>
+                    </li>
+                </ul>
+            </div>
+            <div class="name">
+                <ul>
+                    <li>
+                        <h3>Okocim Pszeniczny</h3>
+                        <p>piwo jasne, pszeniczne, lekko mętne i dolikatnych slodkim smaku i aromacieepasteryzowane o
+                            zawartości alkoholu 5,4%</p>
+                    </li>
+                    <li>
+                        <h3>10,-</h3>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
 
 
-
-
-    {#
-<!--     
-    <table class="container">
-        <thead>
-            <tr>
-                <th>
-                    <h1>Lp</h1>
-                </th>
-                <th>
-                    <h1>Nazwa</h1>
-                </th>
-                <th>
-                    <h1>Rodzaj alkoholu</h1>
-                </th>
-                <th>
-                    <h1>Ilosc</h1>
-                </th>
-                <th>
-                    <h1>Cena</h1>
-                </th>
-                <th>
-                    <h1>Edycja</h1>
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for r in menus %}
-            <tr>
-                <td>{{ r.pk }}</td>
-                <td>{{ r.name }}</td>
-                <td>{{ r.kind }}</td>
-                <td>{{ r.amount }}</td>
-                <td>{{ r.prize }}</td>
-                <td><a href="{% url 'menu_update' pk=r.pk %}"><i class="fas fa-book-open"></i></a></td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    {% endif %} -->
-
-#}
 </section>
+
 {% endblock %}

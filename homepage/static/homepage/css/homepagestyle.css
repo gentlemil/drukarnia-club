@@ -18,7 +18,7 @@ body {
   min-height: 100vh;
   margin: 0;
   padding-top: 100vh;
-  background: url("/static/homepage/img/background.jpg") no-repeat fixed;
+  background: url("/static/homepage/img/back.jpg") no-repeat fixed;
   background-attachment: fixed;
   background-size: cover;
 }
@@ -312,8 +312,6 @@ body {
   width: 100%;
   margin-top: 100px;
   padding: 0;
-  background: url("/static/homepage/img/background.jpg");
-  background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

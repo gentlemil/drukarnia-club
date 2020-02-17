@@ -100,4 +100,117 @@ body {
   font-size: 25px;
   color: white;
 }
+
+#menuList {
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 150px 50px 0 50px;
+  overflow-x: hidden;
+}
+
+#menuList .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+  height: auto;
+  padding-bottom: 100px;
+}
+
+#menuList .header .logo {
+  max-width: 35%;
+  width: 20%;
+}
+
+#menuList .header .logo img {
+  width: 100%;
+}
+
+#menuList .header .title {
+  width: 65%;
+  margin: 0;
+  padding: 0;
+}
+
+#menuList .header .title h1 {
+  margin: 0 0 50px 0;
+  padding: 0;
+  font-family: 'Lemonada', cursive;
+  font-size: 60px;
+  font-weight: 300;
+}
+
+#menuList .header .title p {
+  font-family: 'Lemonada', cursive;
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+
+#menuList .contentList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+}
+
+#menuList .contentList .mixture {
+  width: 45%;
+}
+
+#menuList .contentList .mixture .rubric {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#menuList .contentList .mixture .rubric ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#menuList .contentList .mixture .rubric ul li h2 {
+  font-family: 'Caveat', cursive;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+#menuList .contentList .mixture .name ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#menuList .contentList .mixture .name ul li h3 {
+  font-family: 'Lemonada', cursive;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
+}
+
+#menuList .contentList .mixture .name ul li h3 h4 {
+  font-family: 'Lemonada', cursive;
+  font-size: 12px;
+  font-weight: 300;
+}
 /*# sourceMappingURL=menustyle.css.map */
