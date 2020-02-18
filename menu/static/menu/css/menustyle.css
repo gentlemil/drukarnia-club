@@ -6,7 +6,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   line-height: 1.42em;
-  color: #A7A1AE;
+  color: #f0efef;
   overflow-x: hidden;
   background: url("/static/menu/img/background.jpg") no-repeat fixed;
   background-attachment: fixed;
@@ -141,6 +141,7 @@ body {
   font-family: 'Lemonada', cursive;
   font-size: 60px;
   font-weight: 300;
+  color: #f0efef;
 }
 
 #menuList .header .title p {

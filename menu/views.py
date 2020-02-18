@@ -24,18 +24,18 @@ def index(request):
     return render(request, 'menu/menuindex.html', context) 
 
 class MenuCreate(LoginRequiredMixin, CreateView):
-    model = Menu
+    model = Menu, Kind
     fields = ['name', 'kind', 'amount', 'prize']
     template_name= 'menu/menucreate.html'
 
 class MenuUpdate(LoginRequiredMixin, UpdateView):
-    model = Menu
+    model = Menu, Kind
     fields = ['name', 'kind', 'amount', 'prize']
     template_name = 'menu/menuupdate.html'
     
 
 class MenuDelete(LoginRequiredMixin, DeleteView):
-    model = Menu
+    model = Menu, Kind
     template_name = 'menu/menudelete.html'
 
     # def get_success_url(self):
