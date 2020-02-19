@@ -4,7 +4,6 @@
 
 <section id="loginTemp">
 
-
     {% if user.is_authenticated %}
     tylko dla zalogowanych
     {% endif %}
@@ -13,10 +12,52 @@
     <p class="errorlist">Bledna nazwa uzytkownika lub haslo</p>
     {% endif %}
 
-    <h3>zaloguj sie</h3>
-    <form action="{% url 'login' %}" method="post">
-        {% csrf_token %}
-        <div class="overlay">
+    <h1 class="section-header">Zaloguj sie</h1>
+    <div class="contact-wrapper">
+        <form class="form-horizontal" role="form" method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" id="name" placeholder="Username" name="name" value=""
+                        size="50vw">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <input type="password" class="form-control" id="password" placeholder="Password" name="password"
+                        value="" size="50vw">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <input type="hidden" class="form-control" id="password" placeholder="Password" name="next"
+                        value="{{ next }}" size="50vw">
+                </div>
+            </div>
+            <button class="btn btn-primary send-button" id="submit" type="submit" value="Sign In">
+                <div class="button">
+                    <span class="send-text">ZALOGUJ</span>
+                </div>
+            </button>
+            <div class="icons">
+                <ul>
+                    <li> <a href="#">Forgotten Password</a></li>
+                    <li><a href="#">Create an Account</a></li>
+                </ul>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+
+
+
+<!-- ----------------------------------- -->
+<!-- ----------------------------------- -->
+<!-- ----------------------------------- -->
+<!-- <div class="overlay">
             <div class="wrap">
                 <h1>Zaloguj sie</h1>
                 <input type="" placeholder="Username">
@@ -27,7 +68,7 @@
                 <a href="#"><i class="fa fa-user"></i>Create an Account</a>
             </div>
         </div>
-    </form>
+    </form> -->
 
 </section>
 {% endblock %}

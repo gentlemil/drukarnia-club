@@ -1,14 +1,35 @@
-.background {
-  width: 100%;
-  min-height: 100vh;
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
-  padding-top: 100vh;
-  background: url("/static/reservation/img/back.jpg") no-repeat fixed;
-  background-attachment: fixed;
-  background-size: cover;
+  width: 100%;
+  font-weight: 300;
+  line-height: 1.42em;
+  color: #E1E1E1;
+  overflow-x: hidden;
+  font-family: 'Oswald', sans-serif;
+  /* --------------------------------------------------------------------- */
+  /* ----------------------- NAVIGATION ---------------------------------- */
+  /* --------------------------------------------------------------------- */
 }
 
-.background #navigation {
+body .background {
+  max-width: 100vw;
+  min-height: 100vh;
+  margin: 0 auto;
+  height: 100%;
+  overflow: hidden;
+  background: url("/static/reservation/img/1.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body .background .backphoto {
+  width: 100%;
+  position: relative;
+}
+
+body .background .backphoto #navigation {
   position: fixed;
   top: 0;
   left: 0;
@@ -22,23 +43,23 @@
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  height: 80px;
+  height: 90px;
   z-index: 10000;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(14, 6, 1, 0.3);
 }
 
-.background #navigation .logo {
+body .background .backphoto #navigation .logo {
   width: 50px;
-  height: 50px;
+  height: auto;
   padding-right: 200px;
 }
 
-.background #navigation .logo a img {
+body .background .backphoto #navigation .logo a img {
   width: auto;
   height: 60px;
 }
 
-.background #navigation .menu ul {
+body .background .backphoto #navigation .menu ul {
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -49,50 +70,450 @@
   width: 100%;
 }
 
-.background #navigation .menu ul li {
+body .background .backphoto #navigation .menu ul li {
   padding: 10px 15px;
   margin: 10px;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
 }
 
-.background #navigation .menu ul li a {
+body .background .backphoto #navigation .menu ul li a {
   text-decoration: none;
-  font-size: 16px;
-  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
   font-weight: 300;
   line-height: 1.42em;
-  color: white;
+  color: #E1E1E1;
 }
 
-.background #navigation .menu ul li a:hover:last-child {
-  color: white;
+body .background .backphoto #navigation .menu ul li a:hover:last-child {
+  color: #E1E1E1;
 }
 
-.background #navigation .menu ul li li:hover {
-  border: 1px solid #E4E6E9;
+body .background .backphoto #navigation .menu ul li:hover {
+  border-bottom: 1px solid #E1E1E1;
   -webkit-transition-delay: 0s;
           transition-delay: 0s;
-  -webkit-transition-duration: 0.4s;
-          transition-duration: 0.4s;
-  -webkit-transition-property: all;
-  transition-property: all;
+  -webkit-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+  -webkit-transition: 0.8s all;
+  transition: 0.8s all;
   -webkit-transition-timing-function: line;
           transition-timing-function: line;
 }
 
-.background #navigation .menu ul li li:last-child {
-  border: 1px solid #E4E6E9;
-  margin-right: 40px;
+body .background .backphoto #navigation .menu ul li:last-child {
+  padding: 10px 15px;
+  margin: 10px;
+  border: 1px solid #E1E1E1;
 }
 
-.background #navigation .menu ul li li:hover:last-child {
+body .background .backphoto #navigation .menu ul li:hover:last-child {
   background-color: rgba(255, 255, 255, 0.1);
   -webkit-transition: 0.8s all;
   transition: 0.8s all;
 }
 
-.background #navigation .logadmin a {
+body .background .backphoto #navigation .logadmin a {
   text-decoration: none;
   font-size: 25px;
-  color: white;
+  color: #E1E1E1;
+}
+
+body .background .backphoto #admin-navigation {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 120px;
+  right: 50px;
+  max-width: 12vw;
+  height: auto;
+  z-index: 10000;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 0.5px solid #E1E1E1;
+  border-radius: 5px;
+}
+
+body .background .backphoto #admin-navigation .admin-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin: 0;
+}
+
+body .background .backphoto #admin-navigation .admin-menu ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0;
+}
+
+body .background .backphoto #admin-navigation .admin-menu ul li {
+  padding: 10px 7px;
+  margin: 2px;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+body .background .backphoto #admin-navigation .admin-menu ul li a {
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  line-height: 1.42em;
+  color: #E1E1E1;
+}
+
+body .background .backphoto #admin-navigation .admin-menu ul li a:hover:last-child {
+  color: #E1E1E1;
+}
+
+body .background .backphoto #admin-navigation .admin-menu ul li:hover {
+  border-bottom: 1px solid #E1E1E1;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+  -webkit-transition: 0.8s all;
+  transition: 0.8s all;
+  -webkit-transition-timing-function: line;
+          transition-timing-function: line;
+}
+
+body .background .backphoto #admin-navigation .admin-menu ul li:last-child {
+  padding: 10px 15px;
+  margin: 10px;
+  border: 1px solid #E1E1E1;
+}
+
+body .background .backphoto #admin-navigation .admin-menu ul li:hover:last-child {
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-transition: 0.8s all;
+  transition: 0.8s all;
+}
+
+body .background .backphoto #formTemplate {
+  height: 400px;
+  max-width: 100vw;
+  margin-top: 100px;
+  padding-bottom: 500px;
+  overflow: hidden;
+}
+
+body .background .backphoto #formTemplate .section-header {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 50px;
+  color: #E1E1E1;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 1.42em;
+  margin-bottom: 10%;
+  letter-spacing: 0.8px;
+}
+
+body .background .backphoto #formTemplate .contact-wrapper {
+  max-width: 100vw;
+  height: 100%;
+  margin: 10px 50px 50px 50px;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  border: 1px solid #E1E1E1;
+  border-radius: 10px;
+  background-color: rgba(14, 6, 1, 0.3);
+}
+
+body .background .backphoto #formTemplate .contact-wrapper .form-horizontal {
+  width: 100%;
+  height: auto;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+}
+
+body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheleft {
+  width: 45%;
+  margin: 5px 0;
+  padding: 10px 10%;
+  border-right: 1px solid #E1E1E1;
+}
+
+body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheleft .form-group .col-sm-12 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheleft .form-group .col-sm-12 .form-control {
+  max-width: 100%;
+  background-color: rgba(184, 145, 73, 0.1);
+  color: #E1E1E1;
+  letter-spacing: 1px;
+  border: 1px solid #E1E1E1;
+  border-radius: 5px;
+  margin: 15px 0;
+  padding: 10px;
+}
+
+body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheleft .form-group .col-sm-12 ::-webkit-input-placeholder {
+  color: #E1E1E1;
+  font-size: 14px;
+  font-style: italic;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  line-height: 1.42em;
+}
+
+body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheleft .form-group .col-sm-12 :-ms-input-placeholder {
+  color: #E1E1E1;
+  font-size: 14px;
+  font-style: italic;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  line-height: 1.42em;
+}
+
+body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheleft .form-group .col-sm-12 ::-ms-input-placeholder {
+  color: #E1E1E1;
+  font-size: 14px;
+  font-style: italic;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  line-height: 1.42em;
+}
+
+body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheleft .form-group .col-sm-12 ::placeholder {
+  color: #E1E1E1;
+  font-size: 14px;
+  font-style: italic;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  line-height: 1.42em;
+}
+
+body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheleft .form-group .col-sm-12 .form-control:hover {
+  background-color: rgba(70, 46, 0, 0.4);
+}
+
+body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheleft .form-group:last-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 0 10px;
+}
+
+body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheright {
+  width: 45%;
+  margin: 0;
+  padding: 10px 5%;
+}
+
+body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheright .form-group {
+  width: 100%;
+}
+
+body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheright .form-group .col-sm-12 textarea {
+  background-color: rgba(70, 46, 0, 0.1);
+  width: 100%;
+  color: #E1E1E1;
+  letter-spacing: 1px;
+  resize: none;
+  border: 1px solid #E1E1E1;
+  border-radius: 5px;
+  margin: 15px 0;
+  padding: 10px;
+}
+
+body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheright .form-group .col-sm-12 ::-webkit-input-placeholder {
+  color: #E1E1E1;
+  font-size: 14px;
+  font-style: italic;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  line-height: 1.42em;
+}
+
+body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheright .form-group .col-sm-12 :-ms-input-placeholder {
+  color: #E1E1E1;
+  font-size: 14px;
+  font-style: italic;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  line-height: 1.42em;
+}
+
+body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheright .form-group .col-sm-12 ::-ms-input-placeholder {
+  color: #E1E1E1;
+  font-size: 14px;
+  font-style: italic;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  line-height: 1.42em;
+}
+
+body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheright .form-group .col-sm-12 ::placeholder {
+  color: #E1E1E1;
+  font-size: 14px;
+  font-style: italic;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  line-height: 1.42em;
+}
+
+body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheright .form-group .col-sm-12 textarea:hover {
+  background-color: rgba(70, 46, 0, 0.4);
+}
+
+body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheright .send-button {
+  padding: 10px 15px;
+  margin: 10px 40%;
+  background-color: transparent;
+  width: auto;
+  border: 1px solid #E1E1E1;
+  border-radius: 5px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheright .send-button .button {
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheright .send-button .button .send-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.42em;
+  color: rgba(225, 225, 225, 0.788);
+}
+
+body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheright .send-button .button .send-text:hover {
+  color: #E1E1E1;
+}
+
+body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheright .send-button:hover {
+  background-color: rgba(70, 46, 0, 0.4);
+  border: 1px solid #E1E1E1;
+}
+
+body .background .backphoto #footer {
+  max-width: 100vw;
+  width: 100%;
+  height: 90px;
+  padding: 7px;
+  margin: 0;
+  background-color: rgba(14, 6, 1, 0.85);
+}
+
+body .background .backphoto #footer .container {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid rgba(225, 225, 225, 0.5);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+body .background .backphoto #footer .container .footer-sign {
+  margin: 0;
+  padding-left: 15vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .background .backphoto #footer .container .footer-sign a {
+  color: #E1E1E1;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  letter-spacing: 0.8px;
+  margin-right: 10px;
+}
+
+body .background .backphoto #footer .container .footer-sign a img {
+  width: auto;
+  height: 40px;
+  background-color: transparent;
+}
+
+body .background .backphoto #footer .container .footer-logo {
+  width: 50px;
+  height: auto;
+  padding-right: 50px;
+}
+
+body .background .backphoto #footer .container .footer-logo img {
+  width: auto;
+  height: 50px;
 }
 /*# sourceMappingURL=style.css.map */

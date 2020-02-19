@@ -54,6 +54,8 @@ class Reservation(models.Model):
         choices=STATUS_CHOICES,
     )
 
+    title = models.CharField(max_length=50, default='BIBA')
+
     class Meta:
         pass
 

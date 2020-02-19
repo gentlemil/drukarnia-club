@@ -37,10 +37,11 @@
                         <li><a href="{% url 'reservation-create' %}">REZERWACJA</a></li>
                     </ul>
                 </div>
-                <div class="logadmin"><a href="#"><i class="fas fa-chess-knight"></i></a></li>
-                    </ul>
+                <div class="logadmin">
+                    <a href="{% url 'login' %}"><i class="fas fa-chess-knight"></i></a>
                 </div>
             </section>
+
 
 
             <section id="about">
@@ -52,7 +53,7 @@
                     <div class="texttwo">
                         <p>Kraków, Stare Podgórze, ul. Nadwiślańska 1</p>
                         <div class="buttonabout">
-                            <a href="#">REZERWACJA</a>
+                            <a href="{% url 'reservation-create' %}">REZERWACJA</a>
                         </div>
                     </div>
 
@@ -69,7 +70,7 @@
                     <div class="texttwo">
 
                         <div class="buttonmenu">
-                            <a href="#">MENU</a>
+                            <a href="{% url 'menu' %}">MENU</a>
                         </div>
                     </div>
                     <!-- TASTE. TOUCH. HEAR. EXPERIENCE. twoj bar, twoje miasto, button menu -->
@@ -117,7 +118,7 @@
 
                 <div class="contact-wrapper">
 
-                    <form class="form-horizontal" role="form" method="post" action="">
+                    <form class="form-horizontal" role="form" method="POST" action="">
 
                         <div class="form-group">
                             <div class="col-sm-12">
@@ -197,7 +198,6 @@
                     </div>
                 </div>
             </section>
-
         </div>
     </div>
 

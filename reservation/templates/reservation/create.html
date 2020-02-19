@@ -3,61 +3,79 @@
 {% block content %}
 
 <section id="formTemplate">
-
-    <div class="container">
-        <form class="create" method="post">
+    <h1 class="section-header">Tutaj możesz zrobić rezerwację!</h1>
+    <div class="contact-wrapper">
+        <form class="form-horizontal" role="form" method="POST" action="">
             {% csrf_token %}
-
-            <tr>
-                <td><input type="text" name="name" placeholder="Podaj Imie i Nazwisko" maxlength="250" required
-                        id="id_name"></td>
-            </tr>
-            <div class="formtogether">
-                <tr>
-                    <td><input type="text" name="email" placeholder="Podaj adres e-mail" maxlength="250" required
-                            id="id_email"></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="phone" placeholder="Podaj swoj nr kontaktowy" maxlength="250" required
-                            id="id_phone" , pattern="[\+()]*(?:\d[\s\-\.()xX]*){10,14}">
-                    </td>
-                </tr>
+            <div class="ontheleft">
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control" id="id_name" placeholder="Imie i Nazwisko" name="name"
+                            maxlength="250" required value="" size="60px">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control" name="email" placeholder="Podaj adres e-mail"
+                            maxlength="250" required id="id_email" size="25px">
+                        <input type="text" class="form-control" name="phone" placeholder="Podaj swoj nr kontaktowy"
+                            maxlength="250" required id="id_phone" , size="25px">
+                    </div>
+                </div>
+                <div class=" form-group">
+                    <div class="col-sm-12">
+                        <div class="label">
+                            <input type="text" class="form-control" id="id_title" size="25px"
+                                placeholder="Haslo rezerwacji" name="title" maxlength="50" required value="">
+                        </div>
+                        <div class="label">
+                            <input type="number" class="form-control" name="bar" size="25px" placeholder="Bar"
+                                required="" id="id_bar">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="label">
+                            <!--  -->
+                            <input type="text" class="form-control" name="term_of_reservation"
+                                placeholder="Podaj termin" required="" size="25px" id="id_term_of_reservation">
+                        </div>
+                        <div class="label">
+                            <input type="number" class="form-control" name="nr_of_people" placeholder="Liczba osob"
+                                required="" size="25px" id="id_nr_of_people">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="label">
+                        <label class="lb-t" for="id_catering">Catering: </label>
+                        <div class="touch"> {{ form.catering }} </div>
+                    </div>
+                    <div class="label">
+                        <label class="lb-t" for="id_faktura">Faktura: </label>
+                        <div class="touch"> {{ form.faktura }} </div>
+                    </div>
+                </div>
             </div>
-            <div class="formtogether">
-                <tr>
-                    <th><label for="id_bar">Termin:></th>
-                    <td> {{ form.term_of_reservation }} </td>
-                </tr>
-                <tr>
-                    <th><label for="id_bar">Bar:</label></th>
-                    <td>{{ form.bar }}</td>
-                </tr>
+
+            <div class="ontheright">
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <textarea class="form-control" cols="250" rows="10"
+                            placeholder="Podziel sie z nami swoimi myślami." name="additional_information"
+                            maxlength="500"></textarea>
+                    </div>
+                </div>
+                <button class="send-button" name="submit" type="submit" id="submit" data-submit="...Sending"
+                    value="SEND">
+                    <div class="button">
+                        <span class="send-text">WYŚLIJ</span>
+                    </div>
+                </button>
             </div>
-            <div class="formtogether">
-                <tr>
-                    <th><label for="id_nr_of_people">Liczba gosci: :</label></th>
-                    <td>{{ form.nr_of_people }}</td>
-                </tr>
-
-                <tr>
-                    <th><label for="id_catering">Catering:</label></th>
-                    <td>{{ form.catering }}</td>
-                </tr>
-                <tr>
-                    <th><label for="id_faktura">Faktura:</label></th>
-                    <td>{{ form.faktura }}</td>
-                </tr>
-
-            </div>
-            <tr>
-                <td><textarea name="additional_information" cols="80" rows="10" placeholder="drogi pamietniczku"
-                        maxlength="250"></textarea></td>
-            </tr>
-
-            <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Save</button>
         </form>
     </div>
-
 </section>
 
 {% endblock %}
