@@ -7,15 +7,16 @@ body {
   line-height: 1.42em;
   color: #E1E1E1;
   overflow-x: hidden;
+  font-family: 'Oswald', sans-serif;
   /* --------------------------------------------------------------------- */
   /* ----------------------- NAVIGATION ---------------------------------- */
   /* --------------------------------------------------------------------- */
 }
 
 body .background {
-  width: 100%;
-  min-height: 100vh;
-  margin: 0;
+  max-width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
   height: 100%;
   overflow: hidden;
 }
@@ -23,8 +24,8 @@ body .background {
 body .background .backphoto {
   width: 100%;
   position: relative;
-  -webkit-animation: test 60s infinite;
-  animation: test 60s infinite;
+  -webkit-animation: test 90s infinite;
+  animation: test 90s infinite;
 }
 
 body .background .backphoto #navigation {
@@ -41,14 +42,14 @@ body .background .backphoto #navigation {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  height: 80px;
+  height: 90px;
   z-index: 10000;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
 body .background .backphoto #navigation .logo {
   width: 50px;
-  height: 50px;
+  height: auto;
   padding-right: 200px;
 }
 
@@ -71,12 +72,14 @@ body .background .backphoto #navigation .menu ul {
 body .background .backphoto #navigation .menu ul li {
   padding: 10px 15px;
   margin: 10px;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
 }
 
 body .background .backphoto #navigation .menu ul li a {
   text-decoration: none;
-  font-size: 16px;
-  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
   font-weight: 300;
   line-height: 1.42em;
   color: #E1E1E1;
@@ -87,13 +90,13 @@ body .background .backphoto #navigation .menu ul li a:hover:last-child {
 }
 
 body .background .backphoto #navigation .menu ul li:hover {
-  border: 1px solid #E4E6E9;
+  border-bottom: 1px solid #E1E1E1;
   -webkit-transition-delay: 0s;
           transition-delay: 0s;
-  -webkit-transition-duration: 0.4s;
-          transition-duration: 0.4s;
-  -webkit-transition-property: all;
-  transition-property: all;
+  -webkit-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+  -webkit-transition: 0.8s all;
+  transition: 0.8s all;
   -webkit-transition-timing-function: line;
           transition-timing-function: line;
 }
@@ -117,10 +120,10 @@ body .background .backphoto #navigation .logadmin a {
 }
 
 body .background .backphoto #about {
-  height: 400px;
+  height: 70vh;
   width: 100%;
   margin: 0;
-  padding: 100% 0 0 0;
+  padding: 60% 0 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -135,7 +138,7 @@ body .background .backphoto #about {
 body .background .backphoto #about .container {
   width: 100%;
   height: 100%;
-  padding: 0 18%;
+  padding: 5% 15%;
 }
 
 body .background .backphoto #about .container .textone p {
@@ -147,10 +150,16 @@ body .background .backphoto #about .container .textone p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-size: 24px;
-  font-family: 'Open Sans', sans-serif;
+  font-size: 30px;
+  font-family: 'Oswald', sans-serif;
   font-weight: 300;
-  line-height: 1.42em;
+  line-height: 1.82em;
+  letter-spacing: 1px;
+}
+
+body .background .backphoto #about .container .texttwo {
+  border-top: 1px solid #E1E1E1;
+  padding-top: 20px;
 }
 
 body .background .backphoto #about .container .texttwo p {
@@ -162,11 +171,12 @@ body .background .backphoto #about .container .texttwo p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-size: 16px;
-  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-family: 'Oswald', sans-serif;
   font-weight: 300;
   line-height: 1.42em;
   margin-bottom: 10%;
+  letter-spacing: 0.8px;
 }
 
 body .background .backphoto #about .container .texttwo .buttonabout {
@@ -185,9 +195,11 @@ body .background .backphoto #about .container .texttwo .buttonabout a {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-weight: 300;
+  font-size: 24px;
   line-height: 1.42em;
+  letter-spacing: 0.8px;
 }
 
 body .background .backphoto #about .container .texttwo .buttonabout:hover {
@@ -203,7 +215,7 @@ body .background .backphoto #about .container .texttwo .buttonabout:hover {
 }
 
 body .background .backphoto #menu {
-  height: 400px;
+  height: 70vh;
   width: 100%;
   margin-top: 100px;
   background: url("/static/homepage/img/dark.png");
@@ -238,10 +250,11 @@ body .background .backphoto #menu .container .textone p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-size: 24px;
-  font-family: 'Open Sans', sans-serif;
+  font-size: 30px;
+  font-family: 'Oswald', sans-serif;
   font-weight: 300;
-  line-height: 1.42em;
+  line-height: 1.82em;
+  letter-spacing: 1px;
 }
 
 body .background .backphoto #menu .container .texttwo .buttonmenu {
@@ -260,9 +273,11 @@ body .background .backphoto #menu .container .texttwo .buttonmenu a {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-weight: 300;
+  font-size: 24px;
   line-height: 1.42em;
+  letter-spacing: 0.8px;
 }
 
 body .background .backphoto #menu .container .texttwo .buttonmenu:hover {
@@ -278,7 +293,7 @@ body .background .backphoto #menu .container .texttwo .buttonmenu:hover {
 }
 
 body .background .backphoto #event {
-  height: 400px;
+  height: 70vh;
   width: 100%;
   margin-top: 100px;
   display: -webkit-box;
@@ -295,11 +310,10 @@ body .background .backphoto #event {
 body .background .backphoto #event .container {
   width: 100%;
   height: 100%;
-  padding: 0 18%;
-}
-
-body .background .backphoto #event .container .textone {
-  margin: 10% 20%;
+  padding: 5% 30%;
+  margin: 50px;
+  border: 1px solid #E1E1E1;
+  border-radius: 10px;
 }
 
 body .background .backphoto #event .container .textone p {
@@ -311,10 +325,16 @@ body .background .backphoto #event .container .textone p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-size: 24px;
-  font-family: 'Open Sans', sans-serif;
+  font-size: 30px;
+  font-family: 'Oswald', sans-serif;
   font-weight: 300;
-  line-height: 1.42em;
+  line-height: 1.82em;
+  letter-spacing: 1px;
+}
+
+body .background .backphoto #event .container .texttwo {
+  border-top: 1px solid #E1E1E1;
+  padding-top: 20px;
 }
 
 body .background .backphoto #event .container .texttwo p {
@@ -326,16 +346,28 @@ body .background .backphoto #event .container .texttwo p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  font-size: 24px;
-  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-family: 'Oswald', sans-serif;
   font-weight: 300;
   line-height: 1.42em;
+  margin-bottom: 10%;
+  letter-spacing: 0.8px;
 }
 
 body .background .backphoto #event .container .texttwo .buttonevent {
-  padding: 10px 15px;
-  margin: 10px 40%;
+  width: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  margin: 10px;
   border: 1px solid #E1E1E1;
+  color: #E1E1E1;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 body .background .backphoto #event .container .texttwo .buttonevent a {
@@ -347,10 +379,13 @@ body .background .backphoto #event .container .texttwo .buttonevent a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 0;
-  font-family: 'Open Sans', sans-serif;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  font-family: 'Oswald', sans-serif;
   font-weight: 300;
+  font-size: 24px;
   line-height: 1.42em;
+  letter-spacing: 0.8px;
 }
 
 body .background .backphoto #event .container .texttwo .buttonevent:hover {
@@ -367,26 +402,289 @@ body .background .backphoto #event .container .texttwo .buttonevent:hover {
 
 body .background .backphoto #gallery {
   height: 400px;
-  width: 100%;
-  margin-top: 100px;
+  max-width: 100vw;
+  margin-top: 200px;
   padding: 0;
+}
+
+body .background .backphoto #gallery .container {
+  width: 100%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border: 1px solid red;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: #0e0601;
+  overflow: hidden;
+  position: relative;
+  z-index: 100;
+}
+
+body .background .backphoto #gallery .container .photo-1 {
+  position: inherit;
+  width: calc(100%/6);
+  height: calc(100%/2);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: url("/static/homepage/img/g1.jpg");
+  background-size: contain;
+  z-index: 10;
+  /* 1. obraz bedzie wiekszy, 2. bedzie plynnie sie zwiekszac  */
+  /* 3. obraz bedzie ciemniejszy, .meal-photo backgro-col black*/
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+  opacity: 0.5;
+}
+
+body .background .backphoto #gallery .container .photo-1:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  opacity: 1;
+}
+
+body .background .backphoto #gallery .container .photo-2 {
+  width: calc(100%/6);
+  height: calc(100%/2);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: url("/static/homepage/img/g2.jpg");
+  background-size: contain;
+  /* 1. obraz bedzie wiekszy, 2. bedzie plynnie sie zwiekszac  */
+  /* 3. obraz bedzie ciemniejszy, .meal-photo backgro-col black*/
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+  opacity: 0.5;
+}
+
+body .background .backphoto #gallery .container .photo-2:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  opacity: 1;
+}
+
+body .background .backphoto #gallery .container .photo-3 {
+  width: calc(100%/6);
+  height: calc(100%/2);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: url("/static/homepage/img/g3.jpg");
+  background-size: contain;
+  /* 1. obraz bedzie wiekszy, 2. bedzie plynnie sie zwiekszac  */
+  /* 3. obraz bedzie ciemniejszy, .meal-photo backgro-col black*/
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+  opacity: 0.5;
+}
+
+body .background .backphoto #gallery .container .photo-3:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  opacity: 1;
+}
+
+body .background .backphoto #gallery .container .photo-4 {
+  width: calc(100%/6);
+  height: calc(100%/2);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: url("/static/homepage/img/g4.jpg");
+  background-size: contain;
+  opacity: 0.5;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+  opacity: 0.5;
+}
+
+body .background .backphoto #gallery .container .photo-4:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  opacity: 1;
+}
+
+body .background .backphoto #gallery .container .photo-5 {
+  width: calc(100%/6);
+  height: calc(100%/2);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: url("/static/homepage/img/g5.jpg");
+  background-size: contain;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+  opacity: 0.5;
+}
+
+body .background .backphoto #gallery .container .photo-5:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  opacity: 1;
+}
+
+body .background .backphoto #gallery .container .photo-6 {
+  width: calc(100%/6);
+  height: calc(100%/2);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: url("/static/homepage/img/g6.jpg");
+  background-size: contain;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+  opacity: 0.5;
+}
+
+body .background .backphoto #gallery .container .photo-6:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  opacity: 1;
+}
+
+body .background .backphoto #gallery .container .photo-7 {
+  width: calc(100%/6);
+  height: calc(100%/2);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: url("/static/homepage/img/g7.jpg");
+  background-size: contain;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+  opacity: 0.5;
+}
+
+body .background .backphoto #gallery .container .photo-7:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  opacity: 1;
+}
+
+body .background .backphoto #gallery .container .photo-8 {
+  width: calc(100%/6);
+  height: calc(100%/2);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: url("/static/homepage/img/g8.jpg");
+  background-size: contain;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+  opacity: 0.5;
+}
+
+body .background .backphoto #gallery .container .photo-8:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  opacity: 1;
+}
+
+body .background .backphoto #gallery .container .photo-9 {
+  width: calc(100%/6);
+  height: calc(100%/2);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: url("/static/homepage/img/g9.jpg");
+  background-size: contain;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+  opacity: 0.5;
+}
+
+body .background .backphoto #gallery .container .photo-9:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  opacity: 1;
+}
+
+body .background .backphoto #gallery .container .photo-10 {
+  width: calc(100%/6);
+  height: calc(100%/2);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: url("/static/homepage/img/g10.jpg");
+  background-size: contain;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+  opacity: 0.5;
+}
+
+body .background .backphoto #gallery .container .photo-10:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  opacity: 1;
+}
+
+body .background .backphoto #gallery .container .photo-11 {
+  width: calc(100%/6);
+  height: calc(100%/2);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: url("/static/homepage/img/g11.jpg");
+  background-size: contain;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+  opacity: 0.5;
+}
+
+body .background .backphoto #gallery .container .photo-11:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  opacity: 1;
+}
+
+body .background .backphoto #gallery .container .photo-12 {
+  width: calc(100%/6);
+  height: calc(100%/2);
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background: url("/static/homepage/img/g12.jpg");
+  background-size: contain;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+  opacity: 0.5;
+}
+
+body .background .backphoto #gallery .container .photo-12:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  opacity: 1;
 }
 
 body .background .backphoto #contact {
   height: 400px;
-  width: 100%;
+  max-width: 100vw;
   margin-top: 100px;
-  padding-bottom: 200px;
+  padding-bottom: 500px;
   overflow: hidden;
 }
 
@@ -394,18 +692,23 @@ body .background .backphoto #contact .section-header {
   text-align: center;
   margin: 0 auto;
   padding-top: 50px;
-  margin-bottom: 50px;
-  letter-spacing: 6px;
-  color: #fff;
+  margin-bottom: 20px;
+  color: #E1E1E1;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 1.42em;
+  margin-bottom: 10%;
+  letter-spacing: 0.8px;
 }
 
 body .background .backphoto #contact .contact-wrapper {
-  width: 100%;
+  max-width: 100%;
   height: 100%;
-  margin: 50px;
-  padding: 20px;
+  margin: 20px 50px 50px 50px;
+  padding: 10px 10%;
   position: relative;
-  border: 1px solid #fff;
+  border: 1px solid #E1E1E1;
   border-radius: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -419,41 +722,59 @@ body .background .backphoto #contact .contact-wrapper {
 }
 
 body .background .backphoto #contact .contact-wrapper .form-horizontal {
-  max-width: 50%;
+  max-width: 400px;
   height: 100%;
-  padding: 0;
-  margin: 0 auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   font-weight: 300;
-  border: 1px solid red;
 }
 
 body .background .backphoto #contact .contact-wrapper .form-horizontal .form-group .col-sm-12 .form-control {
   max-width: 100%;
-  background-color: rgba(70, 46, 0, 0.1);
-  color: #fff;
+  background-color: rgba(184, 145, 73, 0.1);
+  color: #E1E1E1;
   letter-spacing: 1px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid #E1E1E1;
   border-radius: 5px;
-  margin: 10px;
+  margin: 15px 0;
+  padding: 10px;
 }
 
-body .background .backphoto #contact .contact-wrapper .form-horizontal .form-group .col-sm-12 .form-control ::-webkit-input-placeholder:hover {
-  color: #462d00;
+body .background .backphoto #contact .contact-wrapper .form-horizontal .form-group .col-sm-12 ::-webkit-input-placeholder {
+  color: #E1E1E1;
+  font-size: 14px;
+  font-style: italic;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  line-height: 1.42em;
 }
 
-body .background .backphoto #contact .contact-wrapper .form-horizontal .form-group .col-sm-12 .form-control :-ms-input-placeholder:hover {
-  color: #462d00;
+body .background .backphoto #contact .contact-wrapper .form-horizontal .form-group .col-sm-12 :-ms-input-placeholder {
+  color: #E1E1E1;
+  font-size: 14px;
+  font-style: italic;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  line-height: 1.42em;
 }
 
-body .background .backphoto #contact .contact-wrapper .form-horizontal .form-group .col-sm-12 .form-control ::-ms-input-placeholder:hover {
-  color: #462d00;
+body .background .backphoto #contact .contact-wrapper .form-horizontal .form-group .col-sm-12 ::-ms-input-placeholder {
+  color: #E1E1E1;
+  font-size: 14px;
+  font-style: italic;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  line-height: 1.42em;
 }
 
-body .background .backphoto #contact .contact-wrapper .form-horizontal .form-group .col-sm-12 .form-control ::placeholder:hover {
-  color: #462d00;
+body .background .backphoto #contact .contact-wrapper .form-horizontal .form-group .col-sm-12 ::placeholder {
+  color: #E1E1E1;
+  font-size: 14px;
+  font-style: italic;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  line-height: 1.42em;
 }
 
 body .background .backphoto #contact .contact-wrapper .form-horizontal .form-group .col-sm-12 .form-control:hover {
@@ -462,89 +783,326 @@ body .background .backphoto #contact .contact-wrapper .form-horizontal .form-gro
 
 body .background .backphoto #contact .contact-wrapper .form-horizontal textarea {
   background-color: rgba(70, 46, 0, 0.1);
-  max-width: 400px;
-  color: #fff;
+  width: 100%;
+  color: #E1E1E1;
   letter-spacing: 1px;
+  resize: none;
+  border: 1px solid #E1E1E1;
+  border-radius: 5px;
+  margin: 15px 0;
+  padding: 10px;
+}
+
+body .background .backphoto #contact .contact-wrapper .form-horizontal ::-webkit-input-placeholder {
+  color: #E1E1E1;
+  font-size: 14px;
+  font-style: italic;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  line-height: 1.42em;
+}
+
+body .background .backphoto #contact .contact-wrapper .form-horizontal :-ms-input-placeholder {
+  color: #E1E1E1;
+  font-size: 14px;
+  font-style: italic;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  line-height: 1.42em;
+}
+
+body .background .backphoto #contact .contact-wrapper .form-horizontal ::-ms-input-placeholder {
+  color: #E1E1E1;
+  font-size: 14px;
+  font-style: italic;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  line-height: 1.42em;
+}
+
+body .background .backphoto #contact .contact-wrapper .form-horizontal ::placeholder {
+  color: #E1E1E1;
+  font-size: 14px;
+  font-style: italic;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  line-height: 1.42em;
 }
 
 body .background .backphoto #contact .contact-wrapper .form-horizontal textarea:hover {
   background-color: rgba(70, 46, 0, 0.4);
 }
 
-body .background .backphoto #contact .contact-wrapper .form-horizontal button .btn .btn-primary .send-button {
-  margin-top: 15px;
-  height: 34px;
-  width: 400px;
+body .background .backphoto #contact .contact-wrapper .form-horizontal .send-button {
+  padding: 10px 15px;
+  margin: 10px 40%;
+  background-color: transparent;
+  width: auto;
+  border: 1px solid #E1E1E1;
+  border-radius: 5px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+body .background .backphoto #contact .contact-wrapper .form-horizontal .send-button .button {
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+body .background .backphoto #contact .contact-wrapper .form-horizontal .send-button .button .send-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.42em;
+  color: rgba(225, 225, 225, 0.788);
+}
+
+body .background .backphoto #contact .contact-wrapper .form-horizontal .send-button .button .send-text:hover {
+  color: #E1E1E1;
+}
+
+body .background .backphoto #contact .contact-wrapper .form-horizontal .send-button:hover {
+  background-color: rgba(70, 46, 0, 0.4);
+  border: 1px solid #E1E1E1;
+}
+
+body .background .backphoto #contact .contact-wrapper .direct-contact-container {
+  max-width: 400px;
+  height: 70%;
+  padding-top: 50px;
+  padding-left: 50px;
+  position: relative;
+  border-left: 1px solid #E1E1E1;
+}
+
+body .background .backphoto #contact .contact-wrapper .direct-contact-container .contact-list {
+  list-style: none;
+  text-align: left;
+}
+
+body .background .backphoto #contact .contact-wrapper .direct-contact-container .contact-list .list-item {
+  padding: 15px 0;
+}
+
+body .background .backphoto #contact .contact-wrapper .direct-contact-container .contact-list .list-item .contact-text {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.42em;
+  letter-spacing: 1.9px;
+  color: #E1E1E1;
+  text-align: left;
+}
+
+body .background .backphoto #contact .contact-wrapper .direct-contact-container .contact-list .list-item .contact-text a {
+  color: #E1E1E1;
+  text-decoration: none;
+  -webkit-transition-duration: 0.9s;
+          transition-duration: 0.9s;
+}
+
+body .background .backphoto #contact .contact-wrapper .direct-contact-container .contact-list .list-item .contact-text a:hover {
+  color: #E1E1E1;
+  text-decoration: none;
+}
+
+body .background .backphoto #contact .contact-wrapper .direct-contact-container .social-media-list {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 10px;
+  position: relative;
+  font-size: 25px;
+  max-width: 100%;
+}
+
+body .background .backphoto #contact .contact-wrapper .direct-contact-container .social-media-list li {
+  color: #E1E1E1;
+  border-radius: 50px;
+  cursor: pointer;
+  background: transparent;
+  -webkit-transition: all .9s ease-in-out;
+  transition: all .9s ease-in-out;
+}
+
+body .background .backphoto #contact .contact-wrapper .direct-contact-container .social-media-list li a {
+  color: #E1E1E1;
+  text-decoration: none;
+  background: transparent;
+  border-radius: 5px;
+}
+
+body .background .backphoto #contact .contact-wrapper .direct-contact-container .social-media-list li:hover {
+  background-color: transparent;
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+body .background .backphoto #contact .contact-wrapper .direct-contact-container .social-media-list li:hover:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+          transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+}
+
+body .background .backphoto #contact .contact-wrapper .direct-contact-container .social-media-list li:nth-child(1):hover a {
+  color: #4267b2;
+}
+
+body .background .backphoto #contact .contact-wrapper .direct-contact-container .social-media-list li:nth-child(2):hover a {
+  color: #00af87;
+}
+
+body .background .backphoto #contact .contact-wrapper .direct-contact-container .social-media-list li:nth-child(3):hover a {
+  height: 100%;
+  background: radial-gradient(circle at 30% 100%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+body .background .backphoto #footer {
+  max-width: 100vw;
+  width: 100%;
+  height: 90px;
+  padding: 7px;
+  background-color: rgba(14, 6, 1, 0.85);
+}
+
+body .background .backphoto #footer .container {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid rgba(225, 225, 225, 0.5);
+  border-radius: 10px;
   overflow: hidden;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
 }
 
-body .background .backphoto #contact .contact-wrapper .form-horizontal button .btn .btn-primary .send-button .button {
-  width: 400px;
-  height: 34px;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+body .background .backphoto #footer .container .footer-sign {
+  margin: 0;
+  padding-left: 15vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-body .background .backphoto #contact .contact-wrapper .form-horizontal button .btn .btn-primary .send-button .button .send-text {
-  display: block;
-  margin-top: 10px;
-  font: 300 14px 'Lato', sans-serif;
-  letter-spacing: 2px;
+body .background .backphoto #footer .container .footer-sign a {
+  color: #E1E1E1;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  letter-spacing: 0.8px;
+  margin-right: 10px;
+}
+
+body .background .backphoto #footer .container .footer-sign a img {
+  width: auto;
+  height: 40px;
+  background-color: transparent;
+}
+
+body .background .backphoto #footer .container .footer-logo {
+  width: 50px;
+  height: auto;
+  padding-right: 50px;
+}
+
+body .background .backphoto #footer .container .footer-logo img {
+  width: auto;
+  height: 50px;
 }
 
 @-webkit-keyframes test {
-  0% {
+  25% {
     background: url("/static/homepage/img/1.jpg") no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
   }
-  25% {
+  40% {
     background: url("/static/homepage/img/2.jpg") no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
   }
-  50% {
+  53% {
     background: url("/static/homepage/img/3.jpg") no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
   }
-  75% {
+  63% {
     background: url("/static/homepage/img/4.jpg") no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
   }
-  100% {
+  75% {
     background: url("/static/homepage/img/5.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  87% {
+    background: url("/static/homepage/img/6.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  100% {
+    background: url("/static/homepage/img/7.jpg") no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
   }
 }
 
 @keyframes test {
-  0% {
+  25% {
     background: url("/static/homepage/img/1.jpg") no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
   }
-  25% {
+  40% {
     background: url("/static/homepage/img/2.jpg") no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
   }
-  50% {
+  53% {
     background: url("/static/homepage/img/3.jpg") no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
   }
-  75% {
+  63% {
     background: url("/static/homepage/img/4.jpg") no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
   }
-  100% {
+  75% {
     background: url("/static/homepage/img/5.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  87% {
+    background: url("/static/homepage/img/6.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  100% {
+    background: url("/static/homepage/img/7.jpg") no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
   }
