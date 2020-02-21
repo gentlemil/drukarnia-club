@@ -1,3 +1,10 @@
+// To find section you are interested, press CTRL+F and type one of this names:
+// 1. NAVIGATION
+// 2. RESERVATION CREATE
+// 3. LOGIN SITE
+// 4. RESERVATION LIST
+// 5. FOOTER
+
 $mainFontColor: #E1E1E1;
 
 body {
@@ -182,9 +189,9 @@ body {
                 }
             }
 
-            // -----------------------------------------------------------
-            // -----------------------------------------------------------
-            // -----------------------------------------------------------
+            // ---------------------------------------------------------------------------------
+            // --------------- RESERVATION CREATE ----------------------------------------------
+            // ---------------------------------------------------------------------------------
 
             #formTemplate {
                 height: 400px;
@@ -362,9 +369,9 @@ body {
             }
 
 
-            // -----------------------------------------------------------
-            // -----------------------------------------------------------
-            // -----------------------------------------------------------
+            // ---------------------------------------------------------------------------------
+            // ------------------ LOGIN SITE ---------------------------------------------------
+            // ---------------------------------------------------------------------------------
 
 
             #loginTemp {
@@ -521,11 +528,111 @@ body {
                 }
             }
 
+            // ---------------------------------------------------------------------------------
+            // --------------- RESERVATION LIST ------------------------------------------------
+            // ---------------------------------------------------------------------------------
+
+            #listTemplate {
+                min-height: 100vh;
+                max-width: 100vw;
+                padding-top: 100px;
+                padding-bottom: 500px;
+                overflow: hidden;
+
+                .section-header {
+                    text-align: center;
+                    margin: 0 auto;
+                    padding-top: 50px;
+                    margin-bottom: 20px;
+                    color: $mainFontColor;
+                    font-family: 'Oswald', sans-serif;
+                    font-weight: 300;
+                    font-size: 40px;
+                    line-height: 1.42em;
+                    margin-bottom: 10%;
+                    letter-spacing: 0.8px;
+                }
+
+                .container {
+                    max-width: 100%;
+                    width: 100vw;
+                    height: 100%;
+                    margin: 10px 5%;
+                    position: relative;
+                    border: 1px solid $mainFontColor;
+                    border-radius: 10px;
+                    background-color: rgba(14, 6, 1, 0.3);
+                    display: flex;
+                    align-items: center;
+
+                    .tbl-header {
+                        background-color: rgba(255, 255, 255, 0.3);
+
+                        table {
+                            width: 100%;
+                            table-layout: fixed;
+
+                            thead {
+
+                                tr {
+                                    th {
+                                        padding: 20px 15px;
+                                        text-align: left;
+                                        font-weight: 500;
+                                        font-size: 12px;
+                                        color: rgb(230, 18, 18);
+                                        text-transform: uppercase;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .tbl-content {
+                        height: 300px;
+                        overflow-x: auto;
+                        margin-top: 0px;
+                        border: 1px solid rgba(255, 255, 255, 0.3);
+
+                        table {
+                            tbody {
+                                tr {
+                                    td {
+                                        padding: 15px;
+                                        text-align: left;
+                                        vertical-align: middle;
+                                        font-weight: 300;
+                                        font-size: 12px;
+                                        color: #fff;
+                                        border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
 
 
-            // -----------------------------------------------------------
-            // -----------------------------------------------------------
-            // -----------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            // ---------------------------------------------------------------------------------
+            // --------------- FOOTER ----------------------------------------------------------
+            // ---------------------------------------------------------------------------------
 
             #footer {
                 max-width: 100vw;

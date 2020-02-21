@@ -3,48 +3,49 @@
 {% block content %}
 
 <section id="listTemplate">
-    {% if reservations %}
-    <table class="container">
-        <thead>
-            <tr>
-                <th>
-                    <h1>Lp</h1>
-                </th>
-                <th>
-                    <h1>Imie Nazwisko</h1>
-                </th>
-                <th>
-                    <h1>Data</h1>
-                </th>
-                <th>
-                    <h1>Bar</h1>
-                </th>
-                <th>
-                    <h1>Liczba osob</h1>
-                </th>
-                <th>
-                    <h1>Status</h1>
-                </th>
-                <th>
-                    <h1>Sprawdz</h1>
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for r in reservations %}
-            <tr>
-                <td>{{ r.pk }}</td>
-                <td>{{ r.name }}</td>
-                <td>{{ r.term_of_reservation }}</td>
-                <td>{{ r.bar }}</td>
-                <td>{{ r.nr_of_people }}</td>
-                <td>{{ r.status }}</td>
-                <td><a href="{% url 'reservation_details' pk=r.pk %}"><i class="fas fa-book-open"></i></a></td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="section-header">
+        <h1>LISTA REZERWACJI</h1>
+    </div>
+    <div class="container">
+        {% if reservations %}
+        <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <tr>
+                        <th>Lp</th>
+                        <th>HASLO</th>
+                        <th>IMIE/NAZWISKO</th>
+                        <th>DATA</th>
+                        <th>BAR</th>
+                        <th>LICZBA OSOB</th>
+                        <th>STATUS</th>
+                        <th>EDYCJA</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
 
-    {% endif %}
+        {% for r in reservations %}
+        <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <tr>
+                        <td>{{ r.pk }}</td>
+                        <td>{{ r.title }}</td>
+                        <td>{{ r.name }}</td>
+                        <td>{{ r.term_of_reservation }}</td>
+                        <td>{{ r.bar }}</td>
+                        <td>{{ r.nr_of_people }}</td>
+                        <td>{{ r.status }}</td>
+                        <td>"{% url 'reservation_details' pk=r.pk %}"><i class="fas fa-book-open"></i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
 </section>
+
+
 {% endblock %}
