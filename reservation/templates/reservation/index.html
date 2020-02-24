@@ -1,9 +1,56 @@
 {% extends "base.html"%}
-
+{% load sass_tags static %}
 
 {% block content %}
 
-<h1 style="color: aliceblue;"><br><br><br><br>CZESC!</h1>
-<h2 style="color: aliceblue;">Jestes w panelu rezerwacyjnym. Udanej zabawy!</h2">
 
-    {% endblock %}
+<section id="reservation">
+    <div class="main">
+        <h1 class="section-header">Wynajem sal</h1>
+
+        <p>W lokalu znajdują się cztery sale, każda z nich posiada osobny bar i charakteryzuje się niepowtarzalnym
+            wnętrzem. Pierwszy tzw.: „Start Bar” to miejsce do spotkań starych znajomych w luźnej atmosferze. Sala
+            kominkowa to przestrzeń elegancka idealna dla służbowych spotkań. Na poziomie -1 znajdują się dwa
+            pomieszczenia, z bogato wyposażonymi barami, gdzie w każdy weekend organizujemy imprezy, TYLKO z muzyką
+            taneczną. Jest to miejsce, gdzie możesz również zorganizować imprezę firmową, spotkanie z przyjaciółmi.
+            Zapraszamy do odwiedzin naszego lokalu.
+
+            Kontakt w sprawie wynajmu lokalu:
+            tel: 12 656 6560</p>
+        <div class="menu">
+            <ul>
+                <li><a href="#">WYNAJEM SAL</a></li>
+                <li><a href="#">ZRÓB REZERWACJĘ</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <h1 class="section-header">Galeria</h1>
+    <div class="container">
+    </div>
+
+    <h1 class="section-header">Oferta cateringowa</h1>
+    <div class="catering">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt veritatis esse, facere possimus fugit,
+            saepe soluta nesciunt fugiat ipsam libero delectus culpa? Fugit officiis veniam eligendi tempora optio error
+            cumque.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus eligendi odit laborum rerum voluptatum
+            quas laudantium sint alias ipsum earum aperiam tempore cupiditate laboriosam, quod, omnis deserunt
+            veritatis? Blanditiis, sed.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt veritatis esse, facere possimus fugit,
+            saepe soluta nesciunt fugiat ipsam libero delectus culpa? Fugit officiis veniam eligendi tempora optio error
+            cumque.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus eligendi odit laborum rerum voluptatum
+            quas laudantium sint alias ipsum earum aperiam tempore cupiditate laboriosam, quod, omnis deserunt
+            veritatis? Blanditiis, sed.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt veritatis esse, facere possimus fugit,
+            saepe soluta nesciunt fugiat ipsam libero delectus culpa? Fugit officiis veniam eligendi tempora optio error
+            cumque.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus eligendi odit laborum rerum voluptatum
+            quas laudantium sint alias ipsum earum aperiam tempore cupiditate laboriosam, quod, omnis deserunt
+            veritatis? Blanditiis, sed.</p>
+    </div>
+</section>
+
+
+{% endblock %}

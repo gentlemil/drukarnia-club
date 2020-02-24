@@ -9,8 +9,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>D R U K 2.0 - REZERWACJA</title>
 
+    <link rel="stylesheet" type="text/css" href="{% static 'reservation/css/jquery.datetimepicker' %}">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-    <link rel="stylesheet" href="{% sass_src 'reservation/css/reservation-style.scss' %}">
+    <link rel="stylesheet" href="{% sass_src 'homepage/css/homepage.scss' %}">
 
     <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500&display=swap&subset=latin-ext"
         rel="stylesheet">
@@ -49,7 +51,7 @@
                         <li><a href="{% url 'reservation_list' %}">LISTA REZERWACJI</a></li>
                         <li><a href="{% url 'reservation-create' %}">NOWA REZERWACJA</a></li>
                         <li><a href="{% url 'bar_availability' %}">DOSTEPNOSC</a></li>
-                        <li><a href="#">Logout</a></li>
+                        <li><a href="{% url 'logout' %}">Logout</a></li>
                     </ul>
                 </div>
             </section>

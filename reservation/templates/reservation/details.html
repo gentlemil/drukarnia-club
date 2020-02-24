@@ -2,44 +2,59 @@
 
 {% block content %}
 
-<section id="details">
-    <div class="content">
-        <table class="container">
+<section id="reservationDetails">
+    <h1 class="section-header">SZCZEGÓŁY REZERWACJI</h1>
+    <div class="container">
+        <table class="content">
             <tbody>
                 <tr>
-                    <td>Termin rezerwacji:</td>
-                    <td>{{reservation.term_of_reservation}}</td>
+                    <td>HASLO: </td>
+                    <td>{{reservation.title}}</td>
                 </tr>
                 <tr>
-                    <td>Tworca</td>
+                    <td>IMIE, NAZWISKO:</td>
                     <td>{{reservation.name}}</td>
                 </tr>
                 <tr>
-                    <td>Nr kontaktowy</td>
-                    <td>{{reservation.phone}}</td>
-                </tr>
-                <tr>
-                    <td>Adres e-mail:</td>
+                    <td>E-MAIL:</td>
                     <td>{{reservation.email}}</td>
                 </tr>
                 <tr>
-                    <td>Ktory bar</td>
+                    <td>Nr KONTAKTOWY:</td>
+                    <td>{{reservation.phone}}</td>
+                </tr>
+                <tr>
+                    <td>TERMIN:</td>
+                    <td>{{reservation.term_of_reservation}}</td>
+                </tr>
+                <tr>
+                    <td>BAR:</td>
                     <td>{{reservation.bar}}</td>
                 </tr>
                 <tr>
-                    <td>Liczba osob</td>
+                    <td>LICZBA OSÓB:</td>
                     <td>{{reservation.nr_of_people}}</td>
+                </tr>
+                <tr>
+                    <td>FAKTURA:</td>
+                    <td>{{reservation.faktura}}</td>
+                </tr>
+                <tr>
+                    <td>CATERING:</td>
+                    <td>{{reservation.catering}}</td>
+                </tr>
+                <tr>
+                    <td>UWAGI:</td>
+                    <td>{{reservation.additional_information}}</td>
                 </tr>
             </tbody>
         </table>
-
-        <div class="options">
+        <div class="menu">
             <ul>
                 <li><a href="{% url 'reservation_edition' pk=reservation.pk %}">EDYCJA</a></li>
                 <li><a href="{% url 'reservation_delete' pk=reservation.pk %}">USUN REZERWACJE</a></li>
             </ul>
         </div>
-
     </div>
 </section>
 

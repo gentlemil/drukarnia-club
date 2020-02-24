@@ -9,9 +9,7 @@ urlpatterns = [
     path('', include('homepage.urls')),
     path('menu/', include('menu.urls')),
     path('reservation/', include('reservation.urls')),
-    # path('accounts/', include('django.contrib.auth.urls'))
-    path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
-    path('accounts/logout/', auth_views.LoginView.as_view(), name='logout'),
+    # path('accounts/', include('accounts.urls')),
 ]
 
 if settings.DEBUG:                  # <--------

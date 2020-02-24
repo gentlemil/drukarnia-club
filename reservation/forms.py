@@ -1,12 +1,10 @@
 from django import forms
 from .models import Reservation, Bar
 
+# --- formularz logowania sie
+
+# --- formularz tworzenia nowej rezerwacji
 class ReservationForm(forms.ModelForm):
-    """Formularz tworzenia nowej rezerwacji"""
-
-
-
-# widget=forms.TextInput(attrs={'placeholder': 'Search'})
 
     name = forms.CharField(max_length=250, widget=forms.TextInput(attrs={'placeholder': 'Podaj Imie i Nazwisko'}))
     email = forms.CharField(max_length=250, widget=forms.TextInput(attrs={'placeholder': 'Podaj adres e-mail'}))
@@ -22,3 +20,5 @@ class ReservationForm(forms.ModelForm):
     class Meta:
         model = Reservation
         fields = ['name', 'email', 'phone', 'term_of_reservation', 'bar', 'nr_of_people', 'catering', 'faktura', 'additional_information']
+
+

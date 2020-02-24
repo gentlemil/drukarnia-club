@@ -27,6 +27,9 @@ body .background {
 body .background .backphoto {
   width: 100%;
   position: relative;
+  /* --------------------------------------------------------------------- */
+  /* ----------------------- DETAILS ---------------------------------- */
+  /* --------------------------------------------------------------------- */
 }
 
 body .background .backphoto #navigation {
@@ -214,6 +217,123 @@ body .background .backphoto #admin-navigation .admin-menu ul li:hover:last-child
   background-color: rgba(255, 255, 255, 0.1);
   -webkit-transition: 0.8s all;
   transition: 0.8s all;
+}
+
+body .background .backphoto #reservation {
+  height: 100%;
+  max-width: 100vw;
+  width: 100%;
+  padding: 0 15px;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body .background .backphoto #reservation .main {
+  border: 1px solid #E1E1E1;
+  border-radius: 10px;
+  margin: 15px 10px;
+  padding: 150px 150px 0 150px;
+  height: 70vh;
+}
+
+body .background .backphoto #reservation .main .section-header {
+  text-align: center;
+  margin: 0 auto;
+  color: #E1E1E1;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 1.42em;
+  letter-spacing: 0.8px;
+}
+
+body .background .backphoto #reservation .main p {
+  margin-bottom: 40px;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.42em;
+  letter-spacing: 0.2px;
+}
+
+body .background .backphoto #reservation .main .menu ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+body .background .backphoto #reservation .main .menu ul li {
+  padding: 10px 15px;
+  margin: 10px;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+body .background .backphoto #reservation .main .menu ul li a {
+  text-decoration: none;
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  line-height: 1.42em;
+  color: #E1E1E1;
+}
+
+body .background .backphoto #reservation .main .menu ul li a:hover:last-child {
+  color: #E1E1E1;
+}
+
+body .background .backphoto #reservation .main .menu ul li:hover {
+  border-bottom: 1px solid #E1E1E1;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+  -webkit-transition: 0.8s all;
+  transition: 0.8s all;
+  -webkit-transition-timing-function: line;
+          transition-timing-function: line;
+}
+
+body .background .backphoto #reservation .main .menu ul li:last-child {
+  padding: 10px 15px;
+  margin: 10px;
+  border: 1px solid #E1E1E1;
+}
+
+body .background .backphoto #reservation .main .menu ul li:hover:last-child {
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-transition: 0.8s all;
+  transition: 0.8s all;
+}
+
+body .background .backphoto #reservation .section-header {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 50px;
+  color: #E1E1E1;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 1.42em;
+  margin-bottom: 10%;
+  letter-spacing: 0.8px;
+}
+
+body .background .backphoto #reservation .container {
+  max-width: 100%;
+  width: 100%;
+  height: 40vh;
+  background: url("/static/reservation/img/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  border: 1px solid #E1E1E1;
+  border-radius: 10px;
 }
 
 body .background .backphoto #formTemplate {
@@ -451,6 +571,192 @@ body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ont
   border: 1px solid #E1E1E1;
 }
 
+body .background .backphoto #reservationDetails {
+  height: 100vh;
+  max-width: 100vw;
+  margin-top: 50px;
+  overflow: hidden;
+}
+
+body .background .backphoto #reservationDetails .section-header {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 50px;
+  color: #E1E1E1;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 1.42em;
+  letter-spacing: 0.8px;
+}
+
+body .background .backphoto #reservationDetails .container {
+  max-width: 100vw;
+  width: 700px;
+  height: 100%;
+  margin: 10px 50px 50px 50px;
+  padding: 20px;
+  position: relative;
+  border: 1px solid #E1E1E1;
+  border-radius: 10px;
+  background-color: rgba(14, 6, 1, 0.3);
+}
+
+body .background .backphoto #reservationDetails .container .content {
+  width: 100%;
+}
+
+body .background .backphoto #reservationDetails .container .content tbody tr {
+  padding: 8px 0;
+}
+
+body .background .backphoto #reservationDetails .container .content tbody tr td {
+  padding: 5px 0 5px 15px;
+  text-align: center;
+  font-weight: 300;
+  font-size: 16px;
+  color: #E1E1E1;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+}
+
+body .background .backphoto #reservationDetails .container .content tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+body .background .backphoto #reservationDetails .container .menu {
+  margin: 0;
+  width: 100%;
+}
+
+body .background .backphoto #reservationDetails .container .menu ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .background .backphoto #reservationDetails .container .menu ul li {
+  padding: 10px 15px;
+  margin: 10px 20px;
+  background-color: transparent;
+  width: auto;
+  border: 1px solid #E1E1E1;
+  border-radius: 5px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+body .background .backphoto #reservationDetails .container .menu ul li a {
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.42em;
+  color: rgba(225, 225, 225, 0.788);
+}
+
+body .background .backphoto #reservationDetails .container .menu ul li:hover {
+  background-color: rgba(70, 46, 0, 0.4);
+  border: 1px solid #E1E1E1;
+}
+
+body .background .backphoto #listEdition {
+  height: 400px;
+  max-width: 100vw;
+  margin-top: 100px;
+  padding-bottom: 500px;
+  overflow: hidden;
+}
+
+body .background .backphoto #listEdition .section-header {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 50px;
+  color: #E1E1E1;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 1.42em;
+  margin-bottom: 10%;
+  letter-spacing: 0.8px;
+}
+
+body .background .backphoto #listEdition .container {
+  max-width: 100vw;
+  height: 100%;
+  margin: 10px 50px 50px 50px;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  border: 1px solid #E1E1E1;
+  border-radius: 10px;
+  background-color: rgba(14, 6, 1, 0.3);
+}
+
+body .background .backphoto #listEdition .container .form {
+  width: 50%;
+  height: auto;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+body .background .backphoto #listEdition .container .send-button {
+  padding: 10px 15px;
+  margin: 10px 40%;
+  background-color: transparent;
+  width: auto;
+  border: 1px solid #E1E1E1;
+  border-radius: 5px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+body .background .backphoto #listEdition .container .send-button .button {
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+body .background .backphoto #listEdition .container .send-button .button .send-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.42em;
+  color: rgba(225, 225, 225, 0.788);
+}
+
+body .background .backphoto #listEdition .container .send-button .button .send-text:hover {
+  color: #E1E1E1;
+}
+
+body .background .backphoto #listEdition .container .send-button:hover {
+  background-color: rgba(70, 46, 0, 0.4);
+  border: 1px solid #E1E1E1;
+}
+
 body .background .backphoto #loginTemp {
   height: 400px;
   max-width: 100vw;
@@ -633,6 +939,85 @@ body .background .backphoto #loginTemp .contact-wrapper .form-horizontal .icons 
   border-radius: 5px;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
+}
+
+body .background .backphoto #listTemplate {
+  height: 100%;
+  max-width: 100vw;
+  width: 100%;
+  padding: 0 15px;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body .background .backphoto #listTemplate .section-header {
+  text-align: center;
+  padding-top: 50px;
+  margin-bottom: 20px;
+  color: #E1E1E1;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 1.42em;
+  margin-bottom: 10%;
+  letter-spacing: 0.8px;
+}
+
+body .background .backphoto #listTemplate .container {
+  max-width: 100%;
+  width: 100vw;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  border: 1px solid #E1E1E1;
+  border-radius: 10px;
+  background-color: rgba(14, 6, 1, 0.6);
+}
+
+body .background .backphoto #listTemplate .container .tbl-header {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+body .background .backphoto #listTemplate .container .tbl-header table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+body .background .backphoto #listTemplate .container .tbl-header table thead tr th {
+  width: calc(100%/8);
+  text-align: center;
+  font-weight: 300;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  color: #E1E1E1;
+  text-transform: uppercase;
+  padding: 5px 0 5px 30px;
+}
+
+body .background .backphoto #listTemplate .container .tbl-content {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+body .background .backphoto #listTemplate .container .tbl-content table {
+  width: 100%;
+}
+
+body .background .backphoto #listTemplate .container .tbl-content table tbody tr {
+  padding: 10px 0;
+}
+
+body .background .backphoto #listTemplate .container .tbl-content table tbody tr td {
+  width: calc(100%/8);
+  padding: 5px 0 5px 30px;
+  text-align: center;
+  font-weight: 300;
+  font-size: 16px;
+  color: #E1E1E1;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+}
+
+body .background .backphoto #listTemplate .container .tbl-content table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 body .background .backphoto #footer {

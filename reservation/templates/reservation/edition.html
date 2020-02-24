@@ -2,10 +2,21 @@
 
 {% block content %}
 
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" name="submit" value="update">
-</form>
+<section id="listEdition">
+    <h1 class="section-header">Edycja</h1>
+    <div class="container">
+        <form class="form" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="send-button" name="submit" type="submit" id="submit" data-submit="...Sending" value="SEND">
+                <div class="button">
+                    <span class="send-text">ZATWIERDŹ</span>
+                </div>
+            </button>
+
+        </form>
+    </div>
+</section>
+
 
 {% endblock %}

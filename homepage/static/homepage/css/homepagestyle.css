@@ -1054,7 +1054,7 @@ body .background .backphoto #footer .container .footer-logo img {
 }
 
 @-webkit-keyframes test {
-  25% {
+  20% {
     background: url("/static/homepage/img/1.jpg") no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
@@ -1064,23 +1064,13 @@ body .background .backphoto #footer .container .footer-logo img {
     background-size: cover;
     background-attachment: fixed;
   }
-  53% {
+  60% {
     background: url("/static/homepage/img/3.jpg") no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
   }
-  63% {
-    background: url("/static/homepage/img/4.jpg") no-repeat center center fixed;
-    background-size: cover;
-    background-attachment: fixed;
-  }
-  75% {
+  80% {
     background: url("/static/homepage/img/5.jpg") no-repeat center center fixed;
-    background-size: cover;
-    background-attachment: fixed;
-  }
-  87% {
-    background: url("/static/homepage/img/6.jpg") no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
   }
@@ -1092,7 +1082,7 @@ body .background .backphoto #footer .container .footer-logo img {
 }
 
 @keyframes test {
-  25% {
+  20% {
     background: url("/static/homepage/img/1.jpg") no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
@@ -1102,23 +1092,13 @@ body .background .backphoto #footer .container .footer-logo img {
     background-size: cover;
     background-attachment: fixed;
   }
-  53% {
+  60% {
     background: url("/static/homepage/img/3.jpg") no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
   }
-  63% {
-    background: url("/static/homepage/img/4.jpg") no-repeat center center fixed;
-    background-size: cover;
-    background-attachment: fixed;
-  }
-  75% {
+  80% {
     background: url("/static/homepage/img/5.jpg") no-repeat center center fixed;
-    background-size: cover;
-    background-attachment: fixed;
-  }
-  87% {
-    background: url("/static/homepage/img/6.jpg") no-repeat center center fixed;
     background-size: cover;
     background-attachment: fixed;
   }

@@ -11,16 +11,34 @@ from django.views.generic.base import TemplateView
 from .forms import ReservationForm
 from .models import Reservation, Bar
 
-# glowny widok aplikacji rezerwacji, gdzie beda wyswietlane mozliwe akcje do wyboru
-# /reservation
+# /reservation --- glowny widok aplikacji rezerwacji, gdzie beda wyswietlane mozliwe akcje do wyboru
 def index(request):
+
     return render(request, 'reservation/index.html')
 
 
-# widok wyswietlajacy wszystkie powstale rezerwacje.
-# /reservation/list
-@login_required
+# /reservation/create/
+def reservation_create(request):
+
+    if request.method == 'POST':
+        form = ReservationForm(request.POST)
+        if form.is_valid():
+            r = form.save()
+            return redirect(reverse('reservation_details', args=[r.pk]))
+    else:
+        form = ReservationForm()     # ---> trzeba zaimportowac suggestionform
+   
+    context = {
+        'title': 'Sugestia ankiety',
+        'form': form,
+    }
+    return render(request, 'reservation/create.html', context)
+
+
+# /reservation/list --- widok wyswietlajacy wszystkie powstale rezerwacje.
+# @login_required
 def reservation_list(request):
+
     reservations = Reservation.objects.all().order_by('term_of_reservation')
     context = {
 
@@ -29,10 +47,10 @@ def reservation_list(request):
     return render(request, 'reservation/list.html', context)
 
 
-# widok pokazujacy szczegoly dot. konkretnej rezerwacji
-# /reservation/id
-@login_required
+# /reservation/id --- widok pokazujacy szczegoly dot. konkretnej rezerwacji
+# @login_required
 def reservation_details(request, pk):
+
     rd = get_object_or_404(Reservation, pk=pk)
     context = {
         'title': rd.name,
@@ -41,18 +59,18 @@ def reservation_details(request, pk):
     return render(request, 'reservation/details.html', context)
 
 
-# widok do edycji rezerwacji (po stronie admina oczywiscie)
-# dorobic pozniej wyswietlanie komunikatu ze zmiany zostaly wprowadzone pomylsnie
-# /reservation/id/edit
+# /reservation/id/edit --- widok do edycji rezerwacji (po stronie admina oczywiscie)
 class ReservationEdition(LoginRequiredMixin, UpdateView):
+
     model = Reservation
-    fields = ['name', 'phone', 'term_of_reservation', 'bar', 'nr_of_people', 'status']
+    fields = ['title', 'name', 'email', 'phone', 'term_of_reservation', 'bar',
+    'nr_of_people', 'catering', 'faktura', 'additional_information', 'status']
     template_name = 'reservation/edition.html'
 
 
-# widok do usuwania rezerwacji (po stronie admina oczywiscie)
-# /reservation/id/delete
+# /reservation/id/delete --- widok do usuwania rezerwacji (po stronie admina oczywiscie)
 class ReservationDelete(LoginRequiredMixin, DeleteView):
+
     model = Reservation
     template_name = 'reservation/delete.html'
 
@@ -60,50 +78,10 @@ class ReservationDelete(LoginRequiredMixin, DeleteView):
         return reverse_lazy('confirm')
 
 
-# /reservation/create/
-def reservation_create(request):
-    # jesli sa dane POST to sprobuj je zwalidowac
-    if request.method == 'POST':
-        # skoro sa dostepne dane POST, to nalezy je wrzcic do formularza
-        form = ReservationForm(request.POST)
-        # sprawdzenie poprawnosci formularza
-        if form.is_valid():
-            r = form.save()
-            # messages.success(request, 'SUKCES SUKCES SUKCES')   #formul. przeszedl walidacje :)
-            return redirect(reverse('reservation_details', args=[r.pk]))
-        # else:       #formularz nie przeszedl walidacji, czyli ma bledy
-            # messages.error(request, 'BLAD BLAD BLAD!')
-
-
-    # nie ma danych POST wiec pokazujemy pusty formularz
-    else:
-        form = ReservationForm()     # ---> trzeba zaimportowac suggestionform
-
-    # DLA TESTOW
-    # messages.debug(request, 'info dla programistow')
-    # messages.info(request, 'info informacyjne')
-    # messages.warning(request, 'uwaga')
-    
-    context = {
-        'title': 'Sugestia ankiety',
-        'form': form,
-    }
-    return render(request, 'reservation/create.html', context)
-
-
-# widok formularzu do tworzenia nowej rezerwacji
-# /reservation/create/
-# class ReservationCreate(CreateView):
-#     model = Reservation
-#     fields = ['name', 'email', 'phone', 'term_of_reservation', 'bar', 'nr_of_people', 'catering', 'faktura', 'additional_information']
-#     template_name = 'reservation/create.html'
-
-
-
-# widok pokazujacy ilosc wolnych miejsc
-# /reservation/bar-availability/
-@login_required
+# /reservation/bar-availability/ --- widok pokazujacy ilosc wolnych miejsc
+# @login_required
 def bar_availability(request):
+
     reservations = Reservation.objects.all().order_by('-term_of_reservation')
 
     nr_days = Reservation.objects \
@@ -121,12 +99,7 @@ def bar_availability(request):
     }
     return render(request, 'reservation/availability.html', context)
 
-    # for bar in Bar.objects.annotate(day=TruncDate('reservation__term_of_reservation', output_field=DateField()))
-    #  .annotate(people=Sum('reservation__nr_of_people')):
-    #      print(bar, bar.day, bar.people)
-
-
-
+# /reservation/confirm/ --- widok potwierdzenia zlozenia rezerwacji
 class ConfirmPage(TemplateView):
 
     template_name = "reservation/confirm.html"
