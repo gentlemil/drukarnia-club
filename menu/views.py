@@ -14,14 +14,11 @@ from .models import TypeOfProduct, Product
 
 # -------------------------------------------------------------------------
 def index(request):
-    categories = TypeOfProduct.objects.all().prefetch_related('product')
-    # ---
-    # menus = Product.objects.all()
-    # kinds = TypeOfProduct.objects.all()
+    categories = TypeOfProduct.objects.all().prefetch_related('product_set')
+
     context = {
         'categories': categories,
-        # 'menus': menus,
-        # 'kinds': kinds
+        
     }
     return render(request, 'menu/menuindex.html', context) 
 # -------------------------------------------------------------------------

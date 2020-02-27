@@ -12,12 +12,10 @@ class ProductAdmin(admin.ModelAdmin):
 class TypeOfProductAdmin(admin.ModelAdmin):
     list_display = [
         'name',
-        'product',
   
     ]
     list_filter = [
         'name',
-        'product',
 
     ]
     search_fields = ('name',)

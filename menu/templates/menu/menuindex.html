@@ -15,20 +15,19 @@
             doloremque laborum quidem ea?
         </h3>
     </div>
-    <!-- ------------------------------------------------------------ -->
-    <div class="contact-wrapper">
-        {% for type in categories %}
-        <p>Kategoria: {{ type.name }}<br>Produkty w kategorii:</p>
-        {% for product in categories.product_set.all %}
-        <ul>
-            <li>Nazwa: {{ product.name }}</li>
-            <li>Ilosc: {{ product.amount }}</li>
-            <li>Cena: {{ product.prize }}</li>
-        </ul>
-        {% endfor %}
-        {% endfor %}
-    </div>
-    <!-- ------------------------------------------------------------ -->
+
+    {% for type in categories %}
+    Kategoria: {{ type.name }}
+    {% for product in type.product_set.all %}
+    <ul>
+
+        <li>Nazwa: {{ product.name }}</li>
+        <li>Ilosc: {{ product.amount }}</li>
+        <li>Cena: {{ product.prize }}</li>
+
+    </ul>
+    {% endfor %}
+    {% endfor %}
 
 </section>
 

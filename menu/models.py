@@ -1,10 +1,21 @@
 from django.db import models
 from django.urls import reverse
 
+class TypeOfProduct(models.Model):
+    name = models.CharField(
+        max_length=100,
+        blank= False, null=False,
+        verbose_name='Type of Product',
+        help_text='',
+    )
+
+    def __str__(self):
+        return self.name
+
 class Product(models.Model):
     name = models.CharField(
         max_length=100,
-        blank= False, null=False, default='',
+        blank= False, null=False,
         unique=True,
         verbose_name='Name',
         help_text='',
@@ -24,6 +35,14 @@ class Product(models.Model):
         max_length=10,
     )
 
+    types = models.ForeignKey(
+        TypeOfProduct,
+        null=False, default='',
+        verbose_name='Type of Product',
+        on_delete=models.CASCADE,
+        
+        )
+
     def __str__(self):
         return  "%s %s %s" % (
             self.name,
@@ -31,21 +50,4 @@ class Product(models.Model):
             self.prize,
         )
 
-class TypeOfProduct(models.Model):
-    name = models.CharField(
-        max_length=100,
-        blank= False, null=False, default='',
-        verbose_name='Type of Product',
-        help_text='',
-    )
 
-    product = models.ForeignKey(
-        Product,
-        on_delete=models.CASCADE,
-        )
-
-    def __str__(self):
-        return "%s (%s)" % (
-            self.name,
-            self.product,
-        )
