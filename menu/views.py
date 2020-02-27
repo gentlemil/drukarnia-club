@@ -23,21 +23,42 @@ def index(request):
     return render(request, 'menu/menuindex.html', context) 
 # -------------------------------------------------------------------------
 
+# @login_required
+def menu_list(request):
+
+    products = Product.objects.all().order_by('price')
+    categories = TypeOfProduct.objects.all().prefetch_related('product_set')
+    
+    context = {
+        'categories': categories,
+        'products': products,
+    }
+    return render(request, 'menu/menuproductlist.html', context)
+
+
 class MenuCreate(LoginRequiredMixin, CreateView):
     model = TypeOfProduct, Product
     fields = ['name', 'amount', 'prize']
     template_name= 'menu/menucreate.html'
 
-class MenuUpdate(LoginRequiredMixin, UpdateView):
-    model = TypeOfProduct, Product
-    fields = ['name', 'amount', 'prize']
-    template_name = 'menu/menuupdate.html'
+# class MenuUpdate(LoginRequiredMixin, UpdateView):
+#     model = TypeOfProduct, Product
+#     fields = ['name', 'amount', 'prize']
+#     template_name = 'menu/menuupdate.html'
     
 
 class MenuDelete(LoginRequiredMixin, DeleteView):
-    model = TypeOfProduct, Product
+    model = Product
     template_name = 'menu/menudelete.html'
 
-    # def get_success_url(self):
-    #     return reverse_lazy('confirm')
+    def get_success_url(self):
+        return reverse_lazy('confirm')
 
+
+class ConfirmPage(TemplateView):
+
+    template_name = "menu/menuconfirm.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context

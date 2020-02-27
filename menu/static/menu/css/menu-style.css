@@ -264,6 +264,8 @@ body .background .backphoto #menuList .contact-wrapper .contentList {
 
 body .background .backphoto #menuList .contact-wrapper .contentList .mixture {
   width: 45%;
+  margin: 0 10px;
+  border-bottom: 1px solid #E1E1E1;
 }
 
 body .background .backphoto #menuList .contact-wrapper .contentList .mixture .rubric {
@@ -309,6 +311,223 @@ body .background .backphoto #menuList .contact-wrapper .contentList .mixture .na
   font-weight: 300;
   margin: 3px 0 5px 0;
   font-style: italic;
+}
+
+body .background .backphoto #menuProductList {
+  height: 100%;
+  max-width: 100vw;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body .background .backphoto #menuProductList .section-header {
+  text-align: center;
+  padding-top: 50px;
+  margin-bottom: 20px;
+  color: #E1E1E1;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 1.42em;
+  margin-bottom: 10%;
+  letter-spacing: 0.8px;
+}
+
+body .background .backphoto #menuProductList .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+body .background .backphoto #menuProductList .wrapper .container {
+  max-width: 45vw;
+  height: 100%;
+  margin: 10px auto;
+  position: relative;
+  border: 1px solid #E1E1E1;
+  border-radius: 10px;
+  background-color: rgba(14, 6, 1, 0.6);
+}
+
+body .background .backphoto #menuProductList .wrapper .container .rubric {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body .background .backphoto #menuProductList .wrapper .container .rubric ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+body .background .backphoto #menuProductList .wrapper .container .rubric ul li {
+  margin: 0;
+  padding: 0 40px;
+}
+
+body .background .backphoto #menuProductList .wrapper .container .rubric ul li h2 {
+  font-size: 25px;
+  font-weight: 400;
+}
+
+body .background .backphoto #menuProductList .wrapper .container .tbl-header {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+body .background .backphoto #menuProductList .wrapper .container .tbl-header table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+body .background .backphoto #menuProductList .wrapper .container .tbl-header table thead tr th {
+  width: calc(100%/8);
+  text-align: center;
+  font-weight: 300;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  color: #E1E1E1;
+  text-transform: uppercase;
+  padding: 5px 0 5px 30px;
+}
+
+body .background .backphoto #menuProductList .wrapper .container .tbl-content {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+body .background .backphoto #menuProductList .wrapper .container .tbl-content table {
+  width: 100%;
+}
+
+body .background .backphoto #menuProductList .wrapper .container .tbl-content table tbody tr {
+  padding: 10px 0;
+}
+
+body .background .backphoto #menuProductList .wrapper .container .tbl-content table tbody tr td {
+  width: calc(100%/8);
+  padding: 5px 0 5px 30px;
+  text-align: center;
+  font-weight: 300;
+  font-size: 16px;
+  color: #E1E1E1;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+}
+
+body .background .backphoto #menuProductList .wrapper .container .tbl-content table tbody tr td a {
+  text-decoration: none;
+  color: #E1E1E1;
+}
+
+body .background .backphoto #menuProductList .wrapper .container .tbl-content table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+body .background .backphoto #deleteProduct {
+  height: auto;
+  max-width: 100vw;
+  margin-top: 100px;
+  padding-bottom: 100px;
+  overflow: hidden;
+}
+
+body .background .backphoto #deleteProduct .section-header {
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 5px;
+  padding-bottom: 50px;
+  color: #E1E1E1;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  text-align: center;
+  line-height: 1em;
+  letter-spacing: 0.01em;
+}
+
+body .background .backphoto #deleteProduct .section-header h1 {
+  font-size: 60px;
+  font-weight: 300;
+  color: #E1E1E1;
+  font-family: 'Oswald', sans-serif;
+}
+
+body .background .backphoto #deleteProduct .section-header h3 {
+  color: #E1E1E1;
+  font-family: 'Oswald', sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+
+body .background .backphoto #deleteProduct .contact-wrapper {
+  max-width: 100vw;
+  height: auto;
+  margin: 10px 50px 50px 50px;
+  padding-right: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  border: 1px solid #E1E1E1;
+  border-radius: 10px;
+  background-color: rgba(14, 6, 1, 0.3);
+}
+
+body .background .backphoto #deleteProduct .contact-wrapper form .send-button {
+  padding: 10px 15px;
+  margin: 10px 40%;
+  background-color: transparent;
+  width: auto;
+  border: 1px solid #E1E1E1;
+  border-radius: 5px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+body .background .backphoto #deleteProduct .contact-wrapper form .send-button .button {
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+body .background .backphoto #deleteProduct .contact-wrapper form .send-button .button .send-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.42em;
+  color: rgba(225, 225, 225, 0.788);
+}
+
+body .background .backphoto #deleteProduct .contact-wrapper form .send-button .button .send-text:hover {
+  color: #E1E1E1;
+}
+
+body .background .backphoto #deleteProduct .contact-wrapper form .send-button:hover {
+  background-color: rgba(70, 46, 0, 0.4);
+  border: 1px solid #E1E1E1;
 }
 
 body .background .backphoto #footer {

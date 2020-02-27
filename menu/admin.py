@@ -4,7 +4,6 @@ from .models import TypeOfProduct, Product
 class ProductAdmin(admin.ModelAdmin):
     list_display = [
         'name',
-        'amount',
         'prize',
 
     ]
@@ -12,11 +11,11 @@ class ProductAdmin(admin.ModelAdmin):
 class TypeOfProductAdmin(admin.ModelAdmin):
     list_display = [
         'name',
-  
+        'amount',
     ]
     list_filter = [
         'name',
-
+        'amount',
     ]
     search_fields = ('name',)
     # date_hierarchy = pass

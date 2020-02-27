@@ -39,7 +39,8 @@
                         <ul>
                             <li><a href="{% url 'menu_create' %}"> NOWE MENU</a></li>
                             <li><a href="{% url 'reservation_list' %}">LISTA REZERWACJI</a></li>
-                            <li><a href="#">NOWY POST</a></li>
+                            <li><a href="{% url 'menu_list' %}">LISTA PRODUKTÓW</a></li>
+                            <li><a href="#"><s>NOWY POST</s></a></li>
                         </ul>
                     </div>
                 </div>
@@ -48,7 +49,7 @@
                     <ul>
                         <li><a href="{% url 'aboutUs' %}">O NAS</a></li>
                         <li><a href="{% url 'menu' %}">MENU</a></li>
-                        <li><a href="#">WYDARZENIA</a></li>
+                        <li><a href="#"><s>WYDARZENIA</s></a></li>
                         <li><a href="{% url 'barrental' %}">OFERTA</a></li>
                         <li><a href="{% url 'reservation-create' %}">REZERWACJA</a></li>
                     </ul>

@@ -1,11 +1,27 @@
-{% extends "base.html"%}
+{% extends "menubase.html"%}
+{% load sass_tags static %}
+
 
 {% block content %}
 
-<form method="post">
-    {% csrf_token %}
-    <p>Are you sure you want to delete "{{ object }}"?</p>
-    <input type="submit" value="Confirm">
-</form>
+<section id="deleteProduct">
+    <div class="section-header">
+        <h3>Usuwanie produktu</h3>
+        <div class="contact-wrapper">
+            <form method="POST">
+                {% csrf_token %}
+                <p>Jesteś pewny usunięcia "{{ object }}"?</p>
+                <button class="send-button" name="submit" type="submit" id="submit" data-submit="...Sending"
+                    value="Confirm">
+                    <div class="button">
+                        <span class="send-text">USUŃ</span>
+                    </div>
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+
 
 {% endblock %}

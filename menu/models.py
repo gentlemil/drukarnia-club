@@ -9,6 +9,14 @@ class TypeOfProduct(models.Model):
         help_text='',
     )
 
+    amount = models.CharField(
+        max_length=8,
+        blank= False, null=False,
+        default="&mdash",
+        verbose_name='Amount of liquor',
+        help_text='In ml',
+    )
+
     def __str__(self):
         return self.name
 
@@ -19,13 +27,6 @@ class Product(models.Model):
         unique=True,
         verbose_name='Name',
         help_text='',
-    )
-    
-    amount = models.CharField(
-        max_length=8,
-        blank= False, null=False,
-        verbose_name='Amount of liquor',
-        help_text='In ml',
     )
 
     prize = models.CharField(
@@ -44,10 +45,6 @@ class Product(models.Model):
         )
 
     def __str__(self):
-        return  "%s %s %s" % (
-            self.name,
-            self.amount,
-            self.prize,
-        )
+        return self.name
 
 
