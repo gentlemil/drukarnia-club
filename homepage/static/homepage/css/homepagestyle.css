@@ -34,6 +34,7 @@ body .background .backphoto #navigation {
   left: 0;
   max-width: 100vw;
   width: 100%;
+  height: 90px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -42,7 +43,6 @@ body .background .backphoto #navigation {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  height: 90px;
   z-index: 10000;
   background-color: rgba(14, 6, 1, 0.3);
 }
@@ -50,12 +50,83 @@ body .background .backphoto #navigation {
 body .background .backphoto #navigation .logo {
   width: 50px;
   height: auto;
-  padding-right: 200px;
 }
 
 body .background .backphoto #navigation .logo a img {
   width: auto;
   height: 60px;
+}
+
+body .background .backphoto #navigation .admin-navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 10000;
+}
+
+body .background .backphoto #navigation .admin-navigation .admin-menu {
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-left: 1px solid #E1E1E1;
+  border-right: 1px solid #E1E1E1;
+}
+
+body .background .backphoto #navigation .admin-navigation .admin-menu ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+body .background .backphoto #navigation .admin-navigation .admin-menu ul li {
+  padding: 5px 7px;
+  margin: 10px;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+body .background .backphoto #navigation .admin-navigation .admin-menu ul li a {
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  line-height: 1.42em;
+  color: #E1E1E1;
+}
+
+body .background .backphoto #navigation .admin-navigation .admin-menu ul li:hover {
+  border-bottom: 1px solid #E1E1E1;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+  -webkit-transition: 0.8s all;
+  transition: 0.8s all;
+  -webkit-transition-timing-function: line;
+          transition-timing-function: line;
 }
 
 body .background .backphoto #navigation .menu ul {
@@ -74,8 +145,6 @@ body .background .backphoto #navigation .menu ul li {
   margin: 10px;
   -webkit-transition: all 0.6s ease-in-out;
   transition: all 0.6s ease-in-out;
-  text-transform: uppercase;
-  display: inline-block;
 }
 
 body .background .backphoto #navigation .menu ul li a {
@@ -115,27 +184,10 @@ body .background .backphoto #navigation .menu ul li:hover:last-child {
   transition: 0.8s all;
 }
 
-body .background .backphoto #navigation .logadmin {
-  background: transparent;
-  -webkit-transition: all .9s ease-in-out;
-  transition: all .9s ease-in-out;
-}
-
 body .background .backphoto #navigation .logadmin a {
   text-decoration: none;
   font-size: 25px;
   color: #E1E1E1;
-}
-
-body .background .backphoto #navigation .logadmin a:hover {
-  color: #d49b09;
-}
-
-body .background .backphoto #navigation .logadmin:hover {
-  -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
 }
 
 body .background .backphoto #about {
@@ -987,7 +1039,204 @@ body .background .backphoto #contact .contact-wrapper .direct-contact-container 
   background: radial-gradient(circle at 30% 100%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
 }
 
-body .background .backphoto #footer {
+body .background .backphoto #aboutTemplate {
+  height: auto;
+  max-width: 100vw;
+  margin: 0;
+  overflow: hidden;
+  background-color: rgba(14, 6, 1, 0.8);
+}
+
+body .background .backphoto #aboutTemplate .section-header {
+  width: 80%;
+  margin: 0 auto;
+  padding: 110px 5% 50px;
+  color: #E1E1E1;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  text-align: center;
+  line-height: 1em;
+  letter-spacing: 0.01em;
+}
+
+body .background .backphoto #aboutTemplate .section-header h1 {
+  font-size: 60px;
+  font-weight: 300;
+  color: #E1E1E1;
+  font-family: 'Oswald', sans-serif;
+}
+
+body .background .backphoto #aboutTemplate .section-header h3 {
+  color: #E1E1E1;
+  font-family: 'Oswald', sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+
+body .background .backphoto #aboutTemplate .contact-wrapper {
+  max-width: 80vw;
+  height: 60px;
+  margin: 10px 50px 150px 50px;
+  padding: 20px 0;
+  position: relative;
+  border-top: 0.5px solid #E1E1E1;
+  border-bottom: 0.5px solid #E1E1E1;
+}
+
+body .background .backphoto #aboutTemplate .contact-wrapper .icons {
+  margin-top: 5px;
+  width: 80vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .background .backphoto #aboutTemplate .contact-wrapper .icons ul {
+  width: 100%;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+body .background .backphoto #aboutTemplate .contact-wrapper .icons-titles {
+  margin-top: 5px;
+  width: 80vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .background .backphoto #aboutTemplate .contact-wrapper .icons-titles ul {
+  width: 100%;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+body .background .backphoto #aboutTemplate .content {
+  max-width: 100vw;
+  height: 70vh;
+  margin: 20px 50px 50px 50px;
+  position: relative;
+  border: 1px solid #E1E1E1;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .background .backphoto #aboutTemplate .content .map {
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+  opacity: 0.5;
+  max-width: 40%;
+  margin: 0 5%;
+}
+
+body .background .backphoto #aboutTemplate .content .map:hover {
+  opacity: 1;
+}
+
+body .background .backphoto #aboutTemplate .tips {
+  width: 60%;
+  height: 75%;
+  margin: 0 20px;
+  padding: 20px;
+  border-left: 1px solid #E1E1E1;
+}
+
+body .background .backphoto #aboutTemplate .tips p {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body .background .backphoto #barRental {
+  height: auto;
+  max-width: 100vw;
+  margin: 0;
+  overflow: hidden;
+  background-color: rgba(14, 6, 1, 0.8);
+}
+
+body .background .backphoto #barRental .section-header {
+  width: 80%;
+  margin: 0 auto;
+  padding: 110px 5% 50px;
+  color: #E1E1E1;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  text-align: center;
+  line-height: 1em;
+  letter-spacing: 0.01em;
+}
+
+body .background .backphoto #barRental .section-header h1 {
+  font-size: 60px;
+  font-weight: 300;
+  color: #E1E1E1;
+  font-family: 'Oswald', sans-serif;
+}
+
+body .background .backphoto #barRental .section-header h3 {
+  color: #E1E1E1;
+  font-family: 'Oswald', sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+
+body .background .backphoto #barRental .content {
+  max-width: 100vw;
+  height: 70vh;
+  margin: 20px 50px 50px 50px;
+  position: relative;
+  border: 1px solid #E1E1E1;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body #footer {
   max-width: 100vw;
   width: 100%;
   height: 90px;
@@ -996,7 +1245,7 @@ body .background .backphoto #footer {
   background-color: rgba(14, 6, 1, 0.85);
 }
 
-body .background .backphoto #footer .container {
+body #footer .container {
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -1013,7 +1262,7 @@ body .background .backphoto #footer .container {
   overflow: hidden;
 }
 
-body .background .backphoto #footer .container .footer-sign {
+body #footer .container .footer-sign {
   margin: 0;
   padding-left: 15vw;
   display: -webkit-box;
@@ -1027,7 +1276,7 @@ body .background .backphoto #footer .container .footer-sign {
           align-items: center;
 }
 
-body .background .backphoto #footer .container .footer-sign a {
+body #footer .container .footer-sign a {
   color: #E1E1E1;
   font-family: 'Oswald', sans-serif;
   font-weight: 300;
@@ -1036,19 +1285,19 @@ body .background .backphoto #footer .container .footer-sign a {
   margin-right: 10px;
 }
 
-body .background .backphoto #footer .container .footer-sign a img {
+body #footer .container .footer-sign a img {
   width: auto;
   height: 40px;
   background-color: transparent;
 }
 
-body .background .backphoto #footer .container .footer-logo {
+body #footer .container .footer-logo {
   width: 50px;
   height: auto;
   padding-right: 50px;
 }
 
-body .background .backphoto #footer .container .footer-logo img {
+body #footer .container .footer-logo img {
   width: auto;
   height: 50px;
 }

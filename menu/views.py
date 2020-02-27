@@ -4,8 +4,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import CreateView, UpdateView, DeleteView, TemplateView
 from django.views.generic.base import TemplateView
 from django.http import HttpResponse
-from django.urls import reverse, reverse_lazy
-from .models import Menu, Kind
+from .models import TypeOfProduct, Product
 
 # from django.contrib.auth.decorators import login_required   #FBV
 # from django.contrib.messages.views import SuccessMessageMixin
@@ -13,29 +12,33 @@ from .models import Menu, Kind
 # from django.db.models.functions import TruncDate
 # from .forms import ReservationForm
 
+# -------------------------------------------------------------------------
 def index(request):
-    menus = Menu.objects.all()
-    kinds = Kind.objects.all()
+    categories = TypeOfProduct.objects.all().prefetch_related('product')
+    # ---
+    # menus = Product.objects.all()
+    # kinds = TypeOfProduct.objects.all()
     context = {
-        'menus': menus,
-        'kinds': kinds
+        'categories': categories,
+        # 'menus': menus,
+        # 'kinds': kinds
     }
-    
     return render(request, 'menu/menuindex.html', context) 
+# -------------------------------------------------------------------------
 
 class MenuCreate(LoginRequiredMixin, CreateView):
-    model = Menu, Kind
-    fields = ['name', 'kind', 'amount', 'prize']
+    model = TypeOfProduct, Product
+    fields = ['name', 'amount', 'prize']
     template_name= 'menu/menucreate.html'
 
 class MenuUpdate(LoginRequiredMixin, UpdateView):
-    model = Menu, Kind
-    fields = ['name', 'kind', 'amount', 'prize']
+    model = TypeOfProduct, Product
+    fields = ['name', 'amount', 'prize']
     template_name = 'menu/menuupdate.html'
     
 
 class MenuDelete(LoginRequiredMixin, DeleteView):
-    model = Menu, Kind
+    model = TypeOfProduct, Product
     template_name = 'menu/menudelete.html'
 
     # def get_success_url(self):

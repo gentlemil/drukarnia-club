@@ -29,12 +29,23 @@
                     <a href="{% url 'homepage' %}"><img src="{% static 'homepage/img/drukarnia-logo.png' %}"
                             alt="logo"></a>
                 </div>
+                {% if user.is_authenticated %}
+                <div class="admin-navigation">
+                    <div class="admin-menu">
+                        <ul>
+                            <li><a href="{% url 'menu_create' %}"> NOWE MENU</a></li>
+                            <li><a href="{% url 'reservation_list' %}">LISTA REZERWACJI</a></li>
+                            <li><a href="#">NOWY POST</a></li>
+                        </ul>
+                    </div>
+                </div>
+                {% endif %}
                 <div class="menu">
                     <ul>
-                        <li><a href="{% url 'aboutus' %}">O NAS</a></li>
+                        <li><a href="{% url 'aboutUs' %}">O NAS</a></li>
                         <li><a href="{% url 'menu' %}">MENU</a></li>
                         <li><a href="#">WYDARZENIA</a></li>
-                        <li><a href="{% url 'barrental' %}">WYNAJEM SAL</a></li>
+                        <li><a href="{% url 'barrental' %}">OFERTA</a></li>
                         <li><a href="{% url 'reservation-create' %}">REZERWACJA</a></li>
                     </ul>
                 </div>
@@ -42,18 +53,6 @@
                     <a href="#"><i class="fas fa-chess-knight"></i></a>
                 </div>
             </section>
-            {% if user.is_authenticated %}
-            <section id="admin-navigation">
-                <div class="admin-menu">
-                    <ul>
-                        <li><a href="{% url 'reservation_list' %}">LISTA REZERWACJI</a></li>
-                        <li><a href="{% url 'reservation-create' %}">NOWA REZERWACJA</a></li>
-                        <li><a href="{% url 'bar_availability' %}">DOSTEPNOSC</a></li>
-                        <li><a href="#">Logout</a></li>
-                    </ul>
-                </div>
-            </section>
-            {% endif %}
 
             <!-- ----------------------------- -->
 

@@ -1,207 +1,150 @@
+{% extends "homepagebase.html"%}
 {% load sass_tags static %}
 
-<!DOCTYPE html>
-<html lang="en">
+{% block content %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D R U K 2.0</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500&display=swap&subset=latin-ext"
-        rel="stylesheet">
+<section id="about">
+    <div class="container">
+        <div class="textone">
+            <p>Klub Drukarnia to jeden z najlepiej zlokalizowanych krakowskich lokali.
+                Położony jest tuż nad Wisłą, w dawnej przemysłowej dzielnicy Krakowa – Podgórzu.</p>
+        </div>
+        <div class="texttwo">
+            <p>Kraków, Stare Podgórze, ul. Nadwiślańska 1</p>
+            <div class="buttonabout">
+                <a href="{% url 'reservation-create' %}">REZERWACJA</a>
+            </div>
+        </div>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-    <link rel="stylesheet" href="{% sass_src 'homepage/css/homepagestyle.scss' %}">
-</head>
+    </div>
+    <!-- krotko o drukarnia, button rezerwacja -->
+</section>
 
-<body>
 
-    <!-- ------------------------------------------------------------------------- -->
-    <!-- ---------------------------- NAVIGATION --------------------------------- -->
-    <!-- ------------------------------------------------------------------------- -->
-    <div class="background">
-        <div class="backphoto">
+<section id="menu">
+    <div class="container">
+        <div class="textone">
+            <p>Twój bar. Twoje miasto.</p>
+        </div>
+        <div class="texttwo">
 
-            <section id="navigation">
-                <div class="logo">
-                    <a href="{% url 'homepage' %}"><img src="{% static 'homepage/img/drukarnia-logo.png' %}"
-                            alt="logo"></a>
+            <div class="buttonmenu">
+                <a href="{% url 'menu' %}">MENU</a>
+            </div>
+        </div>
+        <!-- TASTE. TOUCH. HEAR. EXPERIENCE. twoj bar, twoje miasto, button menu -->
+</section>
+
+
+<section id="event">
+    <div class="container">
+        <div class="textone">
+            <p>WYDARZENIA</p>
+        </div>
+        <div class="texttwo">
+            <p>Z życia Drukarni.</p>
+            <div class="buttonevent">
+                <a href="#">WIĘCEJ</a>
+            </div>
+        </div>
+        <!-- ostatnio w druku, button zobacz wiecej -->
+</section>
+
+
+<section id="gallery">
+    <div class="container">
+        <div class="photo-1"></div>
+        <div class="photo-2"></div>
+        <div class="photo-3"></div>
+        <div class="photo-4"></div>
+        <div class="photo-5"></div>
+        <div class="photo-6"></div>
+
+        <div class="photo-7"></div>
+        <div class="photo-8"></div>
+        <div class="photo-9"></div>
+        <div class="photo-10"></div>
+        <div class="photo-11"></div>
+        <div class="photo-12"></div>
+
+    </div>
+</section>
+
+
+<section id="contact">
+
+    <h1 class="section-header">Masz pytania? Skontaktuj się z nami!</h1>
+
+    <div class="contact-wrapper">
+
+        <form class="form-horizontal" role="form" method="POST" action="">
+
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" id="name" placeholder="Imię" name="name" value=""
+                        size="50vw">
                 </div>
-                <div class="menu">
-                    <ul>
-                        <li><a href="#">O NAS</a></li>
-                        <li><a href="{% url 'menu' %}">MENU</a></li>
-                        <li><a href="#">WYDARZENIA</a></li>
-                        <li><a href="#">LOKALIZACJA</a></li>
-                        <li><a href="{% url 'reservation-create' %}">REZERWACJA</a></li>
-                    </ul>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <input type="email" class="form-control" id="email" placeholder="Podaj adres e-mail" name="email"
+                        value="" size="50vw">
                 </div>
-                <div class="logadmin">
-                    <a href="#"><i class="fas fa-chess-knight"></i></a>
+            </div>
+
+            <textarea class="form-control" cols="300" rows="10" placeholder="Napisz co Cię trapi :)"
+                name="message"></textarea>
+
+            <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+                <div class="button">
+                    <span class="send-text">WYŚLIJ</span>
                 </div>
-            </section>
+            </button>
+        </form>
 
+        <div class="direct-contact-container">
 
+            <ul class="contact-list">
+                <li class="list-item">
 
-            <section id="about">
-                <div class="container">
-                    <div class="textone">
-                        <p>Klub Drukarnia to jeden z najlepiej zlokalizowanych krakowskich lokali.
-                            Położony jest tuż nad Wisłą, w dawnej przemysłowej dzielnicy Krakowa – Podgórzu.</p>
-                    </div>
-                    <div class="texttwo">
-                        <p>Kraków, Stare Podgórze, ul. Nadwiślańska 1</p>
-                        <div class="buttonabout">
-                            <a href="{% url 'reservation-create' %}">REZERWACJA</a>
-                        </div>
-                    </div>
+                    <span class="contact-text"><i class="fas fa-map-marker-alt"
+                            style="font-size: 30px;"></i>&emsp;&emsp;Kraków | ul.
+                        Nadwiślańska 1</span>
+                </li>
 
-                </div>
-                <!-- krotko o drukarnia, button rezerwacja -->
-            </section>
+                <li class="list-item">
 
+                    <span class="contact-text"> <i class="fa fa-phone fa-2x"></i>&emsp;&emsp;+ 48 12 656
+                        6560</span>
+                </li>
+                <li class="list-item">
 
-            <section id="menu">
-                <div class="container">
-                    <div class="textone">
-                        <p>Twój bar. Twoje miasto.</p>
-                    </div>
-                    <div class="texttwo">
+                    <span class="contact-text">
+                        <a href="mailto:#" title="Send me an email"> <i
+                                class="fa fa-envelope fa-2x"></i>&emsp;&emsp;drukarnia@drukarniaclub.pl</a>
+                    </span>
+                </li>
+            </ul>
 
-                        <div class="buttonmenu">
-                            <a href="{% url 'menu' %}">MENU</a>
-                        </div>
-                    </div>
-                    <!-- TASTE. TOUCH. HEAR. EXPERIENCE. twoj bar, twoje miasto, button menu -->
-            </section>
+            <hr>
+            <ul class="social-media-list">
+                <li><a href="https://www.facebook.com/DrukarniaKlub/" target="_blank" class="contact-icon">
+                        <i class="fab fa-facebook"></i></a>
+                </li>
+                <li><a href="https://pl.tripadvisor.com/Attraction_Review-g274772-d12197208-Reviews-Drukarnia_Club-Krakow_Lesser_Poland_Province_Southern_Poland.html"
+                        target="_blank" class="contact-icon">
+                        <i class="fab fa-tripadvisor"></i></a>
+                </li>
+                <li><a href="https://www.instagram.com/drukarniaklub/" target="_blank" class="contact-icon">
+                        <i class="fab fa-instagram"></i></a>
+                </li>
+            </ul>
+            <hr>
 
-
-            <section id="event">
-                <div class="container">
-                    <div class="textone">
-                        <p>WYDARZENIA</p>
-                    </div>
-                    <div class="texttwo">
-                        <p>Z życia Drukarni.</p>
-                        <div class="buttonevent">
-                            <a href="#">WIĘCEJ</a>
-                        </div>
-                    </div>
-                    <!-- ostatnio w druku, button zobacz wiecej -->
-            </section>
-
-
-            <section id="gallery">
-                <div class="container">
-                    <div class="photo-1"></div>
-                    <div class="photo-2"></div>
-                    <div class="photo-3"></div>
-                    <div class="photo-4"></div>
-                    <div class="photo-5"></div>
-                    <div class="photo-6"></div>
-
-                    <div class="photo-7"></div>
-                    <div class="photo-8"></div>
-                    <div class="photo-9"></div>
-                    <div class="photo-10"></div>
-                    <div class="photo-11"></div>
-                    <div class="photo-12"></div>
-
-                </div>
-            </section>
-
-
-            <section id="contact">
-
-                <h1 class="section-header">Masz pytania? Skontaktuj się z nami!</h1>
-
-                <div class="contact-wrapper">
-
-                    <form class="form-horizontal" role="form" method="POST" action="">
-
-                        <div class="form-group">
-                            <div class="col-sm-12">
-                                <input type="text" class="form-control" id="name" placeholder="Imię" name="name"
-                                    value="" size="50vw">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-sm-12">
-                                <input type="email" class="form-control" id="email" placeholder="Podaj adres e-mail"
-                                    name="email" value="" size="50vw">
-                            </div>
-                        </div>
-
-                        <textarea class="form-control" cols="300" rows="10" placeholder="Napisz co Cię trapi :)"
-                            name="message"></textarea>
-
-                        <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
-                            <div class="button">
-                                <span class="send-text">WYŚLIJ</span>
-                            </div>
-                        </button>
-                    </form>
-
-                    <div class="direct-contact-container">
-
-                        <ul class="contact-list">
-                            <li class="list-item">
-
-                                <span class="contact-text"><i class="fas fa-map-marker-alt"
-                                        style="font-size: 30px;"></i>&emsp;&emsp;Kraków | ul.
-                                    Nadwiślańska 1</span>
-                            </li>
-
-                            <li class="list-item">
-
-                                <span class="contact-text"> <i class="fa fa-phone fa-2x"></i>&emsp;&emsp;+ 48 12 656
-                                    6560</span>
-                            </li>
-                            <li class="list-item">
-
-                                <span class="contact-text">
-                                    <a href="mailto:#" title="Send me an email"> <i
-                                            class="fa fa-envelope fa-2x"></i>&emsp;&emsp;drukarnia@drukarniaclub.pl</a>
-                                </span>
-                            </li>
-                        </ul>
-
-                        <hr>
-                        <ul class="social-media-list">
-                            <li><a href="https://www.facebook.com/DrukarniaKlub/" target="_blank" class="contact-icon">
-                                    <i class="fab fa-facebook"></i></a>
-                            </li>
-                            <li><a href="https://pl.tripadvisor.com/Attraction_Review-g274772-d12197208-Reviews-Drukarnia_Club-Krakow_Lesser_Poland_Province_Southern_Poland.html"
-                                    target="_blank" class="contact-icon">
-                                    <i class="fab fa-tripadvisor"></i></a>
-                            </li>
-                            <li><a href="https://www.instagram.com/drukarniaklub/" target="_blank" class="contact-icon">
-                                    <i class="fab fa-instagram"></i></a>
-                            </li>
-                        </ul>
-                        <hr>
-
-                    </div>
-                </div>
-            </section>
-
-            <section id="footer">
-                <div class="container">
-                    <div class="footer-sign">
-                        <a href="#" target="_blank"> <img src="{% static 'homepage/img/weed.png' %}" alt="logo"></a>
-                        Developed and Design by Gentlemil
-                    </div>
-                    <div class="footer-logo">
-                        <img src="{% static 'homepage/img/drukarnia-logo.png' %}" alt="logo">
-                    </div>
-                </div>
-            </section>
         </div>
     </div>
+</section>
 
-
-</body>
-
-</html>
+{% endblock %}

@@ -1,28 +1,31 @@
 from django.contrib import admin
-from .models import Menu, Kind
+from .models import TypeOfProduct, Product
 
-class MenuAdmin(admin.ModelAdmin):
+class ProductAdmin(admin.ModelAdmin):
     list_display = [
         'name',
-        'kind',
+        'amount',
         'prize',
 
     ]
+
+class TypeOfProductAdmin(admin.ModelAdmin):
+    list_display = [
+        'name',
+        'product',
+  
+    ]
     list_filter = [
         'name',
-        'kind',
+        'product',
 
     ]
-    search_fields = ('name', 'kind',)
+    search_fields = ('name',)
     # date_hierarchy = pass
     # ordering = [ pass ]
 
-class KindAdmin(admin.ModelAdmin):
-    list_display = [
-        'name',
-        'amount'
-    ]
 
 
-admin.site.register(Menu, MenuAdmin)
-admin.site.register(Kind, KindAdmin)
+
+admin.site.register(TypeOfProduct, TypeOfProductAdmin)
+admin.site.register(Product, ProductAdmin)

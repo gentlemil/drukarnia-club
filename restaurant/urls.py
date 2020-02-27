@@ -10,6 +10,7 @@ urlpatterns = [
     path('menu/', include('menu.urls')),
     path('reservation/', include('reservation.urls')),
     # path('accounts/', include('accounts.urls')),
+
 ]
 
 if settings.DEBUG:                  # <--------

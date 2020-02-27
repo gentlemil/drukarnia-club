@@ -38,6 +38,7 @@ body .background .backphoto #navigation {
   left: 0;
   max-width: 100vw;
   width: 100%;
+  height: 90px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -46,7 +47,6 @@ body .background .backphoto #navigation {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  height: 90px;
   z-index: 10000;
   background-color: rgba(14, 6, 1, 0.3);
 }
@@ -54,12 +54,83 @@ body .background .backphoto #navigation {
 body .background .backphoto #navigation .logo {
   width: 50px;
   height: auto;
-  padding-right: 200px;
 }
 
 body .background .backphoto #navigation .logo a img {
   width: auto;
   height: 60px;
+}
+
+body .background .backphoto #navigation .admin-navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 10000;
+}
+
+body .background .backphoto #navigation .admin-navigation .admin-menu {
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-left: 1px solid #E1E1E1;
+  border-right: 1px solid #E1E1E1;
+}
+
+body .background .backphoto #navigation .admin-navigation .admin-menu ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+
+body .background .backphoto #navigation .admin-navigation .admin-menu ul li {
+  padding: 5px 7px;
+  margin: 10px;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+body .background .backphoto #navigation .admin-navigation .admin-menu ul li a {
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  line-height: 1.42em;
+  color: #E1E1E1;
+}
+
+body .background .backphoto #navigation .admin-navigation .admin-menu ul li:hover {
+  border-bottom: 1px solid #E1E1E1;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+  -webkit-transition: 0.8s all;
+  transition: 0.8s all;
+  -webkit-transition-timing-function: line;
+          transition-timing-function: line;
 }
 
 body .background .backphoto #navigation .menu ul {
@@ -121,102 +192,6 @@ body .background .backphoto #navigation .logadmin a {
   text-decoration: none;
   font-size: 25px;
   color: #E1E1E1;
-}
-
-body .background .backphoto #admin-navigation {
-  position: fixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  top: 120px;
-  right: 50px;
-  max-width: 12vw;
-  height: auto;
-  z-index: 10000;
-  background-color: rgba(0, 0, 0, 0.5);
-  border: 0.5px solid #E1E1E1;
-  border-radius: 5px;
-}
-
-body .background .backphoto #admin-navigation .admin-menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  margin: 0;
-}
-
-body .background .backphoto #admin-navigation .admin-menu ul {
-  list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  padding: 0;
-}
-
-body .background .backphoto #admin-navigation .admin-menu ul li {
-  padding: 10px 7px;
-  margin: 2px;
-  -webkit-transition: all 0.6s ease-in-out;
-  transition: all 0.6s ease-in-out;
-}
-
-body .background .backphoto #admin-navigation .admin-menu ul li a {
-  text-decoration: none;
-  font-size: 16px;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
-  line-height: 1.42em;
-  color: #E1E1E1;
-}
-
-body .background .backphoto #admin-navigation .admin-menu ul li a:hover:last-child {
-  color: #E1E1E1;
-}
-
-body .background .backphoto #admin-navigation .admin-menu ul li:hover {
-  border-bottom: 1px solid #E1E1E1;
-  -webkit-transition-delay: 0s;
-          transition-delay: 0s;
-  -webkit-transition-duration: 0.8s;
-          transition-duration: 0.8s;
-  -webkit-transition: 0.8s all;
-  transition: 0.8s all;
-  -webkit-transition-timing-function: line;
-          transition-timing-function: line;
-}
-
-body .background .backphoto #admin-navigation .admin-menu ul li:last-child {
-  padding: 10px 15px;
-  margin: 10px;
-  border: 1px solid #E1E1E1;
-}
-
-body .background .backphoto #admin-navigation .admin-menu ul li:hover:last-child {
-  background-color: rgba(255, 255, 255, 0.1);
-  -webkit-transition: 0.8s all;
-  transition: 0.8s all;
 }
 
 body .background .backphoto #reservation {
@@ -347,14 +322,14 @@ body .background .backphoto #formTemplate {
 body .background .backphoto #formTemplate .section-header {
   text-align: center;
   margin: 0 auto;
-  padding-top: 50px;
+  padding-top: 15px;
   color: #E1E1E1;
   font-family: 'Oswald', sans-serif;
   font-weight: 300;
-  font-size: 40px;
+  font-size: 50px;
   line-height: 1.42em;
-  margin-bottom: 10%;
-  letter-spacing: 0.8px;
+  margin-bottom: 15px;
+  letter-spacing: 0.4px;
 }
 
 body .background .backphoto #formTemplate .contact-wrapper {
