@@ -4,9 +4,10 @@ certifi==2019.11.28
 chardet==3.0.4
 colorama==0.4.3
 decorator==4.4.1
-Django==3.0.3
+Django==2.2.10
 django-appconf==1.0.3
 django-compressor==2.4
+django-cors-headers==3.2.1
 django-debug-toolbar==2.2
 django-environ==0.4.5
 django-extensions==2.2.6
@@ -20,8 +21,13 @@ ipython==7.11.1
 ipython-genutils==0.2.0
 jedi==0.15.2
 libsass==0.19.4
+node==0.9.24
+npm==0.1.1
+odict==1.7.0
+optional-django==0.1.0
 parso==0.5.2
 pickleshare==0.7.5
+plumber==1.5
 prompt-toolkit==3.0.2
 psycopg2==2.8.4
 Pygments==2.5.2
@@ -36,3 +42,11 @@ urllib3==1.25.8
 wcwidth==0.1.8
 whitenoise==5.0.1
 wincertstore==0.2
+zope.component==4.6
+zope.deferredimport==4.3.1
+zope.deprecation==4.4.0
+zope.event==4.4
+zope.hookable==5.0.0
+zope.interface==4.7.1
+zope.lifecycleevent==4.3
+zope.proxy==4.3.3
