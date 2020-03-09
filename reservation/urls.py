@@ -8,7 +8,7 @@ urlpatterns = [
     path('list/<int:pk>/', views.reservation_details, name='reservation_details'),
     path('<int:pk>/edit/', views.ReservationEdition.as_view(), name='reservation_edition'),
     path('<int:pk>/delete/', views.ReservationDelete.as_view(), name='reservation_delete'),
-    path('bar-availability/', views.bar_availability, name='bar_availability'),
-    path('create/confirm/', views.ConfirmPage.as_view(), name='confirm'),
+    # path('bar-availability/', views.bar_availability, name='bar_availability'),
+    path('create/confirm/', views.ConfirmReservation.as_view(), name='confirm'),
 
 ]

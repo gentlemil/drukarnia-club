@@ -9,7 +9,8 @@ urlpatterns = [
     path('', include('homepage.urls')),
     path('menu/', include('menu.urls')),
     path('reservation/', include('reservation.urls')),
-    # path('accounts/', include('accounts.urls')),
+    path('blog/', include('blog.urls')),
+    path('account/', include('account.urls')),
 
 ]
 

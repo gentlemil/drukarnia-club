@@ -100,7 +100,7 @@ def bar_availability(request):
     return render(request, 'reservation/availability.html', context)
 
 # /reservation/confirm/ --- widok potwierdzenia zlozenia rezerwacji
-class ConfirmPage(TemplateView):
+class ConfirmReservation(TemplateView):
 
     template_name = "reservation/confirm.html"
 

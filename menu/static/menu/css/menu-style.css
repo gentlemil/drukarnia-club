@@ -433,7 +433,7 @@ body .background .backphoto #menuProductList .wrapper .container .tbl-content ta
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-body .background .backphoto #deleteProduct {
+body .background .backphoto #menuDelete {
   height: auto;
   max-width: 100vw;
   margin-top: 100px;
@@ -441,7 +441,7 @@ body .background .backphoto #deleteProduct {
   overflow: hidden;
 }
 
-body .background .backphoto #deleteProduct .section-header {
+body .background .backphoto #menuDelete .section-header {
   width: 70%;
   margin: 0 auto;
   padding-top: 5px;
@@ -455,14 +455,14 @@ body .background .backphoto #deleteProduct .section-header {
   letter-spacing: 0.01em;
 }
 
-body .background .backphoto #deleteProduct .section-header h1 {
+body .background .backphoto #menuDelete .section-header h1 {
   font-size: 60px;
   font-weight: 300;
   color: #E1E1E1;
   font-family: 'Oswald', sans-serif;
 }
 
-body .background .backphoto #deleteProduct .section-header h3 {
+body .background .backphoto #menuDelete .section-header h3 {
   color: #E1E1E1;
   font-family: 'Oswald', sans-serif;
   font-size: 22px;
@@ -471,7 +471,7 @@ body .background .backphoto #deleteProduct .section-header h3 {
   padding: 0;
 }
 
-body .background .backphoto #deleteProduct .contact-wrapper {
+body .background .backphoto #menuDelete .contact-wrapper {
   max-width: 100vw;
   height: auto;
   margin: 10px 50px 50px 50px;
@@ -491,7 +491,7 @@ body .background .backphoto #deleteProduct .contact-wrapper {
   background-color: rgba(14, 6, 1, 0.3);
 }
 
-body .background .backphoto #deleteProduct .contact-wrapper form .send-button {
+body .background .backphoto #menuDelete .contact-wrapper form .send-button {
   padding: 10px 15px;
   margin: 10px 40%;
   background-color: transparent;
@@ -502,12 +502,12 @@ body .background .backphoto #deleteProduct .contact-wrapper form .send-button {
   transition: all .2s ease-in-out;
 }
 
-body .background .backphoto #deleteProduct .contact-wrapper form .send-button .button {
+body .background .backphoto #menuDelete .contact-wrapper form .send-button .button {
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
 }
 
-body .background .backphoto #deleteProduct .contact-wrapper form .send-button .button .send-text {
+body .background .backphoto #menuDelete .contact-wrapper form .send-button .button .send-text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -521,16 +521,79 @@ body .background .backphoto #deleteProduct .contact-wrapper form .send-button .b
   color: rgba(225, 225, 225, 0.788);
 }
 
-body .background .backphoto #deleteProduct .contact-wrapper form .send-button .button .send-text:hover {
+body .background .backphoto #menuDelete .contact-wrapper form .send-button .button .send-text:hover {
   color: #E1E1E1;
 }
 
-body .background .backphoto #deleteProduct .contact-wrapper form .send-button:hover {
+body .background .backphoto #menuDelete .contact-wrapper form .send-button:hover {
   background-color: rgba(70, 46, 0, 0.4);
   border: 1px solid #E1E1E1;
 }
 
-body .background .backphoto #footer {
+body .background .backphoto #menuConfirm {
+  height: auto;
+  max-width: 100vw;
+  margin-top: 100px;
+  padding-bottom: 100px;
+  overflow: hidden;
+}
+
+body .background .backphoto #menuConfirm .section-header {
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 5px;
+  padding-bottom: 50px;
+  color: #E1E1E1;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  text-align: center;
+  line-height: 1em;
+  letter-spacing: 0.01em;
+}
+
+body .background .backphoto #menuConfirm .section-header h1 {
+  font-size: 60px;
+  font-weight: 300;
+  color: #E1E1E1;
+  font-family: 'Oswald', sans-serif;
+}
+
+body .background .backphoto #menuConfirm .contact-wrapper {
+  max-width: 100vw;
+  height: auto;
+  margin: 10px 50px 50px 50px;
+  padding-right: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  border: 1px solid #E1E1E1;
+  border-radius: 10px;
+  background-color: rgba(14, 6, 1, 0.3);
+}
+
+body .background .backphoto #menuConfirm .contact-wrapper h3 {
+  color: #E1E1E1;
+  font-family: 'Oswald', sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+
+body .background .backphoto #menuConfirm .contact-wrapper .send-button:hover {
+  background-color: rgba(70, 46, 0, 0.4);
+  border: 1px solid #E1E1E1;
+}
+
+body .background #footer {
   max-width: 100vw;
   width: 100%;
   height: 90px;
@@ -539,7 +602,7 @@ body .background .backphoto #footer {
   background-color: rgba(14, 6, 1, 0.85);
 }
 
-body .background .backphoto #footer .container {
+body .background #footer .container {
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -556,7 +619,7 @@ body .background .backphoto #footer .container {
   overflow: hidden;
 }
 
-body .background .backphoto #footer .container .footer-sign {
+body .background #footer .container .footer-sign {
   margin: 0;
   padding-left: 15vw;
   display: -webkit-box;
@@ -570,7 +633,7 @@ body .background .backphoto #footer .container .footer-sign {
           align-items: center;
 }
 
-body .background .backphoto #footer .container .footer-sign a {
+body .background #footer .container .footer-sign a {
   color: #E1E1E1;
   font-family: 'Oswald', sans-serif;
   font-weight: 300;
@@ -579,19 +642,19 @@ body .background .backphoto #footer .container .footer-sign a {
   margin-right: 10px;
 }
 
-body .background .backphoto #footer .container .footer-sign a img {
+body .background #footer .container .footer-sign a img {
   width: auto;
   height: 40px;
   background-color: transparent;
 }
 
-body .background .backphoto #footer .container .footer-logo {
+body .background #footer .container .footer-logo {
   width: 50px;
   height: auto;
   padding-right: 50px;
 }
 
-body .background .backphoto #footer .container .footer-logo img {
+body .background #footer .container .footer-logo img {
   width: auto;
   height: 50px;
 }

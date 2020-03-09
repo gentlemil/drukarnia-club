@@ -1,0 +1,89 @@
+{% load sass_tags static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>D R U K 2.0 - STRONA GLOWNA</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" href="{% sass_src 'account/css/accountstyle.scss' %}">
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500&display=swap&subset=latin-ext"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- ------------------------------------------------------------------------- -->
+    <!-- ---------------------------- NAVIGATION --------------------------------- -->
+    <!-- ------------------------------------------------------------------------- -->
+    <div class="background">
+        <div class="backphoto">
+
+            <section id="navigation">
+                <div class="logo">
+                    <a href="{% url 'homepage' %}"><img src="{% static 'homepage/img/drukarnia-logo.png' %}"
+                            alt="logo"></a>
+                </div>
+                {% if user.is_authenticated %}
+                <div class="admin-navigation">
+                    <div class="admin-menu">
+                        <ul>
+                            <li><a href="{% url 'menu_create' %}"> NOWE MENU</a></li>
+                            <li><a href="{% url 'reservation_list' %}">LISTA REZERWACJI</a></li>
+                            <li><a href="{% url 'menu_list' %}">LISTA PRODUKTÓW</a></li>
+                            <li><a href="#"><s>NOWY POST</s></a></li>
+                        </ul>
+                    </div>
+                </div>
+                {% endif %}
+                <div class="menu">
+                    <ul>
+                        <li><a href="{% url 'aboutUs' %}">O NAS</a></li>
+                        <li><a href="{% url 'menu' %}">MENU</a></li>
+                        <li><a href="#"><s>WYDARZENIA</s></a></li>
+                        <li><a href="{% url 'barrental' %}">OFERTA</a></li>
+                        <li><a href="{% url 'reservation-create' %}">REZERWACJA</a></li>
+                    </ul>
+                </div>
+                <div class="logadmin">
+                    <a href="#"><i class="fas fa-chess-knight"></i></a>
+                </div>
+            </section>
+
+
+            <!-- ----------------------------- -->
+
+            {% block content %}{% endblock %}
+
+            <!-- ----------------------------- -->
+
+
+            <section id="footer">
+                <div class="container">
+                    <div class="footer-sign">
+                        ------
+                        <a href="#" target="_blank"> <img src="{% static 'reservation/img/weed.png' %}" alt="logo"></a>
+                        Developed and Design by Gentlemil ------
+                    </div>
+                    <div class="footer-logo">
+                        <img src="{% static 'reservation/img/drukarnia-logo.png' %}" alt="logo">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- JS FILES -->
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'reservation/css/jquery.datetimepicker' %}">
+    <script src="{% static 'reservation/js/jquery.js' %}"></script>
+    <script src="{% static 'reservation/js/build/jquery.datetimepicker.full.min.js' %}"></script>
+    <script src="{% static 'reservation/js/axios.min.js' %}"></script>
+    <script src="{% static 'reservation/js/jquery-3.4.1.min.js' %}"></script> -->
+
+</body>
+
+</html>

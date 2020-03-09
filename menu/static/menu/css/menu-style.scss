@@ -426,7 +426,7 @@ body {
             // ------ DELETE ----------------------------------------------
             // -----------------------------------------------------------
 
-            #deleteProduct {
+            #menuDelete {
                 height: auto;
                 max-width: 100vw;
                 margin-top: 100px;
@@ -520,62 +520,128 @@ body {
                 }
             }
 
+            // -----------------------------------------------------------
+            // ------ DELETE ----------------------------------------------
+            // -----------------------------------------------------------
 
-            // -----------------------------------------------------------
-            // -----------------------------------------------------------
-            // -----------------------------------------------------------
-
-            #footer {
+            #menuConfirm {
+                height: auto;
                 max-width: 100vw;
-                width: 100%;
-                height: 90px;
-                padding: 7px;
-                margin: 0;
-                background-color: rgba(14, 6, 1, 0.85);
+                margin-top: 100px;
+                padding-bottom: 100px;
+                overflow: hidden;
 
-                .container {
-                    width: 100%;
-                    height: 100%;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    border: 1px solid rgba(225, 225, 225, 0.5);
-                    border-radius: 10px;
-                    overflow: hidden;
+                .section-header {
+                    width: 70%;
+                    margin: 0 auto;
+                    padding-top: 5px;
+                    padding-bottom: 50px;
+                    color: $mainFontColor;
+                    font-family: 'Oswald', sans-serif;
+                    font-weight: 300;
+                    font-size: 40px;
+                    text-align: center;
+                    line-height: 1em;
+                    letter-spacing: 0.01em;
 
-                    .footer-sign {
-
-                        margin: 0;
-                        padding-left: 15vw;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-
-                        a {
-                            color: $mainFontColor;
-                            font-family: 'Oswald', sans-serif;
-                            font-weight: 300;
-                            font-size: 20px;
-                            letter-spacing: 0.8px;
-                            margin-right: 10px;
-
-                            img {
-                                width: auto;
-                                height: 40px;
-                                background-color: transparent;
-                            }
-                        }
+                    h1 {
+                        font-size: 60px;
+                        font-weight: 300;
+                        color: $mainFontColor;
+                        font-family: 'Oswald', sans-serif;
                     }
 
-                    .footer-logo {
-                        width: 50px;
-                        height: auto;
-                        padding-right: 50px;
+
+                }
+
+                .contact-wrapper {
+                    max-width: 100vw;
+                    height: auto;
+                    margin: 10px 50px 50px 50px;
+                    padding-right: 25px;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    position: relative;
+                    border: 1px solid $mainFontColor;
+                    border-radius: 10px;
+
+                    background-color: rgba(14, 6, 1, 0.3);
+
+                    h3 {
+                        color: $mainFontColor;
+                        font-family: 'Oswald', sans-serif;
+                        font-size: 22px;
+                        font-weight: 300;
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                    .send-button:hover {
+                        background-color: rgba(70, 46, 0, 0.4);
+                        border: 1px solid $mainFontColor;
+                    }
+                }
+            }
+        }
+
+
+        // -----------------------------------------------------------
+        // -----------------------------------------------------------
+        // -----------------------------------------------------------
+
+        #footer {
+            max-width: 100vw;
+            width: 100%;
+            height: 90px;
+            padding: 7px;
+            margin: 0;
+            background-color: rgba(14, 6, 1, 0.85);
+
+            .container {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border: 1px solid rgba(225, 225, 225, 0.5);
+                border-radius: 10px;
+                overflow: hidden;
+
+                .footer-sign {
+
+                    margin: 0;
+                    padding-left: 15vw;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    a {
+                        color: $mainFontColor;
+                        font-family: 'Oswald', sans-serif;
+                        font-weight: 300;
+                        font-size: 20px;
+                        letter-spacing: 0.8px;
+                        margin-right: 10px;
 
                         img {
                             width: auto;
-                            height: 50px;
+                            height: 40px;
+                            background-color: transparent;
                         }
+                    }
+                }
+
+                .footer-logo {
+                    width: 50px;
+                    height: auto;
+                    padding-right: 50px;
+
+                    img {
+                        width: auto;
+                        height: 50px;
                     }
                 }
             }

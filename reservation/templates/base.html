@@ -23,7 +23,6 @@
     <!-- ------------------------------------------------------------------------- -->
     <div class="background">
         <div class="backphoto">
-
             <section id="navigation">
                 <div class="logo">
                     <a href="{% url 'homepage' %}"><img src="{% static 'homepage/img/drukarnia-logo.png' %}"
@@ -55,11 +54,7 @@
                 </div>
             </section>
 
-            <!-- ----------------------------- -->
-
-            {% block content %}{% endblock %}
-
-            <!-- ----------------------------- -->
+            <!-- ------------------------------------------------------ -->
 
             <section id="footer">
                 <div class="container">
@@ -73,16 +68,23 @@
                     </div>
                 </div>
             </section>
+
+
+
+            <!-- ----------------------------- -->
+
+            {% block content %}{% endblock %}
+
+            <!-- ----------------------------- -->
+
             <!--  -------  -->
         </div>
     </div>
     <!-- JS FILES -->
-    <link rel="stylesheet" type="text/css" href="{% static 'reservation/css/jquery.datetimepicker' %}">
+    <script src="{% static '/reservation/js/main.js' %}"></script>
     <script src="{% static 'reservation/js/jquery.js' %}"></script>
-    <script src="{% static 'reservation/js/build/jquery.datetimepicker.full.min.js' %}"></script>
-    <script src="{% static 'reservation/js/axios.min.js' %}"></script>
-    <script src="{% static 'reservation/js/jquery-3.4.1.min.js' %}"></script>
-
+    <!-- <script src="{% static 'reservation/js/axios.min.js' %}"></script>
+    <script src="{% static 'reservation/js/jquery-3.4.1.min.js' %}"></script> -->
 </body>
 
 </html>

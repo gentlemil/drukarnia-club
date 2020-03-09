@@ -12,9 +12,9 @@ env = environ.Env(
     ALLOWED_HOSTS=(list, []),
 )
 # .env is in parent directory to 'settings.py'
-# env_file= os.path.join(BASE_DIR, '.env')     #sciezka absolutna do pliku env
+env_file= os.path.join(BASE_DIR, '.env')     #sciezka absolutna do pliku env
 # read from .env file if it exists
-# environ.Env.read_env(env_file)     #laduje zmienne z pliku env do naszego srodowiska
+environ.Env.read_env(env_file)     #laduje zmienne z pliku env do naszego srodowiska
 
 DEBUG = env('DEBUG')
 SECRET_KEY = env('SECRET_KEY')
@@ -23,6 +23,7 @@ ALLOWED_HOSTS = env('ALLOWED_HOSTS')
 # Application definition
 
 INSTALLED_APPS = [
+    'account.apps.AccountConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -33,9 +34,11 @@ INSTALLED_APPS = [
     'django_extensions',
     'sass_processor',
     'compressor',
+    'taggit',
     'reservation.apps.ReservationConfig',
     'homepage.apps.HomepageConfig',
     'menu.apps.MenuConfig',
+    'blog.apps.BlogConfig',
 
 ]
 
@@ -77,7 +80,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'restaurant.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
@@ -89,7 +91,6 @@ DATABASES = {
     # zamieniamy dla heroku tak jak ponizej:
     'default': env.db(),
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -109,7 +110,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
@@ -118,7 +118,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
@@ -139,5 +138,8 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 #     os.path.join(BASE_DIR, '/static'),
 # ]
 
-LOGIN_REDIRECT_URL = '/login'
-LOGOUT_REDIRECT_URL = '/logout'
+LOGIN_REDIRECT_URL = 'dashboard'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
