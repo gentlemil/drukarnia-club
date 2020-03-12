@@ -1,9 +1,9 @@
 import os
-import django_heroku
+
 import environ
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-# directory to file mamnage.py
+# directory to file manage.py
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))      #sciezka absolutna do pliku manage.py
 
 env = environ.Env(
@@ -142,4 +142,20 @@ LOGOUT_URL = 'logout'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-django_heroku.settings(locals())
+# # --------
+# import dj_database_url
+# DATABASES['default'] =  dj_database_url.config()
+
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# ALLOWED_HOSTS = ['*']
+
+# STATIC_ROOT = 'staticfiles'
+
+# DEBUG = False
+
+# try:
+#     from .local_settings import *
+# except ImportError:
+#     pass
+# # --------
