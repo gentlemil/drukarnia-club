@@ -32,6 +32,7 @@ plumber==1.5
 prompt-toolkit==3.0.2
 psycopg2==2.8.4
 Pygments==2.5.2
+python-decouple==3.3
 pytz==2019.3
 rcssmin==1.0.6
 requests==2.22.0
