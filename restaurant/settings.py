@@ -1,6 +1,5 @@
 import os
-# from decouple import config
-# import dj_database_url
+import django_heroku
 import environ
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -17,9 +16,9 @@ env_file= os.path.join(BASE_DIR, '.env')     #sciezka absolutna do pliku env
 # read from .env file if it exists
 environ.Env.read_env(env_file)     #laduje zmienne z pliku env do naszego srodowiska
 
-# DEBUG = env('DEBUG')
-# SECRET_KEY = env('SECRET_KEY')
-# ALLOWED_HOSTS = env('ALLOWED_HOSTS')
+DEBUG = env('DEBUG')
+SECRET_KEY = env('SECRET_KEY')
+ALLOWED_HOSTS = env('ALLOWED_HOSTS')
 
 # Application definition
 
@@ -56,6 +55,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'restaurant.urls'
 
