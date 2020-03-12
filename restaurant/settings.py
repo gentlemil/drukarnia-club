@@ -5,7 +5,7 @@ import environ
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 # directory to file manage.py
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))      #sciezka absolutna do pliku manage.py
-
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 env = environ.Env(
     #defaul types and values
     DEBUG=(bool, False),
@@ -128,13 +128,14 @@ STATICFILES_FINDERS = [
     
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-SASS_PROCESOR_ROOT = STATIC_ROOT
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+SASS_PROCESOR_ROOT = STATIC_ROOT
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, '/static'),
+    os.path.join(BASE_DIR, 'static'),
 ]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
