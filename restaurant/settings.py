@@ -3,7 +3,7 @@ import os
 import environ
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-# directory to file mamnage.py
+# directory to file manage.py
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))      #sciezka absolutna do pliku manage.py
 
 env = environ.Env(
@@ -16,9 +16,9 @@ env_file= os.path.join(BASE_DIR, '.env')     #sciezka absolutna do pliku env
 # read from .env file if it exists
 environ.Env.read_env(env_file)     #laduje zmienne z pliku env do naszego srodowiska
 
-DEBUG = env('DEBUG')
-SECRET_KEY = env('SECRET_KEY')
-ALLOWED_HOSTS = env('ALLOWED_HOSTS')
+# DEBUG = env('DEBUG')
+# SECRET_KEY = env('SECRET_KEY')
+# ALLOWED_HOSTS = env('ALLOWED_HOSTS')
 
 # Application definition
 
@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'sass_processor',
     'compressor',
-    'taggit',
+    # 'taggit',
     'reservation.apps.ReservationConfig',
     'homepage.apps.HomepageConfig',
     'menu.apps.MenuConfig',
@@ -132,9 +132,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 SASS_PROCESOR_ROOT = STATIC_ROOT
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, '/static'),
-# ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, '/static'),
+]
 
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGIN_URL = 'login'
