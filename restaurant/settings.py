@@ -42,8 +42,6 @@ INSTALLED_APPS = [
 
 ]
 
-
-
 MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',      # <---- to tez dopisujemy na samej gorze to doinsatalowaniu paczek
     'django.middleware.security.SecurityMiddleware',
@@ -55,8 +53,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'restaurant.urls'
 
@@ -145,3 +141,5 @@ LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+django_heroku.settings(locals())
