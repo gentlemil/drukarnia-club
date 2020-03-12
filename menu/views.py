@@ -23,7 +23,7 @@ def index(request):
 # @login_required
 def menu_list(request):
 
-    products = Product.objects.all().order_by('price')
+    products = Product.objects.all().order_by('price').order_by('prize')
     categories = TypeOfProduct.objects.all().prefetch_related('product_set')
     
     context = {
@@ -41,6 +41,10 @@ def menu_list(request):
 # @login_required
 def menu_create(request):
 
+    typeofproduct = TypeOfProduct.objects.all()
+    products = Product.objects.all().order_by('price')
+    categories = TypeOfProduct.objects.all().prefetch_related('product_set')
+
     if request.method == 'POST':
         form = ProductForm(request.POST)
         if form.is_valid():
@@ -50,7 +54,9 @@ def menu_create(request):
         form = ProductForm()     # ---> trzeba zaimportowac suggestionform
    
     context = {
-        'title': 'Sugestia ankiety',
+        'typeofproduct': typeofproduct,
+        'categories': categories,
+        'products': products,
         'form': form,
     }
     return render(request, 'menu/menucreate.html', context)
@@ -59,14 +65,14 @@ def menu_create(request):
 def menu_details(request, pk):
 
     rd = get_object_or_404(Product, pk=pk)
-    # products = Product.objects.all().order_by('price')
-    # categories = TypeOfProduct.objects.all().prefetch_related('product_set')
+    products = Product.objects.all().order_by('price')
+    categories = TypeOfProduct.objects.all().prefetch_related('product_set')
     
     context = {
         'title': rd.name,
         'product': rd,
-        # 'categories': categories,
-        # 'products': products,
+        'categories': categories,
+        'products': products,
 
     }
     return render(request, 'menu/menudetails.html', context)
@@ -76,7 +82,7 @@ class MenuDelete(LoginRequiredMixin, DeleteView):
     template_name = 'menu/menudelete.html'
 
     def get_success_url(self):
-        return reverse_lazy('confirm')
+        return reverse_lazy('menu_confirm')
 
 
 class ConfirmMenuPage(TemplateView):

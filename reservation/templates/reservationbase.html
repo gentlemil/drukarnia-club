@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <link rel="stylesheet" href="{% sass_src 'homepage/css/homepagestyle.scss' %}">
+    <link rel="stylesheet" href="{% sass_src 'reservation/css/reservation-style.scss' %}">
 
     <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500&display=swap&subset=latin-ext"
         rel="stylesheet">
@@ -18,7 +19,6 @@
 </head>
 
 <body>
-
     <nav class="menu">
         <div class="photo">
             <a class="logo" href="{% url 'homepage' %}"><img src="{% static 'homepage/img/drukarnia-logo.png' %}"
@@ -76,6 +76,19 @@
             {% endif %}
         </div>
     </nav>
+
+    <!-- <div class="content">
+        <ul class="cb-slideshow">
+            <li><span>Image 01</span>
+            </li>
+            <li><span>Image 02</span>
+            </li>
+            <li><span>Image 03</span>
+            </li>
+            <li><span>Image 04</span>
+            </li>
+        </ul>
+    </div> -->
 
     {% block content %}
 

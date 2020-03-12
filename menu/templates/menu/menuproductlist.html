@@ -1,57 +1,62 @@
 {% extends "menubase.html"%}
 {% load sass_tags static %}
 
-
 {% block content %}
 
+<section id="menuList">
+    <h1 class="section-header">EDYTUJ MENU</h1>
+    <h3 class="section-description">
+        Tutaj możesz dodać nowy pyszny alkohol dostępny w naszej ofercie i usunąć nie potrzebne.
+    </h3>
 
-<section id="menuProductList">
-    <h1 class="section-header">Lista produktów</h1>
-    <div class="wrapper">
-        {% if categories %}
-        {% for type in categories %}
-        <div class="container">
-            <div class="rubric">
-                <ul>
-                    <li>
-                        <h2>{{ type.name }}</h2>
-                    </li>
-                    <li>
-                        <h2>{{ type.amount }}</h2>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="tbl-header">
-                <table cellpadding="0" cellspacing="0" border="0">
-                    <thead>
-                        <tr>
-                            <th>NAZWA</th>
-                            <th>CENA</th>
-                            <th>EDYTUJ</th>
-                        </tr>
-                    </thead>
-                </table>
-            </div>
-            {% for product in type.product_set.all %}
-            <div class="tbl-content">
-                <table cellpadding="0" cellspacing="0" border="0">
-                    <tbody>
-                        <tr>
-                            <td>{{ product.name }}</td>
-                            <td>{{ product.prize }}</td>
-                            <td><a href="{% url 'menu_delete' pk=product.pk %}"><i class="fas fa-book-open"></i></a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+    <div class="contact-wrapper">
+        <div class="contentList">
+            {% for type in categories %}
+            <div class="mixture">
+                <div class="rubric">
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>
+                                    <h2>{{ type.name }}</h2>
+                                </td>
+                                <td>
+                                    <h2>{{ type.amount }}</h2>
+                                </td>
+                                <td>
+                                    <h2 class="shake"><a href="{% url 'menu_create' %}"><i
+                                                class="fas fa-wine-bottle"></i></a>
+                                    </h2>
+                                </td>
+                            </tr>
+                        </thead>
+                        {% for product in type.product_set.all %}
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h3>{{ product.name }}</h3>
+                                </td>
+                                <td>
+                                    <h3>{{ product.prize }}</h3>
+                                </td>
+                                <td>
+                                    <h3 class="shake"><a href="{% url 'menu_delete' pk=product.pk %}"><i
+                                                class="far fa-trash-alt"></i></a></h3>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>opis alkoholu, rodzaj, kraj pochodzenia</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                        {% endfor %}
+                    </table>
+                </div>
             </div>
             {% endfor %}
         </div>
-        {% endfor %}
-        {% endif %}
     </div>
 </section>
-
 
 {% endblock %}

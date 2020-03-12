@@ -2,12 +2,13 @@
 
 {% block content %}
 
-<section id="menuConfirm">
-    <div class="section-header">
-        <h1>PRODUKT USUNIETY</h1>
-    </div>
-    <div class="contact-wrapper">
-        <h3>PRODUKT USUNIETY</h3>
+<section id="menuList">
+    <h1 class="section-header">POTWIERDZENIE </h1>
+    <div class="confirm-wrapper">
+        <p class="confirm">Produkt został usunięty.</p>
+        <div class="button">
+            <a href="{% url 'reservation-create' %}">WRÓĆ DO MENU</a>
+        </div>
     </div>
 </section>
 

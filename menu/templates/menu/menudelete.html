@@ -1,22 +1,20 @@
 {% extends "menubase.html"%}
+{% load sass_tags static %}
 
 {% block content %}
 
-<section id="menuDelete">
-    <div class="section-header">
-        <h1>USUWANIE PRODUKTU</h1>
-    </div>
+<section id="menuList">
+    <h1 class="section-header">USUWANIE </h1>
     <div class="contact-wrapper">
         <form method="post">
             {% csrf_token %}
-            <p>Are you sure you want to delete "{{ object }}"?</p>
+            <p>Na pewno chcesz usunąć "{{ object }} z naszego menu"?</p>
             <button class="send-button" name="submit" type="submit" id="submit" data-submit="...Sending" value="SEND">
                 <div class="button">
-                    <span class="send-text">USUŃ</span>
+                    <span class="send-text">TAK, USUŃ!</span>
                 </div>
             </button>
         </form>
-
     </div>
 </section>
 

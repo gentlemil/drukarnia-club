@@ -2,8 +2,20 @@
 {% load sass_tags static %}
 
 {% block content %}
+<div class="content">
+    <ul class="cb-slideshow">
+        <li><span>Image 01</span>
+        </li>
+        <li><span>Image 02</span>
+        </li>
+        <li><span>Image 03</span>
+        </li>
+        <li><span>Image 04</span>
+        </li>
+    </ul>
+</div>
 
-<section id="about">
+<section id="about-home">
     <div class="container">
         <div class="textone">
             <p>Klub Drukarnia to jeden z najlepiej zlokalizowanych krakowskich lokali.
@@ -12,45 +24,45 @@
         <hr>
         <div class="texttwo">
             <p>Kraków, Stare Podgórze, ul. Nadwiślańska 1</p>
-            <div class="buttonabout">
+            <div class="button-homepage">
                 <a href="{% url 'reservation-create' %}">REZERWACJA</a>
             </div>
         </div>
-
     </div>
-    <!-- krotko o drukarnia, button rezerwacja -->
+    <span class="border_btm"></span>
 </section>
 
-<section id="menu">
+<section id="menu-home">
     <div class="container">
         <div class="textone">
             <p>Twój bar. Twoje miasto.</p>
         </div>
+        <hr>
         <div class="texttwo">
-
-            <div class="buttonmenu">
+            <p></p>
+            <div class="button-homepage">
                 <a href="{% url 'menu' %}">MENU</a>
             </div>
         </div>
         <!-- TASTE. TOUCH. HEAR. EXPERIENCE. twoj bar, twoje miasto, button menu -->
 </section>
 
-<section id="event">
+<section id="event-home">
     <div class="container">
         <div class="textone">
             <p>WYDARZENIA</p>
         </div>
         <div class="texttwo">
             <p>Z życia Drukarni.</p>
-            <div class="buttonevent">
+            <div class="button-homepage">
                 <a href="#">WIĘCEJ</a>
             </div>
         </div>
-        <!-- ostatnio w druku, button zobacz wiecej -->
+        <span class="border_btm"></span>
 </section>
 
 
-<!-- <section id="gallery">
+<!-- <section id="gallery-home">
     <div class="container">
         <div class="photo-1"></div>
         <div class="photo-2"></div>
@@ -68,76 +80,58 @@
     </div>
 </section> -->
 
-<section id="contact">
-    <h1 class="section-header">Masz pytania? Skontaktuj się z nami!</h1>
-    <div class="container">
-        <form class="form-horizontal direct-contact-container" role="form" method="POST" action="">
+<section id="contact-home">
+    <h1 class="section-header">CONTACT</h1>
+    <div class="contact-wrapper">
+        <form class="form-horizontal" role="form" method="post" action="contact.php">
 
             <div class="form-group">
                 <div class="col-sm-12">
-                    <input type="text" class="form-control" id="name" placeholder="Imię" name="name" value=""
-                        size="50vw">
+                    <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="">
                 </div>
             </div>
-
             <div class="form-group">
                 <div class="col-sm-12">
-                    <input type="email" class="form-control" id="email" placeholder="Podaj adres e-mail" name="email"
-                        value="" size="50vw">
+                    <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="">
                 </div>
             </div>
-
-            <textarea class="form-control" cols="300" rows="10" placeholder="Napisz co Cię trapi :)"
-                name="message"></textarea>
-
+            <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message"></textarea>
             <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
-                <div class="button">
-                    <span class="send-text">WYŚLIJ</span>
+                <div class="button"><span class="send-text">WYŚLIJ WIADOMOŚĆ</span>
                 </div>
             </button>
+
         </form>
-        <hr>
+
         <div class="direct-contact-container">
-
-            <ul class="contact-list">
-                <li class="list-item">
-
-                    <span class="contact-text"><i class="fas fa-map-marker-alt"
-                            style="font-size: 30px;"></i>&emsp;&emsp;Kraków | ul.
-                        Nadwiślańska 1</span>
-                </li>
-
-                <li class="list-item">
-
-                    <span class="contact-text"> <i class="fa fa-phone fa-2x"></i>&emsp;&emsp;+ 48 12 656
-                        6560</span>
-                </li>
-                <li class="list-item">
-
-                    <span class="contact-text">
-                        <a href="mailto:#" title="Send me an email"> <i
-                                class="fa fa-envelope fa-2x"></i>&emsp;&emsp;drukarnia@drukarniaclub.pl</a>
-                    </span>
-                </li>
-            </ul>
-
-            <!-- <hr>
-            <ul class="social-media-list">
-                <li><a href="https://www.facebook.com/DrukarniaKlub/" target="_blank" class="contact-icon">
-                        <i class="fab fa-facebook"></i></a>
-                </li>
-                <li><a href="https://pl.tripadvisor.com/Attraction_Review-g274772-d12197208-Reviews-Drukarnia_Club-Krakow_Lesser_Poland_Province_Southern_Poland.html"
-                        target="_blank" class="contact-icon">
-                        <i class="fab fa-tripadvisor"></i></a>
-                </li>
-                <li><a href="https://www.instagram.com/drukarniaklub/" target="_blank" class="contact-icon">
-                        <i class="fab fa-instagram"></i></a>
-                </li>
-            </ul>
-            <hr> -->
-
+            <table>
+                <tbody>
+                    <tr>
+                        <td><i class="fa fa-map-marker fa-2x"></i></td>
+                        <td>
+                            <p class="contact-text place">KRAKÓW | ul. Nadwiślańska 1</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-phone fa-2x"></i></td>
+                        <td>
+                            <p class="contact-text phone"><a href="tel:48-12 656 6560" title="Zadzwoń!">+48 12 656
+                                    6560</a></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa fa-envelope fa-2x"></i></td>
+                        <td>
+                            <p class="contact-text gmail"><a href="mailto:#"
+                                    title="Send me an email">drukarnia@drukarniaclub.pl</a>
+                            </p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </section>
+
 
 {% endblock %}

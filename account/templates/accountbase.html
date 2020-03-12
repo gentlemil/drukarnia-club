@@ -10,6 +10,7 @@
     <title>D R U K 2.0 - STRONA GLOWNA</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" href="{% sass_src 'homepage/css/homepagestyle.scss' %}">
     <link rel="stylesheet" href="{% sass_src 'account/css/accountstyle.scss' %}">
 
     <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500&display=swap&subset=latin-ext"
@@ -18,71 +19,103 @@
 </head>
 
 <body>
-    <!-- ------------------------------------------------------------------------- -->
-    <!-- ---------------------------- NAVIGATION --------------------------------- -->
-    <!-- ------------------------------------------------------------------------- -->
-    <div class="background">
-        <div class="backphoto">
 
-            <section id="navigation">
-                <div class="logo">
-                    <a href="{% url 'homepage' %}"><img src="{% static 'homepage/img/drukarnia-logo.png' %}"
-                            alt="logo"></a>
-                </div>
+    <nav class="menu">
+        <div class="photo">
+            <a class="logo" href="{% url 'homepage' %}"><img src="{% static 'homepage/img/drukarnia-logo.png' %}"
+                    alt="logo"></a>
+        </div>
+        <ol>
+            <li class="menu-item"><a href="{% url 'aboutUs' %}">O NAS</a></li>
+            <li class="menu-item"><a href="{% url 'barrental' %}">OFERTA</a></li>
+            <li class="menu-item">
+                <a href="#0"><s>BLOG</s></a>
                 {% if user.is_authenticated %}
-                <div class="admin-navigation">
-                    <div class="admin-menu">
-                        <ul>
-                            <li><a href="{% url 'menu_create' %}"> NOWE MENU</a></li>
-                            <li><a href="{% url 'reservation_list' %}">LISTA REZERWACJI</a></li>
-                            <li><a href="{% url 'menu_list' %}">LISTA PRODUKTÓW</a></li>
-                            <li><a href="#"><s>NOWY POST</s></a></li>
-                        </ul>
-                    </div>
-                </div>
+                <ol class="sub-menu">
+                    <li class="menu-item"><a href="#0">WIDOK</a></li>
+                    <li class="menu-item"><a href="#0">NOWY POST</a></li>
+                    <li class="menu-item"><a href="#0">EDYCJA</a></li>
+                </ol>
                 {% endif %}
-                <div class="menu">
-                    <ul>
-                        <li><a href="{% url 'aboutUs' %}">O NAS</a></li>
-                        <li><a href="{% url 'menu' %}">MENU</a></li>
-                        <li><a href="#"><s>WYDARZENIA</s></a></li>
-                        <li><a href="{% url 'barrental' %}">OFERTA</a></li>
-                        <li><a href="{% url 'reservation-create' %}">REZERWACJA</a></li>
+            </li>
+            <li class="menu-item">
+                <a href="{% url 'menu' %}">MENU</a>
+                {% if user.is_authenticated %}
+                <ol class="sub-menu">
+                    <li class="menu-item"><a href="{% url 'menu_list' %}">LISTA PRODUKTÓW</a></li>
+                    <li class="menu-item"><a href="{% url 'menu_create' %}">DODAJ PRODUKT</a></li>
+                </ol>
+                {% endif %}
+            </li>
+            {% if user.is_authenticated %}
+            <li class="menu-item">
+                <a href="#0"><s>UŻYTKOWNICY</s></a>
+                <ol class="sub-menu">
+                    <li class="menu-item"><a href="#0">ZOBACZ WSZYSTKICH</a></li>
+                    <li class="menu-item"><a href="#0">DODAJ NOWEGO</a></li>
+                    <li class="menu-item"><a href="#0">EDYTUJ DANE</a></li>
+                </ol>
+            </li>
+            {% endif %}
+            <li class="menu-item">
+                <a href="{% url 'reservation-create' %}">REZERWACJA</a>
+                {% if user.is_authenticated %}
+                <ol class="sub-menu">
+                    <li class="menu-item"><a href="{% url 'reservation_list' %}">ZOBACZ REZERWACJE</a></li>
+                    <li class="menu-item"><a href="{% url 'reservation-create' %}">DODAJ NOWĄ</a></li>
+                </ol>
+                {% endif %}
+            </li>
+        </ol>
+        <div class="user">
+            <span><i class="fas fa-user"></i></span>
+            {% if request.user.is_authenticated %}
+            Hej {{ request.user.first_name }},
+            <a href="{% url 'logout' %}"><span>WYLOGUJ</span></a>
+            {% else %}
+            <a href="{% url 'login' %}"><span>ZALOGUJ</span></a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <!-- <div class="content">
+        <ul class="cb-slideshow">
+            <li><span>Image 01</span>
+            </li>
+            <li><span>Image 02</span>
+            </li>
+            <li><span>Image 03</span>
+            </li>
+            <li><span>Image 04</span>
+            </li>
+        </ul>
+    </div> -->
+
+    {% block content %}
+
+    {% endblock %}
+
+    <footer class="site-footer">
+        <hr>
+        <div class="container">
+            <div class="row">
+                <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by
+                    <a href="#">Gentlemil</a>.
+                </p>
+                <div class="icons">
+                    <ul class="social-icons">
+                        <li><a href="https://www.facebook.com/DrukarniaKlub/" target="_blank" class="contact-icon">
+                                <i class="fab fa-facebook"></i></a></li>
+                        <li><a href="https://www.instagram.com/drukarniaklub/" target="_blank" class="contact-icon">
+                                <i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://pl.tripadvisor.com/Attraction_Review-g274772-d12197208-Reviews-Drukarnia_Club-Krakow_Lesser_Poland_Province_Southern_Poland.html"
+                                target="_blank" class="contact-icon">
+                                <i class="fab fa-tripadvisor"></i></a></li>
                     </ul>
                 </div>
-                <div class="logadmin">
-                    <a href="#"><i class="fas fa-chess-knight"></i></a>
-                </div>
-            </section>
-
-
-            <!-- ----------------------------- -->
-
-            {% block content %}{% endblock %}
-
-            <!-- ----------------------------- -->
-
-
-            <section id="footer">
-                <div class="container">
-                    <div class="footer-sign">
-                        ------
-                        <a href="#" target="_blank"> <img src="{% static 'reservation/img/weed.png' %}" alt="logo"></a>
-                        Developed and Design by Gentlemil ------
-                    </div>
-                    <div class="footer-logo">
-                        <img src="{% static 'reservation/img/drukarnia-logo.png' %}" alt="logo">
-                    </div>
-                </div>
-            </section>
+            </div>
         </div>
-    </div>
-    <!-- JS FILES -->
-    <!-- <link rel="stylesheet" type="text/css" href="{% static 'reservation/css/jquery.datetimepicker' %}">
-    <script src="{% static 'reservation/js/jquery.js' %}"></script>
-    <script src="{% static 'reservation/js/build/jquery.datetimepicker.full.min.js' %}"></script>
-    <script src="{% static 'reservation/js/axios.min.js' %}"></script>
-    <script src="{% static 'reservation/js/jquery-3.4.1.min.js' %}"></script> -->
+    </footer>
 
 </body>
 

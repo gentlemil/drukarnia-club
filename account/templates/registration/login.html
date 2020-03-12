@@ -4,25 +4,47 @@
 
 {% block content %}
 
-<h1>Log-in</h1>
-{% if form.errors %}
-<p>
-    Your username and password didn't match.
-    Please try again.
-</p>
-{% else %}
-<p>Please, use the following form to log-in. If you don't have an account <a href="{% url 'register' %}">register
-        here</a></p>
-{% endif %}
-<div class="login-form">
-    <form action="{% url 'login' %}" method="post">
-        {{ form.as_p }}
-        {% csrf_token %}
-        <input type="hidden" name="next" value="{{ next }}" />
-        <p><input type="submit" value="Log-in"></p>
-    </form>
-    <p><a href="{% url 'password_reset' %}">Forgotten your
-            password?</a></p>
-</div>
+<section id="login">
+
+    <h1 class="section-header">ZALOGUJ SIĘ</h1>
+    {% if form.errors %}
+    <p>
+        Login lub hasło jest nieprawidłowe. Spróbuj ponownie.
+    </p>
+    {% endif %}
+    <div class="contact-wrapper">
+        <form class="form-horizontal" role="form" method="POST" action="">
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" id="id_name" placeholder="LOGIN" name="username"
+                        maxlength="250" required value="" size="60px">
+                </div>
+            </div>
+            <input type="password" name="password" required id="id_password" class="form-control" placeholder="HASŁO"
+                size="60px">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ next }}">
+            <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+                <div class="button">
+                    <p class="send-text">ZALOGUJ</p>
+                </div>
+            </button>
+        </form>
+        <div class="direct-contact-container">
+            <ul class="contact-list">
+                <li class="list-item"><i class="fa fa-map-marker fa-2x">
+                        <span class="contact-text phone">
+                            <a href="{% url 'password_reset' %}">ODZYSKAJ HASŁO</a>
+                        </span></i>
+                </li>
+                <li class="list-item"><i class="fa fa-phone fa-2x">
+                        <span class="contact-text phone">
+                            <a href="{% url 'register' %}">ZAREJESTRUJ SIĘ</a>
+                        </span></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
 
 {% endblock %}

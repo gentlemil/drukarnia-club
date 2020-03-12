@@ -1,8 +1,6 @@
 from django import forms
 from .models import Reservation, Bar
 
-# --- formularz logowania sie
-
 # --- formularz tworzenia nowej rezerwacji
 class ReservationForm(forms.ModelForm):
 

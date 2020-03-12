@@ -4,7 +4,16 @@
 
 {% block content %}
 
-<h1>Logged out</h1>
-<p>You have been successfully logged out. You can <a href="{% url 'login' %}">log-in again</a>.</p>
+<section id="logout">
+    <div class="container">
+        <div class="text">
+            <p>Zostałeś wylogowany. Czy chcesz zalogować się ponownie?</p>
+            <hr>
+            <div class="button-log">
+                <a href="{% url 'login' %}">ZALOGUJ PONOWNIE</a>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
