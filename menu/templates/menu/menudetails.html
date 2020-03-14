@@ -3,79 +3,40 @@
 
 {% block content %}
 
-<section id="menuList">
-    <h1 class="section-header">DODANO PRODUKT</h1>
-    <h3 class="section-description">
-        Szczegóły dodanego produktu:
-    </h3>
-    <div class="container-product-details">
-        <table>
-            <tbody>
-                <tr>
-                    <td>NAZWA PRODUKTU: </td>
-                    <td>{{product.name}}</td>
-                </tr>
-                <tr>
-                    <td>CENA</td>
-                    <td>{{product.prize}}</td>
-                </tr>
-                <tr>
-                    <td>RODZAJ</td>
-                    <td>{{product.types}}</td>
-                </tr>
-            </tbody>
-        </table>
+<section id="menu-site">
+    <div class="header">
+        <h1 class="section-header">SZCZEGÓŁY</h1>
     </div>
+    <div class="container">
+        <div class="left">
+            <!-- <div class="left-create"> -->
+            <table>
+                <tbody>
+                    <tr>
+                        <td>NAZWA PRODUKTU: </td>
+                        <td>{{ product.name }}</td>
+                    </tr>
+                    <tr>
+                        <td>CENA:</td>
+                        <td>{{ product.prize }}</td>
+                    </tr>
+                    <tr>
+                        <td>RODZAJ:</td>
+                        <td>{{ product.types }}</td>
+                    </tr>
+                    <tr>
+                        <td>OPIS:</td>
+                        <td>{{ product.description }}</td>
+                    </tr>
 
-    <div class="contact-wrapper">
-        <div class="contentList">
-            {% for type in categories %}
-            <div class="mixture">
-                <div class="rubric">
-                    <table>
-                        <thead>
-                            <tr>
-                                <td>
-                                    <h2>{{ type.name }}</h2>
-                                </td>
-                                <td>
-                                    <h2>{{ type.amount }}</h2>
-                                </td>
-                                <td>
-                                    <h2 class="shake"><a href="{% url 'menu_create' %}"><i
-                                                class="fas fa-wine-bottle"></i></a>
-                                    </h2>
-                                </td>
-                            </tr>
-                        </thead>
-                        {% for product in type.product_set.all %}
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <h3>{{ product.name }}</h3>
-                                </td>
-                                <td>
-                                    <h3>{{ product.prize }}</h3>
-                                </td>
-                                <td>
-                                    <h3 class="shake"><a href="{% url 'menu_delete' pk=product.pk %}"><i
-                                                class="far fa-trash-alt"></i></a></h3>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p>opis alkoholu, rodzaj, kraj pochodzenia</p>
-                                </td>
-                            </tr>
-                        </tbody>
-                        {% endfor %}
-                    </table>
-                </div>
-            </div>
-            {% endfor %}
+                </tbody>
+            </table>
+            <!-- </div> -->
         </div>
     </div>
 </section>
 
 {% endblock %}
-<!-- ----------------------------------------------------------- -->
+
+<!-- --------------------- -->
+<!-- --------------------- -->

@@ -14,53 +14,53 @@
         </li>
     </ul>
 </div>
+<!-- -------------------- -->
 
-<section id="about-home">
+<section id="single-homepage-section">
     <div class="container">
-        <div class="textone">
-            <p>Klub Drukarnia to jeden z najlepiej zlokalizowanych krakowskich lokali.
+        <div class="left">
+            <p class="home-text">Klub Drukarnia to jeden z najlepiej zlokalizowanych krakowskich lokali.
                 Położony jest tuż nad Wisłą, w dawnej przemysłowej dzielnicy Krakowa – Podgórzu.</p>
-        </div>
-        <hr>
-        <div class="texttwo">
-            <p>Kraków, Stare Podgórze, ul. Nadwiślańska 1</p>
-            <div class="button-homepage">
-                <a href="{% url 'reservation-create' %}">REZERWACJA</a>
-            </div>
+            <hr>
+            <p class="home-text">Kraków, Stare Podgórze, ul. Nadwiślańska 1</p>
+            <ul class="option-list">
+                <li>
+                    <a href="{% url 'reservation-create' %}">REZERWACJA</a>
+                </li>
+            </ul>
         </div>
     </div>
-    <span class="border_btm"></span>
 </section>
 
-<section id="menu-home">
+<section id="single-homepage-section">
     <div class="container">
-        <div class="textone">
-            <p>Twój bar. Twoje miasto.</p>
+        <div class="left">
+            <p class="home-text">Twój bar. Twoje miasto!</p>
+            <hr>
+            <p class="home-text">Jesteśmy otwarci codziennie od 9:00. O której zamkniemy zależy już od Was.</p>
+            <ul class="option-list">
+                <li>
+                    <a href="{% url 'menu' %}">MENU</a>
+                </li>
+            </ul>
         </div>
-        <hr>
-        <div class="texttwo">
-            <p></p>
-            <div class="button-homepage">
-                <a href="{% url 'menu' %}">MENU</a>
-            </div>
-        </div>
-        <!-- TASTE. TOUCH. HEAR. EXPERIENCE. twoj bar, twoje miasto, button menu -->
+    </div>
 </section>
 
-<section id="event-home">
+<section id="single-homepage-section">
     <div class="container">
-        <div class="textone">
-            <p>WYDARZENIA</p>
+        <div class="left">
+            <p class="home-text">Z życia Drukarni.</p>
+            <!-- trzy zdjecia koncerty, imprezy, blabla -->
+            <hr>
+            <ul class="option-list">
+                <li>
+                    <a href="{% url 'menu' %}">ZOBACZ WIĘCEJ</a>
+                </li>
+            </ul>
         </div>
-        <div class="texttwo">
-            <p>Z życia Drukarni.</p>
-            <div class="button-homepage">
-                <a href="#">WIĘCEJ</a>
-            </div>
-        </div>
-        <span class="border_btm"></span>
+    </div>
 </section>
-
 
 <!-- <section id="gallery-home">
     <div class="container">
@@ -80,58 +80,498 @@
     </div>
 </section> -->
 
-<section id="contact-home">
-    <h1 class="section-header">CONTACT</h1>
-    <div class="contact-wrapper">
-        <form class="form-horizontal" role="form" method="post" action="contact.php">
+<section id="single-homepage-section">
+    <div class="container">
+        <h1 class="section-header">NAPISZ DO NAS!</h1>
+        <div class="left">
+            <form class="form-horizontal" role="form" method="POST" action="">
+                <input type="text" class="form-input" id="name" placeholder="imie i nazwisko" name="name" value="">
+                <input type="email" class="form-input" id="email" placeholder="e-mail" name="email" value="">
+                <textarea class="form-input" rows="10" placeholder="wpisz treść wiadomości..."
+                    name="message"></textarea>
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ next }}">
+                <span class="btn">
+                    <button class="send-btn" id="submit" type="submit" value="SEND">WYŚLIJ</button>
+                </span>
+            </form>
+        </div>
+        <hr>
+        <div class="right">
 
-            <div class="form-group">
-                <div class="col-sm-12">
-                    <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-12">
-                    <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="">
-                </div>
-            </div>
-            <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message"></textarea>
-            <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
-                <div class="button"><span class="send-text">WYŚLIJ WIADOMOŚĆ</span>
-                </div>
-            </button>
+            <ul class="option-list-icon">
+                <li>
+                    <i class="fa fa-map-marker fa-2x icon-text"></i>
+                </li>
+                <li>
+                    <p class="icon-text">KRAKÓW<br>ul. Nadwiślańska 1</p>
+                </li>
+            </ul>
 
-        </form>
+            <ul class="option-list-icon">
+                <li>
+                    <i class="fa fa-phone fa-2x icon-text"></i>
+                </li>
+                <li>
+                    <p class="icon-text">+48 12 656 65 60</p>
+                </li>
+            </ul>
 
-        <div class="direct-contact-container">
-            <table>
-                <tbody>
-                    <tr>
-                        <td><i class="fa fa-map-marker fa-2x"></i></td>
-                        <td>
-                            <p class="contact-text place">KRAKÓW | ul. Nadwiślańska 1</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><i class="fa fa-phone fa-2x"></i></td>
-                        <td>
-                            <p class="contact-text phone"><a href="tel:48-12 656 6560" title="Zadzwoń!">+48 12 656
-                                    6560</a></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><i class="fa fa-envelope fa-2x"></i></td>
-                        <td>
-                            <p class="contact-text gmail"><a href="mailto:#"
-                                    title="Send me an email">drukarnia@drukarniaclub.pl</a>
-                            </p>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <ul class="option-list-icon">
+                <li>
+                    <i class="fa fa-envelope fa-2x icon-text"></i>
+                </li>
+                <li>
+                    <p class="icon-text">drukarnia@drukarniaclub.pl</p>
+                </li>
+            </ul>
         </div>
     </div>
 </section>
 
-
 {% endblock %}
+<!-- --------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------- -->
+
+<!-- // -------------- GALLERY --------------------------------
+#gallery {
+    height: 400px;
+    max-width: 100vw;
+    margin-top: 200px;
+    padding: 0;
+
+    .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #0e0601;
+        overflow: hidden;
+        position: relative;
+        z-index: 100;
+
+        .photo-1 {
+            position: inherit;
+            width: calc(100%/6);
+            height: calc(100%/2);
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background: url('/static/homepage/img/g1.jpg');
+            background-size: contain;
+            z-index: 10;
+
+            /* 1. obraz bedzie wiekszy, 2. bedzie plynnie sie zwiekszac  */
+            /* 3. obraz bedzie ciemniejszy, .meal-photo backgro-col black*/
+            transform: scale(1);
+            transition: all 0.6s ease-in-out;
+            opacity: 0.5;
+        }
+
+        .photo-1:hover {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+
+        .photo-2 {
+            width: calc(100%/6);
+            height: calc(100%/2);
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background: url('/static/homepage/img/g2.jpg');
+            background-size: contain;
+
+            /* 1. obraz bedzie wiekszy, 2. bedzie plynnie sie zwiekszac  */
+            /* 3. obraz bedzie ciemniejszy, .meal-photo backgro-col black*/
+            transform: scale(1);
+            transition: all 0.6s ease-in-out;
+            opacity: 0.5;
+        }
+
+        .photo-2:hover {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+
+        .photo-3 {
+            width: calc(100%/6);
+            height: calc(100%/2);
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background: url('/static/homepage/img/g3.jpg');
+            background-size: contain;
+
+            /* 1. obraz bedzie wiekszy, 2. bedzie plynnie sie zwiekszac  */
+            /* 3. obraz bedzie ciemniejszy, .meal-photo backgro-col black*/
+            transform: scale(1);
+            transition: all 0.6s ease-in-out;
+            opacity: 0.5;
+        }
+
+        .photo-3:hover {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+
+        .photo-4 {
+            width: calc(100%/6);
+            height: calc(100%/2);
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background: url('/static/homepage/img/g4.jpg');
+            background-size: contain;
+            opacity: 0.5;
+            transition: all 0.6s ease-in-out;
+            opacity: 0.5;
+        }
+
+        .photo-4:hover {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+
+        .photo-5 {
+            width: calc(100%/6);
+            height: calc(100%/2);
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background: url('/static/homepage/img/g5.jpg');
+            background-size: contain;
+            transform: scale(1);
+            transition: all 0.6s ease-in-out;
+            opacity: 0.5;
+
+        }
+
+        .photo-5:hover {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+
+        .photo-6 {
+            width: calc(100%/6);
+            height: calc(100%/2);
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background: url('/static/homepage/img/g6.jpg');
+            background-size: contain;
+            transform: scale(1);
+            transition: all 0.6s ease-in-out;
+            opacity: 0.5;
+
+        }
+
+        .photo-6:hover {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+
+        .photo-7 {
+            width: calc(100%/6);
+            height: calc(100%/2);
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background: url('/static/homepage/img/g7.jpg');
+            background-size: contain;
+            transform: scale(1);
+            transition: all 0.6s ease-in-out;
+            opacity: 0.5;
+
+        }
+
+        .photo-7:hover {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+
+        .photo-8 {
+            width: calc(100%/6);
+            height: calc(100%/2);
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background: url('/static/homepage/img/g8.jpg');
+            background-size: contain;
+            transform: scale(1);
+            transition: all 0.6s ease-in-out;
+            opacity: 0.5;
+
+        }
+
+        .photo-8:hover {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+
+        .photo-9 {
+            width: calc(100%/6);
+            height: calc(100%/2);
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background: url('/static/homepage/img/g9.jpg');
+            background-size: contain;
+            transform: scale(1);
+            transition: all 0.6s ease-in-out;
+            opacity: 0.5;
+
+        }
+
+        .photo-9:hover {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+
+        .photo-10 {
+            width: calc(100%/6);
+            height: calc(100%/2);
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background: url('/static/homepage/img/g10.jpg');
+            background-size: contain;
+            transform: scale(1);
+            transition: all 0.6s ease-in-out;
+            opacity: 0.5;
+
+        }
+
+        .photo-10:hover {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+
+        .photo-11 {
+            width: calc(100%/6);
+            height: calc(100%/2);
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background: url('/static/homepage/img/g11.jpg');
+            background-size: contain;
+            transform: scale(1);
+            transition: all 0.6s ease-in-out;
+            opacity: 0.5;
+
+        }
+
+        .photo-11:hover {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+
+        .photo-12 {
+            width: calc(100%/6);
+            height: calc(100%/2);
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            background: url('/static/homepage/img/g12.jpg');
+            background-size: contain;
+            transform: scale(1);
+            transition: all 0.6s ease-in-out;
+            opacity: 0.5;
+
+        }
+
+        .photo-12:hover {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+    }
+}
+
+// ------------------------------------------------------------------------
+// ---------------------- VIEW - ABOUT ------------------------------------
+// ------------------------------------------------------------------------
+
+#aboutTemplate {
+    height: auto;
+    max-width: 100vw;
+    margin: 0;
+    overflow: hidden;
+    background-color: rgba(38, 39, 43, 0.5);
+
+    .section-header {
+        width: 80%;
+        margin: 0 auto;
+        padding: 110px 5% 50px;
+        color: $mainFontColor;
+        font-family: 'Oswald', sans-serif;
+        font-weight: 300;
+        font-size: 40px;
+        text-align: center;
+        line-height: 1em;
+        letter-spacing: 0.01em;
+
+        h1 {
+            font-size: 60px;
+            font-weight: 300;
+            color: $mainFontColor;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        h3 {
+            color: $mainFontColor;
+            font-family: 'Oswald', sans-serif;
+            font-size: 22px;
+            font-weight: 300;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    .contact-wrapper {
+        max-width: 80vw;
+        height: 60px;
+        margin: 10px 50px 150px 50px;
+        padding: 20px 0;
+        position: relative;
+        border-top: 0.5px solid $mainFontColor;
+        border-bottom: 0.5px solid $mainFontColor;
+
+        .icons {
+            margin-top: 5px;
+            width: 80vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            ul {
+                width: 100%;
+                list-style: none;
+                display: flex;
+                justify-content: space-around;
+
+                li {
+                    i {}
+                }
+            }
+        }
+
+        .icons-titles {
+            margin-top: 5px;
+            width: 80vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            ul {
+                width: 100%;
+                list-style: none;
+                display: flex;
+                justify-content: space-around;
+
+                li {
+                    i {}
+                }
+            }
+        }
+    }
+
+    .content {
+        max-width: 100vw;
+        height: 70vh;
+        margin: 20px 50px 50px 50px;
+
+        position: relative;
+        border: 1px solid $mainFontColor;
+        border-radius: 10px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .map {
+            transition: all 0.6s ease-in-out;
+            opacity: 0.5;
+            max-width: 40%;
+            margin: 0 5%;
+
+        }
+
+        .map:hover {
+            opacity: 1;
+        }
+    }
+
+    .tips {
+        width: 60%;
+        height: 75%;
+        margin: 0 20px;
+        padding: 20px;
+
+        border-left: 1px solid $mainFontColor;
+
+        p {
+            max-width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            justify-content: center;
+        }
+    }
+}
+
+// ------------------------------------------------------------------------
+// ------------------ VIEW - BAR RENTAL - BARRENTAL ------------------------------------
+// ------------------------------------------------------------------------
+
+#barRental {
+    height: auto;
+    max-width: 100vw;
+    margin: 0;
+    overflow: hidden;
+    background-color: rgba(14, 6, 1, 0.8);
+
+    .section-header {
+        width: 80%;
+        margin: 0 auto;
+        padding: 110px 5% 50px;
+        color: $mainFontColor;
+        font-family: 'Oswald', sans-serif;
+        font-weight: 300;
+        font-size: 40px;
+        text-align: center;
+        line-height: 1em;
+        letter-spacing: 0.01em;
+
+        h1 {
+            font-size: 60px;
+            font-weight: 300;
+            color: $mainFontColor;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        h3 {
+            color: $mainFontColor;
+            font-family: 'Oswald', sans-serif;
+            font-size: 22px;
+            font-weight: 300;
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    .content {
+        max-width: 100vw;
+        height: 70vh;
+        margin: 20px 50px 50px 50px;
+
+        position: relative;
+        border: 1px solid $mainFontColor;
+        border-radius: 10px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+} -->
+
+<!-- --------------------------------------------------------------- -->
+<!-- --------------------------------------------------------------- -->

@@ -1,18 +1,48 @@
-#login {
-  width: 100%;
-  min-height: 75vh;
-  height: 100%;
-  background-color: #111;
-  overflow-x: hidden;
-  padding-top: 40px;
+.text {
+  font-size: 0.6em;
 }
 
-#logout {
+#login-site {
+  height: 100%;
   width: 100vw;
-  height: 75vh;
-  background-color: #111;
-  overflow: hidden;
-  padding-top: 80px;
+  padding: 1em 0 2em 0;
+  background-color: #26272B;
+  display: block;
+  color: #E1E1E1;
+}
+
+#login-site .header {
+  width: 100%;
+  margin-bottom: 3em;
+}
+
+#login-site .header p {
+  font-size: 1em;
+}
+
+#login-site .container {
+  width: 90%;
+  height: 100%;
+  padding: 1em 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid #887D7D;
+}
+
+#login-site .container .left {
+  max-width: 400px;
+  width: 100%;
+  height: 100%;
+  padding: 2.5em 1em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -24,386 +54,107 @@
           align-items: center;
 }
 
-#logout .container {
+#login-site .container .left .form-horizontal {
   width: 100%;
-  height: 100%;
-  margin-top: 3em;
 }
 
-#logout .container hr {
-  width: 40%;
-  margin: 1.5em auto;
+#login-site .container .left .form-horizontal .form-input,
+#login-site .container .left .form-horizontal textarea {
+  width: 90%;
+  background-color: #26272B;
   color: #E1E1E1;
-}
-
-#logout .container .text p {
-  color: #E1E1E1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  text-align: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-size: 18px;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
-  line-height: 1.42em;
-  margin-bottom: 1.5em;
-  letter-spacing: 0.8px;
-}
-
-#logout .container .text .button-log {
-  padding: 10px 15px;
-  margin: 10px 40%;
+  letter-spacing: 1px;
+  font-size: 1em;
+  margin: 0.5em;
+  padding: 0.3em;
   border: 1px solid #E1E1E1;
 }
 
-#logout .container .text .button-log a {
-  text-decoration: none;
+#login-site .container .left .form-horizontal ::-webkit-input-placeholder {
   color: #E1E1E1;
+  background-color: #26272B;
+  font-size: 1em;
+}
+
+#login-site .container .left .form-horizontal :-ms-input-placeholder {
+  color: #E1E1E1;
+  background-color: #26272B;
+  font-size: 1em;
+}
+
+#login-site .container .left .form-horizontal ::-ms-input-placeholder {
+  color: #E1E1E1;
+  background-color: #26272B;
+  font-size: 1em;
+}
+
+#login-site .container .left .form-horizontal ::placeholder {
+  color: #E1E1E1;
+  background-color: #26272B;
+  font-size: 1em;
+}
+
+#login-site .container .left .form-horizontal .btn {
+  width: 100%;
+  height: 100%;
+  margin: 0.8em 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 0;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
-  font-size: 24px;
-  line-height: 1.42em;
-  letter-spacing: 0.8px;
 }
 
-#logout .container .text .button:hover {
-  background-color: #ffffff46;
-  -webkit-transition-delay: 0s;
-          transition-delay: 0s;
-  -webkit-transition-duration: 0.8s;
-          transition-duration: 0.8s;
-  -webkit-transition-property: all;
-  transition-property: all;
-  -webkit-transition-timing-function: line;
-          transition-timing-function: line;
+#login-site .container .left .form-horizontal .btn button {
+  height: 100%;
+  padding: 0.5em 1em;
+  font-size: 2em;
+  background-color: transparent;
+  color: #E1E1E1;
+  border-style: solid;
+  border: 1px solid #E1E1E1;
 }
 
-.section-header {
-  text-align: center;
-  margin: 0 auto;
-  padding-top: 50px;
-  letter-spacing: 6px;
-  color: #fff;
-  margin-bottom: 25px;
-}
-
-.contact-wrapper {
-  margin: 0 auto;
-  padding-top: 20px;
-  position: relative;
-  max-width: 800px;
-  font-size: 0.8em;
+#login-site .container .left .form-horizontal .option-list {
+  height: 100%;
+  width: 100%;
+  padding-left: 0;
+  list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-/* Begin Left Contact Page */
-.form-horizontal {
-  max-width: 30%;
-  padding-top: 40px;
-  display: inline-block;
+#login-site .container .left .form-horizontal .option-list li {
+  color: #E1E1E1;
 }
 
-.form-control,
-textarea {
-  max-width: 100%;
-  background-color: #111;
-  color: #fff;
-  letter-spacing: 1px;
+#login-site .container .left .form-horizontal .option-list li a {
   font-size: 1em;
-  margin: 0.3em;
-  padding: 0.2em;
-  border: 1px solid #E1E1E1;
 }
 
-::-webkit-input-placeholder {
-  color: #E1E1E1;
-  background-color: #111111;
-  font-size: 0.8em;
-  font-style: italic;
-  font-family: 'Open Sans', sans-serif;
-}
-
-:-ms-input-placeholder {
-  color: #E1E1E1;
-  background-color: #111111;
-  font-size: 0.8em;
-  font-style: italic;
-  font-family: 'Open Sans', sans-serif;
-}
-
-::-ms-input-placeholder {
-  color: #E1E1E1;
-  background-color: #111111;
-  font-size: 0.8em;
-  font-style: italic;
-  font-family: 'Open Sans', sans-serif;
-}
-
-::placeholder {
-  color: #E1E1E1;
-  background-color: #111111;
-  font-size: 0.8em;
-  font-style: italic;
-  font-family: 'Open Sans', sans-serif;
-}
-
-.send-button {
-  background-color: transparent;
-  width: auto;
-  margin-top: 1em;
-  border: 1px solid #E1E1E1;
-  border-radius: 2px;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-}
-
-.send-button .button {
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-}
-
-.send-button .button .send-text {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 0;
-  margin: 0;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-  line-height: 1.82em;
-  color: rgba(225, 225, 225, 0.788);
-}
-
-.send-button .button .send-text:hover {
-  color: #111111;
-}
-
-.send-button:hover {
-  background-color: #E1E1E1;
-  border: 1px solid #E1E1E1;
-}
-
-/* Begin Right Contact Page */
-.direct-contact-container {
-  max-width: 50%;
-  margin-top: 1em;
-}
-
-/* Location, Phone, Email Section */
-.contact-list {
-  list-style-type: none;
-  margin-left: -30px;
-  padding-right: 20px;
-}
-
-.list-item {
-  line-height: 4;
-  color: #aaa;
-}
-
-.contact-text {
-  font: 300 18px 'Lato', sans-serif;
-  letter-spacing: 1.9px;
-  color: #bbb;
-}
-
-.place {
-  margin-left: 62px;
-}
-
-.phone {
-  margin-left: 56px;
-}
-
-.gmail {
-  margin-left: 53px;
-}
-
-.contact-text a {
-  color: #bbb;
-  text-decoration: none;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
-}
-
-.contact-text a:hover {
-  color: #fff;
-  text-decoration: none;
-}
-
-/* Social Media Icons */
-.social-media-list {
-  position: relative;
-  font-size: 2.3rem;
-  text-align: center;
+#login-site .container .left .form-horizontal .helptext {
+  height: 100%;
   width: 100%;
+  padding-left: 0;
+  list-style: none;
 }
 
-.social-media-list li a {
-  color: #fff;
+#login-site .container .left .form-horizontal .helptext li {
+  color: #E1E1E1;
 }
 
-.social-media-list li {
-  position: relative;
-  top: 0;
-  left: -20px;
-  display: inline-block;
-  height: 70px;
-  width: 70px;
-  margin: 10px auto;
-  line-height: 70px;
-  border-radius: 50%;
-  color: #fff;
-  background-color: #1b1b1b;
-  cursor: pointer;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+#login-site .container .left .form-horizontal .helptext li a {
+  font-size: 1em;
 }
 
-.social-media-list li:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 70px;
-  height: 70px;
-  line-height: 70px;
-  border-radius: 50%;
-  opacity: 0;
-  -webkit-box-shadow: 0 0 0 1px #fff;
-          box-shadow: 0 0 0 1px #fff;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-}
-
-.social-media-list li:hover {
-  background-color: #fff;
-}
-
-.social-media-list li:hover:after {
-  opacity: 1;
-  -webkit-transform: scale(1.12);
-          transform: scale(1.12);
-  -webkit-transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
-          transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
-}
-
-.social-media-list li:hover a {
-  color: #111;
-}
-
-.copyright {
-  font: 200 14px 'Oswald', sans-serif;
-  color: #555;
-  letter-spacing: 1px;
-  text-align: center;
-}
-
-hr {
-  border-color: rgba(255, 255, 255, 0.8);
-}
-
-p {
-  color: white;
-}
-
-/* Begin Media Queries*/
-@media screen and (max-width: 760px) {
-  #contact {
-    height: 1000px;
-  }
-  .section-header {
-    font-size: 65px;
-  }
-  .direct-contact-container,
-  .form-horizontal {
-    float: none;
-    margin: 2em 20%;
-  }
-  .direct-contact-container {
-    margin-top: 60px;
-    max-width: 100vw;
-  }
-  .social-media-list li {
-    height: 60px;
-    width: 60px;
-    line-height: 60px;
-  }
-  .social-media-list li:after {
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
-  }
-}
-
-@media screen and (max-width: 569px) {
-  #contact {
-    height: 1200px;
-  }
-  .section-header {
-    font-size: 50px;
-  }
-  .direct-contact-container,
-  .form-wrapper {
-    float: none;
-    margin: 0 auto;
-  }
-  .form-control,
-  textarea {
-    max-width: 340px;
-    margin: 0 auto;
-  }
-  .name,
-  .email,
-  textarea {
-    width: 280px;
-  }
-  .send-button {
-    max-width: 340px;
-  }
-  .direct-contact-container {
-    margin-top: 60px;
-    max-width: 340px;
-  }
-  .social-media-list {
-    left: 0;
-  }
-  .social-media-list li {
-    height: 55px;
-    width: 55px;
-    line-height: 55px;
-    font-size: 2rem;
-  }
-  .social-media-list li:after {
-    width: 55px;
-    height: 55px;
-    line-height: 55px;
-  }
-}
-
-@media screen and (max-width: 410px) {
-  .send-button {
-    width: 99%;
-  }
+#login-site .container .right {
+  width: 500px;
+  height: 500px;
+  background-color: firebrick;
+  display: none;
 }
 /*# sourceMappingURL=accountstyle.css.map */

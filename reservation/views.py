@@ -31,6 +31,7 @@ def reservation_create(request):
     context = {
         'title': 'Sugestia ankiety',
         'form': form,
+
     }
     return render(request, 'reservation/create.html', context)
 

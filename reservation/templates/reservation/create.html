@@ -2,80 +2,45 @@
 
 {% block content %}
 
-<section id="formTemplate">
-    <h1 class="section-header">Tutaj możesz zrobić rezerwację!</h1>
-    <div class="contact-wrapper">
-        <form class="form-horizontal" role="form" method="POST" action="">
-            {% csrf_token %}
-            <div class="ontheleft">
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <input type="text" class="form-control" id="id_name" placeholder="Imie i Nazwisko" name="name"
-                            maxlength="250" required value="" size="60px">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <input type="text" class="form-control" name="email" placeholder="Podaj adres e-mail"
-                            maxlength="250" required id="id_email" size="25px">
-                        <input type="text" class="form-control" name="phone" placeholder="Podaj swoj nr kontaktowy"
-                            maxlength="250" required id="id_phone" , size="25px">
-                    </div>
-                </div>
-                <div class=" form-group">
-                    <div class="col-sm-12">
-                        <div class="label">
-                            <input type="text" class="form-control" id="id_title" size="25px"
-                                placeholder="Haslo rezerwacji" name="title" maxlength="50" required value="">
-                        </div>
-                        <div class="label">
-                            <input type="number" class="form-control" name="bar" size="25px" placeholder="Bar"
-                                required="" id="id_bar">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <div class="label">
-                            <!--  -->
-                            <input type="text" class="form-control" name="term_of_reservation"
-                                placeholder="Podaj termin" required="" size="25px" id="id_term_of_reservation">
-                        </div>
-                        <div class="label">
-                            <input type="number" class="form-control" name="nr_of_people" placeholder="Liczba osob"
-                                required="" size="25px" id="id_nr_of_people">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="label">
-                        <label class="lb-t" for="id_catering">Catering: </label>
-                        <div class="touch"> {{ form.catering }} </div>
-                    </div>
-                    <div class="label">
-                        <label class="lb-t" for="id_faktura">Faktura: </label>
-                        <div class="touch"> {{ form.faktura }} </div>
-                    </div>
-                </div>
-            </div>
+<section id="reservation-site">
+    <div class="header">
+        <h1 class="section-header">ZŁÓŻ REZERWACJĘ</h1>
 
-            <div class="ontheright">
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <textarea class="form-control" cols="250" rows="10"
-                            placeholder="Podziel sie z nami swoimi myślami." name="additional_information"
-                            maxlength="500"></textarea>
-                    </div>
-                </div>
-                <button class="send-button" name="submit" type="submit" id="submit" data-submit="...Sending"
-                    value="SEND">
-                    <div class="button">
-                        <span class="send-text">WYŚLIJ</span>
-                    </div>
-                </button>
+    </div>
+    <div class="container">
+        <div class="left">
+            <div class="content">
+                <form class="form-horizontal" role="form" method="POST" action="">
+
+                    <input type="text" class="form-input" id="id_name" placeholder="Imie i Nazwisko" name="name"
+                        maxlength="250" required value="" size="60px">
+                    <input type="text" class="form-input" name="email" placeholder="Podaj adres e-mail" maxlength="250"
+                        required id="id_email" size="25px">
+                    <input type="text" class="form-input" name="phone" placeholder="Podaj swoj nr kontaktowy"
+                        maxlength="250" required id="id_phone" , size="25px">
+                    <input type="text" class="form-input" id="id_title" size="25px" placeholder="Haslo rezerwacji"
+                        name="title" maxlength="50" required value="">
+                    <input type="number" class="form-input" name="bar" size="25px" placeholder="Bar" required=""
+                        id="id_bar">
+                    <input type="text" class="form-input" name="term_of_reservation" placeholder="Podaj termin"
+                        required="" size="25px" id="id_term_of_reservation">
+                    <input type="number" class="form-input" name="nr_of_people" placeholder="Liczba osob" required=""
+                        size="25px" id="id_nr_of_people">
+                    <label class="lb-t" for="id_catering">Catering: </label>
+                    <div class="touch"> {{ form.catering }} </div>
+                    <label class="lb-t" for="id_faktura">Faktura: </label>
+                    <div class="touch"> {{ form.faktura }} </div>
+                    <textarea class="form-input" placeholder="Podziel sie z nami swoimi myślami."
+                        name="additional_information" maxlength="500">
+                    </textarea>
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ next }}">
+                    <span class="btn">
+                        <button class="send-btn" id="submit" type="submit" value="SEND">ZAPISZ</button>
+                    </span>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 </section>
-
 {% endblock %}

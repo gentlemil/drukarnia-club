@@ -10,7 +10,7 @@ class TypeOfProduct(models.Model):
     )
 
     amount = models.CharField(
-        max_length=8,
+        max_length=15,
         blank= False, null=False,
         default="&mdash",
         verbose_name='Amount of liquor',
@@ -40,8 +40,15 @@ class Product(models.Model):
         TypeOfProduct,
         null=False, default='',
         verbose_name='Type of Product',
-        on_delete=models.CASCADE,
-        
+        on_delete=models.CASCADE, 
+        )
+
+    description = models.CharField(
+        max_length=150,
+        blank= False, null=False,
+        unique=False, default='&nbsp;',
+        verbose_name='Opis',
+        help_text='Opis Produktu',
         )
 
     def __str__(self):

@@ -69,18 +69,18 @@
         <div class="user">
             <span><i class="fas fa-user"></i></span>
             {% if request.user.is_authenticated %}
-            Hej {{ request.user.first_name }},
+            {Hej} {{ request.user.first_name }},
             <a href="{% url 'logout' %}"><span>WYLOGUJ</span></a>
             {% else %}
             <a href="{% url 'login' %}"><span>ZALOGUJ</span></a>
             {% endif %}
         </div>
     </nav>
+    <div class="main-content">
+        {% block content %}
 
-    {% block content %}
-
-    {% endblock %}
-
+        {% endblock %}
+    </div>
     <footer class="site-footer">
         <hr>
         <div class="container">

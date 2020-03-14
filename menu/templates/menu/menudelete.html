@@ -3,18 +3,22 @@
 
 {% block content %}
 
-<section id="menuList">
-    <h1 class="section-header">USUWANIE </h1>
-    <div class="contact-wrapper">
-        <form method="post">
-            {% csrf_token %}
-            <p>Na pewno chcesz usunąć "{{ object }} z naszego menu"?</p>
-            <button class="send-button" name="submit" type="submit" id="submit" data-submit="...Sending" value="SEND">
-                <div class="button">
-                    <span class="send-text">TAK, USUŃ!</span>
-                </div>
-            </button>
-        </form>
+<section id="menu-site">
+    <div class="header">
+        <h1 class="section-header">USUWANIE PRODUKTU</h1>
+
+
+    </div>
+    <div class="container">
+        <div class="left">
+            <form method="post">
+                {% csrf_token %}
+                <p>Na pewno chcesz usunąć {{ object }} z naszego menu?</p>
+                <span class="btn">
+                    <button class="send-btn" id="submit" type="submit" value="SEND">TAK, USUŃ</button>
+                </span>
+            </form>
+        </div>
     </div>
 </section>
 

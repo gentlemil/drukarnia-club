@@ -1,0 +1,31 @@
+{% extends "menubase.html"%}
+{% load sass_tags static %}
+
+{% block content %}
+
+<section id="menu-site">
+    <div class="header">
+        <h1 class="section-header">SZCZEGÓŁY</h1>
+    </div>
+    <div class="container">
+        <div class="left">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>NAZWA KATEGORII: </td>
+                        <td>{{typeofproduct.name}}</td>
+                    </tr>
+                    <tr>
+                        <td>ILOŚĆ PODAWANIA (w ml):</td>
+                        <td>{{typeofproduct.amount}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+<!-- --------------------- -->
+<!-- --------------------- -->

@@ -1,48 +1,37 @@
 {% extends "accountbase.html" %}
 
-{% block title %}Log-in{% endblock %}
-
 {% block content %}
 
-<section id="login">
+<section id="login-site">
+    <div class="header">
+        <h1 class="section-header">ZALOGUJ SIĘ</h1>
+        {% if form.errors %}
+        <p>
+            Login lub hasło jest nieprawidłowe. Spróbuj ponownie.
+        </p>
+        {% endif %}
+    </div>
+    <div class="container">
+        <div class="left">
+            <!--  -->
+            <form class="form-horizontal" role="form" method="POST" action="">
+                <input type="text" class="form-input" id="id_name" placeholder="LOGIN" name="username" maxlength="250"
+                    required value="" size="60px">
+                <input type="password" class="form-input" name="password" required id="id_password" placeholder="HASŁO"
+                    size="60px">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ next }}">
+                <span class="btn">
+                    <button class="send-btn" id="submit" type="submit" value="SEND">ZALOGUJ SIĘ</button>
+                </span>
+                <ul class="option-list">
+                    <li><a href="{% url 'password_reset' %}">ODZYSKAJ HASŁO</a></li>
+                    <li><a href="{% url 'register' %}">ZAREJESTRUJ SIĘ</a></li>
+                </ul>
+            </form>
 
-    <h1 class="section-header">ZALOGUJ SIĘ</h1>
-    {% if form.errors %}
-    <p>
-        Login lub hasło jest nieprawidłowe. Spróbuj ponownie.
-    </p>
-    {% endif %}
-    <div class="contact-wrapper">
-        <form class="form-horizontal" role="form" method="POST" action="">
-            <div class="form-group">
-                <div class="col-sm-12">
-                    <input type="text" class="form-control" id="id_name" placeholder="LOGIN" name="username"
-                        maxlength="250" required value="" size="60px">
-                </div>
-            </div>
-            <input type="password" name="password" required id="id_password" class="form-control" placeholder="HASŁO"
-                size="60px">
-            {% csrf_token %}
-            <input type="hidden" name="next" value="{{ next }}">
-            <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
-                <div class="button">
-                    <p class="send-text">ZALOGUJ</p>
-                </div>
-            </button>
-        </form>
-        <div class="direct-contact-container">
-            <ul class="contact-list">
-                <li class="list-item"><i class="fa fa-map-marker fa-2x">
-                        <span class="contact-text phone">
-                            <a href="{% url 'password_reset' %}">ODZYSKAJ HASŁO</a>
-                        </span></i>
-                </li>
-                <li class="list-item"><i class="fa fa-phone fa-2x">
-                        <span class="contact-text phone">
-                            <a href="{% url 'register' %}">ZAREJESTRUJ SIĘ</a>
-                        </span></i>
-                </li>
-            </ul>
+        </div>
+        <div class="right">
         </div>
     </div>
 </section>

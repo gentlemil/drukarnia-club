@@ -1,0 +1,28 @@
+{% extends "menubase.html"%}
+{% load sass_tags static %}
+
+{% block content %}
+
+<section id="menu-site">
+    <div class="header">
+        <h1 class="section-header">DODAJ NOWĄ KATEGORIĘ</h1>
+    </div>
+    <div class="container">
+        <div class="left">
+            <div class="left-create">
+                <form class="form-horizontal" role="form" method="POST" action="">
+                    {% csrf_token %}
+                    <input class="form-input" type="text" name="name" placeholder="NAZWA KATEGORII: " maxlength="250"
+                        required id="id_name">
+                    <input type="text" class="form-input" name="amount" placeholder="ILOŚĆ (w 'w ml'): " maxlength="250"
+                        required id="id_amount">
+                    <span class="btn">
+                        <button class="send-btn" id="submit" type="submit" value="SEND">DODAJ</button>
+                    </span>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

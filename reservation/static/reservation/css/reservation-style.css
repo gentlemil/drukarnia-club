@@ -1,1067 +1,338 @@
 /* Extra */
-body {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin: 0;
-  width: 100%;
-  font-weight: 300;
-  line-height: 1.42em;
-  color: #E1E1E1;
-  overflow-x: hidden;
-  font-family: 'Oswald', sans-serif;
-  /* --------------------------------------------------------------------- */
-  /* ----------------------- NAVIGATION ---------------------------------- */
-  /* --------------------------------------------------------------------- */
+.text {
+  font-size: 0.6em;
 }
 
-body .background {
-  max-width: 100vw;
-  min-height: 100vh;
-  margin: 0 auto;
+#reservation-site {
   height: 100%;
-  overflow: hidden;
-  background: url("/static/reservation/img/1.jpg") no-repeat center center fixed;
-  background-size: cover;
-  background-attachment: fixed;
+  width: 100vw;
+  padding: 1em 0 1em 0;
+  background-color: #26272B;
+  display: block;
+  color: #E1E1E1;
 }
 
-body .background .backphoto {
+#reservation-site .header {
   width: 100%;
-  position: relative;
-  /* --------------------------------------------------------------------- */
-  /* --------------------------------------------------------------------- */
-  /* --------------------------------------------------------------------- */
-  /* --------------------------------------------------------------------- */
-  /* ----------------------- DETAILS ---------------------------------- */
-  /* --------------------------------------------------------------------- */
 }
 
-body .background .backphoto #navigation {
-  position: fixed;
-  top: 0;
-  left: 0;
-  max-width: 100vw;
-  width: 100%;
-  height: 90px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  z-index: 10000;
-  background-color: rgba(14, 6, 1, 0.3);
+#reservation-site .header p {
+  font-size: 1em;
 }
 
-body .background .backphoto #navigation .logo {
-  width: 50px;
-  height: auto;
-}
-
-body .background .backphoto #navigation .logo a img {
-  width: auto;
-  height: 60px;
-}
-
-body .background .backphoto #navigation .admin-navigation {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  z-index: 10000;
-}
-
-body .background .backphoto #navigation .admin-navigation .admin-menu {
-  height: 60px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border-left: 1px solid #E1E1E1;
-  border-right: 1px solid #E1E1E1;
-}
-
-body .background .backphoto #navigation .admin-navigation .admin-menu ul {
-  list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
+#reservation-site .container {
+  margin-top: 2em;
   height: 100%;
-  padding: 0;
-}
-
-body .background .backphoto #navigation .admin-navigation .admin-menu ul li {
-  padding: 5px 7px;
-  margin: 10px;
-  -webkit-transition: all 0.6s ease-in-out;
-  transition: all 0.6s ease-in-out;
-}
-
-body .background .backphoto #navigation .admin-navigation .admin-menu ul li a {
-  text-decoration: none;
-  font-size: 16px;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
-  line-height: 1.42em;
-  color: #E1E1E1;
-}
-
-body .background .backphoto #navigation .admin-navigation .admin-menu ul li:hover {
-  border-bottom: 1px solid #E1E1E1;
-  -webkit-transition-delay: 0s;
-          transition-delay: 0s;
-  -webkit-transition-duration: 0.8s;
-          transition-duration: 0.8s;
-  -webkit-transition: 0.8s all;
-  transition: 0.8s all;
-  -webkit-transition-timing-function: line;
-          transition-timing-function: line;
-}
-
-body .background .backphoto #navigation .menu ul {
-  list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 100%;
-}
-
-body .background .backphoto #navigation .menu ul li {
-  padding: 10px 15px;
-  margin: 10px;
-  -webkit-transition: all 0.6s ease-in-out;
-  transition: all 0.6s ease-in-out;
-}
-
-body .background .backphoto #navigation .menu ul li a {
-  text-decoration: none;
-  font-size: 20px;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
-  line-height: 1.42em;
-  color: #E1E1E1;
-}
-
-body .background .backphoto #navigation .menu ul li a:hover:last-child {
-  color: #E1E1E1;
-}
-
-body .background .backphoto #navigation .menu ul li:hover {
-  border-bottom: 1px solid #E1E1E1;
-  -webkit-transition-delay: 0s;
-          transition-delay: 0s;
-  -webkit-transition-duration: 0.8s;
-          transition-duration: 0.8s;
-  -webkit-transition: 0.8s all;
-  transition: 0.8s all;
-  -webkit-transition-timing-function: line;
-          transition-timing-function: line;
-}
-
-body .background .backphoto #navigation .menu ul li:last-child {
-  padding: 10px 15px;
-  margin: 10px;
-  border: 1px solid #E1E1E1;
-}
-
-body .background .backphoto #navigation .menu ul li:hover:last-child {
-  background-color: rgba(255, 255, 255, 0.1);
-  -webkit-transition: 0.8s all;
-  transition: 0.8s all;
-}
-
-body .background .backphoto #navigation .logadmin a {
-  text-decoration: none;
-  font-size: 25px;
-  color: #E1E1E1;
-}
-
-body .background .backphoto #reservation {
-  height: 100%;
-  max-width: 100vw;
-  width: 100%;
-  padding: 0 15px;
-  overflow-x: hidden;
-  position: relative;
-}
-
-body .background .backphoto #reservation .main {
-  border: 1px solid #E1E1E1;
-  border-radius: 10px;
-  margin: 15px 10px;
-  padding: 150px 150px 0 150px;
-  height: 70vh;
-}
-
-body .background .backphoto #reservation .main .section-header {
-  text-align: center;
-  margin: 0 auto;
-  color: #E1E1E1;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
-  font-size: 40px;
-  line-height: 1.42em;
-  letter-spacing: 0.8px;
-}
-
-body .background .backphoto #reservation .main p {
-  margin-bottom: 40px;
-  text-align: center;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
-  font-size: 20px;
-  line-height: 1.42em;
-  letter-spacing: 0.2px;
-}
-
-body .background .backphoto #reservation .main .menu ul {
-  list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 100%;
-}
-
-body .background .backphoto #reservation .main .menu ul li {
-  padding: 10px 15px;
-  margin: 10px;
-  -webkit-transition: all 0.6s ease-in-out;
-  transition: all 0.6s ease-in-out;
-}
-
-body .background .backphoto #reservation .main .menu ul li a {
-  text-decoration: none;
-  font-size: 20px;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
-  line-height: 1.42em;
-  color: #E1E1E1;
-}
-
-body .background .backphoto #reservation .main .menu ul li a:hover:last-child {
-  color: #E1E1E1;
-}
-
-body .background .backphoto #reservation .main .menu ul li:hover {
-  border-bottom: 1px solid #E1E1E1;
-  -webkit-transition-delay: 0s;
-          transition-delay: 0s;
-  -webkit-transition-duration: 0.8s;
-          transition-duration: 0.8s;
-  -webkit-transition: 0.8s all;
-  transition: 0.8s all;
-  -webkit-transition-timing-function: line;
-          transition-timing-function: line;
-}
-
-body .background .backphoto #reservation .main .menu ul li:last-child {
-  padding: 10px 15px;
-  margin: 10px;
-  border: 1px solid #E1E1E1;
-}
-
-body .background .backphoto #reservation .main .menu ul li:hover:last-child {
-  background-color: rgba(255, 255, 255, 0.1);
-  -webkit-transition: 0.8s all;
-  transition: 0.8s all;
-}
-
-body .background .backphoto #reservation .section-header {
-  text-align: center;
-  margin: 0 auto;
-  padding-top: 50px;
-  color: #E1E1E1;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
-  font-size: 40px;
-  line-height: 1.42em;
-  margin-bottom: 10%;
-  letter-spacing: 0.8px;
-}
-
-body .background .backphoto #reservation .container {
-  max-width: 100%;
-  width: 100%;
-  height: 40vh;
-  background: url("/static/reservation/img/background.jpg") no-repeat center center fixed;
-  background-size: cover;
-  position: relative;
-  border: 1px solid #E1E1E1;
-  border-radius: 10px;
-}
-
-body .background .backphoto #formTemplate {
-  height: 400px;
-  max-width: 100vw;
-  margin-top: 100px;
-  padding-bottom: 500px;
-  overflow: hidden;
-}
-
-body .background .backphoto #formTemplate .section-header {
-  text-align: center;
-  margin: 0 auto;
-  padding-top: 15px;
-  color: #E1E1E1;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
-  font-size: 50px;
-  line-height: 1.42em;
-  margin-bottom: 15px;
-  letter-spacing: 0.4px;
-}
-
-body .background .backphoto #formTemplate .contact-wrapper {
-  max-width: 100vw;
-  height: 100%;
-  margin: 10px 50px 50px 50px;
-  padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  position: relative;
-  border: 1px solid #E1E1E1;
-  border-radius: 10px;
-  background-color: rgba(14, 6, 1, 0.3);
-}
-
-body .background .backphoto #formTemplate .contact-wrapper .form-horizontal {
-  width: 100%;
-  height: auto;
-  font-weight: 300;
-  margin: 0;
-  padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: absolute;
-}
-
-body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheleft {
-  width: 45%;
-  margin: 5px 0;
-  padding: 10px 10%;
-  border-right: 1px solid #E1E1E1;
-}
-
-body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheleft .form-group .col-sm-12 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheleft .form-group .col-sm-12 .form-control {
-  max-width: 100%;
-  background-color: rgba(184, 145, 73, 0.1);
-  color: #E1E1E1;
-  letter-spacing: 1px;
-  border: 1px solid #E1E1E1;
-  border-radius: 5px;
-  margin: 15px 0;
-  padding: 10px;
-}
-
-body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheleft .form-group .col-sm-12 ::-webkit-input-placeholder {
-  color: #E1E1E1;
-  font-size: 14px;
-  font-style: italic;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 100;
-  line-height: 1.42em;
-}
-
-body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheleft .form-group .col-sm-12 :-ms-input-placeholder {
-  color: #E1E1E1;
-  font-size: 14px;
-  font-style: italic;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 100;
-  line-height: 1.42em;
-}
-
-body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheleft .form-group .col-sm-12 ::-ms-input-placeholder {
-  color: #E1E1E1;
-  font-size: 14px;
-  font-style: italic;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 100;
-  line-height: 1.42em;
-}
-
-body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheleft .form-group .col-sm-12 ::placeholder {
-  color: #E1E1E1;
-  font-size: 14px;
-  font-style: italic;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 100;
-  line-height: 1.42em;
-}
-
-body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheleft .form-group .col-sm-12 .form-control:hover {
-  background-color: rgba(70, 46, 0, 0.4);
-}
-
-body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheleft .form-group:last-child {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  padding: 0 10px;
-}
-
-body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheright {
-  width: 45%;
-  margin: 0;
-  padding: 10px 5%;
-}
-
-body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheright .form-group {
-  width: 100%;
-}
-
-body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheright .form-group .col-sm-12 textarea {
-  background-color: rgba(70, 46, 0, 0.1);
-  width: 100%;
-  color: #E1E1E1;
-  letter-spacing: 1px;
-  resize: none;
-  border: 1px solid #E1E1E1;
-  border-radius: 5px;
-  margin: 15px 0;
-  padding: 10px;
-}
-
-body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheright .form-group .col-sm-12 ::-webkit-input-placeholder {
-  color: #E1E1E1;
-  font-size: 14px;
-  font-style: italic;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 100;
-  line-height: 1.42em;
-}
-
-body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheright .form-group .col-sm-12 :-ms-input-placeholder {
-  color: #E1E1E1;
-  font-size: 14px;
-  font-style: italic;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 100;
-  line-height: 1.42em;
-}
-
-body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheright .form-group .col-sm-12 ::-ms-input-placeholder {
-  color: #E1E1E1;
-  font-size: 14px;
-  font-style: italic;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 100;
-  line-height: 1.42em;
-}
-
-body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheright .form-group .col-sm-12 ::placeholder {
-  color: #E1E1E1;
-  font-size: 14px;
-  font-style: italic;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 100;
-  line-height: 1.42em;
-}
-
-body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheright .form-group .col-sm-12 textarea:hover {
-  background-color: rgba(70, 46, 0, 0.4);
-}
-
-body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheright .send-button {
-  padding: 10px 15px;
-  margin: 10px 40%;
-  background-color: transparent;
-  width: auto;
-  border: 1px solid #E1E1E1;
-  border-radius: 5px;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-}
-
-body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheright .send-button .button {
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-}
-
-body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheright .send-button .button .send-text {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 0;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-  line-height: 1.42em;
-  color: rgba(225, 225, 225, 0.788);
-}
-
-body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheright .send-button .button .send-text:hover {
-  color: #E1E1E1;
-}
-
-body .background .backphoto #formTemplate .contact-wrapper .form-horizontal .ontheright .send-button:hover {
-  background-color: rgba(70, 46, 0, 0.4);
-  border: 1px solid #E1E1E1;
-}
-
-body .background .backphoto #reservationDetails {
-  height: 100vh;
-  max-width: 100vw;
-  margin-top: 50px;
-  overflow: hidden;
-}
-
-body .background .backphoto #reservationDetails .section-header {
-  text-align: center;
-  margin: 0 auto;
-  padding-top: 50px;
-  color: #E1E1E1;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
-  font-size: 30px;
-  line-height: 1.42em;
-  letter-spacing: 0.8px;
-}
-
-body .background .backphoto #reservationDetails .container {
-  max-width: 100vw;
-  width: 700px;
-  height: 100%;
-  margin: 10px 50px 50px 50px;
-  padding: 20px;
-  position: relative;
-  border: 1px solid #E1E1E1;
-  border-radius: 10px;
-  background-color: rgba(14, 6, 1, 0.3);
-}
-
-body .background .backphoto #reservationDetails .container .content {
-  width: 100%;
-}
-
-body .background .backphoto #reservationDetails .container .content tbody tr {
-  padding: 8px 0;
-}
-
-body .background .backphoto #reservationDetails .container .content tbody tr td {
-  padding: 5px 0 5px 15px;
-  text-align: center;
-  font-weight: 300;
-  font-size: 16px;
-  color: #E1E1E1;
-  border-bottom: solid 1px rgba(255, 255, 255, 0.1);
-}
-
-body .background .backphoto #reservationDetails .container .content tbody tr:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-body .background .backphoto #reservationDetails .container .menu {
-  margin: 0;
-  width: 100%;
-}
-
-body .background .backphoto #reservationDetails .container .menu ul {
-  list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-body .background .backphoto #reservationDetails .container .menu ul li {
-  padding: 10px 15px;
-  margin: 10px 20px;
-  background-color: transparent;
-  width: auto;
-  border: 1px solid #E1E1E1;
-  border-radius: 5px;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-}
-
-body .background .backphoto #reservationDetails .container .menu ul li a {
-  text-decoration: none;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-  line-height: 1.42em;
-  color: rgba(225, 225, 225, 0.788);
-}
-
-body .background .backphoto #reservationDetails .container .menu ul li:hover {
-  background-color: rgba(70, 46, 0, 0.4);
-  border: 1px solid #E1E1E1;
-}
-
-body .background .backphoto #listEdition {
-  height: 400px;
-  max-width: 100vw;
-  margin-top: 100px;
-  padding-bottom: 500px;
-  overflow: hidden;
-}
-
-body .background .backphoto #listEdition .section-header {
-  text-align: center;
-  margin: 0 auto;
-  padding-top: 50px;
-  color: #E1E1E1;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
-  font-size: 40px;
-  line-height: 1.42em;
-  margin-bottom: 10%;
-  letter-spacing: 0.8px;
-}
-
-body .background .backphoto #listEdition .container {
-  max-width: 100vw;
-  height: 100%;
-  margin: 10px 50px 50px 50px;
-  padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  position: relative;
-  border: 1px solid #E1E1E1;
-  border-radius: 10px;
-  background-color: rgba(14, 6, 1, 0.3);
-}
-
-body .background .backphoto #listEdition .container .form {
-  width: 50%;
-  height: auto;
-  font-weight: 300;
-  margin: 0;
-  padding: 0;
+  padding: 1em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-}
-
-body .background .backphoto #listEdition .container .send-button {
-  padding: 10px 15px;
-  margin: 10px 40%;
-  background-color: transparent;
-  width: auto;
-  border: 1px solid #E1E1E1;
-  border-radius: 5px;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-}
-
-body .background .backphoto #listEdition .container .send-button .button {
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-}
-
-body .background .backphoto #listEdition .container .send-button .button .send-text {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 0;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-  line-height: 1.42em;
-  color: rgba(225, 225, 225, 0.788);
-}
-
-body .background .backphoto #listEdition .container .send-button .button .send-text:hover {
-  color: #E1E1E1;
-}
-
-body .background .backphoto #listEdition .container .send-button:hover {
-  background-color: rgba(70, 46, 0, 0.4);
-  border: 1px solid #E1E1E1;
-}
-
-body .background .backphoto #loginTemp {
-  height: 400px;
-  max-width: 100vw;
-  margin-top: 100px;
-  padding-bottom: 500px;
-  overflow: hidden;
-}
-
-body .background .backphoto #loginTemp .section-header {
-  text-align: center;
-  margin: 0 auto;
-  padding-top: 50px;
-  margin-bottom: 20px;
-  color: #E1E1E1;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
-  font-size: 40px;
-  line-height: 1.42em;
-  margin-bottom: 10%;
-  letter-spacing: 0.8px;
-}
-
-body .background .backphoto #loginTemp .contact-wrapper {
-  max-width: 100%;
-  height: 100%;
-  margin: 10px 5%;
-  position: relative;
-  border: 1px solid #E1E1E1;
-  border-radius: 10px;
-  background-color: rgba(14, 6, 1, 0.3);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-body .background .backphoto #loginTemp .contact-wrapper .form-horizontal {
-  width: auto;
-  margin: 40px 0;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  font-weight: 300;
+#reservation-site .container .left {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #887D7D;
 }
 
-body .background .backphoto #loginTemp .contact-wrapper .form-horizontal .form-group .col-sm-12 .form-control {
-  max-width: 100%;
+#reservation-site .container .left .content {
+  max-width: 60%;
   margin: 0 auto;
-  background-color: rgba(184, 145, 73, 0.1);
+}
+
+#reservation-site .container .left .content .form-horizontal {
+  width: 100%;
+  margin: 0 auto;
+}
+
+#reservation-site .container .left .content .form-horizontal .form-input,
+#reservation-site .container .left .content .form-horizontal textarea {
+  width: 95%;
+  background-color: transparent;
   color: #E1E1E1;
   letter-spacing: 1px;
-  border: 1px solid #E1E1E1;
-  border-radius: 5px;
-  margin: 15px 0;
-  padding: 10px;
-}
-
-body .background .backphoto #loginTemp .contact-wrapper .form-horizontal .form-group .col-sm-12 ::-webkit-input-placeholder {
-  color: #E1E1E1;
-  font-size: 14px;
-  font-style: italic;
-  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9em;
   font-weight: 100;
-  line-height: 1.42em;
-}
-
-body .background .backphoto #loginTemp .contact-wrapper .form-horizontal .form-group .col-sm-12 :-ms-input-placeholder {
-  color: #E1E1E1;
-  font-size: 14px;
-  font-style: italic;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 100;
-  line-height: 1.42em;
-}
-
-body .background .backphoto #loginTemp .contact-wrapper .form-horizontal .form-group .col-sm-12 ::-ms-input-placeholder {
-  color: #E1E1E1;
-  font-size: 14px;
-  font-style: italic;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 100;
-  line-height: 1.42em;
-}
-
-body .background .backphoto #loginTemp .contact-wrapper .form-horizontal .form-group .col-sm-12 ::placeholder {
-  color: #E1E1E1;
-  font-size: 14px;
-  font-style: italic;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 100;
-  line-height: 1.42em;
-}
-
-body .background .backphoto #loginTemp .contact-wrapper .form-horizontal .form-group .col-sm-12 .form-control:hover {
-  background-color: rgba(70, 46, 0, 0.4);
-}
-
-body .background .backphoto #loginTemp .contact-wrapper .form-horizontal .send-button {
-  padding: 10px 15px;
-  margin: 10px 40%;
-  background-color: transparent;
-  width: auto;
-  border: 1px solid #E1E1E1;
-  border-radius: 5px;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-}
-
-body .background .backphoto #loginTemp .contact-wrapper .form-horizontal .send-button .button {
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-}
-
-body .background .backphoto #loginTemp .contact-wrapper .form-horizontal .send-button .button .send-text {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 0;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-  line-height: 1.42em;
-  color: rgba(225, 225, 225, 0.788);
-}
-
-body .background .backphoto #loginTemp .contact-wrapper .form-horizontal .send-button .button .send-text:hover {
-  color: #E1E1E1;
-}
-
-body .background .backphoto #loginTemp .contact-wrapper .form-horizontal .send-button:hover {
-  background-color: rgba(70, 46, 0, 0.4);
+  margin: 0.5em;
+  padding: 0.3em;
   border: 1px solid #E1E1E1;
 }
 
-body .background .backphoto #loginTemp .contact-wrapper .form-horizontal .icons {
+#reservation-site .container .left .content .form-horizontal ::-webkit-input-placeholder {
+  color: #E1E1E1;
+  background-color: #26272B;
+  font-size: 0.9em;
+  font-weight: 100;
+}
+
+#reservation-site .container .left .content .form-horizontal :-ms-input-placeholder {
+  color: #E1E1E1;
+  background-color: #26272B;
+  font-size: 0.9em;
+  font-weight: 100;
+}
+
+#reservation-site .container .left .content .form-horizontal ::-ms-input-placeholder {
+  color: #E1E1E1;
+  background-color: #26272B;
+  font-size: 0.9em;
+  font-weight: 100;
+}
+
+#reservation-site .container .left .content .form-horizontal ::placeholder {
+  color: #E1E1E1;
+  background-color: #26272B;
+  font-size: 0.9em;
+  font-weight: 100;
+}
+
+#reservation-site .container .left .content .form-horizontal .btn {
   width: 100%;
-  height: auto;
+  height: 100%;
+  margin: 0.8em 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 0;
 }
 
-body .background .backphoto #loginTemp .contact-wrapper .form-horizontal .icons ul {
+#reservation-site .container .left .content .form-horizontal .btn button {
+  height: 100%;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  background-color: transparent;
+  color: #E1E1E1;
+  border-style: solid;
+  border: 1px solid #E1E1E1;
+}
+
+#reservation-site .container .left .content .form-horizontal .option-list {
+  height: 100%;
+  width: 100%;
+  padding-left: 0;
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
-body .background .backphoto #loginTemp .contact-wrapper .form-horizontal .icons ul li {
-  margin: 10px;
-}
-
-body .background .backphoto #loginTemp .contact-wrapper .form-horizontal .icons ul li a {
-  width: 100%;
-  text-decoration: none;
-  padding: 10px 15px;
-  margin: 10px 5%;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-  line-height: 1.42em;
-  font-size: 12px;
-  color: rgba(225, 225, 225, 0.788);
-  background-color: transparent;
-  border: 1px solid #E1E1E1;
-  border-radius: 5px;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-}
-
-body .background .backphoto #listTemplate {
-  height: 100%;
-  max-width: 100vw;
-  width: 100%;
-  padding: 0 15px;
-  overflow-x: hidden;
-  position: relative;
-}
-
-body .background .backphoto #listTemplate .section-header {
-  text-align: center;
-  padding-top: 50px;
-  margin-bottom: 20px;
+#reservation-site .container .left .content .form-horizontal .option-list li {
   color: #E1E1E1;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
-  font-size: 40px;
-  line-height: 1.42em;
-  margin-bottom: 10%;
-  letter-spacing: 0.8px;
 }
 
-body .background .backphoto #listTemplate .container {
-  max-width: 100%;
-  width: 100vw;
+#reservation-site .container .left .content .form-horizontal .option-list li a {
+  font-size: 1em;
+}
+
+#reservation-site .container .left .content .form-horizontal .helptext {
   height: 100%;
-  margin: 0 auto;
-  position: relative;
+  width: 100%;
+  padding-left: 0;
+  list-style: none;
+}
+
+#reservation-site .container .left .content .form-horizontal .helptext li {
+  color: #E1E1E1;
+}
+
+#reservation-site .container .left .content .form-horizontal .helptext li a {
+  font-size: 1em;
+}
+
+#reservation-site .container .left .content {
+  color: #E1E1E1;
+  width: 100%;
+}
+
+#reservation-site .container .left .content tbody {
+  padding: 0.3em 0;
+  width: 100%;
+  text-align: center;
+}
+
+#reservation-site .container .left .content tbody tr td a {
+  font-size: 1em;
+  font-weight: 100;
+}
+
+#reservation-site .container .left .content tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+#reservation-site .container .left .option-list {
+  height: 100%;
+  width: 100%;
+  padding-left: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#reservation-site .container .left .option-list li {
+  color: #E1E1E1;
+}
+
+#reservation-site .container .left .option-list li a {
+  font-size: 1em;
   border: 1px solid #E1E1E1;
-  border-radius: 10px;
-  background-color: rgba(14, 6, 1, 0.6);
+  padding: 0.3em 0.5em;
 }
 
-body .background .backphoto #listTemplate .container .tbl-header {
-  background-color: rgba(255, 255, 255, 0.3);
+#reservation-site .container .left .tbl {
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
-body .background .backphoto #listTemplate .container .tbl-header table {
+#reservation-site .container .left .tbl table {
   width: 100%;
   table-layout: fixed;
+  margin: 0;
+  padding: 0;
 }
 
-body .background .backphoto #listTemplate .container .tbl-header table thead tr th {
-  width: calc(100%/8);
+#reservation-site .container .left .tbl table thead {
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0;
+  padding: 0;
+}
+
+#reservation-site .container .left .tbl table thead tr th {
+  min-width: calc(100%/8);
   text-align: center;
   font-weight: 300;
   font-size: 20px;
   letter-spacing: 0.5px;
   color: #E1E1E1;
   text-transform: uppercase;
-  padding: 5px 0 5px 30px;
-}
-
-body .background .backphoto #listTemplate .container .tbl-content {
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-body .background .backphoto #listTemplate .container .tbl-content table {
-  width: 100%;
-}
-
-body .background .backphoto #listTemplate .container .tbl-content table tbody tr {
   padding: 10px 0;
 }
 
-body .background .backphoto #listTemplate .container .tbl-content table tbody tr td {
+#reservation-site .container .left .tbl table tbody tr {
+  padding: 10px 0;
+}
+
+#reservation-site .container .left .tbl table tbody tr td {
   width: calc(100%/8);
-  padding: 5px 0 5px 30px;
+  padding: 0.4em 0;
   text-align: center;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 1em;
   color: #E1E1E1;
   border-bottom: solid 1px rgba(255, 255, 255, 0.1);
 }
 
-body .background .backphoto #listTemplate .container .tbl-content table tbody tr:hover {
+#reservation-site .container .left .tbl table tbody tr td ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#reservation-site .container .left .tbl table tbody tr td ul li {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5em;
+}
+
+#reservation-site .container .left .tbl table tbody tr td ul li a {
+  font-size: 0.5em;
+}
+
+#reservation-site .container .left .tbl table tbody tr:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-body .background .backphoto #footer {
-  max-width: 100vw;
-  width: 100%;
-  height: 90px;
-  padding: 7px;
-  margin: 0;
-  background-color: rgba(14, 6, 1, 0.85);
+@media (max-width: 768px) {
+  .tbl {
+    display: none;
+  }
+  .portrait-view {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .portrait-view table {
+    width: 100%;
+    padding: 0.3em;
+  }
+  .portrait-view table tbody {
+    width: 100%;
+  }
+  .portrait-view table tbody tr {
+    width: 100%;
+  }
+  .portrait-view table tbody tr td ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    -webkit-padding-start: 0;
+            padding-inline-start: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .portrait-view table tbody tr td ul li {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+  }
+  .portrait-view table tbody tr td ul li i {
+    font-size: 0.8em;
+    padding: 0 1em;
+  }
+  .portrait-view table tbody tr td ul li a {
+    font-size: 0.8em;
+    padding: 1em 0;
+  }
+  .portrait-view table tbody tr td:last-child {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .portrait-view table tbody tr > :nth-child(2) {
+    width: 86%;
+    border-right: 1px solid #E1E1E1;
+    border-left: 1px solid #E1E1E1;
+  }
+  .portrait-view table tbody:nth-child(1) {
+    background-color: rgba(255, 255, 255, 0.06);
+  }
 }
 
-body .background .backphoto #footer .container {
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border: 1px solid rgba(225, 225, 225, 0.5);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-body .background .backphoto #footer .container .footer-sign {
-  margin: 0;
-  padding-left: 15vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-body .background .backphoto #footer .container .footer-sign a {
-  color: #E1E1E1;
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
-  font-size: 20px;
-  letter-spacing: 0.8px;
-  margin-right: 10px;
-}
-
-body .background .backphoto #footer .container .footer-sign a img {
-  width: auto;
-  height: 40px;
-  background-color: transparent;
-}
-
-body .background .backphoto #footer .container .footer-logo {
-  width: 50px;
-  height: auto;
-  padding-right: 50px;
-}
-
-body .background .backphoto #footer .container .footer-logo img {
-  width: auto;
-  height: 50px;
+@media (min-width: 768px) {
+  .tbl {
+    display: block;
+  }
+  .portrait-view {
+    display: none;
+  }
 }
 /*# sourceMappingURL=reservation-style.css.map */

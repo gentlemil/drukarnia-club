@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from . import views
 from django.contrib.auth.mixins import LoginRequiredMixin   #CBV
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import CreateView, UpdateView, DeleteView, TemplateView
@@ -6,7 +7,7 @@ from django.db.models import Sum, DateField, Count
 from django.urls import reverse, reverse_lazy
 from django.views.generic.base import TemplateView
 from django.http import HttpResponse
-from .forms import ProductForm
+from .forms import ProductForm #TypeOfProductForm
 from .models import TypeOfProduct, Product
 
 # /menu --- glowny widok, widoczny dla wszystkich
@@ -42,7 +43,7 @@ def menu_list(request):
 def menu_create(request):
 
     typeofproduct = TypeOfProduct.objects.all()
-    products = Product.objects.all().order_by('price')
+    products = Product.objects.all().order_by('price').order_by('name')
     categories = TypeOfProduct.objects.all().prefetch_related('product_set')
 
     if request.method == 'POST':
@@ -60,6 +61,25 @@ def menu_create(request):
         'form': form,
     }
     return render(request, 'menu/menucreate.html', context)
+
+# @login_required
+# def menu_create_type(request):
+
+#     typeofproduct = TypeOfProduct.objects.all()
+
+#     if request.method == 'POST':
+#         form = ProductForm(request.POST)
+#         if form.is_valid():
+#             r = form.save()
+#             return redirect(reverse('menu_type_details', args=[r.pk]))
+#     else:
+#         form = TypeOfProductForm()     # ---> trzeba zaimportowac suggestionform
+   
+#     context = {
+#         'typeofproduct': typeofproduct,
+#         'form': form,
+#     }
+#     return render(request, 'menu/menutypecreate.html', context)
 
 # @login_required
 def menu_details(request, pk):

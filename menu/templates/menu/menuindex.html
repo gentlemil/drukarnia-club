@@ -3,59 +3,56 @@
 
 {% block content %}
 
-<section id="menuList">
-    <h1 class="section-header">MENU</h1>
-    <h3 class="section-description">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum ea quidem obcaecati
-        quas ipsam nisi
-        voluptatibus ducimus eligendi dolorum, doloribus quia, amet maiores veniam nobis eos sit. Nostrum, ad
-        temporibus!
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi suscipit atque tempore. Voluptates error
-        exercitationem temporibus inventore ducimus delectus dolor illo totam, quod deleniti dolorem iusto
-        doloremque laborum quidem ea?
-    </h3>
-
-    <div class="contact-wrapper">
-        <div class="contentList">
-            {% for type in categories %}
-            <div class="mixture">
-                <div class="rubric">
-                    <table>
-                        <thead>
-                            <tr>
-                                <td>
-                                    <h2>{{ type.name }}</h2>
-                                </td>
-                                <td>
-                                    <h2>{{ type.amount }}</h2>
-                                </td>
-                            </tr>
-                        </thead>
-                        {% for product in type.product_set.all %}
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <h3>{{ product.name }}</h3>
-                                </td>
-                                <td>
-                                    <h3>{{ product.prize }}</h3>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p>opis alkoholu, rodzaj, kraj pochodzenia</p>
-                                </td>
-                            </tr>
-                        </tbody>
-                        {% endfor %}
-                    </table>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
+<section id="menu-site">
+    <div class="header">
+        <h1 class="section-header">MENU</h1>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum ea quidem obcaecati
+            quas ipsam nisi
+            voluptatibus ducimus eligendi dolorum, doloribus quia, amet maiores veniam nobis eos sit. Nostrum, ad
+            temporibus!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi suscipit atque tempore. Voluptates error
+            exercitationem temporibus inventore ducimus delectus dolor illo totam, quod deleniti dolorem iusto
+            doloremque laborum quidem ea?
+        </p>
     </div>
-    <!-- --------------- -->
-
+    <!--  -->
+    <div class="container">
+        {% for type in categories %}
+        <div class="left">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <h2>{{ type.name }}</h2>
+                        </td>
+                        <td>
+                            <h2>{{ type.amount }}ml</h2>
+                        </td>
+                    </tr>
+                </tbody>
+                {% for product in type.product_set.all %}
+                <tbody>
+                    <tr>
+                        <td>
+                            <h3>{{ product.name }}</h3>
+                        </td>
+                        <td>
+                            <h3>{{ product.prize }}</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="text-about">{{ product.description }}</p>
+                        </td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="bdr"></div>
+        {% endfor %}
+    </div>
 </section>
 
 {% endblock %}

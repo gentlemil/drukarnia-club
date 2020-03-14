@@ -4,11 +4,13 @@
 
 {% block content %}
 
-<section id="logout">
+<section id="login-site">
+    <div class="header">
+        <h1 class="section-header">Zostałeś wylogowany.</h1>
+        <p>Cz chcesz się zalogować ponownie?</p>
+    </div>
     <div class="container">
-        <div class="text">
-            <p>Zostałeś wylogowany. Czy chcesz zalogować się ponownie?</p>
-            <hr>
+        <div class="left">
             <div class="button-log">
                 <a href="{% url 'login' %}">ZALOGUJ PONOWNIE</a>
             </div>

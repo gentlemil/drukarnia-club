@@ -1,11 +1,36 @@
 {% extends "accountbase.html" %}
 {% block title %}Create an account{% endblock %}
 {% block content %}
-<h1>Create an account</h1>
-<p>Please, sign up using the following form:</p>
-<form action="." method="post">
-    {{ user_form.as_p }}
-    {% csrf_token %}
-    <p><input type="submit" value="Create my account"></p>
-</form>
+
+<section id="login-site">
+    <div class="header">
+        <h1 class="section-header">NOWY UŻYTKOWNIK</h1>
+        <p>
+            Aby dokonać rejestracji, proszę uzupełnić wszystkie pola.
+        </p>
+    </div>
+    <div class="container">
+        <div class="left">
+            <!--  -->
+            <form class="form-horizontal" role="form" method="POST" action="">
+                <input type="text" class="form-input" name="username" maxlength="150" required id="id_username"
+                    placeholder="Username">
+                <p class="text">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</p>
+                <input type="text" class="form-input" name="first_name" maxlength="30" id="id_first_name"
+                    placeholder="Imię">
+                <input type="email" class="form-input" name="email" maxlength="254" id="id_email"
+                    placeholder="Adres e-mail">
+                <input type="password" class="form-input" name="password" required id="id_password" placeholder="Hasło">
+                <input type="password" class="form-input" name="password2" required id="id_password2"
+                    placeholder="Powtórz hasło">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ next }}">
+                <span class="btn">
+                    <button class="send-btn" id="submit" type="submit" value="SEND">UTWÓRZ KONTO</button>
+                </span>
+            </form>
+        </div>
+    </div>
+</section>
+
 {% endblock %}

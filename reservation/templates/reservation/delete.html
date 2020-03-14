@@ -1,11 +1,36 @@
-{% extends "base.html"%}
+{% extends "reservationbase.html"%}
+{% load sass_tags static %}
 
 {% block content %}
 
-<form method="post">
+<section id="reservation-site">
+    <div class="header">
+        <h1 class="section-header">USUWANIE REZERWACJI</h1>
+
+
+    </div>
+    <div class="container">
+        <div class="left">
+            <form class="form-horizontal" method="POST">
+                {% csrf_token %}
+                <p>Na pewno chcesz usunąć rezerwację "{{ object }}" ?</p>
+                <span class="btn">
+                    <button class="send-btn" id="submit" type="submit" value="SEND">USUŃ</button>
+                </span>
+                <ul class="option-list">
+                    <li><a href="{% url 'reservation_list' %}">WRÓĆ DO MENU</a></li>
+                </ul>
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+
+
+<!-- <form method="post">
     {% csrf_token %}
     <p>Are you sure you want to delete "{{ object }}"?</p>
     <input type="submit" value="Confirm">
-</form>
-
-{% endblock %}
+</form> -->

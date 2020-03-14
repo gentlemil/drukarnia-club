@@ -1,63 +1,72 @@
-{% extends "base.html"%}
+{% extends "reservationbase.html"%}
 
 {% block content %}
 
-<section id="reservationDetails">
-    <h1 class="section-header">SZCZEGÓŁY REZERWACJI</h1>
+<section id="reservation-site">
+    <div class="header">
+        <h1 class="section-header">SZCZEGÓŁY REZERWACJI</h1>
+    </div>
     <div class="container">
-        <table class="content">
-            <tbody>
-                <tr>
-                    <td>HASLO: </td>
-                    <td>{{reservation.title}}</td>
-                </tr>
-                <tr>
-                    <td>IMIE, NAZWISKO:</td>
-                    <td>{{reservation.name}}</td>
-                </tr>
-                <tr>
-                    <td>E-MAIL:</td>
-                    <td>{{reservation.email}}</td>
-                </tr>
-                <tr>
-                    <td>Nr KONTAKTOWY:</td>
-                    <td>{{reservation.phone}}</td>
-                </tr>
-                <tr>
-                    <td>TERMIN:</td>
-                    <td>{{reservation.term_of_reservation}}</td>
-                </tr>
-                <tr>
-                    <td>BAR:</td>
-                    <td>{{reservation.bar}}</td>
-                </tr>
-                <tr>
-                    <td>LICZBA OSÓB:</td>
-                    <td>{{reservation.nr_of_people}}</td>
-                </tr>
-                <tr>
-                    <td>FAKTURA:</td>
-                    <td>{{reservation.faktura}}</td>
-                </tr>
-                <tr>
-                    <td>CATERING:</td>
-                    <td>{{reservation.catering}}</td>
-                </tr>
-                <tr>
-                    <td>UWAGI:</td>
-                    <td>{{reservation.additional_information}}</td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="menu">
-            <ul>
-                <li><a href="{% url 'reservation_edition' pk=reservation.pk %}">EDYCJA</a></li>
-                <li><a href="{% url 'reservation_delete' pk=reservation.pk %}">USUN REZERWACJE</a></li>
+        <div class="left">
+
+            <table class="content">
+                <tbody>
+                    <tr>
+                        <!--  -->
+                        <td>HASLO: </td>
+                        <td>{{reservation.title}}</td>
+                    </tr>
+                    <tr>
+                        <td>IMIE, NAZWISKO:</td>
+                        <td>{{reservation.name}}</td>
+                    </tr>
+                    <tr>
+                        <td>E-MAIL:</td>
+                        <td>{{reservation.email}}</td>
+                    </tr>
+                    <tr>
+                        <td>Nr KONTAKTOWY:</td>
+                        <td>{{reservation.phone}}</td>
+                    </tr>
+                    <tr>
+                        <td>TERMIN:</td>
+                        <td>{{reservation.term_of_reservation}}</td>
+                    </tr>
+                    <tr>
+                        <td>BAR:</td>
+                        <td>{{reservation.bar}}</td>
+                    </tr>
+                    <tr>
+                        <td>LICZBA OSÓB:</td>
+                        <td>{{reservation.nr_of_people}}</td>
+                    </tr>
+                    <tr>
+                        <td>FAKTURA:</td>
+                        <td>{{reservation.faktura}}</td>
+                    </tr>
+                    <tr>
+                        <td>CATERING:</td>
+                        <td>{{reservation.catering}}</td>
+                    </tr>
+                    <tr>
+                        <td>UWAGI:</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>{{reservation.additional_information}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            {% if user.is_authenticated %}
+            <ul class="option-list">
+                <li><a href="{% url 'reservation_edition' pk=reservation.pk %}">EDYTUJ</a></li>
+                <li><a href="{% url 'reservation_delete' pk=reservation.pk %}">USUŃ</a></li>
             </ul>
+            <ul class="option-list">
+                <li><a href="{% url 'reservation_list' %}">POWRÓT DO MENU</a></li>
+            </ul>
+            {% endif %}
         </div>
     </div>
 </section>
-
-
-
 {% endblock %}
