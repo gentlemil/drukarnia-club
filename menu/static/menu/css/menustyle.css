@@ -134,6 +134,9 @@
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+  margin: 1.5em 0;
 }
 
 #menu-site .header ul li {
@@ -146,9 +149,9 @@
 }
 
 #menu-site .container {
-  width: 100%;
   height: 100%;
   padding: 1em 0;
+  margin: 2em 2%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -176,6 +179,7 @@
           align-items: center;
   padding-bottom: 1.5em;
   border-bottom: 1px solid #E1E1E1;
+  margin: 0 1em;
 }
 
 #menu-site .container .left table {
@@ -219,6 +223,10 @@
   margin: 0;
 }
 
+#menu-site .container .left table tbody tr td:last-child {
+  padding-left: 0.5em;
+}
+
 #menu-site .container .left table tbody tr td .text-about {
   display: inline;
   color: #E1E1E1;
@@ -249,6 +257,10 @@
 #menu-site .container .left .confirm-text ul li a {
   border: 1px solid #E1E1E1;
   padding: 0.3em 0.5em;
+}
+
+#menu-site .container .left:last-child {
+  border-bottom: none;
 }
 
 .left-create {
@@ -362,5 +374,13 @@
   color: #E1E1E1;
   border-style: solid;
   border: 1px solid #E1E1E1;
+}
+
+@media (max-width: 768px) {
+  .left {
+    width: 100%;
+    margin: 0;
+    padding: 0 1em;
+  }
 }
 /*# sourceMappingURL=menustyle.css.map */

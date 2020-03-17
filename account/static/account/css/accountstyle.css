@@ -21,17 +21,17 @@
 }
 
 #login-site .container {
-  width: 90%;
   height: 100%;
   padding: 1em 0;
+  margin: 2em 5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -40,9 +40,7 @@
 
 #login-site .container .left {
   max-width: 400px;
-  width: 100%;
-  height: 100%;
-  padding: 2.5em 1em;
+  padding: 1.5em 1em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -52,6 +50,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
+  padding: 3em 0;
 }
 
 #login-site .container .left .form-horizontal {
@@ -107,33 +107,19 @@
 }
 
 #login-site .container .left .form-horizontal .btn button {
-  height: 100%;
-  padding: 0.5em 1em;
-  font-size: 2em;
-  background-color: transparent;
-  color: #E1E1E1;
-  border-style: solid;
-  border: 1px solid #E1E1E1;
-}
-
-#login-site .container .left .form-horizontal .option-list {
-  height: 100%;
-  width: 100%;
-  padding-left: 0;
-  list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-}
-
-#login-site .container .left .form-horizontal .option-list li {
-  color: #E1E1E1;
-}
-
-#login-site .container .left .form-horizontal .option-list li a {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5em 1em;
   font-size: 1em;
+  background-color: transparent;
+  color: #E1E1E1;
+  border: 1px solid #E1E1E1;
 }
 
 #login-site .container .left .form-horizontal .helptext {
@@ -148,6 +134,31 @@
 }
 
 #login-site .container .left .form-horizontal .helptext li a {
+  font-size: 1em;
+}
+
+#login-site .container .option-list {
+  padding-left: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#login-site .container .option-list li {
+  padding: 0.5em 1em;
+  font-size: 1em;
+  background-color: transparent;
+  color: #E1E1E1;
+  border: 1px solid #E1E1E1;
+}
+
+#login-site .container .option-list li a {
   font-size: 1em;
 }
 

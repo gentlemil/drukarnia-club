@@ -13,26 +13,31 @@
                 <form class="form-horizontal" role="form" method="POST" action="">
 
                     <input type="text" class="form-input" id="id_name" placeholder="Imie i Nazwisko" name="name"
-                        maxlength="250" required value="" size="60px">
+                        maxlength="250" required value="">
                     <input type="text" class="form-input" name="email" placeholder="Podaj adres e-mail" maxlength="250"
-                        required id="id_email" size="25px">
+                        required id="id_email">
                     <input type="text" class="form-input" name="phone" placeholder="Podaj swoj nr kontaktowy"
-                        maxlength="250" required id="id_phone" , size="25px">
-                    <input type="text" class="form-input" id="id_title" size="25px" placeholder="Haslo rezerwacji"
-                        name="title" maxlength="50" required value="">
-                    <input type="number" class="form-input" name="bar" size="25px" placeholder="Bar" required=""
-                        id="id_bar">
+                        maxlength="250" required id="id_phone">
+                    <input type="text" class="form-input" id="id_title" placeholder="Haslo rezerwacji" name="title"
+                        maxlength="50" required value="">
+                    <input type="text" class="form-input" name="bar" placeholder="Bar" required="" id="id_bar">
                     <input type="text" class="form-input" name="term_of_reservation" placeholder="Podaj termin"
-                        required="" size="25px" id="id_term_of_reservation">
+                        required="" id="id_term_of_reservation">
                     <input type="number" class="form-input" name="nr_of_people" placeholder="Liczba osob" required=""
                         size="25px" id="id_nr_of_people">
-                    <label class="lb-t" for="id_catering">Catering: </label>
-                    <div class="touch"> {{ form.catering }} </div>
-                    <label class="lb-t" for="id_faktura">Faktura: </label>
-                    <div class="touch"> {{ form.faktura }} </div>
+                    <div class="inline">
+                        <label class="lb-t" for="id_catering">Catering: </label>
+                        <div class="touch"> {{ form.catering }} </div>
+                        <label class="lb-t" for="id_faktura">Faktura: </label>
+                        <div class="touch"> {{ form.faktura }} </div>
+                    </div>
                     <textarea class="form-input" placeholder="Podziel sie z nami swoimi myślami."
                         name="additional_information" maxlength="500">
                     </textarea>
+                    {% if user.is_authenticated %}
+                    <input type="text" class="form-input" id="id_status" placeholder="Status rezerwacji" name="status"
+                        maxlength="50" value="">
+                    {% endif %}
                     {% csrf_token %}
                     <input type="hidden" name="next" value="{{ next }}">
                     <span class="btn">

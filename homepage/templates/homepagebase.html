@@ -67,12 +67,22 @@
             </li>
         </ol>
         <div class="user">
-            <span><i class="fas fa-user"></i></span>
+            <p><i class="fas fa-user"></i></p>
             {% if request.user.is_authenticated %}
             {Hej} {{ request.user.first_name }},
-            <a href="{% url 'logout' %}"><span>WYLOGUJ</span></a>
+            <a href="{% url 'logout' %}">
+                <p>WYLOGUJ</p>
+            </a>
             {% else %}
-            <a href="{% url 'login' %}"><span>ZALOGUJ</span></a>
+            <ul>
+                <li><a href="{% url 'login' %}">
+                        <p>ZALOGUJ / </p>
+                    </a></li>
+                <li><a href="{% url 'register' %}">
+                        <p> DOŁĄCZ</p>
+                    </a></li>
+            </ul>
+
             {% endif %}
         </div>
     </nav>

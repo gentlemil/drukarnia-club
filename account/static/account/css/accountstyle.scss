@@ -22,23 +22,35 @@ $mainFontColor: #E1E1E1;
     }
 
     .container {
-        width: 90%;
+        // width: 90%;
+        // height: 100%;
+        // padding: 1em 0;
+        // display: flex;
+        // flex-wrap: wrap;
+        // justify-content: center;
+        // align-items: center;
+        // border: 2px solid #887D7D;
+
         height: 100%;
         padding: 1em 0;
+        margin: 2em 5%;
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
+        flex-wrap: wrap;
         align-items: center;
         border: 2px solid #887D7D;
 
         .left {
             max-width: 400px;
-            width: 100%;
-            height: 100%;
-            padding: 2.5em 1em;
+            // width: 100%;
+            // height: 100%;
+            padding: 1.5em 1em;
             display: flex;
             justify-content: center;
             align-items: center;
+
+            width: 100%;
+            padding: 3em 0;
 
             .form-horizontal {
                 width: 100%;
@@ -69,32 +81,16 @@ $mainFontColor: #E1E1E1;
                     justify-content: center;
 
                     button {
-                        height: 100%;
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
                         padding: 0.5em 1em;
-                        font-size: 2em;
+                        font-size: 1em;
                         background-color: transparent;
                         color: $mainFontColor;
-                        border-style: solid;
                         border: 1px solid $mainFontColor;
                     }
 
-                }
-
-                .option-list {
-                    height: 100%;
-                    width: 100%;
-                    padding-left: 0;
-                    list-style: none;
-                    display: flex;
-                    justify-content: space-around;
-
-                    li {
-                        color: $mainFontColor;
-
-                        a {
-                            font-size: 1em;
-                        }
-                    }
                 }
 
                 .helptext {
@@ -110,6 +106,29 @@ $mainFontColor: #E1E1E1;
                             font-size: 1em;
                         }
                     }
+                }
+            }
+        }
+
+        .option-list {
+            // max-width: 200px;
+            padding-left: 0;
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            li {
+                // width: 100%;
+
+                padding: 0.5em 1em;
+                font-size: 1em;
+                background-color: transparent;
+                color: $mainFontColor;
+                border: 1px solid $mainFontColor;
+
+                a {
+                    font-size: 1em;
                 }
             }
         }

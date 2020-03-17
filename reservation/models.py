@@ -6,20 +6,21 @@ class Bar(models.Model):
     name = models.CharField(max_length=100)
     limit = models.PositiveIntegerField()
 
-    class Meta:
-        pass
-
     def __str__(self):
         return self.name
 
 class Reservation(models.Model):
 
     STATUS_CHOICES = (
-            ('draft', 'wstepna'),
-            ('confirmed', 'potwierdzona'),
-            ('rejected', 'odrzucona')
+            ('draft', 'WSTĘPNA'),
+            ('confirmed', 'POTWIERDZONA'),
+            ('rejected', 'ODRZUCONA')
         )
     
+    title = models.CharField(
+        max_length=50,
+        default='BIBA')
+
     name = models.CharField(max_length=200)
 
     email = models.EmailField(
@@ -29,9 +30,13 @@ class Reservation(models.Model):
 
     term_of_reservation = models.DateTimeField(default=timezone.now)
 
-    bar = models.ForeignKey(Bar, on_delete=models.PROTECT)
+    bar = models.ForeignKey(
+        Bar,
+        null=False, default='',
+        verbose_name='BAR',
+        on_delete=models.CASCADE)
 
-    nr_of_people = models.PositiveIntegerField(default=1)
+    nr_of_people = models.PositiveIntegerField(default=2)
 
     catering = models.BooleanField(
         blank=False,
@@ -52,9 +57,8 @@ class Reservation(models.Model):
     status = models.CharField(
         max_length=10,
         choices=STATUS_CHOICES,
+        default='draft',
     )
-
-    title = models.CharField(max_length=50, default='BIBA')
 
     class Meta:
         pass

@@ -2,101 +2,63 @@
 
 {% block content %}
 
-<!-- przerobic te sekcje -->
-<!-- <section id="menu-site">
+<section id="homepage-about">
     <div class="header">
-        <h1 class="section-header">MENU</h1>
-        <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum ea quidem obcaecati
-            quas ipsam nisi
-            voluptatibus ducimus eligendi dolorum, doloribus quia, amet maiores veniam nobis eos sit. Nostrum, ad
-            temporibus!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi suscipit atque tempore. Voluptates error
-            exercitationem temporibus inventore ducimus delectus dolor illo totam, quod deleniti dolorem iusto
-            doloremque laborum quidem ea?
-        </p>
-    </div>
-
-    <div class="container">
-        {% for type in categories %}
-        <div class="left">
-            <table>
-                <tbody>
-                    <tr>
-                        <td>
-                            <h2>{{ type.name }}</h2>
-                        </td>
-                        <td>
-                            <h2>{{ type.amount }}ml</h2>
-                        </td>
-                    </tr>
-                </tbody>
-                {% for product in type.product_set.all %}
-                <tbody>
-                    <tr>
-                        <td>
-                            <h3>{{ product.name }}</h3>
-                        </td>
-                        <td>
-                            <h3>{{ product.prize }}</h3>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p class="text-about">{{ product.description }}</p>
-                        </td>
-                    </tr>
-                </tbody>
-                {% endfor %}
-            </table>
-        </div>
-        <div class="bdr"></div>
-        {% endfor %}
-    </div>
-</section> -->
-
-
-
-<section id="aboutTemplate">
-    <div class="section-header">
-        <h1>O NAS</h1>
-        <h3>to jeden z najlepiej zlokalizowanych krakowskich lokali. Położony jest tuż nad Wisłą, w dawnej przemysłowej
+        <h1 class="section-header">O NAS</h1>
+        <p>to jeden z najlepiej zlokalizowanych krakowskich lokali. Położony jest tuż nad Wisłą, w dawnej przemysłowej
             dzielnicy Krakowa – Podgórzu. Cztery niezależne bary (każdy z niepowtarzalnym klimatem) położone na dwóch
-            poziomach tworzą miejsce do
-            którego zaglądają z przyjemnością stali bywalcy jak i turyści. Z barów znajdujących sie na poziomie ulicy
-            podziwiać można panoramę starego miasta i leżącego po drugiej stronie rzeki Kazimierza.</h3>
+            poziomach tworzą miejsce do którego zaglądają z przyjemnością stali bywalcy jak i turyści. Z barów
+            znajdujących sie na poziomie ulicy
+            podziwiać można panoramę starego miasta i leżącego po drugiej stronie rzeki Kazimierza.
+        </p>
+        <ul>
+            <li><a href="{% url 'barrental' %}">SPRAWDŹ OFERTĘ</a></li>
+            <li><a href="{% url 'reservation-create' %}">ZRÓB REZERWACJĘ</a></li>
+        </ul>
     </div>
-    <!-- ------------------------------------------------------------ -->
-    <div class="contact-wrapper">
-        <div class="icons">
-            <ul>
-                <li><i class="fas fa-map-marker-alt"></i></li>
-                <li><i class="fa fa-phone fa-2x"></i></li>
-                <li><i class="fa fa-envelope fa-2x"></i></li>
+    <div class="container">
+        <h1 class="section-header">JAK NAS ZNALEŹĆ</h1>
+        <div class="left">
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2562.1461260293613!2d19.947049115435348!3d50.046093879421626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165b4375e9fc85%3A0x1d533bf5dca12bad!2sDrukarnia!5e0!3m2!1spl!2spl!4v1582776253632!5m2!1spl!2spl"
+                    width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </div>
+            <div class="tips">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa debitis officiis minus iste sit autem
+                    architecto illo cum! Sed ipsum quas autem error similique porro temporibus hic quasi nemo
+                    voluptatum! </p>
+            </div>
+        </div>
+        <h1 class="section-header">SOCIAL MEDIA</h1>
+        <div class="right">
+
+            <ul class="option-list-icon">
+                <li>
+                    <i class="fa fa-map-marker fa-2x icon-text"></i>
+                </li>
+                <li>
+                    <p class="icon-text">KRAKÓW<br>ul. Nadwiślańska 1</p>
+                </li>
             </ul>
-        </div>
-        <div class="icons-titles">
-            <ul>
-                <li>Kraków | ul.Nadwiślańska 1<br>Stare Podgórze</li>
-                <li>+ 48 12 656 6560</li>
-                <li>drukarnia@drukarniaclub.pl</li>
+
+            <ul class="option-list-icon">
+                <li>
+                    <i class="fa fa-phone fa-2x icon-text"></i>
+                </li>
+                <li>
+                    <p class="icon-text">+48 12 656 65 60</p>
+                </li>
             </ul>
-        </div>
-    </div>
-    <!-- ------------------------------------------------------------ -->
-    <div class="section-header">
-        <h1>DOJAZD</h1>
-    </div>
-    <div class="content">
-        <div class="map">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2562.1461260293613!2d19.947049115435348!3d50.046093879421626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165b4375e9fc85%3A0x1d533bf5dca12bad!2sDrukarnia!5e0!3m2!1spl!2spl!4v1582776253632!5m2!1spl!2spl"
-                width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-        </div>
-        <div class="tips">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa debitis officiis minus iste sit autem
-                architecto illo cum! Sed ipsum quas autem error similique porro temporibus hic quasi nemo
-                voluptatum! </p>
+
+            <ul class="option-list-icon">
+                <li>
+                    <i class="fa fa-envelope fa-2x icon-text"></i>
+                </li>
+                <li>
+                    <p class="icon-text">drukarnia@drukarniaclub.pl</p>
+                </li>
+            </ul>
         </div>
     </div>
 

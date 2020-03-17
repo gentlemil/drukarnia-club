@@ -6,8 +6,19 @@ $mainFontColor: #E1E1E1;
 // $gradient-start :#141414;
 // $gradient-end :#2A2A2A;
 
-$gradient-start :#251d1d;
-$gradient-end :#5e4f4f;
+// $gradient-start :#251d1d;
+// $gradient-end :#5e4f4f;
+
+$gradient-start :#161212;
+$gradient-end :#221919;
+
+// $gradient-start :rgba(33, 17, 0, 1);
+// $gradient-end :rgba(185, 133, 60, 1);
+
+
+
+
+// background: linear-gradient(90deg, 0%, rgba(29,16,0,1) 43%, rgba(37,10,10,0.85) 78%, rgba(185,133,60,1) 100%);
 
 body {
     height: 100%;
@@ -88,6 +99,7 @@ p {
     top: 0;
     left: 0;
     width: 100%;
+    min-width: 100vw;
     height: auto;
     background-image: linear-gradient(to right, #5e4f4f 0%, rgba(94, 79, 79, 0.7) 100%);
     text-transform: uppercase;
@@ -113,7 +125,7 @@ p {
 
     .photo {
         width: 4em;
-        margin-left: 1em;
+        margin-left: 2em;
         margin-top: 0.4em;
         margin-bottom: 0.4em;
 
@@ -152,8 +164,35 @@ p {
     }
 
     .user {
-        margin: 0 1em;
+        margin: 1em 2em;
         font-size: 0.7em;
+
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-inline-start: 0;
+            margin: 0.3em;
+        }
+
+        a {
+            font-size: 1em;
+            color: $mainFontColor;
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+
+        }
+
+        p {
+            font-size: 0.9em;
+            color: $mainFontColor;
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+
+        }
 
     }
 }
@@ -323,14 +362,14 @@ p {
 @media(max-width: 768px) {
     .menu {
         background-image: linear-gradient(to bottom, $gradient-start 0%, $gradient-end 100%);
-        display: none;
-        height: 0;
+        // display: none;
+        // height: 0;
         position: relative;
 
 
 
         a {
-            font-size: 1.4rem;
+            // font-size: 1.4rem;
             padding: 1rem 0.5rem;
         }
 
@@ -616,41 +655,6 @@ p {
             width: 70%;
             color: $mainFontColor;
         }
-
-        .right {
-            max-width: 90%;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: wrap;
-
-
-
-            .option-list-icon {
-                height: 100%;
-                max-width: 250px;
-                margin: 0;
-                padding-left: 0;
-                list-style: none;
-                display: inline-flex;
-                justify-content: space-around;
-                align-items: center;
-
-                li {
-                    color: $mainFontColor;
-                    font-size: 1em;
-                    padding: 0 1em;
-
-                    .icon-text {
-                        font-size: 1.2em;
-                        height: 100%;
-                        color: $mainFontColor;
-                    }
-                }
-            }
-        }
     }
 }
 
@@ -658,9 +662,42 @@ p {
     background: transparent;
 }
 
-// ------------------------------
-// ------------------------------
-// ------------------------------
+.right {
+    max-width: 90%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+
+
+    .option-list-icon {
+        height: 100%;
+        max-width: 250px;
+        margin: 0;
+        padding-left: 0;
+        list-style: none;
+        display: inline-flex;
+        justify-content: space-around;
+        align-items: center;
+
+        li {
+            color: $mainFontColor;
+            font-size: 1em;
+            padding: 0 1em;
+
+            .icon-text {
+                font-size: 1.2em;
+                height: 100%;
+                color: $mainFontColor;
+            }
+        }
+    }
+}
+
+
 /* --------------------------------------------------------------------- */
 /* --------------------------- FOOTER  --------------------------------- */
 .site-footer {
@@ -727,6 +764,113 @@ p {
                     }
                 }
             }
+        }
+    }
+}
+
+#homepage-about {
+    height: 100%;
+    max-width: 100vw;
+    width: 100%;
+    padding: 1em 0 2em 0;
+    background-color: #26272B;
+    display: block;
+    color: $mainFontColor;
+    margin: 0 auto;
+
+    .section-header {
+        margin-bottom: 0.5em;
+    }
+
+    .header {
+        width: 100%;
+        margin-bottom: 3em;
+        margin: 0 auto;
+
+
+
+        p {
+            font-size: 1em;
+            margin: 0 auto;
+            width: 80%;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding-inline-start: 0;
+            margin: 1.5em 1em;
+
+            li {
+                margin: 0 3em;
+
+                a {
+                    border: 1px solid $mainFontColor;
+                    padding: 0.3em 0.5em;
+                }
+            }
+        }
+    }
+
+    .container {
+        height: 100%;
+        padding: 1em 0;
+        margin: 2em 2%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        border: 2px solid #887D7D;
+
+        .left {
+            // min-width: 45%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding-bottom: 1.5em;
+            border-bottom: 1px solid $mainFontColor;
+            margin: 0 1em;
+
+            .map {
+                // width: 100%;
+            }
+
+            .tips {
+                // width: 100%;
+                padding: 0 1em;
+            }
+
+
+
+            // .confirm-text {
+            //     display: block;
+            //     margin: 0 auto;
+
+            //     ul {
+            //         display: block;
+            //         list-style: none;
+
+            //         margin-left: 0;
+            //         padding-left: 0;
+
+            //         li {
+            //             margin: 0 3em;
+            //             margin-left: 0;
+            //             padding-left: 0;
+
+            //             a {
+            //                 border: 1px solid $mainFontColor;
+            //                 padding: 0.3em 0.5em;
+            //             }
+            //         }
+            //     }
+            // }
+        }
+
+        .left:last-child {
+            border-bottom: none;
         }
     }
 }

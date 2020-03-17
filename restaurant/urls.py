@@ -5,12 +5,12 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
+    path('account/', include('account.urls')),
     path('admin/', admin.site.urls),
     path('', include('homepage.urls')),
     path('menu/', include('menu.urls')),
     path('reservation/', include('reservation.urls')),
     path('blog/', include('blog.urls')),
-    path('account/', include('account.urls')),
 
 ]
 

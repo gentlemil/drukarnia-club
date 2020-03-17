@@ -2,23 +2,58 @@
 
 {% block content %}
 
-<section id="barRental">
-    <div class="section-header">
-        <h1>WYNAJEM SALI</h1>
-        <h3>W lokalu znajdują się cztery sale, każda z nich posiada osobny bar i charakteryzuje się niepowtarzalnym
+<section id="homepage-about">
+    <div class="header">
+        <h1 class="section-header">WYNAJEM SALI</h1>
+        <p>W lokalu znajdują się cztery sale, każda z nich posiada osobny bar i charakteryzuje się niepowtarzalnym
             wnętrzem. Pierwszy tzw.: „Start Bar” to miejsce do spotkań starych znajomych w luźnej atmosferze. Sala
             kominkowa to przestrzeń elegancka idealna dla służbowych spotkań. Na poziomie -1 znajdują się dwa
             pomieszczenia, z bogato wyposażonymi barami, gdzie w każdy weekend organizujemy imprezy, TYLKO z muzyką
             taneczną. Jest to miejsce, gdzie możesz również zorganizować imprezę firmową, spotkanie z przyjaciółmi.
-            Zapraszamy do odwiedzin naszego lokalu.</h3>
+            Zapraszamy do odwiedzin naszego lokalu.</p>
+        <ul>
+            <li><a href="#">GALERIA</a></li>
+            <li><a href="{% url 'reservation-create' %}">ZRÓB REZERWACJĘ</a></li>
+        </ul>
     </div>
-    <div class="content"></div>
-    <div class="section-header">
-        <h1>OFERTA CATERINGOWA</h1>
-    </div>
-    <div class="content"></div>
+    <div class="container">
+        <h1 class="section-header">CATERING</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit accusamus enim labore sed necessitatibus
+            ipsum vitae omnis deleniti facilis, tenetur numquam, magni similique saepe facere eum tempore illum
+            aspernatur magnam!</p>
+        <div class="left">
+        </div>
+        <h1 class="section-header">SOCIAL MEDIA</h1>
+        <div class="right">
 
-    <div class="content"></div>
+            <ul class="option-list-icon">
+                <li>
+                    <i class="fa fa-map-marker fa-2x icon-text"></i>
+                </li>
+                <li>
+                    <p class="icon-text">KRAKÓW<br>ul. Nadwiślańska 1</p>
+                </li>
+            </ul>
+
+            <ul class="option-list-icon">
+                <li>
+                    <i class="fa fa-phone fa-2x icon-text"></i>
+                </li>
+                <li>
+                    <p class="icon-text">+48 12 656 65 60</p>
+                </li>
+            </ul>
+
+            <ul class="option-list-icon">
+                <li>
+                    <i class="fa fa-envelope fa-2x icon-text"></i>
+                </li>
+                <li>
+                    <p class="icon-text">drukarnia@drukarniaclub.pl</p>
+                </li>
+            </ul>
+        </div>
+    </div>
 
 </section>
 
