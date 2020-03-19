@@ -22,7 +22,7 @@
             <p class="home-text">Klub Drukarnia to jeden z najlepiej zlokalizowanych krakowskich lokali.
                 Położony jest tuż nad Wisłą, w dawnej przemysłowej dzielnicy Krakowa – Podgórzu.</p>
             <hr>
-            <p class="home-text">Kraków, Stare Podgórze, ul. Nadwiślańska 1</p>
+            <p>Kraków, Stare Podgórze, ul. Nadwiślańska 1</p>
             <ul class="option-list">
                 <li>
                     <a href="{% url 'reservation-create' %}">REZERWACJA</a>
@@ -37,7 +37,7 @@
         <div class="left">
             <p class="home-text">Twój bar. Twoje miasto!</p>
             <hr>
-            <p class="home-text">Jesteśmy otwarci codziennie od 9:00.</p>
+            <p>Otwieramy codziennie o 9:00</p>
             <ul class="option-list">
                 <li>
                     <a href="{% url 'menu' %}">MENU</a>
@@ -69,8 +69,7 @@
             <form class="form-horizontal" role="form" method="POST" action="">
                 <input type="text" class="form-input" id="name" placeholder="imie i nazwisko" name="name" value="">
                 <input type="email" class="form-input" id="email" placeholder="e-mail" name="email" value="">
-                <textarea class="form-input" rows="10" placeholder="wpisz treść wiadomości..."
-                    name="message"></textarea>
+                <textarea class="form-input" rows="7" placeholder="wpisz treść wiadomości..." name="message"></textarea>
                 {% csrf_token %}
                 <input type="hidden" name="next" value="{{ next }}">
                 <span class="btn">
