@@ -30,11 +30,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'jquery',
     'debug_toolbar',            # bardzo wazne, zeby to bylo za staticfiles!
     'django_extensions',
     'sass_processor',
     'compressor',
     'taggit',
+    'bootstrap4',
+    'tempus_dominus',
+    # 'bootstrap_datepicker_plus',
     'reservation.apps.ReservationConfig',
     'homepage.apps.HomepageConfig',
     'menu.apps.MenuConfig',
@@ -142,6 +146,10 @@ LOGOUT_URL = 'logout'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+BOOTSTRAP4 = {
+    'include_jquery': True,
+}
+
 # ######################################################################
 # ######################################################################
 
@@ -180,10 +188,13 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 #     'django.contrib.messages',
 #     'django.contrib.staticfiles',
 #     'debug_toolbar',            # bardzo wazne, zeby to bylo za staticfiles!
+#     'jquery',
 #     'django_extensions',
 #     'sass_processor',
 #     'compressor',
 #     'taggit',
+#     'bootstrap4',
+#     'bootstrap_datepicker_plus',
 #     'reservation.apps.ReservationConfig',
 #     'homepage.apps.HomepageConfig',
 #     'menu.apps.MenuConfig',
@@ -291,3 +302,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # LOGOUT_URL = 'logout'
 
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# BOOTSTRAP4 = {
+#     'include_jquery': True,
+# }

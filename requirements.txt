@@ -1,8 +1,10 @@
+arrow==0.15.5
 asgiref==3.2.3
 backcall==0.1.0
 certifi==2019.11.28
 chardet==3.0.4
 colorama==0.4.3
+dateparser==0.7.4
 decorator==4.4.1
 Django==2.2.10
 django-appconf==1.0.3
@@ -22,6 +24,7 @@ ipython==7.11.1
 ipython-genutils==0.2.0
 jedi==0.15.2
 libsass==0.19.4
+moment==0.8.2
 node==0.9.24
 npm==0.1.1
 odict==1.7.0
@@ -32,14 +35,18 @@ plumber==1.5
 prompt-toolkit==3.0.2
 psycopg2==2.8.4
 Pygments==2.5.2
+python-dateutil==2.8.1
 python-decouple==3.3
 pytz==2019.3
 rcssmin==1.0.6
+regex==2020.2.20
 requests==2.22.0
 rjsmin==1.1.0
 six==1.13.0
 sqlparse==0.3.0
+times==0.7
 traitlets==4.3.3
+tzlocal==2.0.0
 urllib3==1.25.8
 wcwidth==0.1.8
 whitenoise==5.0.1

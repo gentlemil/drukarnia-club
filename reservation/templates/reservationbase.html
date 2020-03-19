@@ -1,4 +1,5 @@
 {% load sass_tags static %}
+{% load staticfiles %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,99 +8,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>D R U K 2.0 - STRONA GLOWNA</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-    <link rel="stylesheet" href="{% sass_src 'homepage/css/homepagestyle.scss' %}">
-    <link rel="stylesheet" href="{% sass_src 'reservation/css/reservation-style.scss' %}">
-
+    <title>Klub Drukarnia - Strona Główna</title>
     <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500&display=swap&subset=latin-ext"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% sass_src 'reservation/css/reservation-style.scss' %}">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'homepage/js/main.js' %}"></script>
+
+    {{ form.media }}
 </head>
 
 <body>
-    <nav class="menu">
+
+    <nav class="menu-bar">
         <div class="photo">
             <a class="logo" href="{% url 'homepage' %}"><img src="{% static 'homepage/img/drukarnia-logo.png' %}"
                     alt="logo"></a>
         </div>
-        <ol>
+
+        <ol id="primary-menu" class="menu nav-menu">
             <li class="menu-item"><a href="{% url 'aboutUs' %}">O NAS</a></li>
             <li class="menu-item"><a href="{% url 'barrental' %}">OFERTA</a></li>
             <li class="menu-item">
-                <a href="#0"><s>BLOG</s></a>
                 {% if user.is_authenticated %}
+                <a href="#"><s>BLOG</s></a>
                 <ol class="sub-menu">
                     <li class="menu-item"><a href="#0">WIDOK</a></li>
                     <li class="menu-item"><a href="#0">NOWY POST</a></li>
                     <li class="menu-item"><a href="#0">EDYCJA</a></li>
                 </ol>
+                {% else %}
+                <a href="#0"><s>BLOG</s></a>
                 {% endif %}
             </li>
             <li class="menu-item">
-                <a href="{% url 'menu' %}">MENU</a>
                 {% if user.is_authenticated %}
+                <a href="#">MENU</a>
                 <ol class="sub-menu">
+                    <li class="menu-item"><a href="{% url 'menu' %}">MENU WIDOK</a></li>
                     <li class="menu-item"><a href="{% url 'menu_list' %}">LISTA PRODUKTÓW</a></li>
                     <li class="menu-item"><a href="{% url 'menu_create' %}">DODAJ PRODUKT</a></li>
                 </ol>
+                {% else %}
+                <a href="{% url 'menu' %}">MENU</a>
                 {% endif %}
             </li>
-            {% if user.is_authenticated %}
+            <!-- {% if user.is_authenticated %}
             <li class="menu-item">
-                <a href="#0"><s>UŻYTKOWNICY</s></a>
+
+                <a href="#"><s>UŻYTKOWNICY</s></a>
                 <ol class="sub-menu">
-                    <li class="menu-item"><a href="#0">ZOBACZ WSZYSTKICH</a></li>
-                    <li class="menu-item"><a href="#0">DODAJ NOWEGO</a></li>
-                    <li class="menu-item"><a href="#0">EDYTUJ DANE</a></li>
+                    <li class="menu-item"><a href="#">ZOBACZ WSZYSTKICH</a></li>
+                    <li class="menu-item"><a href="#">DODAJ NOWEGO</a></li>
+                    <li class="menu-item"><a href="#">EDYTUJ</a></li>
                 </ol>
             </li>
-            {% endif %}
+            {% endif %} -->
             <li class="menu-item">
-                <a href="{% url 'reservation-create' %}">REZERWACJA</a>
                 {% if user.is_authenticated %}
+                <a href="#">REZERWACJA</a>
                 <ol class="sub-menu">
                     <li class="menu-item"><a href="{% url 'reservation_list' %}">ZOBACZ REZERWACJE</a></li>
                     <li class="menu-item"><a href="{% url 'reservation-create' %}">DODAJ NOWĄ</a></li>
                 </ol>
+                {% else %}
+                <a href="{% url 'reservation-create' %}">REZERWACJA</a>
                 {% endif %}
             </li>
         </ol>
         <div class="user">
-            <span><i class="fas fa-user"></i></span>
+            <p><i class="fas fa-user"></i></p>
             {% if request.user.is_authenticated %}
             Hej {{ request.user.first_name }},
-            <a href="{% url 'logout' %}"><span>WYLOGUJ</span></a>
+            <a href="{% url 'logout' %}">
+                <p>WYLOGUJ</p>
+            </a>
             {% else %}
-            <a href="{% url 'login' %}"><span>ZALOGUJ</span></a>
+            <ul>
+                <li><a href="{% url 'login' %}">
+                        <p>ZALOGUJ / </p>
+                    </a></li>
+                <li><a href="{% url 'register' %}">
+                        <p> DOŁĄCZ</p>
+                    </a></li>
+            </ul>
             {% endif %}
         </div>
+        <!--  -->
+        <button id="menu-toggler" data-class="menu-active" class="hamburger">
+            <span class="hamburger-line hamburger-line-top"></span>
+            <span class="hamburger-line hamburger-line-middle"></span>
+            <span class="hamburger-line hamburger-line-bottom"></span>
+        </button>
+        <!--  -->
     </nav>
 
-    <!-- <div class="content">
-        <ul class="cb-slideshow">
-            <li><span>Image 01</span>
-            </li>
-            <li><span>Image 02</span>
-            </li>
-            <li><span>Image 03</span>
-            </li>
-            <li><span>Image 04</span>
-            </li>
-        </ul>
-    </div> -->
+    <div class="main-content">
+        {% block content %}
 
-    {% block content %}
-
-    {% endblock %}
-
+        {% endblock %}
+    </div>
     <footer class="site-footer">
         <hr>
         <div class="container">
             <div class="row">
                 <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by
-                    <a href="#">Gentlemil</a>.
+                    <a href="#">&nbsp;Gentlemil</a>.
                 </p>
                 <div class="icons">
                     <ul class="social-icons">

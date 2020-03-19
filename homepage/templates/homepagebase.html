@@ -1,4 +1,5 @@
 {% load sass_tags static %}
+{% load staticfiles %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,10 +8,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>D R U K 2.0 - STRONA GLOWNA</title>
+    <title>Klub Drukarnia - Strona Główna</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <link rel="stylesheet" href="{% sass_src 'homepage/css/homepagestyle.scss' %}">
+    <!-- <script type="text/javascript" src="{% static 'homepage/js/axios.min.js' %}"></script> -->
+    <script type="text/javascript" src="{% static 'homepage/js/jquery-3.4.1.min.js' %}"></script>
+    <!-- <script type="text/javascript" src="{% static 'https://unpkg.com/aos@2.3.1/dist/aos.js' %}"></script> -->
+    <script type="text/javascript" src="{% static 'homepage/js/main.js' %}"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500&display=swap&subset=latin-ext"
         rel="stylesheet">
@@ -19,57 +24,66 @@
 
 <body>
 
-    <nav class="menu">
+    <nav class="menu-bar">
         <div class="photo">
             <a class="logo" href="{% url 'homepage' %}"><img src="{% static 'homepage/img/drukarnia-logo.png' %}"
                     alt="logo"></a>
         </div>
-        <ol>
+
+        <ol id="primary-menu" class="menu nav-menu">
             <li class="menu-item"><a href="{% url 'aboutUs' %}">O NAS</a></li>
             <li class="menu-item"><a href="{% url 'barrental' %}">OFERTA</a></li>
             <li class="menu-item">
-                <a href="#0"><s>BLOG</s></a>
                 {% if user.is_authenticated %}
+                <a href="#"><s>BLOG</s></a>
                 <ol class="sub-menu">
                     <li class="menu-item"><a href="#0">WIDOK</a></li>
                     <li class="menu-item"><a href="#0">NOWY POST</a></li>
                     <li class="menu-item"><a href="#0">EDYCJA</a></li>
                 </ol>
+                {% else %}
+                <a href="#0"><s>BLOG</s></a>
                 {% endif %}
             </li>
             <li class="menu-item">
-                <a href="{% url 'menu' %}">MENU</a>
                 {% if user.is_authenticated %}
+                <a href="#">MENU</a>
                 <ol class="sub-menu">
+                    <li class="menu-item"><a href="{% url 'menu' %}">MENU WIDOK</a></li>
                     <li class="menu-item"><a href="{% url 'menu_list' %}">LISTA PRODUKTÓW</a></li>
                     <li class="menu-item"><a href="{% url 'menu_create' %}">DODAJ PRODUKT</a></li>
                 </ol>
+                {% else %}
+                <a href="{% url 'menu' %}">MENU</a>
                 {% endif %}
             </li>
-            {% if user.is_authenticated %}
+            <!-- {% if user.is_authenticated %}
             <li class="menu-item">
-                <a href="#0"><s>UŻYTKOWNICY</s></a>
+
+                <a href="#"><s>UŻYTKOWNICY</s></a>
                 <ol class="sub-menu">
-                    <li class="menu-item"><a href="#0">ZOBACZ WSZYSTKICH</a></li>
-                    <li class="menu-item"><a href="#0">DODAJ NOWEGO</a></li>
-                    <li class="menu-item"><a href="#0">EDYTUJ DANE</a></li>
+                    <li class="menu-item"><a href="#">ZOBACZ WSZYSTKICH</a></li>
+                    <li class="menu-item"><a href="#">DODAJ NOWEGO</a></li>
+                    <li class="menu-item"><a href="#">EDYTUJ</a></li>
                 </ol>
             </li>
-            {% endif %}
+            {% endif %} -->
             <li class="menu-item">
-                <a href="{% url 'reservation-create' %}">REZERWACJA</a>
                 {% if user.is_authenticated %}
+                <a href="#">REZERWACJA</a>
                 <ol class="sub-menu">
                     <li class="menu-item"><a href="{% url 'reservation_list' %}">ZOBACZ REZERWACJE</a></li>
                     <li class="menu-item"><a href="{% url 'reservation-create' %}">DODAJ NOWĄ</a></li>
                 </ol>
+                {% else %}
+                <a href="{% url 'reservation-create' %}">REZERWACJA</a>
                 {% endif %}
             </li>
         </ol>
         <div class="user">
             <p><i class="fas fa-user"></i></p>
             {% if request.user.is_authenticated %}
-            {Hej} {{ request.user.first_name }},
+            Hej {{ request.user.first_name }},
             <a href="{% url 'logout' %}">
                 <p>WYLOGUJ</p>
             </a>
@@ -82,10 +96,15 @@
                         <p> DOŁĄCZ</p>
                     </a></li>
             </ul>
-
             {% endif %}
         </div>
+        <button id="menu-toggler" data-class="menu-active" class="hamburger">
+            <span class="hamburger-line hamburger-line-top"></span>
+            <span class="hamburger-line hamburger-line-middle"></span>
+            <span class="hamburger-line hamburger-line-bottom"></span>
+        </button>
     </nav>
+
     <div class="main-content">
         {% block content %}
 
