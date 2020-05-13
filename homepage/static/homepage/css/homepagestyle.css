@@ -102,7 +102,15 @@ body .mynav .dropdown-menu {
 
 body .mynav .dropdown-item:hover {
   background-color: #7c6350 !important;
+  margin: 0;
   font-size: 1.3em;
+}
+
+body .mynav .nav-pills .nav-link.active,
+body .mynav .nav-pills .show > .nav-link {
+  background-color: #7c6350 !important;
+  border-radius: 0em !important;
+  color: #E1E1E1 !important;
 }
 
 body .user {
@@ -139,17 +147,16 @@ body .hamburger {
   background: transparent;
   border: none;
   cursor: pointer;
-  display: none;
   height: 30px;
   position: relative;
   width: 30px;
   z-index: 1000;
   padding: 1em;
-  margin-right: 2em;
+  margin-right: 1rem;
 }
 
 body .hamburger-line {
-  background: #35281E;
+  background: #E1E1E1;
   height: 3px;
   position: absolute;
   left: 0;
@@ -223,7 +230,7 @@ body .horizontal_line {
   width: 30%;
   height: 0.1rem;
   background-color: #E1E1E1;
-  margin: 2rem 0;
+  margin: 2rem auto;
 }
 
 body .content .cb-slideshow {
@@ -420,24 +427,36 @@ body .single-homepage-section-first .header {
   font-weight: 200;
   padding-bottom: 2rem;
   text-align: center;
-  letter-spacing: 0.08rem;
+  letter-spacing: 0.14rem;
 }
 
 body .single-homepage-section-first .horizontal_line {
   height: 0.1rem;
   width: 30vw;
   background-color: #E1E1E1;
-  -webkit-transition: width 2s ease-in-out;
-  transition: width 2s ease-in-out;
+  -webkit-transition: width 1s ease-in-out;
+  transition: width 1s ease-in-out;
 }
 
 body .single-homepage-section-first .subtitle {
   font-size: 3rem;
+  font-weight: 100;
+}
+
+body .single-homepage-section-first .subtitle i {
+  -webkit-transition: all 1.5s ease-in-out;
+  transition: all 1.5s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  body .single-homepage-section-first {
+    margin-top: 50vh;
+  }
 }
 
 body .single-homepage-section-first:hover i {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
+  -webkit-transform: translateY(15px);
+          transform: translateY(15px);
 }
 
 body .single-homepage-section-menu {
@@ -574,7 +593,8 @@ body .single-homepage-section-menu .row .menu-text .home-text-sub {
   font-size: 1.6rem;
   font-weight: 300;
   opacity: 0.95;
-  padding-bottom: 10%;
+  padding: 0;
+  margin: 0;
 }
 
 body .single-homepage-section-menu .row .menu-text .btn {
@@ -624,7 +644,7 @@ body .single-homepage-section-menu .row .one {
   background: url("https://i.imgur.com/TFQlrYQ.png");
   -webkit-transform: scale(1);
           transform: scale(1);
-  opacity: 0.75;
+  opacity: 0.85;
   -webkit-transition: .8s all ease-in-out;
   transition: .8s all ease-in-out;
 }
@@ -639,7 +659,7 @@ body .single-homepage-section-menu .row .two {
   background: url("https://i.imgur.com/PruEygM.png");
   -webkit-transform: scale(1);
           transform: scale(1);
-  opacity: 0.75;
+  opacity: 0.85;
   -webkit-transition: .8s all ease-in-out;
   transition: .8s all ease-in-out;
 }
@@ -654,7 +674,7 @@ body .single-homepage-section-menu .row .three {
   background: url("https://i.imgur.com/vuANIxu.png");
   -webkit-transform: scale(1);
           transform: scale(1);
-  opacity: 0.75;
+  opacity: 0.85;
   -webkit-transition: .8s all ease-in-out;
   transition: .8s all ease-in-out;
 }
@@ -669,7 +689,7 @@ body .single-homepage-section-menu .row .four {
   background: url("https://i.imgur.com/ldchUGi.png");
   -webkit-transform: scale(1);
           transform: scale(1);
-  opacity: 0.75;
+  opacity: 0.85;
   -webkit-transition: .8s all ease-in-out;
   transition: .8s all ease-in-out;
 }
@@ -684,7 +704,7 @@ body .single-homepage-section-menu .row .five {
   background: url("https://i.imgur.com/TGVCPeZ.png");
   -webkit-transform: scale(1);
           transform: scale(1);
-  opacity: 0.75;
+  opacity: 0.85;
   -webkit-transition: .8s all ease-in-out;
   transition: .8s all ease-in-out;
 }
@@ -748,7 +768,7 @@ body .single-homepage-section-menu .row .five:hover {
 }
 
 .single-homepage-section-offer .container .offer_item .space {
-  height: 1.5px;
+  height: 1.8px;
   width: 40%;
   margin: 2rem auto;
   background-color: #E1E1E1;
@@ -756,12 +776,18 @@ body .single-homepage-section-menu .row .five:hover {
   transition: width 1.5s;
 }
 
+.single-homepage-section-offer .container .offer_item .title_offer h5 {
+  font-size: 1.8rem;
+  font-weight: 300;
+  letter-spacing: 0.07rem;
+}
+
 .single-homepage-section-offer .container .offer_item:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .single-homepage-section-offer .container .offer_item:hover .space {
-  width: 60%;
+  width: 75%;
 }
 
 .single-homepage-section-reservation {

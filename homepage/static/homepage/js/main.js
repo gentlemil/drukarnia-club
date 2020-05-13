@@ -12,22 +12,22 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.classList.toggle(className);
     }
 
-    // $(window).on('scroll', function () {
-    //     if (window.pageYOffset > 0) {
-    //         $('.menu').addClass('.active-scroll');
-    //     } else {
-    //         $('.menu').removeClass('.active-scroll');
-    //     }
-    // })
+    $(window).on('scroll', function () {
+        if (window.pageYOffset > 0) {
+            $('.menu').addClass('.active-scroll');
+        } else {
+            $('.menu').removeClass('.active-scroll');
+        }
+    })
 
-    // window.addEventListener('scroll', function () {
-    //     let navigation = document.querySelector('menu-bar')
-    //     if (this.window.pageYOffset > 0) {
-    //         navigation.classList.add('active-scroll')
-    //     } else {
-    //         navigation.classList.remove('active-scroll')
-    //     }
-    // })
+    window.addEventListener('scroll', function () {
+        let navigation = document.querySelector('menu-bar')
+        if (this.window.pageYOffset > 0) {
+            navigation.classList.add('active-scroll')
+        } else {
+            navigation.classList.remove('active-scroll')
+        }
+    })
 
 
 });
