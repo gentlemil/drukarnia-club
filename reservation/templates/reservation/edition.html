@@ -25,35 +25,88 @@
     </div>
     <div class="container">
         <div class="left">
-            <form class="form-horizontal" role="form" method="POST" action="">
-
-                <input type="text" value="{{reservation.title}}" class="form-input" id="id_name" name="name"
-                    maxlength="250" required size="60px">
-                <input type="text" value="{{reservation.email}}" class="form-input" name="email" maxlength="250"
-                    required id="id_email" size="25px">
-                <input type="text" value="{{reservation.phone}}" class="form-input" name="phone" maxlength="250"
-                    required id="id_phone" , size="25px">
-                <input type="text" value="{{reservation.title}}" class="form-input" id="id_title" size="25px"
-                    name="title" maxlength="50" required>
-
-                <input type="number" value="{{reservation.bar}}" class="form-input" placeholder="Bar" name="bar"
-                    size="25px" required="" id="id_bar">
-                <input type="text" value="{{reservation.term_of_reservation}}" class="form-input"
-                    name="term_of_reservation" required="" size="25px" id="id_term_of_reservation">
-                <input type="number" placeholder="Liczba osób" class="form-input" name="nr_of_people" required=""
-                    size="25px" id="id_nr_of_people">
-                <label class="lb-t" for="id_catering">Catering: </label>
-                <div class="touch"> {{ form.catering }} </div>
-                <label class="lb-t" for="id_faktura">Faktura: </label>
-                <div class="touch"> {{ form.faktura }} </div>
-                <textarea class="form-input" placeholder="{{reservation.additional_information}}" cols="250" rows="10"
-                    name="additional_information" maxlength="500">
-                </textarea>
+            <form>
                 {% csrf_token %}
-                <input type="hidden" name="next" value="{{ next }}">
-                <span class="btn">
-                    <button class="send-btn" id="submit" type="submit" value="SEND">ZATWIERDŹ ZMIANY</button>
-                </span>
+                <div class="form-row">
+                    <div class="form-group col-12 col-md-6">
+                        <input type="text" class="form-control" id="id_name" placeholder="Imie i Nazwisko" name="name"
+                            maxlength="250" required value="">
+                    </div>
+                    <div class="form-group col-12 col-md-6">
+                        <input type="text" class="form-control" name="email" placeholder="Podaj adres e-mail"
+                            maxlength="250" required id="id_email">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-12 col-md-6">
+                        <input type="text" class="form-control" name="phone" placeholder="Podaj swoj nr kontaktowy"
+                            maxlength="250" required id="id_phone">
+                    </div>
+                    <div class="form-group col-12 col-md-6">
+                        <input type="text" class="form-control" id="id_title" placeholder="Haslo rezerwacji"
+                            name="title" maxlength="50" required value="">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-12 col-md-4">
+
+                        <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                            <input type="text" class="form-control datetimepicker-input"
+                                data-target="#datetimepicker1" />
+                            <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+                            $(function () {
+                                $('#datetimepicker1').datetimepicker();
+                            });
+                        </script>
+                    </div>
+                    <div class="form-group col-6 col-md-4">
+                        <select name="bar" class="form-control" required id="id_bar">
+                            <option value="" class="form-control" selected>Wybierz bar</option>
+                            <option class="form-input" value="1">BAR1</option>
+                            <option class="form-input" value="2">BAR2</option>
+                            <option class="form-input" value="3">BAR3</option>
+                            <option class="form-input" value="4">BAR4</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-6 col-md-4">
+                        <input type="number" class="form-control" name="nr_of_people" placeholder="Liczba osob"
+                            required="" size="25px" id="id_nr_of_people">
+                    </div>
+                </div>
+                <div class="form-group col-12">
+                    <textarea class="form-control" id="additional_information" name="additional_information"
+                        maxlength="500" rows="3"></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-4">
+                        <div class="form-check">
+                            <label class="form-check-label" for="gridCheck">Catering</label>
+                            <div class="touch"> {{ form.catering }} </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-4">
+                        <div class="form-check">
+                            <label class="form-check-label" for="gridCheck">Faktura</label>
+                            <div class="touch"> {{ form.faktura }} </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-4">
+                        <input type="hidden" name="next" value="{{ next }}">
+                        <span class="btn">
+                            <button class="btn btn-primary" id="submit" type="submit" value="SEND">ZAPISZ</button>
+                        </span>
+                    </div>
+                    {% if user.is_authenticated %}
+                    <div class="form-group col-12">
+                        <input type="text" class="form-control" id="id_status" placeholder="Status rezerwacji"
+                            name="status" maxlength="50" value="">
+                    </div>
+                    {% endif %}
+                </div>
             </form>
         </div>
     </div>

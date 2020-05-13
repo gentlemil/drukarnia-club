@@ -6,85 +6,89 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Klub Drukarnia - Strona Główna</title>
-
+    <title>Klub Drukarnia Kraków</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <link rel="stylesheet" href="{% sass_src 'homepage/css/homepagestyle.scss' %}">
-    <link rel="stylesheet" href="{% sass_src 'account/css/accountstyle.scss' %}">
     <!-- <script type="text/javascript" src="{% static 'homepage/js/axios.min.js' %}"></script> -->
-    <script type="text/javascript" src="{% static 'homepage/js/jquery-3.4.1.min.js' %}"></script>
+    <!-- <script type="text/javascript" src="{% static 'homepage/js/jquery-3.4.1.min.js' %}"></script> -->
     <!-- <script type="text/javascript" src="{% static 'https://unpkg.com/aos@2.3.1/dist/aos.js' %}"></script> -->
     <script type="text/javascript" src="{% static 'homepage/js/main.js' %}"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500&display=swap&subset=latin-ext"
         rel="stylesheet">
-
 </head>
 
 <body>
-
-    <nav class="menu-bar">
-        <div class="photo">
-            <a class="logo" href="{% url 'homepage' %}"><img src="{% static 'homepage/img/drukarnia-logo.png' %}"
-                    alt="logo"></a>
-        </div>
-
-        <ol id="primary-menu" class="menu nav-menu">
-            <li class="menu-item"><a href="{% url 'aboutUs' %}">O NAS</a></li>
-            <li class="menu-item"><a href="{% url 'barrental' %}">OFERTA</a></li>
-            <li class="menu-item">
-                {% if user.is_authenticated %}
-                <a href="#"><s>BLOG</s></a>
-                <ol class="sub-menu">
-                    <li class="menu-item"><a href="#0">WIDOK</a></li>
-                    <li class="menu-item"><a href="#0">NOWY POST</a></li>
-                    <li class="menu-item"><a href="#0">EDYCJA</a></li>
-                </ol>
-                {% else %}
-                <a href="#0"><s>BLOG</s></a>
-                {% endif %}
+    <nav class="navbar navbar-light bg-dark mynav">
+        <a class="navbar-brand" href="{% url 'homepage' %}">
+            <img src="{% static 'homepage/img/drukarnia-logo.png' %}" width="auto" height="80"
+                class="d-inline-block align-top" alt="">
+        </a>
+        <div style="flex: 1;"></div>
+        <ul class="nav nav-pills">
+            <li class="nav-item ">
+                <a class="nav-link disabled" href="{% url 'aboutUs' %}">O NAS</a>
             </li>
-            <li class="menu-item">
-                {% if user.is_authenticated %}
-                <a href="#">MENU</a>
-                <ol class="sub-menu">
-                    <li class="menu-item"><a href="{% url 'menu' %}">MENU WIDOK</a></li>
-                    <li class="menu-item"><a href="{% url 'menu_list' %}">LISTA PRODUKTÓW</a></li>
-                    <li class="menu-item"><a href="{% url 'menu_create' %}">DODAJ PRODUKT</a></li>
-                </ol>
-                {% else %}
-                <a href="{% url 'menu' %}">MENU</a>
-                {% endif %}
+            <li class="nav-item">
+                <a class="nav-link disabled" href="{% url 'barrental' %}">OFERTA</a>
             </li>
-            <li class="menu-item">
-                {% if user.is_authenticated %}
-                <a href="#">REZERWACJA</a>
-                <ol class="sub-menu">
-                    <li class="menu-item"><a href="{% url 'reservation_list' %}">ZOBACZ REZERWACJE</a></li>
-                    <li class="menu-item"><a href="{% url 'reservation-create' %}">DODAJ NOWĄ</a></li>
-                </ol>
-                {% else %}
-                <a href="{% url 'reservation-create' %}">REZERWACJA</a>
-                {% endif %}
+            {% if user.is_authenticated %}
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle disabled" data-toggle="dropdown" href="#" role="button"
+                    aria-haspopup="true" aria-expanded="false">BLOG</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">WIDOK</a>
+                    <a class="dropdown-item" href="#">DODAJ</a>
+                    <a class="dropdown-item" href="#">EDYTUJ</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">DODAJ</a>
+                </div>
             </li>
-        </ol>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                    aria-expanded="false">MENU</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'menu' %}">WIDOK</a>
+                    <a class="dropdown-item" href="{% url 'menu_list' %}">LISTA</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{% url 'menu_create' %}">DODAJ</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                    aria-expanded="false">REZERWACJA</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{% url 'reservation_list' %}">LISTA</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{% url 'reservation-create' %}">DODAJ</a>
+                </div>
+            </li>
+            {% else %}
+            <a class="nav-link" href="{% url 'menu' %}">BLOG</a>
+            <a class="nav-link" href="{% url 'menu' %}">MENU</a>
+            <a class="nav-link" href="{% url 'reservation-create' %}">REZERWACJA</a>
+            {% endif %}
+        </ul>
         <div class="user">
             <p><i class="fas fa-user"></i></p>
             {% if request.user.is_authenticated %}
-            Hej {{ request.user.first_name }},
             <a href="{% url 'logout' %}">
-                <p>WYLOGUJ</p>
+                <p style="padding-top: 5px;">WYLOGUJ</p>
             </a>
             {% else %}
             <ul>
                 <li><a href="{% url 'login' %}">
-                        <p>ZALOGUJ / </p>
-                    </a></li>
+                        <p>ZALOGUJ</p>
+                    </a>
+                </li>
                 <li><a href="{% url 'register' %}">
-                        <p> DOŁĄCZ</p>
-                    </a></li>
+                        <p>DOŁĄCZ</p>
+                    </a>
+                </li>
             </ul>
             {% endif %}
         </div>
@@ -95,7 +99,7 @@
         </button>
     </nav>
 
-    <div class="main-content">
+    <div class="container-fluid" style="padding-left: 0 !important;">
         {% block content %}
 
         {% endblock %}
@@ -103,25 +107,40 @@
     <footer class="site-footer">
         <hr>
         <div class="container">
-            <div class="row">
+            <div class="footer-row">
                 <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by
                     <a href="#">&nbsp;Gentlemil</a>.
                 </p>
                 <div class="icons">
                     <ul class="social-icons">
                         <li><a href="https://www.facebook.com/DrukarniaKlub/" target="_blank" class="contact-icon">
-                                <i class="fab fa-facebook"></i></a></li>
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </li>
                         <li><a href="https://www.instagram.com/drukarniaklub/" target="_blank" class="contact-icon">
-                                <i class="fab fa-instagram"></i></a></li>
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
                         <li><a href="https://pl.tripadvisor.com/Attraction_Review-g274772-d12197208-Reviews-Drukarnia_Club-Krakow_Lesser_Poland_Province_Southern_Poland.html"
                                 target="_blank" class="contact-icon">
-                                <i class="fab fa-tripadvisor"></i></a></li>
+                                <i class="fab fa-tripadvisor"></i>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

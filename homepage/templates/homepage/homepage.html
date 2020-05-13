@@ -2,6 +2,9 @@
 {% load sass_tags static %}
 
 {% block content %}
+<div class="info_line">
+    <p>ul. Nadwiślańska 1, Stare Podgórze, Kraków | Otwarte codziennie od 9:00</p>
+</div>
 <div class="content">
     <ul class="cb-slideshow">
         <li><span>Image 01</span>
@@ -16,98 +19,169 @@
 </div>
 <!-- -------------------- -->
 
-<section id="single-homepage-section">
-    <div class="container">
-        <div class="left">
-            <p class="home-text">Klub Drukarnia to jeden z najlepiej zlokalizowanych krakowskich lokali.
-                Położony jest tuż nad Wisłą, w dawnej przemysłowej dzielnicy Krakowa – Podgórzu.</p>
-            <hr>
-            <p>Kraków, Stare Podgórze, ul. Nadwiślańska 1</p>
-            <ul class="option-list">
+<div class="single-homepage-section-first">
+    <h1 class="header">Drukarnia</p>
+        <div class="horizontal_line"></div>
+        <p class="subtitle">Twój bar nad Wisłą.</p>
+        <p style="font-size: 1rem;"><i class="fas fa-angle-double-down"></i></p>
+</div>
+
+<div class="single-homepage-section-menu">
+    <!-- <div class="container"> -->
+    <div class="row">
+        <div class="col-sm-12 col-md-7" style="margin: 0 !important;">
+            <ul class="menu-text">
                 <li>
-                    <a href="{% url 'reservation-create' %}">REZERWACJA</a>
+                    <p class="home-text-hd">Półśrodki to nie my.</p>
                 </li>
+                <li>
+                    <p class="home-text-sub">Mieszamy, sprawdzamy, testujemy, ozdabiamy. Najlepszy coctaile,
+                        nienaganna
+                        obsługa, najwyższa jakość.</p>
+                </li>
+                <li> <a class="btn" href="{% url 'menu' %}">ZOBACZ MENU</a></li>
             </ul>
         </div>
-    </div>
-</section>
-
-<section id="single-homepage-section">
-    <div class="container">
-        <div class="left">
-            <p class="home-text">Twój bar. Twoje miasto!</p>
-            <hr>
-            <p>Otwieramy codziennie o 9:00</p>
-            <ul class="option-list">
-                <li>
-                    <a href="{% url 'menu' %}">MENU</a>
-                </li>
-            </ul>
+        <div class="col-sm-12 col-md-5">
+            <div class="coctail-photo-the-first"></div>
         </div>
     </div>
-</section>
-
-<section id="single-homepage-section">
-    <div class="container">
-        <div class="left">
-            <p class="home-text">Z życia Drukarni.</p>
-            <!-- trzy zdjecia koncerty, imprezy, blabla -->
-            <hr>
-            <ul class="option-list">
-                <li>
-                    <a href="{% url 'menu' %}">ZOBACZ WIĘCEJ</a>
-                </li>
-            </ul>
+    <div class="row">
+        <div class="col-12 col-md-3">
+            <div class="coctail-photo three"></div>
+        </div>
+        <div class="col-4 col-md-2">
+            <div class="coctail-photo one"></div>
+        </div>
+        <div class="col-4 col-md-2">
+            <div class="coctail-photo two"></div>
+        </div>
+        <div class="col-4 col-md-2">
+            <div class="coctail-photo four"></div>
+        </div>
+        <div class="col-12 col-md-3">
+            <div class="coctail-photo five"></div>
         </div>
     </div>
-</section>
+</div>
 
-<section id="single-homepage-section">
+<div class="single-homepage-section-offer">
+    <div class="container">
+        <p class="home-text">what we do</p>
+        <div class="row justify-content-md-center">
+            <div class="col-sm">
+                <div class="offer_item">
+                    <div class="image_offer" style="background: url('https://i.imgur.com/WJxr8jx.png')">
+
+                    </div>
+                    <div class="space"></div>
+                    <div class="title_offer">
+                        <h5>CATERING</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="offer_item">
+                    <div class="image_offer" style="background: url('https://i.imgur.com/YaGfQqP.jpg')">
+
+                    </div>
+                    <div class="space"></div>
+                    <div class="title_offer">
+                        <h5>CONCERTS</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="offer_item">
+                    <div class="image_offer" style="background: url('https://i.imgur.com/iiYjIlL.jpg')">
+
+                    </div>
+                    <div class="space"></div>
+                    <div class="title_offer">
+                        <h5>RENT A BAR</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="single-homepage-section-reservation">
+    <div class="container">
+        <p class="home-text">Always here for you</p>
+        <div class="horizontal_line"></div>
+        <p class="subtitle">Do you want grab a beer with your friends or come with your date? Make reservation in
+            advance to not be
+            suprised.</p>
+        <a class='btn' href="{% url 'reservation-create' %}">REZERWACJA</a>
+    </div>
+</div>
+
+<div class="single-homepage-section-contact">
     <div class="container">
         <h1 class="section-header">NAPISZ DO NAS!</h1>
-        <div class="left">
-            <form class="form-horizontal" role="form" method="POST" action="">
-                <input type="text" class="form-input" id="name" placeholder="imie i nazwisko" name="name" value="">
-                <input type="email" class="form-input" id="email" placeholder="e-mail" name="email" value="">
-                <textarea class="form-input" rows="7" placeholder="wpisz treść wiadomości..." name="message"></textarea>
-                {% csrf_token %}
-                <input type="hidden" name="next" value="{{ next }}">
-                <span class="btn">
-                    <button class="send-btn" id="submit" type="submit" value="SEND">WYŚLIJ</button>
-                </span>
-            </form>
-        </div>
-        <hr>
-        <div class="right">
-
-            <ul class="option-list-icon">
-                <li>
-                    <i class="fa fa-map-marker fa-2x icon-text"></i>
-                </li>
-                <li>
-                    <p class="icon-text">KRAKÓW<br>ul. Nadwiślańska 1</p>
-                </li>
-            </ul>
-
-            <ul class="option-list-icon">
-                <li>
-                    <i class="fa fa-phone fa-2x icon-text"></i>
-                </li>
-                <li>
-                    <p class="icon-text">+48 12 656 65 60</p>
-                </li>
-            </ul>
-
-            <ul class="option-list-icon">
-                <li>
-                    <i class="fa fa-envelope fa-2x icon-text"></i>
-                </li>
-                <li>
-                    <p class="icon-text">drukarnia@drukarniaclub.pl</p>
-                </li>
-            </ul>
+        <div class="contact-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-4 col-lg-6">
+                        <form class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group col-12 col-md-6">
+                                    <input type="text" class="form-control" id="id_name" placeholder="John Snow"
+                                        name="name" maxlength="250" required value="">
+                                </div>
+                                <div class="form-group col-12 col-md-6">
+                                    <input type="text" class="form-control" name="email" placeholder="john@snow.com"
+                                        maxlength="250" required id="id_email">
+                                </div>
+                                <div class="form-group col-12">
+                                    <textarea class="form-control" id="additional_information"
+                                        name="additional_information" maxlength="500" rows="3"></textarea>
+                                </div>
+                                {% csrf_token %}
+                                <input type="hidden" name="next" value="{{ next }}">
+                                <span class="btn">
+                                    <button class="btn btn-primary btn-hp" id="submit" type="submit"
+                                        value="SEND">ZAPISZ</button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-12 col-md-4 col-lg-6">
+                        <div class="details">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-12 col-lg-4">
+                                    <ul>
+                                        <li><i class="fas fa-map-marker-alt"></i></li>
+                                        <li>ul. Nadwiślańska 1</li>
+                                        <li>Kraków</li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-4">
+                                    <ul>
+                                        <li><i class="fas fa-at"></i></li>
+                                        <li>drukarnia@drukarniaclub.pl</li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-12 col-md-12 col-lg-4">
+                                    <ul>
+                                        <li><i class="fas fa-phone-alt"></i></li>
+                                        <li>+48 12 656 6560</li>
+                                        <li>+48 500 600 700</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</section>
+</div>
+<div class="maps_me">
+    <div class="map-image"></div>
+</div>
+
 
 {% endblock %}
