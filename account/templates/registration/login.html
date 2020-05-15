@@ -2,18 +2,18 @@
 
 {% block content %}
 
-<section id="login-site">
-    <div class="header">
-        <h1 class="section-header">ZALOGUJ SIĘ</h1>
-        {% if form.errors %}
-        <p>
-            Login lub hasło jest nieprawidłowe. Spróbuj ponownie.
-        </p>
-        {% endif %}
-    </div>
-    <div class="container">
-        <div class="left">
-            <!--  -->
+<div class="container">
+    <div class="login-site">
+        <div class="welcome">
+            <p class="sub-header">ZALOGUJ SIĘ</p>
+            <div class="menu-line"></div>
+            {% if form.errors %}
+            <p>
+                Login lub hasło jest nieprawidłowe. Spróbuj ponownie.
+            </p>
+            {% endif %}
+        </div>
+        <div class="container">
             <form class="form-horizontal" role="form" method="POST" action="">
                 <input type="text" class="form-input" id="id_name" placeholder="LOGIN" name="username" maxlength="250"
                     required value="" size="60px">
@@ -25,15 +25,13 @@
                     <button class="send-btn" id="submit" type="submit" value="SEND">ZALOGUJ SIĘ</button>
                 </span>
                 <ul class="option-list">
-                    <li><a href="{% url 'password_reset' %}">ODZYSKAJ HASŁO</a></li>
-                    <li><a href="{% url 'register' %}">ZAREJESTRUJ SIĘ</a></li>
+                    <li class="option-list-element"><a href="{% url 'password_reset' %}">ODZYSKAJ HASŁO</a></li>
+                    <li class="option-list-element"><a href="{% url 'register' %}">ZAREJESTRUJ SIĘ</a></li>
                 </ul>
             </form>
-
-        </div>
-        <div class="right">
         </div>
     </div>
-</section>
+</div>
+
 
 {% endblock %}

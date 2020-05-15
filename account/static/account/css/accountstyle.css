@@ -2,170 +2,113 @@
   font-size: 0.6em;
 }
 
-#login-site {
-  height: 100%;
-  width: 100vw;
-  padding: 1em 0 2em 0;
-  background-color: #26272B;
-  display: block;
-  color: #E1E1E1;
+.login-site {
+  min-height: 65vh;
+  background: transparent;
+  margin-top: 100px;
+  padding: 5%;
+  z-index: 100;
+  background: #7c6350;
 }
 
-#login-site .header {
-  width: 100%;
-  margin-bottom: 3em;
-}
-
-#login-site .header p {
-  font-size: 1em;
-}
-
-#login-site .container {
-  height: 100%;
-  padding: 1em 0;
-  margin: 2em 5%;
+.login-site .welcome {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 2px solid #887D7D;
+  padding-bottom: 2.5rem;
 }
 
-#login-site .container .left {
-  max-width: 400px;
-  padding: 1.5em 1em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  padding: 3em 0;
+.login-site .welcome .header {
+  font-size: 3.5rem;
+  font-weight: 300;
+  padding-bottom: 1.5rem;
 }
 
-#login-site .container .left .form-horizontal {
-  width: 100%;
+.login-site .welcome .sub-header {
+  font-size: 2rem;
+  font-weight: 200;
+  padding-bottom: 1.5rem;
 }
 
-#login-site .container .left .form-horizontal .form-input,
-#login-site .container .left .form-horizontal textarea {
-  width: 90%;
-  background-color: #26272B;
-  color: #E1E1E1;
-  letter-spacing: 1px;
-  font-size: 1em;
-  margin: 0.5em;
-  padding: 0.3em;
-  border: 1px solid #E1E1E1;
+.login-site .line {
+  height: 1px;
+  width: 70%;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  background: #E1E1E1;
 }
 
-#login-site .container .left .form-horizontal ::-webkit-input-placeholder {
-  color: #E1E1E1;
-  background-color: #26272B;
-  font-size: 1em;
+.login-site .line-details {
+  height: 1px;
+  width: 70%;
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+  background: #E1E1E1;
 }
 
-#login-site .container .left .form-horizontal :-ms-input-placeholder {
-  color: #E1E1E1;
-  background-color: #26272B;
-  font-size: 1em;
-}
-
-#login-site .container .left .form-horizontal ::-ms-input-placeholder {
-  color: #E1E1E1;
-  background-color: #26272B;
-  font-size: 1em;
-}
-
-#login-site .container .left .form-horizontal ::placeholder {
-  color: #E1E1E1;
-  background-color: #26272B;
-  font-size: 1em;
-}
-
-#login-site .container .left .form-horizontal .btn {
-  width: 100%;
-  height: 100%;
-  margin: 0.8em 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-#login-site .container .left .form-horizontal .btn button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 0.5em 1em;
-  font-size: 1em;
-  background-color: transparent;
-  color: #E1E1E1;
-  border: 1px solid #E1E1E1;
-}
-
-#login-site .container .left .form-horizontal .helptext {
-  height: 100%;
-  width: 100%;
-  padding-left: 0;
-  list-style: none;
-}
-
-#login-site .container .left .form-horizontal .helptext li {
+.login-site .reservation-table {
+  font-size: 1rem;
+  font-weight: 300;
   color: #E1E1E1;
 }
 
-#login-site .container .left .form-horizontal .helptext li a {
-  font-size: 1em;
+.login-site .form-horizontal {
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-#login-site .container .option-list {
-  padding-left: 0;
+.login-site .edition_list {
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
 }
 
-#login-site .container .option-list li {
-  padding: 0.5em 1em;
-  font-size: 1em;
-  background-color: transparent;
-  color: #E1E1E1;
+.login-site .edition_list .edition_list_element {
+  padding: 0 5px;
+}
+
+.login-site .option-list {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+}
+
+.login-site .option-list .option-list-element {
+  padding: 1rem;
+}
+
+.login-site .option-list .option-list-element a {
+  text-decoration: none;
   border: 1px solid #E1E1E1;
+  padding: 0.4rem 1rem;
 }
 
-#login-site .container .option-list li a {
-  font-size: 1em;
-}
-
-#login-site .container .right {
-  width: 500px;
-  height: 500px;
-  background-color: firebrick;
-  display: none;
+.login-site .form-control {
+  margin: 5px 10px;
 }
 /*# sourceMappingURL=accountstyle.css.map */

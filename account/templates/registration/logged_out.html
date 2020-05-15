@@ -4,20 +4,25 @@
 
 {% block content %}
 
-<section id="login-site">
-    <div class="header">
-        <h1 class="section-header">Zostałeś wylogowany.</h1>
-        <p>Cz chcesz się zalogować ponownie?</p>
-    </div>
-    <div class="container">
-        <div class="left">
+<div class="container">
+    <div class="login-site">
+        <div class="welcome">
+            <p class="sub-header">ZOSTAŁEŚ WYLOGOWANY</p>
+            <p class="sub-header">Czy chcesz się zalogować ponownie?</p>
+            <div class="menu-line"></div>
+            {% if form.errors %}
+            <p>
+                Login lub hasło jest nieprawidłowe. Spróbuj ponownie.
+            </p>
+            {% endif %}
+        </div>
+        <div class="container">
             <ul class="option-list">
-                <!-- <li><a href="#">NOWA KATEGORIA</a></li> -->
-                <li><a href="{% url 'login' %}">ZALOGUJ PONOWNIE</a></li>
-                <li><a href="{% url 'homepage' %}">STRONA GŁÓWNA</a></li>
+                <li class="option-list-element"><a href="{% url 'login' %}">ZALOGUJ PONOWNIE</a></li>
+                <li class="option-list-element"><a href="{% url 'homepage' %}">STRONA GŁÓWNA</a></li>
             </ul>
         </div>
     </div>
-</section>
+</div>
 
 {% endblock %}
