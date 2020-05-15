@@ -3,22 +3,24 @@
 
 {% block content %}
 
-<section id="reservation-site">
-    <div class="header">
-        <h1 class="section-header">USUWANIE REZERWACJI</h1>
-    </div>
-    <div class="container">
-        <form class="form-horizontal" method="POST">
-            {% csrf_token %}
-            <p>Na pewno chcesz usunąć rezerwację "{{ object }}" ?</p>
-            <span class="btn">
+<div class="container">
+    <!-- czesc tytulowa, co z czym sie je -->
+    <div class="reservation-index">
+        <div class="welcome">
+            <p class="sub-header">USUWANIE REZERWACJI</p>
+            <div class="line"></div>
+        </div>
+        <div class="container">
+            <form class="form-horizontal" method="POST">
+                {% csrf_token %}
+                <p>Na pewno chcesz usunąć rezerwację "{{ object }}" ?</p>
                 <button class="btn btn-light" id="submit" type="submit" value="SEND">USUŃ</button>
-            </span>
-            <ul class="option-list">
-                <li><a href="{% url 'reservation_list' %}">WRÓĆ DO MENU</a></li>
-            </ul>
-        </form>
+                <ul class="option-list">
+                    <li><a href="{% url 'reservation_list' %}">WRÓĆ DO MENU</a></li>
+                </ul>
+            </form>
+        </div>
     </div>
-</section>
+</div>
 
 {% endblock %}

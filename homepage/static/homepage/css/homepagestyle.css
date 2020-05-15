@@ -979,8 +979,10 @@ p {
           align-items: center;
 }
 
-.single-homepage-section-reservation .container .home-text {
-  font-size: 2.5rem;
+.single-homepage-section-reservation .container .home-text-hd {
+  font-size: 3.5rem;
+  font-weight: 300;
+  opacity: 0.95;
 }
 
 .single-homepage-section-reservation .container .horizontal_line {

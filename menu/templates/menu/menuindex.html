@@ -3,56 +3,48 @@
 
 {% block content %}
 
-<section id="menu-site">
-    <div class="header">
-        <h1 class="section-header">MENU</h1>
-        <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum ea quidem obcaecati
-            quas ipsam nisi
-            voluptatibus ducimus eligendi dolorum, doloribus quia, amet maiores veniam nobis eos sit. Nostrum, ad
-            temporibus!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi suscipit atque tempore. Voluptates error
-            exercitationem temporibus inventore ducimus delectus dolor illo totam, quod deleniti dolorem iusto
-            doloremque laborum quidem ea?
-        </p>
-    </div>
-    <!--  -->
-    <div class="container">
-        {% for type in categories %}
-        <div class="left">
-            <table>
-                <tbody>
-                    <tr>
-                        <td>
-                            <h2>{{ type.name }}</h2>
-                        </td>
-                        <td>
-                            <h2>{{ type.amount }}ml</h2>
-                        </td>
-                    </tr>
-                </tbody>
-                {% for product in type.product_set.all %}
-                <tbody>
-                    <tr>
-                        <td>
-                            <h3>{{ product.name }}</h3>
-                        </td>
-                        <td>
-                            <h3>{{ product.prize }}</h3>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p class="text-about">{{ product.description }}</p>
-                        </td>
-                    </tr>
-                </tbody>
-                {% endfor %}
-            </table>
+<div class="container">
+    <!-- czesc tytulowa, co z czym sie je -->
+    <div class="menu-index">
+        <div class="welcome">
+            <h1 class="header">NASZA OFERTA</h1>
+            <p class="sub-header">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum ea quidem obcaecati
+                quas ipsam nisi
+                voluptatibus ducimus eligendi dolorum, doloribus quia, amet maiores veniam nobis eos sit. Nostrum, ad
+                temporibus!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi suscipit atque tempore. Voluptates error
+                exercitationem temporibus inventore ducimus delectus dolor illo totam, quod deleniti dolorem iusto
+                doloremque laborum quidem ea?
+            </p>
+            <div class="menu-line"></div>
         </div>
-        <div class="bdr"></div>
-        {% endfor %}
-    </div>
-</section>
+        <div class="container">
+            <div class="row">
+                {% for type in categories %}
+                <div class="col-sm-12 col-md-6">
+                    <!-- wszystkie kategorie i produkty -->
 
-{% endblock %}
+                    <div class="category-box">
+                        <h2 class="category-header">{{type.name}}</h2>
+                        <h2 class="category-amount">{{type.amount}} ml</h2>
+                        <div class="menu-line"></div>
+                    </div>
+                    {% for product in type.product_set.all %}
+                    <div class="product-box">
+                        <h3 class="product-title">{{ product.name }}</h3>
+                        <p class="product-about">{{ product.description }}</p>
+                        <!-- <div class=""></div> -->
+                        <h3 class="product-prize">{{ product.prize }}<i class="far fa-money-bill-alt"></i></h3>
+                    </div>
+                    {% endfor %}
+
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="maps_me">
+        <div class="map-image"></div>
+    </div>
+    {% endblock %}

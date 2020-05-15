@@ -1,52 +1,97 @@
 $mainFontColor: #E1E1E1;
-/* Extra */
-$primary: #FDEDB2;
-$secondary: #CF3340;
-$ternary: #8D222A;
-$dark: #444444;
+$backgroundColor: #35281E;
+$lightBackgroundColor: #7c6350;
 
 .text {
     font-size: 0.6em;
 }
 
-#reservation-site {
-    min-height: 100vh;
-    height: 100%;
-    width: 100vw;
-    padding: 100px 0 0 0;
-    background-color: #26272B;
-    display: block;
-    color: $mainFontColor;
+.reservation-index {
+    background: transparent;
+    margin-top: 100px;
+    padding: 5%;
+    z-index: 100;
+    background: $lightBackgroundColor;
 
-    .header {
-        width: 100%;
-        padding-bottom: 1rem;
+    .welcome {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 2.5rem;
 
-        p {
-            font-size: 1em;
+        .header {
+            font-size: 3.5rem;
+            font-weight: 300;
+            padding-bottom: 1.5rem;
+        }
+
+        .sub-header {
+            font-size: 2rem;
+            font-weight: 200;
+            padding-bottom: 1.5rem;
         }
     }
 
-    .container {
+    .line {
+        height: 1px;
+        width: 70%;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+        background: $mainFontColor;
+    }
 
-        height: 100%;
-        padding: 1em 0;
+    .line-details {
+        height: 1px;
+        width: 70%;
+        margin-top: 1rem;
+        margin-bottom: 0rem;
+        background: $mainFontColor;
+    }
+
+    .reservation-table {
+        font-size: 1rem;
+        font-weight: 300;
+        color: $mainFontColor;
+    }
+
+    .form-horizontal {
+        max-width: 600px;
         margin: 0 auto;
+    }
+
+    .edition_list {
+        list-style: none;
         display: flex;
         justify-content: center;
-        flex-wrap: wrap;
         align-items: center;
-        border: 2px solid #887D7D;
+        padding-inline-start: 0;
 
-        .edition_list {
-            list-style: none;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
+        .edition_list_element {
+            padding: 0 5px;
         }
-
     }
+
+    .option-list {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-inline-start: 0;
+
+        .option-list-element {
+            padding: 1rem;
+
+            a {
+                text-decoration: none;
+                border: 1px solid $mainFontColor;
+                padding: 0.4rem 1rem;
+            }
+        }
+    }
+
 }
+
+.container {}
 
 @media(max-width: 768px) {}
 

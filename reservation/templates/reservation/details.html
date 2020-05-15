@@ -2,67 +2,96 @@
 
 {% block content %}
 
-<section id="reservation-site">
-    <div class="header">
-        <h1 class="section-header">SZCZEGÓŁY REZERWACJI</h1>
+<div class="container">
+    <!-- czesc tytulowa, co z czym sie je -->
+    <div class="reservation-index">
+        <div class="welcome">
+            <p class="sub-header">SZCZEGÓŁY REZERWACJI</p>
+            <ul class="option-list">
+                <li class="option-list-element">
+                    <a href="{% url 'reservation_edition' pk=reservation.pk %}">EDYTUJ</a>
+                </li>
+                <li class="option-list-element">
+                    <a href="{% url 'reservation_delete' pk=reservation.pk %}">USUŃ</a>
+                </li>
+            </ul>
+            <div class="line-details"></div>
+        </div>
+        <div class="container">
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <td>HASLO: </td>
+                        <td>
+                            <h3 class='reservation-table'>{{reservation.title}}</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>IMIE, NAZWISKO:</td>
+                        <td>
+                            <h3 class='reservation-table'>{{reservation.name}}</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>E-MAIL:</td>
+                        <td>
+                            <h3 class='reservation-table'>{{reservation.email}}</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nr KONTAKTOWY:</td>
+                        <td>
+                            <h3 class='reservation-table'>{{reservation.phone}}</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>TERMIN:</td>
+                        <td>
+                            <h3 class='reservation-table'>{{reservation.term_of_reservation}}</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>BAR:</td>
+                        <td>
+                            <h3 class='reservation-table'>{{reservation.bar}}</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>LICZBA OSÓB:</td>
+                        <td>
+                            <h3 class='reservation-table'>{{reservation.nr_of_people}}</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>FAKTURA:</td>
+                        <td>
+                            <h3 class='reservation-table'>{{reservation.faktura}}</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>CATERING:</td>
+                        <td>
+                            <h3 class='reservation-table'>{{reservation.catering}}</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>UWAGI:</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3 class='reservation-table'>{{reservation.additional_information}}</h3>
+                        </td>
+                    </tr>
+                </tbody>
+                <ul class="option-list">
+                    <li class="option-list-element">
+                        <a href="{% url 'reservation_list' %}">POWRÓT DO MENU</a>
+                    </li>
+                </ul>
+            </table>
+        </div>
     </div>
-    <div class="container">
-        <table class="table table-hover table-dark">
-            <tbody>
-                <tr>
-                    <td>HASLO: </td>
-                    <td>{{reservation.title}}</td>
-                </tr>
-                <tr>
-                    <td>IMIE, NAZWISKO:</td>
-                    <td>{{reservation.name}}</td>
-                </tr>
-                <tr>
-                    <td>E-MAIL:</td>
-                    <td>{{reservation.email}}</td>
-                </tr>
-                <tr>
-                    <td>Nr KONTAKTOWY:</td>
-                    <td>{{reservation.phone}}</td>
-                </tr>
-                <tr>
-                    <td>TERMIN:</td>
-                    <td>{{reservation.term_of_reservation}}</td>
-                </tr>
-                <tr>
-                    <td>BAR:</td>
-                    <td>{{reservation.bar}}</td>
-                </tr>
-                <tr>
-                    <td>LICZBA OSÓB:</td>
-                    <td>{{reservation.nr_of_people}}</td>
-                </tr>
-                <tr>
-                    <td>FAKTURA:</td>
-                    <td>{{reservation.faktura}}</td>
-                </tr>
-                <tr>
-                    <td>CATERING:</td>
-                    <td>{{reservation.catering}}</td>
-                </tr>
-                <tr>
-                    <td>UWAGI:</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td>{{reservation.additional_information}}</td>
-                </tr>
-            </tbody>
-        </table>
-        {% if user.is_authenticated %}
-        <ul class="option-list">
-            <li><a href="{% url 'reservation_edition' pk=reservation.pk %}">EDYTUJ</a></li>
-            <li><a href="{% url 'reservation_delete' pk=reservation.pk %}">USUŃ</a></li>
-        </ul>
-        <ul class="option-list">
-            <li><a href="{% url 'reservation_list' %}">POWRÓT DO MENU</a></li>
-        </ul>
-        {% endif %}
-    </div>
-</section>
+</div>
+
 {% endblock %}

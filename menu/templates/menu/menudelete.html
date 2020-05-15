@@ -3,23 +3,20 @@
 
 {% block content %}
 
-<section id="menu-site">
-    <div class="header">
-        <h1 class="section-header">USUWANIE PRODUKTU</h1>
-
-
-    </div>
-    <div class="container">
-        <div class="left">
-            <form method="post">
+<div class="container">
+    <div class="menu-index">
+        <div class="welcome">
+            <p class="sub-header">USUWAMY PRODUKT</p>
+            <div class="menu-line"></div>
+        </div>
+        <div class="container">
+            <form class="form-horizontal" role="form" method="POST" action="">
                 {% csrf_token %}
                 <p>Na pewno chcesz usunąć {{ object }} z naszego menu?</p>
-                <span class="btn">
-                    <button class="send-btn" id="submit" type="submit" value="SEND">TAK, USUŃ</button>
-                </span>
+                <button class="btn" id="submit" type="submit" value="SEND">TAK, USUŃ</button>
             </form>
         </div>
     </div>
-</section>
+</div>
 
 {% endblock %}

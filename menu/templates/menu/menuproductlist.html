@@ -3,57 +3,53 @@
 
 {% block content %}
 
-<section id="menu-site">
-    <div class="header">
-        <h1 class="section-header">MENU</h1>
-        <p>Kliknij poniżej jeśli chcesz dodać:</p>
-        <ul>
-            <!-- <li><a href="#">NOWA KATEGORIA</a></li> -->
-            <li><a href="{% url 'menu_create' %}">NOWY PRODUKT</a></li>
-        </ul>
-    </div>
-    <!--  -->
-    <div class="container">
-        {% for type in categories %}
-        <div class="left">
-            <table>
-                <tbody>
+<div class="container">
+    <!-- czesc tytulowa, co z czym sie je -->
+    <div class="menu-index">
+        <div class="welcome">
+            <p class="sub-header">LISTA PRODUKTÓW</p>
+            <div class="menu-line"></div>
+            <a href="{% url 'menu_create' %}">NOWY PRODUKT</a>
+        </div>
+        <div class="container">
+            <table class="table table-hover">
+                {% for type in categories %}
+                <thead>
                     <tr>
-                        <td>
-                            <h2>{{ type.name }}</h2>
-                        </td>
-                        <td>
-                            <h2>{{ type.amount }}ml</h2>
-                        </td>
+                        <th scope="col">#</th>
+                        <th scope="col">{{ type.name }}</th>
+                        <th scope="col">CENA</th>
+                        <th scope="col">OPIS</th>
+                        <th scope="col">ILOŚĆ</th>
+                        <th scope="col">OPCJE</th>
                     </tr>
-                </tbody>
+                </thead>
                 {% for product in type.product_set.all %}
                 <tbody>
                     <tr>
+                        <th scope="row">1</th>
                         <td>
-                            <h3>{{ product.name }}</h3>
+                            <h3 class='product-table'>{{ product.name }}</h3>
                         </td>
                         <td>
-                            <h3>{{ product.prize }}</h3>
+                            <h3 class='product-table'>{{ product.prize }}</h3>
                         </td>
                         <td>
-                            <h3 class="shake"><a href="{% url 'menu_delete' pk=product.pk %}"><i
+                            <h3 class='product-table'>{{ product.description }}</h3>
+                        </td>
+                        <td>
+                            <h3 class='product-table'>{{ type.amount }}ml</h3>
+                        </td>
+                        <td>
+                            <h3 class="product-table shake"><a href="{% url 'menu_delete' pk=product.pk %}"><i
                                         class="far fa-trash-alt"></i></a></h3>
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            <p class="text-about">opis alkoholu, rodzaj, kraj pochodzenia</p>
-                        </td>
-                    </tr>
-                    <!-- <hr class="line-menu"> -->
                 </tbody>
-
+                {% endfor %}
                 {% endfor %}
             </table>
         </div>
-        {% endfor %}
     </div>
-</section>
-
+</div>
 {% endblock %}

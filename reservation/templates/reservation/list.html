@@ -2,55 +2,73 @@
 
 {% block content %}
 
-<section id="reservation-site">
-    <div class="header">
-        <h1 class="section-header">REZERWACJE</h1>
-    </div>
-    <div class="container">
-        <!--  -->
-        {% if reservations %}
-        <table class="table table-hover table-dark">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">DATA</th>
-                    <th scope="col">HASLO</th>
-                    <th scope="col">IMIE/NAZWISKO</th>
-                    <th scope="col">TELEFON</th>
-                    <th scope="col">BAR</th>
-                    <th scope="col">LICZBA OSOB</th>
-                    <th scope="col">STATUS</th>
-                    <th scope="col">EDYCJA</th>
-                </tr>
-            </thead>
-            {% for r in reservations %}
-            <tbody>
-                <tr>
-                    <th scope="row">{{r}}</th>
-                    <td>{{ r.term_of_reservation|date:"d/m H:i" }}</td>
-                    <td>{{ r.title }}</td>
-                    <td>{{ r.name }}</td>
-                    <td>{{ r.phone }}</td>
-                    <td>{{ r.bar }}</td>
-                    <td>{{ r.nr_of_people }}</td>
-                    <td>{{ r.status }}</td>
+<div class="container">
+    <!-- czesc tytulowa, co z czym sie je -->
+    <div class="reservation-index">
+        <div class="welcome">
+            <p class="sub-header">LISTA REZERWACJI</p>
+            <div class="line"></div>
+        </div>
+        <div class="container">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">DATA</th>
+                        <th scope="col">HASLO</th>
+                        <th scope="col">IMIE/NAZWISKO</th>
+                        <th scope="col">TELEFON</th>
+                        <th scope="col">BAR</th>
+                        <th scope="col">LICZBA OSOB</th>
+                        <th scope="col">STATUS</th>
+                        <th scope="col">EDYCJA</th>
+                    </tr>
+                </thead>
+                {% if reservations %}
+                {% for r in reservations %}
+                <tbody>
+                    <th scope="row">
+                        <h3 class='reservation-table'>{{r}}</h3>
+                    </th>
+                    <td>
+                        <h3 class='reservation-table'>{{ r.term_of_reservation|date:"d/m H:i" }}</h3>
+                    </td>
+                    <td>
+                        <h3 class='reservation-table'>{{ r.title }}</h3>
+                    </td>
+                    <td>
+                        <h3 class='reservation-table'>{{ r.name }}</h3>
+                    </td>
+                    <td>
+                        <h3 class='reservation-table'>{{ r.phone }}</h3>
+                    </td>
+                    <td>
+                        <h3 class='reservation-table'>{{ r.bar }}</h3>
+                    </td>
+                    <td>
+                        <h3 class='reservation-table'>{{ r.nr_of_people }}</h3>
+                    </td>
+                    <td>
+                        <h3 class='reservation-table'>{{ r.status }}</h3>
+                    </td>
                     <td>
                         <ul class="edition_list">
-                            <li class="edition_list_element"> <a href="{% url 'reservation_details' pk=r.pk %}">
-                                    <i class="fas fa-binoculars"></i></a>
+                            <li class="edition_list_element">
+                                <h3 class='reservation-table'><a href="{% url 'reservation_details' pk=r.pk %}">
+                                        <i class="fas fa-binoculars"></i></a></h3>
                             </li>
-                            <li><a href="{% url 'reservation_delete' pk=r.pk %}">
-                                    <i class="far fa-trash-alt"></i></a>
+                            <li>
+                                <h3 class='reservation-table'><a href="{% url 'reservation_delete' pk=r.pk %}">
+                                        <i class="far fa-trash-alt"></i></a></h3>
                             </li>
                         </ul>
                     </td>
-                </tr>
-            </tbody>
-            {% endfor %}
-        </table>
-        {% endif %}
+                </tbody>
+                {% endfor %}
+                {% endif %}
+            </table>
+        </div>
     </div>
-</section>
-
+</div>
 
 {% endblock %}
