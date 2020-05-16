@@ -67,9 +67,15 @@
         </div>
       </li>
       {% else %}
-      <a class="nav-link" href="{% url 'menu' %}">BLOG</a>
-      <a class="nav-link" href="{% url 'menu' %}">MENU</a>
-      <a class="nav-link" href="{% url 'reservation-create' %}">REZERWACJA</a>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="{% url 'menu' %}" style="opacity: 0.3;">BLOG</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'menu' %}">MENU</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'reservation-create' %}">REZERWACJA</a>
+      </li>
       {% endif %}
     </ul>
     <div class="user">

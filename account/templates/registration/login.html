@@ -15,18 +15,18 @@
         </div>
         <div class="container">
             <form class="form-horizontal" role="form" method="POST" action="">
-                <input type="text" class="form-input" id="id_name" placeholder="LOGIN" name="username" maxlength="250"
+                <input type="text" class="form-control" id="id_name" placeholder="LOGIN" name="username" maxlength="250"
                     required value="" size="60px">
-                <input type="password" class="form-input" name="password" required id="id_password" placeholder="HASŁO"
-                    size="60px">
+                <input type="password" class="form-control" name="password" required id="id_password"
+                    placeholder="HASŁO" size="60px">
                 {% csrf_token %}
                 <input type="hidden" name="next" value="{{ next }}">
-                <span class="btn">
-                    <button class="send-btn" id="submit" type="submit" value="SEND">ZALOGUJ SIĘ</button>
-                </span>
+                <button class="send-btn" id="submit" type="submit" value="SEND">ZALOGUJ SIĘ</button>
                 <ul class="option-list">
-                    <li class="option-list-element"><a href="{% url 'password_reset' %}">ODZYSKAJ HASŁO</a></li>
-                    <li class="option-list-element"><a href="{% url 'register' %}">ZAREJESTRUJ SIĘ</a></li>
+                    <li class="element"><a href="{% url 'password_reset' %}">ODZYSKAJ HASŁO</a></li>
+                    <li class="element"><a href="{% url 'register' %}">ZAREJESTRUJ SIĘ</a></li>
+                    <!-- <li class="option-list-element"><a href="{% url 'password_reset' %}">ODZYSKAJ HASŁO</a></li>
+                    <li class="option-list-element"><a href="{% url 'register' %}">ZAREJESTRUJ SIĘ</a></li> -->
                 </ul>
             </form>
         </div>
