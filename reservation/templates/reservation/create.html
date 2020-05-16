@@ -35,19 +35,8 @@
                 </div>
                 <div class="form-row">
                     <div class="form-group col-12 col-md-4">
-
-                        <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-                            <input type="text" class="form-control datetimepicker-input"
-                                data-target="#datetimepicker1" />
-                            <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
-                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                            </div>
-                        </div>
-                        <script type="text/javascript">
-                            $(function () {
-                                $('#datetimepicker1').datetimepicker();
-                            });
-                        </script>
+                        <input type="text" class="form-control" id="id_term_of_reservation" name="term_of_reservation"
+                            placeholder="dd/mm/yyyy hh:mm" required value="">
                     </div>
                     <div class="form-group col-6 col-md-4">
                         <select name="bar" class="form-control" required id="id_bar">
@@ -86,12 +75,12 @@
                             <button class="btn btn-primary" id="submit" type="submit" value="SEND">ZAPISZ</button>
                         </span>
                     </div>
-                    {% if user.is_authenticated %}
+                    <!-- {% if user.is_authenticated %}
                     <div class="form-group col-12">
                         <input type="text" class="form-control" id="id_status" placeholder="Status rezerwacji"
                             name="status" maxlength="50" value="">
                     </div>
-                    {% endif %}
+                    {% endif %} -->
                 </div>
             </form>
         </div>

@@ -31,16 +31,13 @@
         </a>
         <div style="flex: 1;"></div>
         <ul class="nav nav-pills">
-            <li class="nav-item ">
-                <a class="nav-link disabled" href="{% url 'aboutUs' %}">O NAS</a>
-            </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="{% url 'barrental' %}">OFERTA</a>
+                <a class="nav-link" href="{% url 'barrental' %}">OFERTA</a>
             </li>
             {% if user.is_authenticated %}
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle disabled" data-toggle="dropdown" href="#" role="button"
-                    aria-haspopup="true" aria-expanded="false">BLOG</a>
+                    aria-haspopup="true" aria-expanded="false" style="opacity: 0.3;">BLOG</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">WIDOK</a>
                     <a class="dropdown-item" href="#">DODAJ</a>
@@ -133,15 +130,12 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'aboutUs' %}">O NAS</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="{% url 'barrental' %}">OFERTA</a>
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle disabled" data-toggle="dropdown" href="#" role="button"
-                        aria-haspopup="true" aria-expanded="false">BLOG</a>
+                        aria-haspopup="true" aria-expanded="false" style="opacity: 0.3;">BLOG</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">WIDOK</a>
                         <a class="dropdown-item" href="#">DODAJ</a>

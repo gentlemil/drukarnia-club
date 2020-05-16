@@ -32,16 +32,13 @@
         </a>
         <div style="flex: 1;"></div>
         <ul class="nav nav-pills">
-            <li class="nav-item ">
-                <a class="nav-link disabled" href="{% url 'aboutUs' %}">O NAS</a>
-            </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="{% url 'barrental' %}">OFERTA</a>
+                <a class="nav-link" href="{% url 'barrental' %}">OFERTA</a>
             </li>
             {% if user.is_authenticated %}
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle disabled" data-toggle="dropdown" href="#" role="button"
-                    aria-haspopup="true" aria-expanded="false">BLOG</a>
+                    aria-haspopup="true" aria-expanded="false" style="opacity: 0.3;">BLOG</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">WIDOK</a>
                     <a class="dropdown-item" href="#">DODAJ</a>
@@ -134,15 +131,12 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'aboutUs' %}">O NAS</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="{% url 'barrental' %}">OFERTA</a>
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle disabled" data-toggle="dropdown" href="#" role="button"
-                        aria-haspopup="true" aria-expanded="false">BLOG</a>
+                        aria-haspopup="true" aria-expanded="false" style="opacity: 0.3;">BLOG</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">WIDOK</a>
                         <a class="dropdown-item" href="#">DODAJ</a>
@@ -228,9 +222,6 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
     <!--  -->
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRA85a3stE8iflkD95WBI30JX0BiKLNPk&callback=initMap">
-        </script>
 </body>
 
 </html>

@@ -19,7 +19,7 @@ class Reservation(models.Model):
     
     title = models.CharField(
         max_length=50,
-        default='BIBA')
+        )
 
     name = models.CharField(max_length=200)
 
