@@ -86,10 +86,8 @@ p {
   letter-spacing: 1px;
 }
 
-/* ----------------------------------------------------------------------- */
-/* ---------------------------- WELCOME PAGE ----------------------------- */
-/* --------------------------------------------------------------------- */
-/* ---------------------------- NAVIGATION ----------------------------- */
+/* ----------------------------------------------- */
+/* --------------- NAVIGATION ------------------- */
 .mynav {
   position: fixed;
   width: 100vw;
@@ -248,7 +246,6 @@ p {
   margin: 2rem auto;
 }
 
-/* Icon 1 */
 .animated-icon1,
 .animated-icon2,
 .animated-icon3 {
@@ -257,7 +254,7 @@ p {
   position: relative;
   margin: 0px;
   -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
+          transform: rotate(0deg);
   -webkit-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
   cursor: pointer;
@@ -274,7 +271,7 @@ p {
   opacity: 1;
   left: 0;
   -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
+          transform: rotate(0deg);
   -webkit-transition: .25s ease-in-out;
   transition: .25s ease-in-out;
 }
@@ -306,7 +303,7 @@ p {
 .animated-icon1.open span:nth-child(1) {
   top: 11px;
   -webkit-transform: rotate(135deg);
-  transform: rotate(135deg);
+          transform: rotate(135deg);
 }
 
 .animated-icon1.open span:nth-child(2) {
@@ -317,7 +314,7 @@ p {
 .animated-icon1.open span:nth-child(3) {
   top: 11px;
   -webkit-transform: rotate(-135deg);
-  transform: rotate(-135deg);
+          transform: rotate(-135deg);
 }
 
 /* Icon 3*/
@@ -342,12 +339,12 @@ p {
 
 .animated-icon2.open span:nth-child(2) {
   -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 .animated-icon2.open span:nth-child(3) {
   -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .animated-icon2.open span:nth-child(4) {
@@ -360,24 +357,24 @@ p {
 .animated-icon3 span:nth-child(1) {
   top: 0px;
   -webkit-transform-origin: left center;
-  transform-origin: left center;
+          transform-origin: left center;
 }
 
 .animated-icon3 span:nth-child(2) {
   top: 10px;
   -webkit-transform-origin: left center;
-  transform-origin: left center;
+          transform-origin: left center;
 }
 
 .animated-icon3 span:nth-child(3) {
   top: 20px;
   -webkit-transform-origin: left center;
-  transform-origin: left center;
+          transform-origin: left center;
 }
 
 .animated-icon3.open span:nth-child(1) {
   -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
+          transform: rotate(45deg);
   top: 0px;
   left: 8px;
 }
@@ -389,7 +386,7 @@ p {
 
 .animated-icon3.open span:nth-child(3) {
   -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
+          transform: rotate(-45deg);
   top: 21px;
   left: 8px;
 }
@@ -403,7 +400,7 @@ p {
   -webkit-padding-start: 0;
           padding-inline-start: 0;
   z-index: -10;
-  background-color: rgba(53, 40, 30, 0.9);
+  background-color: rgba(53, 40, 30, 0.25);
 }
 
 .content .cb-slideshow li {
@@ -429,6 +426,8 @@ p {
   background: url("https://i.imgur.com/lZzTsqY.jpg");
   background-size: cover;
   background-position: center center;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
 }
 
 .content .cb-slideshow li:nth-child(2) span {
@@ -458,7 +457,7 @@ p {
 @-webkit-keyframes imageAnimation {
   0% {
     opacity: 0;
-    background-color: rgba(53, 40, 30, 0.9);
+    background-color: rgba(53, 40, 30, 0.4);
     -webkit-animation-timing-function: ease-in-out;
             animation-timing-function: ease-in-out;
   }
@@ -479,7 +478,7 @@ p {
 @keyframes imageAnimation {
   0% {
     opacity: 0;
-    background-color: rgba(53, 40, 30, 0.9);
+    background-color: rgba(53, 40, 30, 0.4);
     -webkit-animation-timing-function: ease-in-out;
             animation-timing-function: ease-in-out;
   }
@@ -1038,7 +1037,6 @@ p {
   opacity: 1;
 }
 
-/* --------------------------------------------- */
 /* ----------------- FOOTER  ------------------ */
 .site-footer {
   height: 120px;
@@ -1176,7 +1174,6 @@ p {
 .barrental-index .welcome {
   padding: 4rem 2rem;
   background-color: #7c6350;
-  border: 2px solid #E1E1E1;
   border-bottom: none;
 }
 
@@ -1195,7 +1192,7 @@ p {
 }
 
 .barrental-index .chapter {
-  margin-bottom: 400px;
+  margin-bottom: 500px;
 }
 
 .barrental-index .row {
