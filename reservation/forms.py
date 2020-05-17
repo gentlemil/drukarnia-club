@@ -3,16 +3,16 @@ from .models import Reservation, Bar
 
 class ReservationForm(forms.ModelForm):
 
-    name = forms.CharField(max_length=250, widget=forms.TextInput(attrs={'placeholder': 'Jan Kowalski'}))
-    email = forms.CharField(max_length=250, widget=forms.TextInput(attrs={'placeholder': 'jan@kowalski.com'}))
-    phone = forms.CharField(max_length=250, widget=forms.TextInput(attrs={'placeholder': '600700800'}))
-    title = forms.CharField(max_length=250, widget=forms.TextInput(attrs={'placeholder': 'urodziny janka'}))
-    term_of_reservation = forms.DateTimeField(label="Termin rezerwacji: ", widget=forms.TextInput(attrs={'placeholder': 'YYYY-MM-DD HH:MM:SS'}))
-    bar = forms.ModelChoiceField(label="Bar:", queryset=Bar.objects.all(), widget=forms.Select())   
-    nr_of_people = forms.IntegerField(label="Liczba osob:")
-    catering = forms.BooleanField(required=False)
-    faktura = forms.BooleanField(required=False)
-    additional_information = forms.CharField(required=False, max_length=250, widget=forms.Textarea(attrs={'placeholder': 'dodatkowe informacje'}) )
+    name = forms.CharField(label='', max_length=250, widget=forms.TextInput(attrs={'placeholder': 'Jan Kowalski', 'class':'form-control'}))
+    email = forms.CharField(label='', max_length=250, widget=forms.TextInput(attrs={'placeholder': 'jan@kowalski.com', 'class':'form-control'}))
+    phone = forms.CharField(label='', max_length=250, widget=forms.TextInput(attrs={'placeholder': '600700800', 'class':'form-control'}))
+    title = forms.CharField(label='', max_length=250, widget=forms.TextInput(attrs={'placeholder': 'urodziny janka', 'class':'form-control'}))
+    term_of_reservation = forms.DateTimeField(label="Termin rezerwacji", widget=forms.TextInput(attrs={'placeholder': 'YYYY-MM-DD HH:MM:SS', 'class':'form-control'}))
+    bar = forms.ModelChoiceField(label='', queryset=Bar.objects.all(), widget=forms.Select(attrs={ 'class':'form-control'}))   
+    nr_of_people = forms.IntegerField(label='', widget=forms.TextInput(attrs={'placeholder': 'ile osob?', 'class':'form-control'}))
+    catering = forms.BooleanField(label='Catering:', required=False)
+    faktura = forms.BooleanField(label='Faktura', required=False)
+    additional_information = forms.CharField(label='', required=False, max_length=250, widget=forms.TextInput(attrs={'placeholder': 'dodatkowe informacje', 'class':'form-control'}))
 
     class Meta:
         model = Reservation

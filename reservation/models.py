@@ -40,13 +40,13 @@ class Reservation(models.Model):
 
     catering = models.BooleanField(
         default=False, blank=True, null=False,
-        verbose_name='catering?',
+        verbose_name='',
         help_text='',
     )
 
     faktura = models.BooleanField(
         default=False, blank=True, null=False,
-        verbose_name='faktura?',
+        verbose_name='',
         help_text='',
     ) 
 

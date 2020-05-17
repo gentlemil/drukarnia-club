@@ -3,24 +3,25 @@
 
 {% block content %}
 
-<section id="menu-site">
-    <div class="header">
-        <h1 class="section-header">USUWANIE PRODUKTU</h1>
-
-
-    </div>
-    <div class="container">
-        <div class="left">
-            <div class="confirm-text">
-                <p class="confirm">Produkt został usunięty.</p>
-                <ul>
-                    <li><a href="{% url 'menu_list' %}">WRÓĆ DO MENU</a></li>
-                </ul>
-
-
-            </div>
+<div class="container">
+    <!-- czesc tytulowa, co z czym sie je -->
+    <div class="menu-index">
+        <div class="welcome">
+            <p class="sub-header">POTWIERDZENIE</p>
+            <div class="line"></div>
+        </div>
+        <div class="container">
+            <p>Zmiany zostały wprowadzone.</p>
+            <ul class="option-list">
+                <li class="option-list-element">
+                    <a href="{% url 'menu_list' %}">POWRÓT DO MENU</a>
+                </li>
+                <li class="option-list-element">
+                    <a href="{% url 'homepage' %}">STRONA GŁÓWNA</a>
+                </li>
+            </ul>
         </div>
     </div>
-</section>
+</div>
 
 {% endblock %}

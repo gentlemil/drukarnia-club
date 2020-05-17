@@ -13,8 +13,9 @@
             <!-- <a href="{% url 'menu_category_create' %}">NOWA KATEGORIA</a> -->
         </div>
         <div class="container">
-            <table class="table table-hover">
-                {% for type in categories %}
+            {% for type in categories %}
+            <table class="table table-hover" style="margin-top: 2rem !important;">
+
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -42,22 +43,22 @@
                             <h3 class='product-table'>{{ type.amount }}ml</h3>
                         </td>
                         <td>
-                            <ul class="edition_list">
-                                <li class="edition_list_element">
-                                    <h3 class='reservation-table'><a href="{% url 'menu_details' pk=product.pk %}">
-                                            <i class="fas fa-binoculars"></i></a></h3>
+                            <ul class="option-list np">
+                                <li class="option-list-element np">
+                                    <a href="{% url 'menu_details' pk=product.pk %}">
+                                        <i class="fas fa-binoculars"></i></a>
                                 </li>
-                                <li>
-                                    <h3 class='reservation-table'><a href="{% url 'menu_delete' pk=product.pk %}"><i
-                                                class="far fa-trash-alt"></i></a></h3>
+                                <li class="option-list-element np">
+                                    <a href="{% url 'menu_delete' pk=product.pk %}"><i class="far fa-trash-alt"></i></a>
                                 </li>
                             </ul>
                         </td>
                     </tr>
                 </tbody>
                 {% endfor %}
-                {% endfor %}
+
             </table>
+            {% endfor %}
         </div>
     </div>
 </div>

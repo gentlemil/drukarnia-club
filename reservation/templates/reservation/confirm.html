@@ -9,7 +9,17 @@
             <div class="line"></div>
         </div>
         <div class="container">
-            <p>Rezerwacja została złożona. Będziemy się z Tobą kontaktować w celu ustalenia szczegółów.</p>
+            <p>Rezerwacja wprowadzona do systemu.</p>
+            <ul class="option-list">
+                {% if request.user.is_authenticated %}
+                <li class="option-list-element">
+                    <a href="{% url 'reservation_list' %}">POWRÓT DO REZERWACJI</a>
+                </li>
+                {% endif %}
+                <li class="option-list-element">
+                    <a href="{% url 'homepage' %}">STRONA GŁÓWNA</a>
+                </li>
+            </ul>
         </div>
     </div>
 </div>

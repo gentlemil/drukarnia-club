@@ -6,8 +6,10 @@
 <div class="container">
     <!-- czesc tytulowa, co z czym sie je -->
     <div class="menu-index">
-        <div class="welcome">
-            <p class="sub-header">SZCZEGÓŁY PRODUKTY</p>
+        <div class="welcome details">
+            <p class="sub-header details">SZCZEGÓŁY PRODUKTY</p>
+        </div>
+        <div class="container">
             <ul class="option-list">
                 <li class="option-list-element">
                     <a href="{% url 'menu_update' pk=product.pk %}">EDYTUJ</a>
@@ -19,9 +21,7 @@
                     <a href="{% url 'menu_list' %}">POWRÓT</a>
                 </li>
             </ul>
-        </div>
-        <div class="container">
-            <table>
+            <table class="table">
                 <tbody>
                     <tr>
                         <td>NAZWA PRODUKTU: </td>

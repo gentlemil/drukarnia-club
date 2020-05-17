@@ -6,6 +6,32 @@ $lightBackgroundColor: #7c6350;
     font-size: 0.6em;
 }
 
+button {
+    margin: 1rem auto !important;
+    display: flex !important;
+}
+
+.options {
+    display: flex !important;
+    justify-content: center !important;
+    list-style: none !important;
+    padding-inline-start: 0 !important;
+    padding: 0 !important;
+    font-size: 1rem !important;
+    font-weight: 200 !important;
+    border: none !important;
+
+    .options-element {
+        padding: 0 .7rem;
+
+        a {
+            padding: 0.5rem 0.6rem;
+            text-decoration: none;
+
+        }
+    }
+}
+
 .reservation-index {
     margin: 13vh auto 7vh auto;
     padding: 50px 0;
@@ -39,6 +65,12 @@ $lightBackgroundColor: #7c6350;
         background: $mainFontColor;
     }
 
+    .center {
+        // margin: 0 auto;
+        max-width: 500px;
+        color: $mainFontColor !important;
+    }
+
     .line-details {
         height: 1px;
         width: 70%;
@@ -56,6 +88,10 @@ $lightBackgroundColor: #7c6350;
     .form-horizontal {
         max-width: 600px;
         margin: 0 auto;
+
+        p {
+            font-size: 1rem !important;
+        }
     }
 
     .edition_list {
@@ -67,24 +103,6 @@ $lightBackgroundColor: #7c6350;
 
         .edition_list_element {
             padding: 0 5px;
-        }
-    }
-
-    .option-list {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-inline-start: 0;
-
-        .option-list-element {
-            padding: 1rem;
-
-            a {
-                text-decoration: none;
-                border: 1px solid $mainFontColor;
-                padding: 0.4rem 1rem;
-            }
         }
     }
 }

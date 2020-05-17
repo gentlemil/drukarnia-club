@@ -2,55 +2,27 @@ $mainFontColor: #E1E1E1;
 $backgroundColor: #35281E;
 $lightBackgroundColor: #7c6350;
 
-@keyframes shake {
-    0% {
-        transform: translate(1px, 1px) rotate(0deg);
-    }
+.option-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding-inline-start: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 200;
 
-    10% {
-        transform: translate(-1px, -2px) rotate(-1deg);
-    }
+    .option-list-element {
+        padding: 0 .7rem;
 
-    20% {
-        transform: translate(-3px, 0px) rotate(1deg);
-    }
-
-    30% {
-        transform: translate(3px, 2px) rotate(0deg);
-    }
-
-    40% {
-        transform: translate(1px, -1px) rotate(1deg);
-    }
-
-    50% {
-        transform: translate(-1px, 2px) rotate(-1deg);
-    }
-
-    60% {
-        transform: translate(-3px, 1px) rotate(0deg);
-    }
-
-    70% {
-        transform: translate(3px, 1px) rotate(-1deg);
-    }
-
-    80% {
-        transform: translate(-1px, -1px) rotate(1deg);
-    }
-
-    90% {
-        transform: translate(1px, 2px) rotate(0deg);
-    }
-
-    100% {
-        transform: translate(1px, -2px) rotate(-1deg);
+        a {
+            padding: 0.5rem 0.6rem;
+            text-decoration: none;
+        }
     }
 }
 
-.shake:hover {
-    animation: shake 0.3s;
-    animation-iteration-count: infinite;
+.np {
+    padding: 0rem !important;
 }
 
 .menu-index {
@@ -79,6 +51,10 @@ $lightBackgroundColor: #7c6350;
         }
     }
 
+    .details {
+        padding-bottom: 0 !important;
+    }
+
     .menu-line {
         height: 1px;
         width: 70%;
@@ -89,6 +65,9 @@ $lightBackgroundColor: #7c6350;
 }
 
 .container {
+
+    padding-bottom: 50px;
+
     .category-box {
         display: flex;
         flex-direction: column;
@@ -147,8 +126,20 @@ $lightBackgroundColor: #7c6350;
     }
 
     .form-horizontal {
-        max-width: 600px;
+        max-width: 400px;
         margin: 0 auto;
+    }
+
+    .table {
+        margin: 0 auto;
+        width: 100% !important;
+        color: $mainFontColor !important;
+
+        th,
+        tr,
+        td {
+            padding: 0.2rem;
+        }
     }
 }
 

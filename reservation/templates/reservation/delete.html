@@ -8,15 +8,17 @@
     <div class="reservation-index">
         <div class="welcome">
             <p class="sub-header">USUWANIE REZERWACJI</p>
-            <div class="line"></div>
+            <!-- <div class="line"></div> -->
         </div>
         <div class="container">
             <form class="form-horizontal" method="POST">
                 {% csrf_token %}
                 <p>Na pewno chcesz usunąć rezerwację "{{ object }}" ?</p>
-                <button class="btn btn-light" id="submit" type="submit" value="SEND">USUŃ</button>
-                <ul class="option-list">
-                    <li><a href="{% url 'reservation_list' %}">WRÓĆ DO MENU</a></li>
+                <button class="btn btn-light" id="submit" type="submit" value="USUŃ"
+                    style="margin: 0 auto;">USUŃ</button>
+                <ul class="options">
+                    <li class="options-element"><a href="{% url 'reservation_list' %}">WRÓĆ DO REZERWACJI</a></li>
+                    <li class="options-element"><a href="{% url 'homepage' %}">STRONA GŁÓWNA</a></li>
                 </ul>
             </form>
         </div>

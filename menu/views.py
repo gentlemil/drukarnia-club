@@ -110,10 +110,11 @@ def menu_category_details(request, pk):
 class MenuUpdate(LoginRequiredMixin, UpdateView):
     model = Product
     fields = ['name', 'prize', 'types', 'description']
+    # form_class = 'form-control'
     template_name = 'menu/menuupdate.html'
 
     def get_success_url(self):
-        return reverse_lazy('confirm')
+        return reverse_lazy('menu_confirm')
 
 # ---------------------------------------------
 # --------- DELETE PRODUCT / CATEGORY ---------

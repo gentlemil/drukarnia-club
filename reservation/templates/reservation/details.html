@@ -7,24 +7,23 @@
     <div class="reservation-index">
         <div class="welcome">
             <p class="sub-header">SZCZEGÓŁY REZERWACJI</p>
-            <ul class="option-list">
-                <li class="option-list-element">
+            <ul class="options">
+                <li class="options-element">
                     <a href="{% url 'reservation_edition' pk=reservation.pk %}">EDYTUJ</a>
                 </li>
-                <li class="option-list-element">
+                <li class="options-element">
                     <a href="{% url 'reservation_delete' pk=reservation.pk %}">USUŃ</a>
                 </li>
-                <li class="option-list-element">
+                <li class="options-element">
                     <a href="{% url 'reservation_list' %}">POWRÓT</a>
                 </li>
             </ul>
-            <div class="line-details"></div>
         </div>
-        <div class="container">
-            <table class="table table-hover">
+        <div class="container" style="display: flex; justify-content: center;">
+            <table class="table table-hover center" style="width: 50%;">
                 <tbody>
                     <tr>
-                        <td>HASLO: </td>
+                        <td>HASLO:</td>
                         <td>
                             <h3 class='reservation-table'>{{reservation.title}}</h3>
                         </td>
@@ -53,6 +52,10 @@
                             <h3 class='reservation-table'>{{reservation.term_of_reservation}}</h3>
                         </td>
                     </tr>
+                </tbody>
+            </table>
+            <table class="table table-hover center" style="width: 50%;">
+                <tbody>
                     <tr>
                         <td>BAR:</td>
                         <td>
