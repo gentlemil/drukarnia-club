@@ -13,7 +13,6 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
   <link rel="stylesheet" href="{% sass_src 'homepage/css/homepagestyle.scss' %}">
-  <!-- <link rel="stylesheet" href="{% sass_src 'blog/css/blogbase.scss' %}"> -->
   <script type="text/javascript" src="{% static 'homepage/js/main.js' %}"></script>
 
   <link
@@ -186,9 +185,11 @@
   </nav>
   <!-- end Navbar HAMBURGER -->
   <div class="container-fluid" style="padding: 0 !important; border: none !important;">
+
     {% block content %}
     <!-- moje widoki -->
     {% endblock %}
+
   </div>
   <footer class="site-footer">
     <hr>
