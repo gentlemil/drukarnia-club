@@ -10,6 +10,7 @@
             <p class="sub-header">LISTA PRODUKTÓW</p>
             <div class="menu-line"></div>
             <a href="{% url 'menu_create' %}">NOWY PRODUKT</a>
+            <!-- <a href="{% url 'menu_category_create' %}">NOWA KATEGORIA</a> -->
         </div>
         <div class="container">
             <table class="table table-hover">
@@ -41,8 +42,16 @@
                             <h3 class='product-table'>{{ type.amount }}ml</h3>
                         </td>
                         <td>
-                            <h3 class="product-table shake"><a href="{% url 'menu_delete' pk=product.pk %}"><i
-                                        class="far fa-trash-alt"></i></a></h3>
+                            <ul class="edition_list">
+                                <li class="edition_list_element">
+                                    <h3 class='reservation-table'><a href="{% url 'menu_details' pk=product.pk %}">
+                                            <i class="fas fa-binoculars"></i></a></h3>
+                                </li>
+                                <li>
+                                    <h3 class='reservation-table'><a href="{% url 'menu_delete' pk=product.pk %}"><i
+                                                class="far fa-trash-alt"></i></a></h3>
+                                </li>
+                            </ul>
                         </td>
                     </tr>
                 </tbody>

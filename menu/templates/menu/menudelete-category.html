@@ -6,14 +6,14 @@
 <div class="container">
     <div class="menu-index">
         <div class="welcome">
-            <p class="sub-header">EDYTUJ PRODUKT</p>
+            <p class="sub-header">USUŃ KATEGORIĘ</p>
             <div class="menu-line"></div>
         </div>
         <div class="container">
             <form class="form-horizontal" role="form" method="POST" action="">
                 {% csrf_token %}
-                {{ form }}
-                <input type="submit" value="Update">
+                <p>Na pewno chcesz usunąć {{ object }} z naszego menu?</p>
+                <button class="btn" id="submit" type="submit" value="SEND">TAK, USUŃ</button>
             </form>
         </div>
     </div>

@@ -5,7 +5,7 @@ class TypeOfProduct(models.Model):
     name = models.CharField(
         max_length=100,
         blank= False, null=False,
-        verbose_name='RODZAJ PRODUKTU',
+        verbose_name='Nazwa kategorii',
         help_text='',
     )
 
@@ -13,7 +13,7 @@ class TypeOfProduct(models.Model):
         max_length=15,
         blank= False, null=False,
         default="",
-        verbose_name='Amount of liquor',
+        verbose_name='Ilosc',
         help_text='In ml',
     )
 
@@ -25,7 +25,7 @@ class Product(models.Model):
         max_length=100,
         blank= False, null=False,
         unique=True,
-        verbose_name='NAZWA PRODUKTU',
+        verbose_name='Nazwa produktu',
         help_text='',
     )
 
@@ -39,7 +39,7 @@ class Product(models.Model):
     types = models.ForeignKey(
         TypeOfProduct,
         null=False, default='',
-        verbose_name='RODZAJ PRODUKTU',
+        verbose_name='Rodzaj produktu',
         on_delete=models.CASCADE, 
         )
 
@@ -47,7 +47,7 @@ class Product(models.Model):
         max_length=150,
         blank= False, null=False,
         unique=False, default='',
-        verbose_name='OPIS',
+        verbose_name='Opis produktu',
         help_text='Opis Produktu',
         )
 

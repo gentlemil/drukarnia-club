@@ -13,75 +13,8 @@
         <div class="container">
             <form class="form-horizontal" role="form" method="POST" action="">
                 {% csrf_token %}
-                <div class="form-row">
-                    <div class="form-group col-12 col-md-6">
-                        <input type="text" class="form-control" id="id_name" placeholder="Imie i Nazwisko" name="name"
-                            maxlength="250" required value="">
-                    </div>
-                    <div class="form-group col-12 col-md-6">
-                        <input type="text" class="form-control" name="email" placeholder="Podaj adres e-mail"
-                            maxlength="250" required id="id_email">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-12 col-md-6">
-                        <input type="text" class="form-control" name="phone" placeholder="Podaj swoj nr kontaktowy"
-                            maxlength="250" required id="id_phone">
-                    </div>
-                    <div class="form-group col-12 col-md-6">
-                        <input type="text" class="form-control" id="id_title" placeholder="Haslo rezerwacji"
-                            name="title" maxlength="50" required value="">
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-12 col-md-4">
-                        <input type="text" class="form-control" id="id_term_of_reservation" name="term_of_reservation"
-                            placeholder="dd/mm/yyyy hh:mm" required value="">
-                    </div>
-                    <div class="form-group col-6 col-md-4">
-                        <select name="bar" class="form-control" required id="id_bar">
-                            <option value="" class="form-control" selected>Wybierz bar</option>
-                            <option class="form-input" value="1">BAR1</option>
-                            <option class="form-input" value="2">BAR2</option>
-                            <option class="form-input" value="3">BAR3</option>
-                            <option class="form-input" value="4">BAR4</option>
-                        </select>
-                    </div>
-                    <div class="form-group col-6 col-md-4">
-                        <input type="number" class="form-control" name="nr_of_people" placeholder="Liczba osob"
-                            required="" size="25px" id="id_nr_of_people">
-                    </div>
-                </div>
-                <div class="form-group col-12">
-                    <textarea class="form-control" id="additional_information" name="additional_information"
-                        maxlength="500" rows="3"></textarea>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-4">
-                        <div class="form-check">
-                            <label class="form-check-label" for="gridCheck">Catering</label>
-                            <div class="touch"> {{ form.catering }} </div>
-                        </div>
-                    </div>
-                    <div class="form-group col-4">
-                        <div class="form-check">
-                            <label class="form-check-label" for="gridCheck">Faktura</label>
-                            <div class="touch"> {{ form.faktura }} </div>
-                        </div>
-                    </div>
-                    <div class="form-group col-4">
-                        <input type="hidden" name="next" value="{{ next }}">
-                        <span class="btn">
-                            <button class="btn btn-primary" id="submit" type="submit" value="SEND">ZAPISZ</button>
-                        </span>
-                    </div>
-                    <!-- {% if user.is_authenticated %}
-                    <div class="form-group col-12">
-                        <input type="text" class="form-control" id="id_status" placeholder="Status rezerwacji"
-                            name="status" maxlength="50" value="">
-                    </div>
-                    {% endif %} -->
-                </div>
+                {{ form.as_p }}
+                <input type="submit" value="Submit">
             </form>
         </div>
     </div>

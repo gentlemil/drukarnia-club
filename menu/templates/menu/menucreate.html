@@ -12,32 +12,8 @@
         <div class="container">
             <form class="form-horizontal" role="form" method="POST" action="">
                 {% csrf_token %}
-                <div class="form-row">
-                    <div class="form-group col-12 col-md-4">
-                        <input type="text" class="form-control" id="id_name" placeholder="amundsen" name="name"
-                            maxlength="250" required value="">
-                    </div>
-                    <div class="form-group col-12 col-md-4">
-                        <input type="text" class="form-control" id="id_prize" placeholder="cena" name="name"
-                            maxlength="250" required value="">
-                    </div>
-                    <div class="form-group col-12 col-md-4">
-                        <select class="form-control" name="types" required id="id_types">
-                            <option value="" selected>wybierz jeden</option>
-                            {% for name in categories %}
-                            <option value="{{name.pk}}">{{name.name}}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-12 col-md-12">
-                        <textarea class="form-control" type="text" name="description" rows="3"
-                            placeholder="np. klasyczne piwo typu IPA z dodatkiem sześciu amerykańkich chmieli "
-                            maxlength="250" required id="id_description"></textarea>
-                    </div>
-                </div>
-                <button class="btn" id="submit" type="submit" value="SEND">DODAJ</button>
+                {{ form.as_p }}
+                <input type="submit" value="Submit">
             </form>
         </div>
     </div>

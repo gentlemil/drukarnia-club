@@ -3,13 +3,24 @@
 
 {% block content %}
 
-<section id="menu-site">
-    <div class="header">
-        <h1 class="section-header">SZCZEGÓŁY</h1>
-    </div>
-    <div class="container">
-        <div class="left">
-            <!-- <div class="left-create"> -->
+<div class="container">
+    <!-- czesc tytulowa, co z czym sie je -->
+    <div class="menu-index">
+        <div class="welcome">
+            <p class="sub-header">SZCZEGÓŁY PRODUKTY</p>
+            <ul class="option-list">
+                <li class="option-list-element">
+                    <a href="{% url 'menu_update' pk=product.pk %}">EDYTUJ</a>
+                </li>
+                <li class="option-list-element">
+                    <a href="{% url 'menu_delete' pk=product.pk %}">USUŃ</a>
+                </li>
+                <li class="option-list-element">
+                    <a href="{% url 'menu_list' %}">POWRÓT</a>
+                </li>
+            </ul>
+        </div>
+        <div class="container">
             <table>
                 <tbody>
                     <tr>
@@ -28,13 +39,11 @@
                         <td>OPIS:</td>
                         <td>{{ product.description }}</td>
                     </tr>
-
                 </tbody>
             </table>
-            <!-- </div> -->
         </div>
     </div>
-</section>
+</div>
 
 {% endblock %}
 

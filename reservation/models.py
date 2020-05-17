@@ -39,18 +39,18 @@ class Reservation(models.Model):
     nr_of_people = models.PositiveIntegerField(default=2)
 
     catering = models.BooleanField(
-        blank=False,
-        null=False,
-        default=False
+        default=False, blank=True, null=False,
+        verbose_name='catering?',
+        help_text='',
     )
 
     faktura = models.BooleanField(
-        blank=False,
-        null=False,
-        default=False
+        default=False, blank=True, null=False,
+        verbose_name='faktura?',
+        help_text='',
     ) 
 
-    additional_information = models.TextField(max_length=500)
+    additional_information = models.TextField(max_length=500, blank=True)
 
     created = models.DateTimeField(auto_now_add=timezone.now)
 
