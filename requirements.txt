@@ -1,6 +1,7 @@
 arrow==0.15.5
 asgiref==3.2.3
 backcall==0.1.0
+beautifulsoup4==4.8.2
 certifi==2019.11.28
 chardet==3.0.4
 colorama==0.4.3
@@ -8,14 +9,19 @@ dateparser==0.7.4
 decorator==4.4.1
 Django==2.2.10
 django-appconf==1.0.3
+django-bootstrap-datepicker-plus==3.0.5
+django-bootstrap4==1.1.1
 django-compressor==2.4
 django-cors-headers==3.2.1
+django-crispy-forms==1.9.0
 django-debug-toolbar==2.2
 django-environ==0.4.5
 django-extensions==2.2.6
+django-jquery==3.1.0
 django-libsass==0.8
 django-sass-processor==0.2.6
 django-taggit==1.2.0
+django-tempus-dominus==5.1.2.13
 djangorestframework==3.11.0
 gunicorn==20.0.4
 httpie==2.0.0
@@ -43,6 +49,7 @@ regex==2020.2.20
 requests==2.22.0
 rjsmin==1.1.0
 six==1.13.0
+soupsieve==2.0
 sqlparse==0.3.0
 times==0.7
 traitlets==4.3.3
