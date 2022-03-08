@@ -24,7 +24,7 @@ django-taggit==1.2.0
 django-tempus-dominus==5.1.2.13
 djangorestframework==3.11.0
 gunicorn==20.0.4
-httpie==2.0.0
+httpie==3.1.0
 idna==2.8
 ipython==7.11.1
 ipython-genutils==0.2.0
